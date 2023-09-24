@@ -1,15 +1,20 @@
-# Interview Guidelines
+# Interview approach
 
 This are guidelines I follow when I interview candidates for an Engineering role.
-I have been interviewed by many companies and I have been interviewing candidates for quite a bit now, so I have seen a lot of different approaches to the interview process.
+I have been interviewed by many companies and I have been a hiring manager for some time, I have seen and experienced first hand a lot of different approaches to the interview process.
+
+This is a collection of unsorted questions that purposefully have no answers. The idea is to use this as a reference for your own interview process.
 
 ## Intro
 
-- How are you doing/weather, something to break the ice!
-- Tell me about your engineering journey so far
+- How are you doing/weather, something nice to break the ice and make the candidate feel comfortable
+- Tell me about your engineering journey, how did you get into engineering?
+- What do you like about this job?
 - What are you looking for in your next role?
 - What is your favorite programming language and why?
-- What is your favorite part of this job?
+- What is the best piece of code you have ever written? And the worst?
+- Do you hate PHP? (I do)
+- Are you nervous? (I am)
 
 ## Git
 
@@ -19,13 +24,13 @@ I have been interviewed by many companies and I have been interviewing candidate
 - What’s a hook? Make an example of its use.
 - What’s a submodule and when should it be used?
 - How can I rollback the last commit I made on my local branch?
-- Rebase vs merge, explain the difference
+- Rebase vs merge, explain the difference and when to use one or the other
 
 ## GitHub/GitLab
 
 - What’s CI/CD?
 - Have you ever used GitHub actions? How does it work?
-- Have you ever used GitLab? Does it offer something different from GitHub?
+- Have you ever used GitLab? How does it differ from GitHub?
 
 ## Networking
 
@@ -124,7 +129,7 @@ I have been interviewed by many companies and I have been interviewing candidate
 - What are Kubernetes pods, and how do they relate to containers?
 - Explain the Pod lifecycle
 - What is the CrashLoopBackOff state?
-- Explain this command 
+- Explain the following command 
 ```
 kubectl run nginx --image=nginx:latest --port=80 --env="ENV_VAR=value" --labels="app=nginx" --
 limits="cpu=500m,memory=256Mi" --requests="cpu=250m,memory=128Mi" --dry-run=client -o yaml > nginx.yaml
@@ -256,10 +261,9 @@ limits="cpu=500m,memory=256Mi" --requests="cpu=250m,memory=128Mi" --dry-run=clie
 - How would you approach building a highly interactive and responsive web application with real-time updates? E.g. Financial App Stock Market data
 
 ## Outro
-
-- Are you satified with our salary offering?
-- What is a benefit you would like to see?
-- What is a benefit you are glad we offer?
+- Are you happy with our salary offering?
+- What benefit would you like to see listed?
+- What benefit are you glad we offer?
 - What is your notice period?
-- What would be a reasonable time to come back to you with a feedback?
+- When would you be available to start?
 - Do you have any questions for me?
