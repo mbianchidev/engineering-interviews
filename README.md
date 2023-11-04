@@ -5,7 +5,7 @@ I have been interviewed by many companies and I have been a hiring manager for s
 
 This is a collection of unsorted questions that purposefully have no answers. The idea is to use this as a reference for your own interview process.
 
-## Intro
+# Intro
 
 - How are you doing/weather, something nice to break the ice and make the candidate feel comfortable
 - Tell me about your engineering journey, how did you get into engineering?
@@ -15,6 +15,8 @@ This is a collection of unsorted questions that purposefully have no answers. Th
 - What is the best piece of code you have ever written? And the worst?
 - Do you hate PHP? (I do)
 - Are you nervous? (I am)
+
+# General 
 
 ## Git
 
@@ -26,13 +28,7 @@ This is a collection of unsorted questions that purposefully have no answers. Th
 - How can I rollback the last commit I made on my local branch?
 - Rebase vs merge, explain the difference and when to use one or the other
 
-## GitHub/GitLab
-
-- What’s CI/CD?
-- Have you ever used GitHub actions? How does it work?
-- Have you ever used GitLab? How does it differ from GitHub?
-
-## Networking
+## Network
 
 - How does the TCP/IP protocol work?
 - What’s a DNS and how does that work?
@@ -41,8 +37,9 @@ This is a collection of unsorted questions that purposefully have no answers. Th
 - How does DHCP work?
 - What is a firewall? What is a WAF?
 - How would you block a specific IP address from accessing a service?
-- What is a proxy? What is a reverse proxy?
+- What is a proxy? What is a reverse proxy? What is a forward proxy?
 - How does a load balancer work?
+- Do you know any Load Balancing algorithms? Explain them (e.g. Round Robin, Least Connections, etc.)
 
 ## Linux and Virtualization
 
@@ -60,6 +57,15 @@ This is a collection of unsorted questions that purposefully have no answers. Th
 - What does it happen when you launch `$?` in bash?
 - What is a virtual machine (VM) and how does it work?
 - What’s a hypervisor software?
+
+# DevOps, SRE and Platform Engineering
+
+## CI/CD
+
+- What’s CI/CD?
+- Explain the phases of CI/CD
+- Have you ever used GitHub actions? How does it work?
+- Have you ever used GitLab? How does it differ from GitHub?
 
 ## Docker and Containerization
 
@@ -107,12 +113,6 @@ This is a collection of unsorted questions that purposefully have no answers. Th
 - What major cloud provider can Terraform work with?
 - How does Terraform handle updates to existing resources?
 - How does Terraform handle dependencies between resources?
-
-## Ansible
-
-- What is the difference between Playbook and Role?
-- How do you debug a Playbook?
-- How would you use Ansible to automate the deployment of a web application?
 
 ## Kubernetes, Helm, and Container Orchestration
 
@@ -183,11 +183,26 @@ limits="cpu=500m,memory=256Mi" --requests="cpu=250m,memory=128Mi" --dry-run=clie
 - What is Jinja?
 - How can you see the story of the releases in helm?
 - Describe how to perform a go to the previous version in helm
-- Do you have any experience with OpenShift Container Platform?
+
+## Platform Engineering
+
+- What is Platform Engineering?
+- What is the difference between DevOps, SRE and Platform Engineering?
+- What is the tooling you use for Platform Engineering?
+- Should I go Platform Engineering if I have one product and one team?
+
+See: https://github.com/mbianchidev/platform-engineering-roadmap
 
 ## OpenShift
 
+- Do you have any experience with OpenShift Container Platform?
 - What is OpenShift?
+
+## Ansible
+
+- What is the difference between Playbook and Role?
+- How do you debug a Playbook?
+- How would you use Ansible to automate the deployment of a web application?
 
 ## AWS
 
@@ -203,19 +218,47 @@ limits="cpu=500m,memory=256Mi" --requests="cpu=250m,memory=128Mi" --dry-run=clie
 - Can you explain the difference between Azure Virtual Machines and Azure Kubernetes Service (AKS), and when you might choose one over the other?
 - How do you configure Azure Active Directory for use in a single-sign-on (SSO) scenario?
 
+# Software Engineering 
+
 ## Backend
 
+- Explain SOLID principles
+- Do you know any design pattern? Pick your favorite one and explain it (e.g. Decorator, Facade, Observer)
 - What is a RESTful API?
 - What’s the difference between 2xx, 4xx, and 5xx error codes?
 - What is a Microservice architecture and how it differs from a monolithic one?
 - Explain OOP
 - Explain functional programming
 - Explain what is a Queue in programming and make some examples of different types of Queues (LIFO, FIFO...)
+- How do you handle errors in your code?
+- What is a distributed system?
+- Have you ever used a message broker? What is it and how does it work?
+- What is a cache? What is it used for?
+- Why is redis so fast?
+
+## Microservices
+
+- Why should I use separate data storage for each microservice?
+- What does it meen to keep code at a similar level of maturity?
+- What entails to separate build for each microservice?
+- Should I assign each microservice multiple responsibility?
+- Are containers useful in microservices?
+- Stateless microservices seem to be bad. Can I go stateful with microservices? 
+- Should I Adopt DDD (Domain Driven Design)?
+- Orchestrating microservices is not easy. What are the options?
 
 ## Backend Engineering Scenarios
 
 - What’s canary deployment?
 - What if I have two deployments 1.0 (production, stable) and 1.1 (test, maybe stable) and I want to test 1.1 with production traffic, without using the canary deployment technique, what alternatives have I got?
+- What if I have a log file that multiple processes write to, how can I make sure that the log file is not corrupted?
+
+## Database
+
+- What kind of databases do you know? Pick one and convince me it's the best kind of db ever for my application (e.g. In memory, time series, document, vectorial)
+- Explain DB data structures (e.g. B-Tree, Hash Table, LSM tree etc.)
+- What is a query execution plan? Can you "explain" it?
+- What is a transaction? What's the definition of ACID?
 
 ## Frontend
 
@@ -260,7 +303,31 @@ limits="cpu=500m,memory=256Mi" --requests="cpu=250m,memory=128Mi" --dry-run=clie
 - Can you describe your approach to optimizing the performance and user experience of a large e-commerce website?
 - How would you approach building a highly interactive and responsive web application with real-time updates? E.g. Financial App Stock Market data
 
-## Outro
+# Behavioral (I don't usually ask these questions)
+
+- Describe a time when you disagreed with a team member. How did you resolve the problem?
+- Describe a time when you faced a block at work and how you solved it.
+- Tell me about a time when you disagreed with a supervisor.
+- What is the most difficult/ challenging situation you’ve ever had to resolve in the workplace? 
+- Describe a time when you were able to motivate unmotivated team members.
+- Tell me about a decision that you’ve regretted and how you overcame it.
+- Tell me about a time when you tried something risky and failed.
+- Tell me about a time when you were consulted for a problem.
+- Explain a time when you took the initiative on a project.
+- What’s the best idea you’ve come up with on a team-based project?
+- Tell me about a time when you worked well under pressure.
+- So, tell me a bit about yourself…
+- Why do you want to work here?
+- Where do you see yourself in X years? (X = 3, 5, 10)
+- What do you do outside of work?
+- What are your strengths and weaknesses?
+- Why are you leaving your current job? (not for interns/new grad)
+- Who is your idol?
+- What is your favorite book?
+- Why startup|big tech|[insert here kind of company or industry]?
+- How do you see [insert here industry] in the next 5 years?
+
+# Outro
 - Are you happy with our salary offering?
 - What benefit would you like to see listed?
 - What benefit are you glad we offer?
