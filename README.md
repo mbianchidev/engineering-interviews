@@ -173,6 +173,8 @@ limits="cpu=500m,memory=256Mi" --requests="cpu=250m,memory=128Mi" --dry-run=clie
 - Role vs ClusterRole, explain the difference
 - What are some best practices for monitoring and logging Kubernetes clusters and applications running on them?
 - Do you have any experience with Grafana+Prometheus, New Relic, Datadog, Dynatrace, or other similar products?
+- How would you decide to separate Kubernetes clusters in an organisation? In what conditions would you have a single cluster?
+- How do you manage multi-tenancy on Kubernetes in general and in terms of billing?
 
 ## Helm
 
