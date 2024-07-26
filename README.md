@@ -328,6 +328,7 @@ See: https://github.com/mbianchidev/platform-engineering-roadmap
 - What is your favorite book?
 - Why startup|big tech|[insert here kind of company or industry]?
 - How do you see [insert here industry] in the next 5 years?
+- What would be your perfect job description?
 
 # Outro
 - Are you happy with our salary offering?
