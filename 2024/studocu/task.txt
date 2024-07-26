@@ -1,0 +1,53 @@
+A Load-balanced website served
+from AWS
+
+The purpose of the exercise is to see how comfortable you are with a
+Terraform project describing a website running behind a loadbalancer
+in AWS.
+
+Deliverables
+A PRIVATE Github repository with the source code, and when finished,
+add SamuelNorbury and egarbi as contributors and share with us the
+link to the repository via the questionnaire you received .
+A README file inside that repository with
+An explanation of the setup
+Any justification you would like to include.
+
+Time Limit
+The task does not have a time limit. The reason is that we don’t want you to
+cut corners due to lack of time.
+
+Task Description
+We want to serve a website from AWS with a fully qualified domain name, a
+HTTPS certificate and 2 private ec2-instances for redundancy.
+Describe this setup using Terraform. We expect to only run terraform
+apply, passing in some variables like the domain, and then we expect to
+visit <some-domain>.code.studucu.com and see (only) the private IP of the
+EC2-server in the browser.
+Assume your Terraform code will be deployed to a fresh AWS account, and
+that the reviewers don’t want to have to do any/much work to get it running.
+To test your code, you can use the below AWS access keys, making sure not
+to commit them to any repository or abuse them. We have created a hosted
+zone for code.studucu.com where your code should create any required
+DNS resource.
+
+AWS Access Key ID: yyyy
+AWS Secret: xxxxx
+
+Please make sure to destroy any infrastructure you create when you
+are done testing.
+•
+•
+◦
+◦
+Your assignment will be judged by
+Clarity of the Terraform code: How easy is it to understand the
+infrastructure being set up?
+Reusability of the Terraform code: Do you use modules and variables
+correctly, or at least justifiably?
+Extensibility of the infrastructure: If the needs of the company change
+in future, how easy will it be to add parts to or remove parts from your
+setup?
+•
+•
+•
