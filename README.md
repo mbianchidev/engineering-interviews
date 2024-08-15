@@ -186,6 +186,8 @@ limits="cpu=500m,memory=256Mi" --requests="cpu=250m,memory=128Mi" --dry-run=clie
 - Do you have any experience with Grafana+Prometheus, New Relic, Datadog, Dynatrace, or other similar products?
 - How would you decide to separate Kubernetes clusters in an organisation? In what conditions would you have a single cluster?
 - How do you manage multi-tenancy on Kubernetes in general and in terms of billing?
+- How would you set up a high availability HA cluster in Kubernetes?
+  - How would you manage etcd? Stacked or unstacked?
 
 ## Helm
 
