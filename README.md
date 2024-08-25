@@ -1,7 +1,7 @@
 # Engineering interviews
 
-This repository contains a folder with coding challenges I've been asked to solve during my batches of applications from 2023 and beyond, I'll do my best to keep it updated.
-This very readme file contains the guidelines I follow when I interview candidates for an Engineering role and part of my question pool.
+This repository contains a folder with coding challenges I've been asked to solve during my application batches from 2023 and beyond, I'll do my best to keep it updated with fresh questions.
+This very readme file contains the guidelines I follow when I interview candidates for an Engineering role and part of my question pool, mixed with questions I got asked during interviews.
 
 I have been a hiring manager for some time but I've also applied and got interviews for many companies (100+) - including AWS, Microsoft, Google, Uber, Booking.com and ClickHouse. 
 
@@ -12,6 +12,8 @@ My idea for this repo is, since I have seen and experienced first hand a lot of 
 
 The following list is a collection of unsorted questions that purposefully have no answers. 
 The rationale is to use this as a reference for your own interview process (as candidate or as hiring manager) and to prepare for it.
+
+Contributions to this code base are welcome but subject to my sole judgement for inclusion or exclusion, feel free to fork.
 
 # STAR Method
 
