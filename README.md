@@ -1,6 +1,6 @@
 # Engineering interviews
 
-This repository contains a folder with coding challenges I've been asked to solve during my batches of applications from 2023 and beyoned, I'll do my best to keep it updated.
+This repository contains a folder with coding challenges I've been asked to solve during my batches of applications from 2023 and beyond, I'll do my best to keep it updated.
 This very readme file contains the guidelines I follow when I interview candidates for an Engineering role and part of my question pool.
 
 I have been a hiring manager for some time but I've also applied and got interviews for many companies (100+) - including AWS, Microsoft, Google, Uber, Booking.com and ClickHouse. 
