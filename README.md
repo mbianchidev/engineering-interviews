@@ -7,6 +7,7 @@ I have been a hiring manager for some time but I've also applied and got intervi
 
 _Note: for the sake of transparency I didn't got a job offer from these (yet) but with some I passed some of their coding and system interviews alike_ 
 
+
 My idea for this repo is, since I have seen and experienced first hand a lot of different approaches to the interview process, I want to provide some guideline for people to follow and maybe even spar with someone, or with me - for a (relatively) small fee.
 
 The following list is a collection of unsorted questions that purposefully have no answers. 
