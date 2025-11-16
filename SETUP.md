@@ -44,8 +44,35 @@ npm run dev
 
 ```bash
 npm run build
-npm start
 ```
+
+The build creates a static export in the `out/` directory.
+
+### Building for Static Export (GitHub Pages)
+
+This project is configured to export as a static site for GitHub Pages deployment:
+
+```bash
+npm run build
+```
+
+The static files will be generated in the `out/` directory, ready for deployment.
+
+## Deployment
+
+### GitHub Pages
+
+This repository includes a GitHub Actions workflow that automatically deploys the website to GitHub Pages when changes are pushed to the `main` branch.
+
+**Setup Steps:**
+
+1. Go to your repository's Settings → Pages
+2. Under "Build and deployment", select "GitHub Actions" as the source
+3. Push to the `main` branch to trigger the deployment
+
+The site will be available at: `https://<username>.github.io/engineering-interviews/`
+
+You can also manually trigger the deployment workflow from the Actions tab.
 
 ## Tech Stack
 
@@ -57,17 +84,24 @@ npm start
 ## Project Structure
 
 ```
+├── .github/
+│   └── workflows/
+│       └── deploy.yml         # GitHub Pages deployment workflow
 ├── app/
-│   ├── api/questions/       # API endpoint for questions
-│   ├── practice/            # Practice mode page
-│   ├── topics/              # Topic browsing pages
-│   │   └── [categoryId]/    # Dynamic category pages
-│   ├── layout.tsx           # Root layout
-│   └── page.tsx             # Homepage
+│   ├── practice/              # Practice mode page
+│   ├── topics/                # Topic browsing pages
+│   │   └── [categoryId]/      # Dynamic category pages
+│   ├── layout.tsx             # Root layout
+│   └── page.tsx               # Homepage
 ├── lib/
-│   └── parseQuestions.ts    # Question parsing logic
-├── README.md                # Original interview questions
-└── SETUP.md                 # This file
+│   ├── parseQuestions.ts      # Question parsing logic
+│   └── questionsData.ts       # Client-side questions data
+├── scripts/
+│   └── generate-questions.ts  # Build-time question JSON generator
+├── public/
+│   └── questions.json         # Generated questions data
+├── README.md                  # Original interview questions
+└── SETUP.md                   # This file
 ```
 
 ## How It Works
@@ -77,10 +111,11 @@ The application parses the `README.md` file at build time to extract:
 - Subcategories (Git, Network, React, etc.)
 - Individual questions
 
-This data is then used to:
-1. Generate static pages for each topic category
-2. Provide an API endpoint for the practice mode
-3. Enable random question selection with progress tracking
+The build process:
+1. Runs `generate-questions.ts` to parse README.md and create `public/questions.json`
+2. Generates static pages for each topic category via SSG
+3. Exports all pages as static HTML in the `out/` directory
+4. The practice mode loads questions from the JSON file client-side
 
 ## License
 

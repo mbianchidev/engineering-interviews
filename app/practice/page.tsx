@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { allQuestions } from '@/lib/questionsData';
 
 interface Question {
   id: string;
@@ -11,19 +12,11 @@ interface Question {
 }
 
 export default function PracticePage() {
-  const [questions, setQuestions] = useState<Question[]>([]);
+  const [questions] = useState<Question[]>(allQuestions);
   const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
   const [timer, setTimer] = useState(0);
   const [isActive, setIsActive] = useState(false);
   const [usedQuestions, setUsedQuestions] = useState<Set<string>>(new Set());
-
-  useEffect(() => {
-    // Fetch questions from API
-    fetch('/api/questions')
-      .then(res => res.json())
-      .then(data => setQuestions(data))
-      .catch(err => console.error('Failed to fetch questions:', err));
-  }, []);
 
   useEffect(() => {
     let interval: NodeJS.Timeout | null = null;
@@ -106,7 +99,7 @@ export default function PracticePage() {
               disabled={questions.length === 0}
               className="px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {questions.length === 0 ? 'Loading...' : 'Start Practicing'}
+              Start Practicing
             </button>
           </div>
         ) : (
