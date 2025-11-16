@@ -1,11 +1,14 @@
 import type { NextConfig } from "next";
 
+const isProduction = process.env.NODE_ENV === 'production';
+const isGitHubPages = process.env.GITHUB_ACTIONS === 'true' || process.env.DEPLOY_ENV === 'github-pages';
+
 const nextConfig: NextConfig = {
-  output: 'export',
+  ...(isProduction && { output: 'export' }),
   images: {
     unoptimized: true,
   },
-  basePath: process.env.GITHUB_ACTIONS ? '/engineering-interviews' : '',
+  basePath: isGitHubPages ? '/engineering-interviews' : '',
 };
 
 export default nextConfig;
