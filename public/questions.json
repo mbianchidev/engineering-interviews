@@ -1,0 +1,2685 @@
+{
+  "categories": [
+    {
+      "id": "general",
+      "name": "General",
+      "subcategories": [
+        {
+          "id": "git",
+          "name": "Git",
+          "questions": [
+            {
+              "id": "what-is-the-difference-between-a-remote-branch-and-a-local-branch",
+              "text": "What is the difference between a remote branch and a local branch?",
+              "category": "General",
+              "subcategory": "Git"
+            },
+            {
+              "id": "how-can-i-delete-a-remote-branch-please-give-the-command",
+              "text": "How can I delete a remote branch? Please give the command",
+              "category": "General",
+              "subcategory": "Git"
+            },
+            {
+              "id": "what-s-a-tag-and-how-is-it-used",
+              "text": "What’s a tag and how is it used?",
+              "category": "General",
+              "subcategory": "Git"
+            },
+            {
+              "id": "what-s-a-hook-make-an-example-of-its-use",
+              "text": "What’s a hook? Make an example of its use.",
+              "category": "General",
+              "subcategory": "Git"
+            },
+            {
+              "id": "what-s-a-submodule-and-when-should-it-be-used",
+              "text": "What’s a submodule and when should it be used?",
+              "category": "General",
+              "subcategory": "Git"
+            },
+            {
+              "id": "how-can-i-rollback-the-last-commit-i-made-on-my-local-branch",
+              "text": "How can I rollback the last commit I made on my local branch?",
+              "category": "General",
+              "subcategory": "Git"
+            },
+            {
+              "id": "rebase-vs-merge-explain-the-difference-and-when-to-use-one-or-the-other",
+              "text": "Rebase vs merge, explain the difference and when to use one or the other",
+              "category": "General",
+              "subcategory": "Git"
+            }
+          ]
+        },
+        {
+          "id": "network",
+          "name": "Network",
+          "questions": [
+            {
+              "id": "how-does-the-tcp-ip-protocol-work",
+              "text": "How does the TCP/IP protocol work?",
+              "category": "General",
+              "subcategory": "Network"
+            },
+            {
+              "id": "what-s-a-dns-and-how-does-that-work",
+              "text": "What’s a DNS and how does that work?",
+              "category": "General",
+              "subcategory": "Network"
+            },
+            {
+              "id": "what-is-a-vpn",
+              "text": "What is a VPN?",
+              "category": "General",
+              "subcategory": "Network"
+            },
+            {
+              "id": "what-is-a-nat-tunnel",
+              "text": "What is a NAT tunnel?",
+              "category": "General",
+              "subcategory": "Network"
+            },
+            {
+              "id": "how-does-dhcp-work",
+              "text": "How does DHCP work?",
+              "category": "General",
+              "subcategory": "Network"
+            },
+            {
+              "id": "what-is-a-firewall-what-is-a-waf",
+              "text": "What is a firewall? What is a WAF?",
+              "category": "General",
+              "subcategory": "Network"
+            },
+            {
+              "id": "how-would-you-block-a-specific-ip-address-from-accessing-a-service",
+              "text": "How would you block a specific IP address from accessing a service?",
+              "category": "General",
+              "subcategory": "Network"
+            },
+            {
+              "id": "what-is-a-proxy-what-is-a-reverse-proxy-what-is-a-forward-proxy",
+              "text": "What is a proxy? What is a reverse proxy? What is a forward proxy?",
+              "category": "General",
+              "subcategory": "Network"
+            },
+            {
+              "id": "how-does-a-load-balancer-work",
+              "text": "How does a load balancer work?",
+              "category": "General",
+              "subcategory": "Network"
+            },
+            {
+              "id": "do-you-know-any-load-balancing-algorithms-explain-them-e-g-round-robin-least-connections-etc",
+              "text": "Do you know any Load Balancing algorithms? Explain them (e.g. Round Robin, Least Connections, etc.)",
+              "category": "General",
+              "subcategory": "Network"
+            }
+          ]
+        },
+        {
+          "id": "linux-and-virtualization",
+          "name": "Linux and Virtualization",
+          "questions": [
+            {
+              "id": "what-is-linux-and-what-makes-it-different-from-other-operating-systems",
+              "text": "What is Linux and what makes it different from other operating systems?",
+              "category": "General",
+              "subcategory": "Linux and Virtualization"
+            },
+            {
+              "id": "what-is-a-directory",
+              "text": "What is a directory?",
+              "category": "General",
+              "subcategory": "Linux and Virtualization"
+            },
+            {
+              "id": "what-s-the-kernel",
+              "text": "What’s \"the kernel\"?",
+              "category": "General",
+              "subcategory": "Linux and Virtualization"
+            },
+            {
+              "id": "how-can-you-install-software-on-a-linux-system-and-what-are-the-common-package-managers-used-in-linux",
+              "text": "How can you install software on a Linux system and what are the common package managers used in Linux?",
+              "category": "General",
+              "subcategory": "Linux and Virtualization"
+            },
+            {
+              "id": "what-s-the-command-for-changing-the-permission-of-a-file-give-an-example",
+              "text": "What’s the command for changing the permission of a file? Give an example",
+              "category": "General",
+              "subcategory": "Linux and Virtualization"
+            },
+            {
+              "id": "what-s-the-command-for-changing-the-ownership-of-a-file-give-an-example",
+              "text": "What’s the command for changing the ownership of a file? Give an example",
+              "category": "General",
+              "subcategory": "Linux and Virtualization"
+            },
+            {
+              "id": "what-s-a-command-for-killing-a-process-given-its-pid-give-an-example",
+              "text": "What’s a command for killing a process given its PID? Give an example",
+              "category": "General",
+              "subcategory": "Linux and Virtualization"
+            },
+            {
+              "id": "what-s-a-command-to-list-all-the-processes-running-give-an-example",
+              "text": "What’s a command to list all the processes running? Give an example",
+              "category": "General",
+              "subcategory": "Linux and Virtualization"
+            },
+            {
+              "id": "what-s-the-command-named-after-a-protocol-to-connect-to-a-remote-server-in-linux-give-an-example",
+              "text": "What’s the command, named after a protocol, to connect to a remote server in Linux? Give an example",
+              "category": "General",
+              "subcategory": "Linux and Virtualization"
+            },
+            {
+              "id": "what-s-a-service-in-linux",
+              "text": "What’s a service in Linux?",
+              "category": "General",
+              "subcategory": "Linux and Virtualization"
+            },
+            {
+              "id": "how-does-selinux-work",
+              "text": "How does SELinux work?",
+              "category": "General",
+              "subcategory": "Linux and Virtualization"
+            },
+            {
+              "id": "what-does-it-happen-when-you-launch-in-bash",
+              "text": "What does it happen when you launch `$?` in bash?",
+              "category": "General",
+              "subcategory": "Linux and Virtualization"
+            },
+            {
+              "id": "what-is-a-virtual-machine-vm-and-how-does-it-work",
+              "text": "What is a virtual machine (VM) and how does it work?",
+              "category": "General",
+              "subcategory": "Linux and Virtualization"
+            },
+            {
+              "id": "what-s-a-hypervisor-software",
+              "text": "What’s a hypervisor software?",
+              "category": "General",
+              "subcategory": "Linux and Virtualization"
+            }
+          ]
+        }
+      ],
+      "questions": []
+    },
+    {
+      "id": "devops-sre-and-platform-engineering",
+      "name": "DevOps, SRE and Platform Engineering",
+      "subcategories": [
+        {
+          "id": "ci-cd",
+          "name": "CI/CD",
+          "questions": [
+            {
+              "id": "what-s-ci-cd",
+              "text": "What’s CI/CD?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "CI/CD"
+            },
+            {
+              "id": "explain-the-phases-of-ci-cd",
+              "text": "Explain the phases of CI/CD",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "CI/CD"
+            },
+            {
+              "id": "have-you-ever-used-github-actions-how-does-it-work",
+              "text": "Have you ever used GitHub actions? How does it work?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "CI/CD"
+            },
+            {
+              "id": "have-you-ever-used-gitlab-how-does-it-differ-from-github",
+              "text": "Have you ever used GitLab? How does it differ from GitHub?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "CI/CD"
+            }
+          ]
+        },
+        {
+          "id": "docker-and-containerization",
+          "name": "Docker and Containerization",
+          "questions": [
+            {
+              "id": "what-s-the-difference-between-a-virtual-machine-and-a-container-runtime",
+              "text": "What’s the difference between a virtual machine and a container runtime?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Docker and Containerization"
+            },
+            {
+              "id": "how-does-containerization-work",
+              "text": "How does containerization work?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Docker and Containerization"
+            },
+            {
+              "id": "is-docker-the-only-way-to-create-a-container",
+              "text": "Is Docker the only way to create a container?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Docker and Containerization"
+            },
+            {
+              "id": "what-is-the-purpose-and-power-of-an-image",
+              "text": "What is the purpose and power of an image?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Docker and Containerization"
+            },
+            {
+              "id": "what-is-the-registry-and-how-is-it-used-in-containerization",
+              "text": "What is the registry and how is it used in containerization?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Docker and Containerization"
+            },
+            {
+              "id": "what-s-a-dockerfile",
+              "text": "What’s a Dockerfile?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Docker and Containerization"
+            },
+            {
+              "id": "what-is-the-first-line-of-a-dockerfile",
+              "text": "What is the first line of a Dockerfile?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Docker and Containerization"
+            },
+            {
+              "id": "how-do-you-attach-a-volume-in-a-docker-container",
+              "text": "How do you attach a volume in a Docker container?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Docker and Containerization"
+            },
+            {
+              "id": "how-do-you-manage-or-orchestrate-multiple-containers",
+              "text": "How do you manage or orchestrate multiple containers?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Docker and Containerization"
+            },
+            {
+              "id": "what-s-the-purpose-of-docker-compose",
+              "text": "What’s the purpose of Docker Compose?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Docker and Containerization"
+            },
+            {
+              "id": "best-practice-for-building-a-good-dockerfile",
+              "text": "Best practice for building a good Dockerfile",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Docker and Containerization"
+            },
+            {
+              "id": "why-too-many-lines-are-bad-for-a-dockerfile",
+              "text": "Why too many lines are bad for a Dockerfile?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Docker and Containerization"
+            }
+          ]
+        },
+        {
+          "id": "cloud",
+          "name": "Cloud",
+          "questions": [
+            {
+              "id": "what-is-cloud-computing",
+              "text": "What is cloud computing?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Cloud"
+            },
+            {
+              "id": "define-public-hybrid-and-private-cloud-and-give-a-use-case-for-each",
+              "text": "Define public, hybrid, and private cloud and give a use case for each",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Cloud"
+            },
+            {
+              "id": "what-is-serverless",
+              "text": "What is serverless?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Cloud"
+            },
+            {
+              "id": "is-i-say-edge-computing-what-do-i-mean",
+              "text": "Is I say edge computing, what do I mean?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Cloud"
+            },
+            {
+              "id": "list-some-cncf-cloud-native-computing-foundation-graduated-projects-or-projects-you-like",
+              "text": "List some CNCF (Cloud Native Computing Foundation) graduated projects or projects you like",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Cloud"
+            }
+          ]
+        },
+        {
+          "id": "site-reliability-engineering",
+          "name": "Site Reliability Engineering",
+          "questions": [
+            {
+              "id": "what-is-a-receiver-in-an-alert-manager",
+              "text": "What is a receiver in an alert manager?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Site Reliability Engineering"
+            },
+            {
+              "id": "what-happens-when-you-execute-a-curl-command-on-a-prometheus-exporter-endpoint",
+              "text": "What happens when you execute a `curl` command on a Prometheus exporter endpoint?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Site Reliability Engineering"
+            },
+            {
+              "id": "give-me-an-example-of-an-openmetrics-payload",
+              "text": "Give me an example of an OpenMetrics payload",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Site Reliability Engineering"
+            },
+            {
+              "id": "what-is-a-service-level-objective-slo",
+              "text": "What is a Service Level Objective (SLO)?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Site Reliability Engineering"
+            },
+            {
+              "id": "what-is-a-service-level-indicator-sli",
+              "text": "What is a Service Level Indicator (SLI)?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Site Reliability Engineering"
+            },
+            {
+              "id": "what-is-a-service-level-agreement-sla",
+              "text": "What is a Service Level Agreement (SLA)?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Site Reliability Engineering"
+            },
+            {
+              "id": "if-i-say-error-budget-what-do-i-mean-sla-is-99-9-what-is-the-error-budget",
+              "text": "If I say \"Error Budget\", what do I mean? SLA is 99.9%, what is the error budget?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Site Reliability Engineering"
+            }
+          ]
+        },
+        {
+          "id": "terraform-and-infrastructure-as-code",
+          "name": "Terraform and Infrastructure as Code",
+          "questions": [
+            {
+              "id": "what-is-infrastructure-as-code-and-why-is-it-important-in-modern-cloud-development",
+              "text": "What is Infrastructure as Code and why is it important in modern cloud development?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Terraform and Infrastructure as Code"
+            },
+            {
+              "id": "explain-the-following-commands-terraform-init-terraform-plan-terraform-apply",
+              "text": "Explain the following commands: terraform init, terraform plan, terraform apply",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Terraform and Infrastructure as Code"
+            },
+            {
+              "id": "what-is-the-purpose-of-the-terraform-state-file",
+              "text": "What is the purpose of the Terraform state file?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Terraform and Infrastructure as Code"
+            },
+            {
+              "id": "what-is-terraform-s-remote-state",
+              "text": "What is Terraform's remote state?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Terraform and Infrastructure as Code"
+            },
+            {
+              "id": "where-should-it-be-stored-for-example-in-aws-as-a-cloud-provider",
+              "text": "Where should it be stored, for example, in AWS as a cloud provider?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Terraform and Infrastructure as Code"
+            },
+            {
+              "id": "what-is-a-terraform-provider-and-what-s-the-difference-between-a-provider-and-a-resource",
+              "text": "What is a Terraform provider and what’s the difference between a provider and a resource?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Terraform and Infrastructure as Code"
+            },
+            {
+              "id": "what-is-the-way-of-reusing-terraform-templates",
+              "text": "What is the way of reusing Terraform templates?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Terraform and Infrastructure as Code"
+            },
+            {
+              "id": "how-can-you-use-terraform-variables",
+              "text": "How can you use Terraform variables?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Terraform and Infrastructure as Code"
+            },
+            {
+              "id": "what-major-cloud-provider-can-terraform-work-with",
+              "text": "What major cloud provider can Terraform work with?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Terraform and Infrastructure as Code"
+            },
+            {
+              "id": "how-does-terraform-handle-updates-to-existing-resources",
+              "text": "How does Terraform handle updates to existing resources?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Terraform and Infrastructure as Code"
+            },
+            {
+              "id": "how-does-terraform-handle-dependencies-between-resources",
+              "text": "How does Terraform handle dependencies between resources?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Terraform and Infrastructure as Code"
+            }
+          ]
+        },
+        {
+          "id": "kubernetes-helm-and-container-orchestration",
+          "name": "Kubernetes, Helm, and Container Orchestration",
+          "questions": [
+            {
+              "id": "what-is-kubernetes-and-what-are-some-of-its-main-features-and-benefits",
+              "text": "What is Kubernetes, and what are some of its main features and benefits?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "what-are-the-components-of-a-kubernetes-cluster-and-how-do-they-interact-with-each-other",
+              "text": "What are the components of a Kubernetes cluster, and how do they interact with each other?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "how-can-you-interact-with-kubernetes-api",
+              "text": "How can you interact with Kubernetes API?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "explain-these-commands-k-create-k-get-k-describe-k-delete-k-apply-k-logs-k-exec-scale-rollout",
+              "text": "Explain these commands: k create, k get, k describe, k delete, k apply, k logs, k exec, scale, rollout",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "how-do-you-create-a-kubernetes-deployment-and-what-are-some-best-practices-to-follow-when-defining-deployments",
+              "text": "How do you create a Kubernetes deployment, and what are some best practices to follow when defining deployments?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "what-is-an-imagepullpolicy-and-what-values-can-this-parameter-hold",
+              "text": "What is an ImagePullPolicy and what values can this parameter hold?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "what-is-a-kubernetes-port-forward-why-do-you-use-that-what-s-the-command-to-perform-that",
+              "text": "What is a Kubernetes port forward? Why do you use that? What’s the command to perform that?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "nodeport-vs-loadbalancer",
+              "text": "NodePort vs LoadBalancer?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "what-is-the-role-of-the-scheduler",
+              "text": "What is the role of the Scheduler?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "explain-node-affinity-node-taints-node-selectors-and-pod-priority",
+              "text": "Explain node affinity, node taints, node selectors, and pod priority.",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "what-are-kubernetes-pods-and-how-do-they-relate-to-containers",
+              "text": "What are Kubernetes pods, and how do they relate to containers?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "explain-the-pod-lifecycle",
+              "text": "Explain the Pod lifecycle",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "what-is-the-crashloopbackoff-state",
+              "text": "What is the CrashLoopBackOff state?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "explain-the-following-command",
+              "text": "Explain the following command",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "what-s-the-difference-between-resource-request-and-resource-limit-in-kubernetes",
+              "text": "What’s the difference between resource request and resource limit in Kubernetes?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "when-is-a-pod-evicted",
+              "text": "When is a Pod evicted?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "how-does-kubernetes-health-checks-work",
+              "text": "How does Kubernetes health checks work?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "what-is-a-livenessprobe",
+              "text": "What is a livenessProbe ?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "what-is-a-readinessprobe",
+              "text": "What is a readinessProbe ?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "what-is-a-startupprobe",
+              "text": "What is a startupProbe ?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "how-many-kinds-of-probe-types-are-there",
+              "text": "How many kinds of probe types are there?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "nodeaffinity-vs-podaffinity",
+              "text": "NodeAffinity vs PodAffinity",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "what-is-the-pod-disruption-budget",
+              "text": "What is the POD disruption budget?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "what-is-a-kubernetes-volume",
+              "text": "What is a Kubernetes volume?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "how-is-a-kubernetes-volume-different-from-a-container-s-file-system",
+              "text": "How is a Kubernetes volume different from a container's file system?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "what-are-some-types-of-kubernetes-volumes",
+              "text": "What are some types of Kubernetes volumes?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "how-do-you-define-a-kubernetes-volume-in-a-pod-s-yaml-configuration",
+              "text": "How do you define a Kubernetes volume in a Pod's YAML configuration?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "how-do-you-mount-a-kubernetes-volume-to-a-container",
+              "text": "How do you mount a Kubernetes volume to a container?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "can-multiple-containers-in-a-pod-share-the-same-volume",
+              "text": "Can multiple containers in a Pod share the same volume?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "what-is-a-persistent-volume-pv-in-kubernetes",
+              "text": "What is a Persistent Volume (PV) in Kubernetes?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "how-do-you-define-a-persistent-volume-in-kubernetes",
+              "text": "How do you define a Persistent Volume in Kubernetes?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "how-do-you-claim-a-persistent-volume-in-kubernetes-pvc",
+              "text": "How do you claim a Persistent Volume in Kubernetes (PVC)?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "how-do-you-use-a-persistent-volume-in-a-pod",
+              "text": "How do you use a Persistent Volume in a Pod?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "what-is-a-storageclass-and-how-does-that-work",
+              "text": "What is a StorageClass and how does that work?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "what-are-the-benefits-of-storageclass",
+              "text": "What are the benefits of StorageClass?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "what-is-a-kubernetes-namespace-and-how-can-it-be-used-to-manage-resources-in-a-multi-tenant-environment",
+              "text": "What is a Kubernetes namespace, and how can it be used to manage resources in a multi-tenant environment?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "what-are-kubernetes-services-and-how-do-they-enable-application-discovery-and-load-balancing",
+              "text": "What are Kubernetes Services, and how do they enable application discovery and load balancing?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "what-is-an-ingress-and-how-does-it-work",
+              "text": "What is an Ingress and how does it work?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "what-is-a-kubernetes-controller-and-how-does-it-work",
+              "text": "What is a Kubernetes Controller and how does it work?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "explain-the-difference-between-replicaset-controller-deployment-controller-statefulset-controller-and-daemonset-controller",
+              "text": "Explain the difference between ReplicaSet controller, Deployment controller, StatefulSet controller, and DaemonSet controller",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "what-is-a-secret-and-how-can-it-be-used-to-manage-sensitive-information-like-passwords-and-api-keys",
+              "text": "What is a secret, and how can it be used to manage sensitive information like passwords and API keys?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "how-do-you-scale-a-kubernetes-deployment-and-what-factors-should-you-consider-when-determining-the-optimal-number-of-replicas",
+              "text": "How do you scale a Kubernetes deployment, and what factors should you consider when determining the optimal number of replicas?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "also-what-metrics-exist-natively-that-can-trigger-a-new-pod",
+              "text": "Also, what metrics exist (natively) that can trigger a new pod?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "what-kind-of-autoscaling-is-kubernetes-capable-of",
+              "text": "What kind of autoscaling is Kubernetes capable of?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "what-is-hpa-and-how-does-it-work",
+              "text": "What is HPA and how does it work?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "what-is-cluster-autoscaling-and-how-does-it-work",
+              "text": "What is Cluster Autoscaling and how does it work?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "what-is-a-configmap",
+              "text": "What is a ConfigMap?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "what-s-a-kubernetes-operator",
+              "text": "What’s a Kubernetes Operator?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "explain-rbac-role-based-access-control",
+              "text": "Explain RBAC - Role Based Access Control",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "what-is-the-difference-between-role-and-rolebinding",
+              "text": "What is the difference between Role and RoleBinding?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "role-vs-clusterrole-explain-the-difference",
+              "text": "Role vs ClusterRole, explain the difference",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "what-are-some-best-practices-for-monitoring-and-logging-kubernetes-clusters-and-applications-running-on-them",
+              "text": "What are some best practices for monitoring and logging Kubernetes clusters and applications running on them?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "do-you-have-any-experience-with-grafana-prometheus-new-relic-datadog-dynatrace-or-other-similar-products",
+              "text": "Do you have any experience with Grafana+Prometheus, New Relic, Datadog, Dynatrace, or other similar products?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "how-would-you-decide-to-separate-kubernetes-clusters-in-an-organisation-in-what-conditions-would-you-have-a-single-cluster",
+              "text": "How would you decide to separate Kubernetes clusters in an organisation? In what conditions would you have a single cluster?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "how-do-you-manage-multi-tenancy-on-kubernetes-in-general-and-in-terms-of-billing",
+              "text": "How do you manage multi-tenancy on Kubernetes in general and in terms of billing?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "how-would-you-set-up-a-high-availability-ha-cluster-in-kubernetes",
+              "text": "How would you set up a high availability HA cluster in Kubernetes?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "how-would-you-manage-etcd-stacked-or-unstacked",
+              "text": "How would you manage etcd? Stacked or unstacked?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            }
+          ]
+        },
+        {
+          "id": "helm",
+          "name": "Helm",
+          "questions": [
+            {
+              "id": "what-is-helm",
+              "text": "What is Helm?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Helm"
+            },
+            {
+              "id": "explain-helm-create-helm-package-and-helm-install-commands",
+              "text": "Explain helm create, helm package, and helm install commands",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Helm"
+            },
+            {
+              "id": "what-does-this-replicas-values-replicacount-mean",
+              "text": "What does this `replicas: {{ .Values.replicaCount }}` mean?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Helm"
+            },
+            {
+              "id": "how-does-helm-templating-work",
+              "text": "How does helm templating work?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Helm"
+            },
+            {
+              "id": "what-is-jinja",
+              "text": "What is Jinja?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Helm"
+            },
+            {
+              "id": "how-can-you-see-the-story-of-the-releases-in-helm",
+              "text": "How can you see the story of the releases in helm?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Helm"
+            },
+            {
+              "id": "describe-how-to-perform-a-go-to-the-previous-version-in-helm",
+              "text": "Describe how to perform a go to the previous version in helm",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Helm"
+            }
+          ]
+        },
+        {
+          "id": "platform-engineering",
+          "name": "Platform Engineering",
+          "questions": [
+            {
+              "id": "what-is-platform-engineering",
+              "text": "What is Platform Engineering?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Platform Engineering"
+            },
+            {
+              "id": "what-is-the-difference-between-devops-sre-and-platform-engineering",
+              "text": "What is the difference between DevOps, SRE and Platform Engineering?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Platform Engineering"
+            },
+            {
+              "id": "what-is-the-tooling-you-use-for-platform-engineering",
+              "text": "What is the tooling you use for Platform Engineering?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Platform Engineering"
+            },
+            {
+              "id": "should-i-go-platform-engineering-if-i-have-one-product-and-one-team",
+              "text": "Should I go Platform Engineering if I have one product and one team?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Platform Engineering"
+            }
+          ]
+        },
+        {
+          "id": "openshift",
+          "name": "OpenShift",
+          "questions": [
+            {
+              "id": "do-you-have-any-experience-with-openshift-container-platform",
+              "text": "Do you have any experience with OpenShift Container Platform?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "OpenShift"
+            },
+            {
+              "id": "what-is-openshift",
+              "text": "What is OpenShift?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "OpenShift"
+            }
+          ]
+        },
+        {
+          "id": "ansible",
+          "name": "Ansible",
+          "questions": [
+            {
+              "id": "what-is-the-difference-between-playbook-and-role",
+              "text": "What is the difference between Playbook and Role?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Ansible"
+            },
+            {
+              "id": "how-do-you-debug-a-playbook",
+              "text": "How do you debug a Playbook?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Ansible"
+            },
+            {
+              "id": "how-would-you-use-ansible-to-automate-the-deployment-of-a-web-application",
+              "text": "How would you use Ansible to automate the deployment of a web application?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Ansible"
+            }
+          ]
+        },
+        {
+          "id": "aws",
+          "name": "AWS",
+          "questions": [
+            {
+              "id": "define-these-aws-services-ec2-s3-route-53-lambda-iam",
+              "text": "Define these AWS Services: EC2, S3, Route 53, Lambda, IAM",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "AWS"
+            },
+            {
+              "id": "what-kind-of-different-load-balancers-does-aws-offer",
+              "text": "What kind of different Load Balancers does AWS offer?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "AWS"
+            },
+            {
+              "id": "define-these-networking-resources-in-aws-vpc-acl-nacl",
+              "text": "Define these networking resources in AWS: VPC, ACL, NACL",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "AWS"
+            },
+            {
+              "id": "what-s-the-difference-between-eks-ecs-and-ecr",
+              "text": "What’s the difference between EKS, ECS, and ECR?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "AWS"
+            },
+            {
+              "id": "what-is-cloudformation-and-how-does-it-work",
+              "text": "What is CloudFormation and how does it work?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "AWS"
+            }
+          ]
+        },
+        {
+          "id": "azure",
+          "name": "Azure",
+          "questions": [
+            {
+              "id": "how-would-you-deploy-a-web-application-to-azure-app-service",
+              "text": "How would you deploy a web application to Azure App Service?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Azure"
+            },
+            {
+              "id": "can-you-explain-the-difference-between-azure-virtual-machines-and-azure-kubernetes-service-aks-and-when-you-might-choose-one-over-the-other",
+              "text": "Can you explain the difference between Azure Virtual Machines and Azure Kubernetes Service (AKS), and when you might choose one over the other?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Azure"
+            },
+            {
+              "id": "how-do-you-configure-azure-active-directory-for-use-in-a-single-sign-on-sso-scenario",
+              "text": "How do you configure Azure Active Directory for use in a single-sign-on (SSO) scenario?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Azure"
+            }
+          ]
+        }
+      ],
+      "questions": []
+    },
+    {
+      "id": "software-engineering",
+      "name": "Software Engineering",
+      "subcategories": [
+        {
+          "id": "backend",
+          "name": "Backend",
+          "questions": [
+            {
+              "id": "explain-solid-principles",
+              "text": "Explain SOLID principles",
+              "category": "Software Engineering",
+              "subcategory": "Backend"
+            },
+            {
+              "id": "do-you-know-any-design-pattern-pick-your-favorite-one-and-explain-it-e-g-decorator-facade-observer",
+              "text": "Do you know any design pattern? Pick your favorite one and explain it (e.g. Decorator, Facade, Observer)",
+              "category": "Software Engineering",
+              "subcategory": "Backend"
+            },
+            {
+              "id": "what-is-a-restful-api",
+              "text": "What is a RESTful API?",
+              "category": "Software Engineering",
+              "subcategory": "Backend"
+            },
+            {
+              "id": "what-s-the-difference-between-2xx-4xx-and-5xx-error-codes",
+              "text": "What’s the difference between 2xx, 4xx, and 5xx error codes?",
+              "category": "Software Engineering",
+              "subcategory": "Backend"
+            },
+            {
+              "id": "what-is-a-microservice-architecture-and-how-it-differs-from-a-monolithic-one",
+              "text": "What is a Microservice architecture and how it differs from a monolithic one?",
+              "category": "Software Engineering",
+              "subcategory": "Backend"
+            },
+            {
+              "id": "explain-oop",
+              "text": "Explain OOP",
+              "category": "Software Engineering",
+              "subcategory": "Backend"
+            },
+            {
+              "id": "explain-functional-programming",
+              "text": "Explain functional programming",
+              "category": "Software Engineering",
+              "subcategory": "Backend"
+            },
+            {
+              "id": "explain-what-is-a-queue-in-programming-and-make-some-examples-of-different-types-of-queues-lifo-fifo",
+              "text": "Explain what is a Queue in programming and make some examples of different types of Queues (LIFO, FIFO...)",
+              "category": "Software Engineering",
+              "subcategory": "Backend"
+            },
+            {
+              "id": "how-do-you-handle-errors-in-your-code",
+              "text": "How do you handle errors in your code?",
+              "category": "Software Engineering",
+              "subcategory": "Backend"
+            },
+            {
+              "id": "what-is-a-distributed-system",
+              "text": "What is a distributed system?",
+              "category": "Software Engineering",
+              "subcategory": "Backend"
+            },
+            {
+              "id": "have-you-ever-used-a-message-broker-what-is-it-and-how-does-it-work",
+              "text": "Have you ever used a message broker? What is it and how does it work?",
+              "category": "Software Engineering",
+              "subcategory": "Backend"
+            },
+            {
+              "id": "what-is-a-cache-what-is-it-used-for",
+              "text": "What is a cache? What is it used for?",
+              "category": "Software Engineering",
+              "subcategory": "Backend"
+            },
+            {
+              "id": "why-is-redis-so-fast",
+              "text": "Why is redis so fast?",
+              "category": "Software Engineering",
+              "subcategory": "Backend"
+            }
+          ]
+        },
+        {
+          "id": "microservices",
+          "name": "Microservices",
+          "questions": [
+            {
+              "id": "why-should-i-use-separate-data-storage-for-each-microservice",
+              "text": "Why should I use separate data storage for each microservice?",
+              "category": "Software Engineering",
+              "subcategory": "Microservices"
+            },
+            {
+              "id": "what-does-it-meen-to-keep-code-at-a-similar-level-of-maturity",
+              "text": "What does it meen to keep code at a similar level of maturity?",
+              "category": "Software Engineering",
+              "subcategory": "Microservices"
+            },
+            {
+              "id": "what-entails-to-separate-build-for-each-microservice",
+              "text": "What entails to separate build for each microservice?",
+              "category": "Software Engineering",
+              "subcategory": "Microservices"
+            },
+            {
+              "id": "should-i-assign-each-microservice-multiple-responsibility",
+              "text": "Should I assign each microservice multiple responsibility?",
+              "category": "Software Engineering",
+              "subcategory": "Microservices"
+            },
+            {
+              "id": "are-containers-useful-in-microservices",
+              "text": "Are containers useful in microservices?",
+              "category": "Software Engineering",
+              "subcategory": "Microservices"
+            },
+            {
+              "id": "stateless-microservices-seem-to-be-bad-can-i-go-stateful-with-microservices",
+              "text": "Stateless microservices seem to be bad. Can I go stateful with microservices?",
+              "category": "Software Engineering",
+              "subcategory": "Microservices"
+            },
+            {
+              "id": "should-i-adopt-ddd-domain-driven-design",
+              "text": "Should I Adopt DDD (Domain Driven Design)?",
+              "category": "Software Engineering",
+              "subcategory": "Microservices"
+            },
+            {
+              "id": "orchestrating-microservices-is-not-easy-what-are-the-options",
+              "text": "Orchestrating microservices is not easy. What are the options?",
+              "category": "Software Engineering",
+              "subcategory": "Microservices"
+            }
+          ]
+        },
+        {
+          "id": "backend-engineering-scenarios",
+          "name": "Backend Engineering Scenarios",
+          "questions": [
+            {
+              "id": "what-s-canary-deployment",
+              "text": "What’s canary deployment?",
+              "category": "Software Engineering",
+              "subcategory": "Backend Engineering Scenarios"
+            },
+            {
+              "id": "what-if-i-have-two-deployments-1-0-production-stable-and-1-1-test-maybe-stable-and-i-want-to-test-1-1-with-production-traffic-without-using-the-canary-deployment-technique-what-alternatives-have-i-got",
+              "text": "What if I have two deployments 1.0 (production, stable) and 1.1 (test, maybe stable) and I want to test 1.1 with production traffic, without using the canary deployment technique, what alternatives have I got?",
+              "category": "Software Engineering",
+              "subcategory": "Backend Engineering Scenarios"
+            },
+            {
+              "id": "what-if-i-have-a-log-file-that-multiple-processes-write-to-how-can-i-make-sure-that-the-log-file-is-not-corrupted",
+              "text": "What if I have a log file that multiple processes write to, how can I make sure that the log file is not corrupted?",
+              "category": "Software Engineering",
+              "subcategory": "Backend Engineering Scenarios"
+            }
+          ]
+        },
+        {
+          "id": "database",
+          "name": "Database",
+          "questions": [
+            {
+              "id": "what-kind-of-databases-do-you-know-pick-one-and-convince-me-it-s-the-best-kind-of-db-ever-for-my-application-e-g-in-memory-time-series-document-vectorial",
+              "text": "What kind of databases do you know? Pick one and convince me it's the best kind of db ever for my application (e.g. In memory, time series, document, vectorial)",
+              "category": "Software Engineering",
+              "subcategory": "Database"
+            },
+            {
+              "id": "explain-db-data-structures-e-g-b-tree-hash-table-lsm-tree-etc",
+              "text": "Explain DB data structures (e.g. B-Tree, Hash Table, LSM tree etc.)",
+              "category": "Software Engineering",
+              "subcategory": "Database"
+            },
+            {
+              "id": "what-is-a-query-execution-plan-can-you-explain-it",
+              "text": "What is a query execution plan? Can you \"explain\" it?",
+              "category": "Software Engineering",
+              "subcategory": "Database"
+            },
+            {
+              "id": "what-is-a-transaction-what-s-the-definition-of-acid",
+              "text": "What is a transaction? What's the definition of ACID?",
+              "category": "Software Engineering",
+              "subcategory": "Database"
+            }
+          ]
+        },
+        {
+          "id": "frontend",
+          "name": "Frontend",
+          "questions": [
+            {
+              "id": "what-is-responsive-design-and-how-is-it-achieved",
+              "text": "What is responsive design and how is it achieved?",
+              "category": "Software Engineering",
+              "subcategory": "Frontend"
+            },
+            {
+              "id": "what-is-a-css-preprocessor",
+              "text": "What is a CSS preprocessor?",
+              "category": "Software Engineering",
+              "subcategory": "Frontend"
+            },
+            {
+              "id": "what-is-a-media-query-in-css",
+              "text": "What is a media query in CSS?",
+              "category": "Software Engineering",
+              "subcategory": "Frontend"
+            },
+            {
+              "id": "what-s-a-cdn",
+              "text": "What’s a CDN?",
+              "category": "Software Engineering",
+              "subcategory": "Frontend"
+            },
+            {
+              "id": "how-can-it-help-to-improve-a-frontend",
+              "text": "How can it help to improve a frontend?",
+              "category": "Software Engineering",
+              "subcategory": "Frontend"
+            },
+            {
+              "id": "what-kind-of-cdn-have-you-used",
+              "text": "What kind of CDN have you used?",
+              "category": "Software Engineering",
+              "subcategory": "Frontend"
+            },
+            {
+              "id": "what-s-caching-and-how-does-it-work",
+              "text": "What’s caching and how does it work?",
+              "category": "Software Engineering",
+              "subcategory": "Frontend"
+            },
+            {
+              "id": "what-kind-of-caches-have-you-used",
+              "text": "What kind of caches have you used?",
+              "category": "Software Engineering",
+              "subcategory": "Frontend"
+            },
+            {
+              "id": "how-can-you-test-frontend",
+              "text": "How can you test frontend?",
+              "category": "Software Engineering",
+              "subcategory": "Frontend"
+            },
+            {
+              "id": "have-you-got-any-experience-with-selenium-cypress-or-storybook-js",
+              "text": "Have you got any experience with Selenium, Cypress, or Storybook.js?",
+              "category": "Software Engineering",
+              "subcategory": "Frontend"
+            }
+          ]
+        },
+        {
+          "id": "react",
+          "name": "React",
+          "questions": [
+            {
+              "id": "what-are-the-benefits-of-using-a-virtual-dom-in-react",
+              "text": "What are the benefits of using a virtual DOM in React?",
+              "category": "Software Engineering",
+              "subcategory": "React"
+            },
+            {
+              "id": "what-is-the-difference-between-state-and-props-in-react",
+              "text": "What is the difference between state and props in React?",
+              "category": "Software Engineering",
+              "subcategory": "React"
+            },
+            {
+              "id": "what-s-the-difference-between-a-class-component-and-a-functional-component",
+              "text": "What’s the difference between a class component and a functional component?",
+              "category": "Software Engineering",
+              "subcategory": "React"
+            },
+            {
+              "id": "how-routing-works-in-react",
+              "text": "How routing works in React?",
+              "category": "Software Engineering",
+              "subcategory": "React"
+            },
+            {
+              "id": "what-is-the-difference-between-controlled-and-uncontrolled-components-in-react",
+              "text": "What is the difference between controlled and uncontrolled components in React?",
+              "category": "Software Engineering",
+              "subcategory": "React"
+            },
+            {
+              "id": "what-is-redux",
+              "text": "What is Redux?",
+              "category": "Software Engineering",
+              "subcategory": "React"
+            }
+          ]
+        },
+        {
+          "id": "angular",
+          "name": "Angular",
+          "questions": [
+            {
+              "id": "what-is-the-difference-between-ngonchanges-and-ngoninit-in-angular",
+              "text": "What is the difference between ngOnChanges and ngOnInit in Angular?",
+              "category": "Software Engineering",
+              "subcategory": "Angular"
+            },
+            {
+              "id": "what-is-angular-s-change-detection-mechanism",
+              "text": "What is Angular's change detection mechanism?",
+              "category": "Software Engineering",
+              "subcategory": "Angular"
+            },
+            {
+              "id": "what-is-an-angular-service",
+              "text": "What is an Angular service?",
+              "category": "Software Engineering",
+              "subcategory": "Angular"
+            },
+            {
+              "id": "what-is-dependency-injection-in-angular",
+              "text": "What is dependency injection in Angular?",
+              "category": "Software Engineering",
+              "subcategory": "Angular"
+            },
+            {
+              "id": "what-is-angular-routing",
+              "text": "What is Angular routing?",
+              "category": "Software Engineering",
+              "subcategory": "Angular"
+            },
+            {
+              "id": "what-is-the-difference-between-a-component-and-a-directive-in-angular",
+              "text": "What is the difference between a component and a directive in Angular?",
+              "category": "Software Engineering",
+              "subcategory": "Angular"
+            }
+          ]
+        },
+        {
+          "id": "frontend-engineering-scenarios",
+          "name": "Frontend Engineering Scenarios",
+          "questions": [
+            {
+              "id": "what-are-microfrontends",
+              "text": "What are microfrontends?",
+              "category": "Software Engineering",
+              "subcategory": "Frontend Engineering Scenarios"
+            },
+            {
+              "id": "what-are-the-benefits-of-using-micro-frontends",
+              "text": "What are the benefits of using micro frontends?",
+              "category": "Software Engineering",
+              "subcategory": "Frontend Engineering Scenarios"
+            },
+            {
+              "id": "what-is-a-progressive-web-app-pwa",
+              "text": "What is a Progressive Web App (PWA)?",
+              "category": "Software Engineering",
+              "subcategory": "Frontend Engineering Scenarios"
+            },
+            {
+              "id": "what-are-the-benefits-of-using-pwa",
+              "text": "What are the benefits of using PWA?",
+              "category": "Software Engineering",
+              "subcategory": "Frontend Engineering Scenarios"
+            },
+            {
+              "id": "what-are-the-key-features-of-a-pwa",
+              "text": "What are the key features of a PWA?",
+              "category": "Software Engineering",
+              "subcategory": "Frontend Engineering Scenarios"
+            },
+            {
+              "id": "how-can-you-optimize-a-pwa-for-performance",
+              "text": "How can you optimize a PWA for performance?",
+              "category": "Software Engineering",
+              "subcategory": "Frontend Engineering Scenarios"
+            },
+            {
+              "id": "client-side-rendering-csr-vs-server-side-rendering-ssr-explain-the-concepts",
+              "text": "Client Side Rendering (CSR) vs Server Side Rendering (SSR), explain the concepts",
+              "category": "Software Engineering",
+              "subcategory": "Frontend Engineering Scenarios"
+            },
+            {
+              "id": "can-you-describe-your-approach-to-optimizing-the-performance-and-user-experience-of-a-large-e-commerce-website",
+              "text": "Can you describe your approach to optimizing the performance and user experience of a large e-commerce website?",
+              "category": "Software Engineering",
+              "subcategory": "Frontend Engineering Scenarios"
+            },
+            {
+              "id": "how-would-you-approach-building-a-highly-interactive-and-responsive-web-application-with-real-time-updates-e-g-financial-app-stock-market-data",
+              "text": "How would you approach building a highly interactive and responsive web application with real-time updates? E.g. Financial App Stock Market data",
+              "category": "Software Engineering",
+              "subcategory": "Frontend Engineering Scenarios"
+            }
+          ]
+        }
+      ],
+      "questions": []
+    }
+  ],
+  "questions": [
+    {
+      "id": "what-is-the-difference-between-a-remote-branch-and-a-local-branch",
+      "text": "What is the difference between a remote branch and a local branch?",
+      "category": "General",
+      "subcategory": "Git"
+    },
+    {
+      "id": "how-can-i-delete-a-remote-branch-please-give-the-command",
+      "text": "How can I delete a remote branch? Please give the command",
+      "category": "General",
+      "subcategory": "Git"
+    },
+    {
+      "id": "what-s-a-tag-and-how-is-it-used",
+      "text": "What’s a tag and how is it used?",
+      "category": "General",
+      "subcategory": "Git"
+    },
+    {
+      "id": "what-s-a-hook-make-an-example-of-its-use",
+      "text": "What’s a hook? Make an example of its use.",
+      "category": "General",
+      "subcategory": "Git"
+    },
+    {
+      "id": "what-s-a-submodule-and-when-should-it-be-used",
+      "text": "What’s a submodule and when should it be used?",
+      "category": "General",
+      "subcategory": "Git"
+    },
+    {
+      "id": "how-can-i-rollback-the-last-commit-i-made-on-my-local-branch",
+      "text": "How can I rollback the last commit I made on my local branch?",
+      "category": "General",
+      "subcategory": "Git"
+    },
+    {
+      "id": "rebase-vs-merge-explain-the-difference-and-when-to-use-one-or-the-other",
+      "text": "Rebase vs merge, explain the difference and when to use one or the other",
+      "category": "General",
+      "subcategory": "Git"
+    },
+    {
+      "id": "how-does-the-tcp-ip-protocol-work",
+      "text": "How does the TCP/IP protocol work?",
+      "category": "General",
+      "subcategory": "Network"
+    },
+    {
+      "id": "what-s-a-dns-and-how-does-that-work",
+      "text": "What’s a DNS and how does that work?",
+      "category": "General",
+      "subcategory": "Network"
+    },
+    {
+      "id": "what-is-a-vpn",
+      "text": "What is a VPN?",
+      "category": "General",
+      "subcategory": "Network"
+    },
+    {
+      "id": "what-is-a-nat-tunnel",
+      "text": "What is a NAT tunnel?",
+      "category": "General",
+      "subcategory": "Network"
+    },
+    {
+      "id": "how-does-dhcp-work",
+      "text": "How does DHCP work?",
+      "category": "General",
+      "subcategory": "Network"
+    },
+    {
+      "id": "what-is-a-firewall-what-is-a-waf",
+      "text": "What is a firewall? What is a WAF?",
+      "category": "General",
+      "subcategory": "Network"
+    },
+    {
+      "id": "how-would-you-block-a-specific-ip-address-from-accessing-a-service",
+      "text": "How would you block a specific IP address from accessing a service?",
+      "category": "General",
+      "subcategory": "Network"
+    },
+    {
+      "id": "what-is-a-proxy-what-is-a-reverse-proxy-what-is-a-forward-proxy",
+      "text": "What is a proxy? What is a reverse proxy? What is a forward proxy?",
+      "category": "General",
+      "subcategory": "Network"
+    },
+    {
+      "id": "how-does-a-load-balancer-work",
+      "text": "How does a load balancer work?",
+      "category": "General",
+      "subcategory": "Network"
+    },
+    {
+      "id": "do-you-know-any-load-balancing-algorithms-explain-them-e-g-round-robin-least-connections-etc",
+      "text": "Do you know any Load Balancing algorithms? Explain them (e.g. Round Robin, Least Connections, etc.)",
+      "category": "General",
+      "subcategory": "Network"
+    },
+    {
+      "id": "what-is-linux-and-what-makes-it-different-from-other-operating-systems",
+      "text": "What is Linux and what makes it different from other operating systems?",
+      "category": "General",
+      "subcategory": "Linux and Virtualization"
+    },
+    {
+      "id": "what-is-a-directory",
+      "text": "What is a directory?",
+      "category": "General",
+      "subcategory": "Linux and Virtualization"
+    },
+    {
+      "id": "what-s-the-kernel",
+      "text": "What’s \"the kernel\"?",
+      "category": "General",
+      "subcategory": "Linux and Virtualization"
+    },
+    {
+      "id": "how-can-you-install-software-on-a-linux-system-and-what-are-the-common-package-managers-used-in-linux",
+      "text": "How can you install software on a Linux system and what are the common package managers used in Linux?",
+      "category": "General",
+      "subcategory": "Linux and Virtualization"
+    },
+    {
+      "id": "what-s-the-command-for-changing-the-permission-of-a-file-give-an-example",
+      "text": "What’s the command for changing the permission of a file? Give an example",
+      "category": "General",
+      "subcategory": "Linux and Virtualization"
+    },
+    {
+      "id": "what-s-the-command-for-changing-the-ownership-of-a-file-give-an-example",
+      "text": "What’s the command for changing the ownership of a file? Give an example",
+      "category": "General",
+      "subcategory": "Linux and Virtualization"
+    },
+    {
+      "id": "what-s-a-command-for-killing-a-process-given-its-pid-give-an-example",
+      "text": "What’s a command for killing a process given its PID? Give an example",
+      "category": "General",
+      "subcategory": "Linux and Virtualization"
+    },
+    {
+      "id": "what-s-a-command-to-list-all-the-processes-running-give-an-example",
+      "text": "What’s a command to list all the processes running? Give an example",
+      "category": "General",
+      "subcategory": "Linux and Virtualization"
+    },
+    {
+      "id": "what-s-the-command-named-after-a-protocol-to-connect-to-a-remote-server-in-linux-give-an-example",
+      "text": "What’s the command, named after a protocol, to connect to a remote server in Linux? Give an example",
+      "category": "General",
+      "subcategory": "Linux and Virtualization"
+    },
+    {
+      "id": "what-s-a-service-in-linux",
+      "text": "What’s a service in Linux?",
+      "category": "General",
+      "subcategory": "Linux and Virtualization"
+    },
+    {
+      "id": "how-does-selinux-work",
+      "text": "How does SELinux work?",
+      "category": "General",
+      "subcategory": "Linux and Virtualization"
+    },
+    {
+      "id": "what-does-it-happen-when-you-launch-in-bash",
+      "text": "What does it happen when you launch `$?` in bash?",
+      "category": "General",
+      "subcategory": "Linux and Virtualization"
+    },
+    {
+      "id": "what-is-a-virtual-machine-vm-and-how-does-it-work",
+      "text": "What is a virtual machine (VM) and how does it work?",
+      "category": "General",
+      "subcategory": "Linux and Virtualization"
+    },
+    {
+      "id": "what-s-a-hypervisor-software",
+      "text": "What’s a hypervisor software?",
+      "category": "General",
+      "subcategory": "Linux and Virtualization"
+    },
+    {
+      "id": "what-s-ci-cd",
+      "text": "What’s CI/CD?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "CI/CD"
+    },
+    {
+      "id": "explain-the-phases-of-ci-cd",
+      "text": "Explain the phases of CI/CD",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "CI/CD"
+    },
+    {
+      "id": "have-you-ever-used-github-actions-how-does-it-work",
+      "text": "Have you ever used GitHub actions? How does it work?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "CI/CD"
+    },
+    {
+      "id": "have-you-ever-used-gitlab-how-does-it-differ-from-github",
+      "text": "Have you ever used GitLab? How does it differ from GitHub?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "CI/CD"
+    },
+    {
+      "id": "what-s-the-difference-between-a-virtual-machine-and-a-container-runtime",
+      "text": "What’s the difference between a virtual machine and a container runtime?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Docker and Containerization"
+    },
+    {
+      "id": "how-does-containerization-work",
+      "text": "How does containerization work?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Docker and Containerization"
+    },
+    {
+      "id": "is-docker-the-only-way-to-create-a-container",
+      "text": "Is Docker the only way to create a container?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Docker and Containerization"
+    },
+    {
+      "id": "what-is-the-purpose-and-power-of-an-image",
+      "text": "What is the purpose and power of an image?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Docker and Containerization"
+    },
+    {
+      "id": "what-is-the-registry-and-how-is-it-used-in-containerization",
+      "text": "What is the registry and how is it used in containerization?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Docker and Containerization"
+    },
+    {
+      "id": "what-s-a-dockerfile",
+      "text": "What’s a Dockerfile?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Docker and Containerization"
+    },
+    {
+      "id": "what-is-the-first-line-of-a-dockerfile",
+      "text": "What is the first line of a Dockerfile?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Docker and Containerization"
+    },
+    {
+      "id": "how-do-you-attach-a-volume-in-a-docker-container",
+      "text": "How do you attach a volume in a Docker container?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Docker and Containerization"
+    },
+    {
+      "id": "how-do-you-manage-or-orchestrate-multiple-containers",
+      "text": "How do you manage or orchestrate multiple containers?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Docker and Containerization"
+    },
+    {
+      "id": "what-s-the-purpose-of-docker-compose",
+      "text": "What’s the purpose of Docker Compose?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Docker and Containerization"
+    },
+    {
+      "id": "best-practice-for-building-a-good-dockerfile",
+      "text": "Best practice for building a good Dockerfile",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Docker and Containerization"
+    },
+    {
+      "id": "why-too-many-lines-are-bad-for-a-dockerfile",
+      "text": "Why too many lines are bad for a Dockerfile?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Docker and Containerization"
+    },
+    {
+      "id": "what-is-cloud-computing",
+      "text": "What is cloud computing?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Cloud"
+    },
+    {
+      "id": "define-public-hybrid-and-private-cloud-and-give-a-use-case-for-each",
+      "text": "Define public, hybrid, and private cloud and give a use case for each",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Cloud"
+    },
+    {
+      "id": "what-is-serverless",
+      "text": "What is serverless?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Cloud"
+    },
+    {
+      "id": "is-i-say-edge-computing-what-do-i-mean",
+      "text": "Is I say edge computing, what do I mean?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Cloud"
+    },
+    {
+      "id": "list-some-cncf-cloud-native-computing-foundation-graduated-projects-or-projects-you-like",
+      "text": "List some CNCF (Cloud Native Computing Foundation) graduated projects or projects you like",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Cloud"
+    },
+    {
+      "id": "what-is-a-receiver-in-an-alert-manager",
+      "text": "What is a receiver in an alert manager?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Site Reliability Engineering"
+    },
+    {
+      "id": "what-happens-when-you-execute-a-curl-command-on-a-prometheus-exporter-endpoint",
+      "text": "What happens when you execute a `curl` command on a Prometheus exporter endpoint?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Site Reliability Engineering"
+    },
+    {
+      "id": "give-me-an-example-of-an-openmetrics-payload",
+      "text": "Give me an example of an OpenMetrics payload",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Site Reliability Engineering"
+    },
+    {
+      "id": "what-is-a-service-level-objective-slo",
+      "text": "What is a Service Level Objective (SLO)?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Site Reliability Engineering"
+    },
+    {
+      "id": "what-is-a-service-level-indicator-sli",
+      "text": "What is a Service Level Indicator (SLI)?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Site Reliability Engineering"
+    },
+    {
+      "id": "what-is-a-service-level-agreement-sla",
+      "text": "What is a Service Level Agreement (SLA)?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Site Reliability Engineering"
+    },
+    {
+      "id": "if-i-say-error-budget-what-do-i-mean-sla-is-99-9-what-is-the-error-budget",
+      "text": "If I say \"Error Budget\", what do I mean? SLA is 99.9%, what is the error budget?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Site Reliability Engineering"
+    },
+    {
+      "id": "what-is-infrastructure-as-code-and-why-is-it-important-in-modern-cloud-development",
+      "text": "What is Infrastructure as Code and why is it important in modern cloud development?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Terraform and Infrastructure as Code"
+    },
+    {
+      "id": "explain-the-following-commands-terraform-init-terraform-plan-terraform-apply",
+      "text": "Explain the following commands: terraform init, terraform plan, terraform apply",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Terraform and Infrastructure as Code"
+    },
+    {
+      "id": "what-is-the-purpose-of-the-terraform-state-file",
+      "text": "What is the purpose of the Terraform state file?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Terraform and Infrastructure as Code"
+    },
+    {
+      "id": "what-is-terraform-s-remote-state",
+      "text": "What is Terraform's remote state?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Terraform and Infrastructure as Code"
+    },
+    {
+      "id": "where-should-it-be-stored-for-example-in-aws-as-a-cloud-provider",
+      "text": "Where should it be stored, for example, in AWS as a cloud provider?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Terraform and Infrastructure as Code"
+    },
+    {
+      "id": "what-is-a-terraform-provider-and-what-s-the-difference-between-a-provider-and-a-resource",
+      "text": "What is a Terraform provider and what’s the difference between a provider and a resource?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Terraform and Infrastructure as Code"
+    },
+    {
+      "id": "what-is-the-way-of-reusing-terraform-templates",
+      "text": "What is the way of reusing Terraform templates?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Terraform and Infrastructure as Code"
+    },
+    {
+      "id": "how-can-you-use-terraform-variables",
+      "text": "How can you use Terraform variables?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Terraform and Infrastructure as Code"
+    },
+    {
+      "id": "what-major-cloud-provider-can-terraform-work-with",
+      "text": "What major cloud provider can Terraform work with?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Terraform and Infrastructure as Code"
+    },
+    {
+      "id": "how-does-terraform-handle-updates-to-existing-resources",
+      "text": "How does Terraform handle updates to existing resources?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Terraform and Infrastructure as Code"
+    },
+    {
+      "id": "how-does-terraform-handle-dependencies-between-resources",
+      "text": "How does Terraform handle dependencies between resources?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Terraform and Infrastructure as Code"
+    },
+    {
+      "id": "what-is-kubernetes-and-what-are-some-of-its-main-features-and-benefits",
+      "text": "What is Kubernetes, and what are some of its main features and benefits?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "what-are-the-components-of-a-kubernetes-cluster-and-how-do-they-interact-with-each-other",
+      "text": "What are the components of a Kubernetes cluster, and how do they interact with each other?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "how-can-you-interact-with-kubernetes-api",
+      "text": "How can you interact with Kubernetes API?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "explain-these-commands-k-create-k-get-k-describe-k-delete-k-apply-k-logs-k-exec-scale-rollout",
+      "text": "Explain these commands: k create, k get, k describe, k delete, k apply, k logs, k exec, scale, rollout",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "how-do-you-create-a-kubernetes-deployment-and-what-are-some-best-practices-to-follow-when-defining-deployments",
+      "text": "How do you create a Kubernetes deployment, and what are some best practices to follow when defining deployments?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "what-is-an-imagepullpolicy-and-what-values-can-this-parameter-hold",
+      "text": "What is an ImagePullPolicy and what values can this parameter hold?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "what-is-a-kubernetes-port-forward-why-do-you-use-that-what-s-the-command-to-perform-that",
+      "text": "What is a Kubernetes port forward? Why do you use that? What’s the command to perform that?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "nodeport-vs-loadbalancer",
+      "text": "NodePort vs LoadBalancer?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "what-is-the-role-of-the-scheduler",
+      "text": "What is the role of the Scheduler?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "explain-node-affinity-node-taints-node-selectors-and-pod-priority",
+      "text": "Explain node affinity, node taints, node selectors, and pod priority.",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "what-are-kubernetes-pods-and-how-do-they-relate-to-containers",
+      "text": "What are Kubernetes pods, and how do they relate to containers?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "explain-the-pod-lifecycle",
+      "text": "Explain the Pod lifecycle",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "what-is-the-crashloopbackoff-state",
+      "text": "What is the CrashLoopBackOff state?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "explain-the-following-command",
+      "text": "Explain the following command",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "what-s-the-difference-between-resource-request-and-resource-limit-in-kubernetes",
+      "text": "What’s the difference between resource request and resource limit in Kubernetes?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "when-is-a-pod-evicted",
+      "text": "When is a Pod evicted?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "how-does-kubernetes-health-checks-work",
+      "text": "How does Kubernetes health checks work?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "what-is-a-livenessprobe",
+      "text": "What is a livenessProbe ?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "what-is-a-readinessprobe",
+      "text": "What is a readinessProbe ?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "what-is-a-startupprobe",
+      "text": "What is a startupProbe ?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "how-many-kinds-of-probe-types-are-there",
+      "text": "How many kinds of probe types are there?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "nodeaffinity-vs-podaffinity",
+      "text": "NodeAffinity vs PodAffinity",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "what-is-the-pod-disruption-budget",
+      "text": "What is the POD disruption budget?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "what-is-a-kubernetes-volume",
+      "text": "What is a Kubernetes volume?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "how-is-a-kubernetes-volume-different-from-a-container-s-file-system",
+      "text": "How is a Kubernetes volume different from a container's file system?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "what-are-some-types-of-kubernetes-volumes",
+      "text": "What are some types of Kubernetes volumes?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "how-do-you-define-a-kubernetes-volume-in-a-pod-s-yaml-configuration",
+      "text": "How do you define a Kubernetes volume in a Pod's YAML configuration?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "how-do-you-mount-a-kubernetes-volume-to-a-container",
+      "text": "How do you mount a Kubernetes volume to a container?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "can-multiple-containers-in-a-pod-share-the-same-volume",
+      "text": "Can multiple containers in a Pod share the same volume?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "what-is-a-persistent-volume-pv-in-kubernetes",
+      "text": "What is a Persistent Volume (PV) in Kubernetes?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "how-do-you-define-a-persistent-volume-in-kubernetes",
+      "text": "How do you define a Persistent Volume in Kubernetes?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "how-do-you-claim-a-persistent-volume-in-kubernetes-pvc",
+      "text": "How do you claim a Persistent Volume in Kubernetes (PVC)?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "how-do-you-use-a-persistent-volume-in-a-pod",
+      "text": "How do you use a Persistent Volume in a Pod?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "what-is-a-storageclass-and-how-does-that-work",
+      "text": "What is a StorageClass and how does that work?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "what-are-the-benefits-of-storageclass",
+      "text": "What are the benefits of StorageClass?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "what-is-a-kubernetes-namespace-and-how-can-it-be-used-to-manage-resources-in-a-multi-tenant-environment",
+      "text": "What is a Kubernetes namespace, and how can it be used to manage resources in a multi-tenant environment?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "what-are-kubernetes-services-and-how-do-they-enable-application-discovery-and-load-balancing",
+      "text": "What are Kubernetes Services, and how do they enable application discovery and load balancing?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "what-is-an-ingress-and-how-does-it-work",
+      "text": "What is an Ingress and how does it work?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "what-is-a-kubernetes-controller-and-how-does-it-work",
+      "text": "What is a Kubernetes Controller and how does it work?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "explain-the-difference-between-replicaset-controller-deployment-controller-statefulset-controller-and-daemonset-controller",
+      "text": "Explain the difference between ReplicaSet controller, Deployment controller, StatefulSet controller, and DaemonSet controller",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "what-is-a-secret-and-how-can-it-be-used-to-manage-sensitive-information-like-passwords-and-api-keys",
+      "text": "What is a secret, and how can it be used to manage sensitive information like passwords and API keys?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "how-do-you-scale-a-kubernetes-deployment-and-what-factors-should-you-consider-when-determining-the-optimal-number-of-replicas",
+      "text": "How do you scale a Kubernetes deployment, and what factors should you consider when determining the optimal number of replicas?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "also-what-metrics-exist-natively-that-can-trigger-a-new-pod",
+      "text": "Also, what metrics exist (natively) that can trigger a new pod?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "what-kind-of-autoscaling-is-kubernetes-capable-of",
+      "text": "What kind of autoscaling is Kubernetes capable of?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "what-is-hpa-and-how-does-it-work",
+      "text": "What is HPA and how does it work?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "what-is-cluster-autoscaling-and-how-does-it-work",
+      "text": "What is Cluster Autoscaling and how does it work?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "what-is-a-configmap",
+      "text": "What is a ConfigMap?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "what-s-a-kubernetes-operator",
+      "text": "What’s a Kubernetes Operator?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "explain-rbac-role-based-access-control",
+      "text": "Explain RBAC - Role Based Access Control",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "what-is-the-difference-between-role-and-rolebinding",
+      "text": "What is the difference between Role and RoleBinding?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "role-vs-clusterrole-explain-the-difference",
+      "text": "Role vs ClusterRole, explain the difference",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "what-are-some-best-practices-for-monitoring-and-logging-kubernetes-clusters-and-applications-running-on-them",
+      "text": "What are some best practices for monitoring and logging Kubernetes clusters and applications running on them?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "do-you-have-any-experience-with-grafana-prometheus-new-relic-datadog-dynatrace-or-other-similar-products",
+      "text": "Do you have any experience with Grafana+Prometheus, New Relic, Datadog, Dynatrace, or other similar products?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "how-would-you-decide-to-separate-kubernetes-clusters-in-an-organisation-in-what-conditions-would-you-have-a-single-cluster",
+      "text": "How would you decide to separate Kubernetes clusters in an organisation? In what conditions would you have a single cluster?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "how-do-you-manage-multi-tenancy-on-kubernetes-in-general-and-in-terms-of-billing",
+      "text": "How do you manage multi-tenancy on Kubernetes in general and in terms of billing?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "how-would-you-set-up-a-high-availability-ha-cluster-in-kubernetes",
+      "text": "How would you set up a high availability HA cluster in Kubernetes?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "how-would-you-manage-etcd-stacked-or-unstacked",
+      "text": "How would you manage etcd? Stacked or unstacked?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "what-is-helm",
+      "text": "What is Helm?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Helm"
+    },
+    {
+      "id": "explain-helm-create-helm-package-and-helm-install-commands",
+      "text": "Explain helm create, helm package, and helm install commands",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Helm"
+    },
+    {
+      "id": "what-does-this-replicas-values-replicacount-mean",
+      "text": "What does this `replicas: {{ .Values.replicaCount }}` mean?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Helm"
+    },
+    {
+      "id": "how-does-helm-templating-work",
+      "text": "How does helm templating work?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Helm"
+    },
+    {
+      "id": "what-is-jinja",
+      "text": "What is Jinja?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Helm"
+    },
+    {
+      "id": "how-can-you-see-the-story-of-the-releases-in-helm",
+      "text": "How can you see the story of the releases in helm?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Helm"
+    },
+    {
+      "id": "describe-how-to-perform-a-go-to-the-previous-version-in-helm",
+      "text": "Describe how to perform a go to the previous version in helm",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Helm"
+    },
+    {
+      "id": "what-is-platform-engineering",
+      "text": "What is Platform Engineering?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Platform Engineering"
+    },
+    {
+      "id": "what-is-the-difference-between-devops-sre-and-platform-engineering",
+      "text": "What is the difference between DevOps, SRE and Platform Engineering?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Platform Engineering"
+    },
+    {
+      "id": "what-is-the-tooling-you-use-for-platform-engineering",
+      "text": "What is the tooling you use for Platform Engineering?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Platform Engineering"
+    },
+    {
+      "id": "should-i-go-platform-engineering-if-i-have-one-product-and-one-team",
+      "text": "Should I go Platform Engineering if I have one product and one team?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Platform Engineering"
+    },
+    {
+      "id": "do-you-have-any-experience-with-openshift-container-platform",
+      "text": "Do you have any experience with OpenShift Container Platform?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "OpenShift"
+    },
+    {
+      "id": "what-is-openshift",
+      "text": "What is OpenShift?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "OpenShift"
+    },
+    {
+      "id": "what-is-the-difference-between-playbook-and-role",
+      "text": "What is the difference between Playbook and Role?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Ansible"
+    },
+    {
+      "id": "how-do-you-debug-a-playbook",
+      "text": "How do you debug a Playbook?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Ansible"
+    },
+    {
+      "id": "how-would-you-use-ansible-to-automate-the-deployment-of-a-web-application",
+      "text": "How would you use Ansible to automate the deployment of a web application?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Ansible"
+    },
+    {
+      "id": "define-these-aws-services-ec2-s3-route-53-lambda-iam",
+      "text": "Define these AWS Services: EC2, S3, Route 53, Lambda, IAM",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "AWS"
+    },
+    {
+      "id": "what-kind-of-different-load-balancers-does-aws-offer",
+      "text": "What kind of different Load Balancers does AWS offer?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "AWS"
+    },
+    {
+      "id": "define-these-networking-resources-in-aws-vpc-acl-nacl",
+      "text": "Define these networking resources in AWS: VPC, ACL, NACL",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "AWS"
+    },
+    {
+      "id": "what-s-the-difference-between-eks-ecs-and-ecr",
+      "text": "What’s the difference between EKS, ECS, and ECR?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "AWS"
+    },
+    {
+      "id": "what-is-cloudformation-and-how-does-it-work",
+      "text": "What is CloudFormation and how does it work?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "AWS"
+    },
+    {
+      "id": "how-would-you-deploy-a-web-application-to-azure-app-service",
+      "text": "How would you deploy a web application to Azure App Service?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Azure"
+    },
+    {
+      "id": "can-you-explain-the-difference-between-azure-virtual-machines-and-azure-kubernetes-service-aks-and-when-you-might-choose-one-over-the-other",
+      "text": "Can you explain the difference between Azure Virtual Machines and Azure Kubernetes Service (AKS), and when you might choose one over the other?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Azure"
+    },
+    {
+      "id": "how-do-you-configure-azure-active-directory-for-use-in-a-single-sign-on-sso-scenario",
+      "text": "How do you configure Azure Active Directory for use in a single-sign-on (SSO) scenario?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Azure"
+    },
+    {
+      "id": "explain-solid-principles",
+      "text": "Explain SOLID principles",
+      "category": "Software Engineering",
+      "subcategory": "Backend"
+    },
+    {
+      "id": "do-you-know-any-design-pattern-pick-your-favorite-one-and-explain-it-e-g-decorator-facade-observer",
+      "text": "Do you know any design pattern? Pick your favorite one and explain it (e.g. Decorator, Facade, Observer)",
+      "category": "Software Engineering",
+      "subcategory": "Backend"
+    },
+    {
+      "id": "what-is-a-restful-api",
+      "text": "What is a RESTful API?",
+      "category": "Software Engineering",
+      "subcategory": "Backend"
+    },
+    {
+      "id": "what-s-the-difference-between-2xx-4xx-and-5xx-error-codes",
+      "text": "What’s the difference between 2xx, 4xx, and 5xx error codes?",
+      "category": "Software Engineering",
+      "subcategory": "Backend"
+    },
+    {
+      "id": "what-is-a-microservice-architecture-and-how-it-differs-from-a-monolithic-one",
+      "text": "What is a Microservice architecture and how it differs from a monolithic one?",
+      "category": "Software Engineering",
+      "subcategory": "Backend"
+    },
+    {
+      "id": "explain-oop",
+      "text": "Explain OOP",
+      "category": "Software Engineering",
+      "subcategory": "Backend"
+    },
+    {
+      "id": "explain-functional-programming",
+      "text": "Explain functional programming",
+      "category": "Software Engineering",
+      "subcategory": "Backend"
+    },
+    {
+      "id": "explain-what-is-a-queue-in-programming-and-make-some-examples-of-different-types-of-queues-lifo-fifo",
+      "text": "Explain what is a Queue in programming and make some examples of different types of Queues (LIFO, FIFO...)",
+      "category": "Software Engineering",
+      "subcategory": "Backend"
+    },
+    {
+      "id": "how-do-you-handle-errors-in-your-code",
+      "text": "How do you handle errors in your code?",
+      "category": "Software Engineering",
+      "subcategory": "Backend"
+    },
+    {
+      "id": "what-is-a-distributed-system",
+      "text": "What is a distributed system?",
+      "category": "Software Engineering",
+      "subcategory": "Backend"
+    },
+    {
+      "id": "have-you-ever-used-a-message-broker-what-is-it-and-how-does-it-work",
+      "text": "Have you ever used a message broker? What is it and how does it work?",
+      "category": "Software Engineering",
+      "subcategory": "Backend"
+    },
+    {
+      "id": "what-is-a-cache-what-is-it-used-for",
+      "text": "What is a cache? What is it used for?",
+      "category": "Software Engineering",
+      "subcategory": "Backend"
+    },
+    {
+      "id": "why-is-redis-so-fast",
+      "text": "Why is redis so fast?",
+      "category": "Software Engineering",
+      "subcategory": "Backend"
+    },
+    {
+      "id": "why-should-i-use-separate-data-storage-for-each-microservice",
+      "text": "Why should I use separate data storage for each microservice?",
+      "category": "Software Engineering",
+      "subcategory": "Microservices"
+    },
+    {
+      "id": "what-does-it-meen-to-keep-code-at-a-similar-level-of-maturity",
+      "text": "What does it meen to keep code at a similar level of maturity?",
+      "category": "Software Engineering",
+      "subcategory": "Microservices"
+    },
+    {
+      "id": "what-entails-to-separate-build-for-each-microservice",
+      "text": "What entails to separate build for each microservice?",
+      "category": "Software Engineering",
+      "subcategory": "Microservices"
+    },
+    {
+      "id": "should-i-assign-each-microservice-multiple-responsibility",
+      "text": "Should I assign each microservice multiple responsibility?",
+      "category": "Software Engineering",
+      "subcategory": "Microservices"
+    },
+    {
+      "id": "are-containers-useful-in-microservices",
+      "text": "Are containers useful in microservices?",
+      "category": "Software Engineering",
+      "subcategory": "Microservices"
+    },
+    {
+      "id": "stateless-microservices-seem-to-be-bad-can-i-go-stateful-with-microservices",
+      "text": "Stateless microservices seem to be bad. Can I go stateful with microservices?",
+      "category": "Software Engineering",
+      "subcategory": "Microservices"
+    },
+    {
+      "id": "should-i-adopt-ddd-domain-driven-design",
+      "text": "Should I Adopt DDD (Domain Driven Design)?",
+      "category": "Software Engineering",
+      "subcategory": "Microservices"
+    },
+    {
+      "id": "orchestrating-microservices-is-not-easy-what-are-the-options",
+      "text": "Orchestrating microservices is not easy. What are the options?",
+      "category": "Software Engineering",
+      "subcategory": "Microservices"
+    },
+    {
+      "id": "what-s-canary-deployment",
+      "text": "What’s canary deployment?",
+      "category": "Software Engineering",
+      "subcategory": "Backend Engineering Scenarios"
+    },
+    {
+      "id": "what-if-i-have-two-deployments-1-0-production-stable-and-1-1-test-maybe-stable-and-i-want-to-test-1-1-with-production-traffic-without-using-the-canary-deployment-technique-what-alternatives-have-i-got",
+      "text": "What if I have two deployments 1.0 (production, stable) and 1.1 (test, maybe stable) and I want to test 1.1 with production traffic, without using the canary deployment technique, what alternatives have I got?",
+      "category": "Software Engineering",
+      "subcategory": "Backend Engineering Scenarios"
+    },
+    {
+      "id": "what-if-i-have-a-log-file-that-multiple-processes-write-to-how-can-i-make-sure-that-the-log-file-is-not-corrupted",
+      "text": "What if I have a log file that multiple processes write to, how can I make sure that the log file is not corrupted?",
+      "category": "Software Engineering",
+      "subcategory": "Backend Engineering Scenarios"
+    },
+    {
+      "id": "what-kind-of-databases-do-you-know-pick-one-and-convince-me-it-s-the-best-kind-of-db-ever-for-my-application-e-g-in-memory-time-series-document-vectorial",
+      "text": "What kind of databases do you know? Pick one and convince me it's the best kind of db ever for my application (e.g. In memory, time series, document, vectorial)",
+      "category": "Software Engineering",
+      "subcategory": "Database"
+    },
+    {
+      "id": "explain-db-data-structures-e-g-b-tree-hash-table-lsm-tree-etc",
+      "text": "Explain DB data structures (e.g. B-Tree, Hash Table, LSM tree etc.)",
+      "category": "Software Engineering",
+      "subcategory": "Database"
+    },
+    {
+      "id": "what-is-a-query-execution-plan-can-you-explain-it",
+      "text": "What is a query execution plan? Can you \"explain\" it?",
+      "category": "Software Engineering",
+      "subcategory": "Database"
+    },
+    {
+      "id": "what-is-a-transaction-what-s-the-definition-of-acid",
+      "text": "What is a transaction? What's the definition of ACID?",
+      "category": "Software Engineering",
+      "subcategory": "Database"
+    },
+    {
+      "id": "what-is-responsive-design-and-how-is-it-achieved",
+      "text": "What is responsive design and how is it achieved?",
+      "category": "Software Engineering",
+      "subcategory": "Frontend"
+    },
+    {
+      "id": "what-is-a-css-preprocessor",
+      "text": "What is a CSS preprocessor?",
+      "category": "Software Engineering",
+      "subcategory": "Frontend"
+    },
+    {
+      "id": "what-is-a-media-query-in-css",
+      "text": "What is a media query in CSS?",
+      "category": "Software Engineering",
+      "subcategory": "Frontend"
+    },
+    {
+      "id": "what-s-a-cdn",
+      "text": "What’s a CDN?",
+      "category": "Software Engineering",
+      "subcategory": "Frontend"
+    },
+    {
+      "id": "how-can-it-help-to-improve-a-frontend",
+      "text": "How can it help to improve a frontend?",
+      "category": "Software Engineering",
+      "subcategory": "Frontend"
+    },
+    {
+      "id": "what-kind-of-cdn-have-you-used",
+      "text": "What kind of CDN have you used?",
+      "category": "Software Engineering",
+      "subcategory": "Frontend"
+    },
+    {
+      "id": "what-s-caching-and-how-does-it-work",
+      "text": "What’s caching and how does it work?",
+      "category": "Software Engineering",
+      "subcategory": "Frontend"
+    },
+    {
+      "id": "what-kind-of-caches-have-you-used",
+      "text": "What kind of caches have you used?",
+      "category": "Software Engineering",
+      "subcategory": "Frontend"
+    },
+    {
+      "id": "how-can-you-test-frontend",
+      "text": "How can you test frontend?",
+      "category": "Software Engineering",
+      "subcategory": "Frontend"
+    },
+    {
+      "id": "have-you-got-any-experience-with-selenium-cypress-or-storybook-js",
+      "text": "Have you got any experience with Selenium, Cypress, or Storybook.js?",
+      "category": "Software Engineering",
+      "subcategory": "Frontend"
+    },
+    {
+      "id": "what-are-the-benefits-of-using-a-virtual-dom-in-react",
+      "text": "What are the benefits of using a virtual DOM in React?",
+      "category": "Software Engineering",
+      "subcategory": "React"
+    },
+    {
+      "id": "what-is-the-difference-between-state-and-props-in-react",
+      "text": "What is the difference between state and props in React?",
+      "category": "Software Engineering",
+      "subcategory": "React"
+    },
+    {
+      "id": "what-s-the-difference-between-a-class-component-and-a-functional-component",
+      "text": "What’s the difference between a class component and a functional component?",
+      "category": "Software Engineering",
+      "subcategory": "React"
+    },
+    {
+      "id": "how-routing-works-in-react",
+      "text": "How routing works in React?",
+      "category": "Software Engineering",
+      "subcategory": "React"
+    },
+    {
+      "id": "what-is-the-difference-between-controlled-and-uncontrolled-components-in-react",
+      "text": "What is the difference between controlled and uncontrolled components in React?",
+      "category": "Software Engineering",
+      "subcategory": "React"
+    },
+    {
+      "id": "what-is-redux",
+      "text": "What is Redux?",
+      "category": "Software Engineering",
+      "subcategory": "React"
+    },
+    {
+      "id": "what-is-the-difference-between-ngonchanges-and-ngoninit-in-angular",
+      "text": "What is the difference between ngOnChanges and ngOnInit in Angular?",
+      "category": "Software Engineering",
+      "subcategory": "Angular"
+    },
+    {
+      "id": "what-is-angular-s-change-detection-mechanism",
+      "text": "What is Angular's change detection mechanism?",
+      "category": "Software Engineering",
+      "subcategory": "Angular"
+    },
+    {
+      "id": "what-is-an-angular-service",
+      "text": "What is an Angular service?",
+      "category": "Software Engineering",
+      "subcategory": "Angular"
+    },
+    {
+      "id": "what-is-dependency-injection-in-angular",
+      "text": "What is dependency injection in Angular?",
+      "category": "Software Engineering",
+      "subcategory": "Angular"
+    },
+    {
+      "id": "what-is-angular-routing",
+      "text": "What is Angular routing?",
+      "category": "Software Engineering",
+      "subcategory": "Angular"
+    },
+    {
+      "id": "what-is-the-difference-between-a-component-and-a-directive-in-angular",
+      "text": "What is the difference between a component and a directive in Angular?",
+      "category": "Software Engineering",
+      "subcategory": "Angular"
+    },
+    {
+      "id": "what-are-microfrontends",
+      "text": "What are microfrontends?",
+      "category": "Software Engineering",
+      "subcategory": "Frontend Engineering Scenarios"
+    },
+    {
+      "id": "what-are-the-benefits-of-using-micro-frontends",
+      "text": "What are the benefits of using micro frontends?",
+      "category": "Software Engineering",
+      "subcategory": "Frontend Engineering Scenarios"
+    },
+    {
+      "id": "what-is-a-progressive-web-app-pwa",
+      "text": "What is a Progressive Web App (PWA)?",
+      "category": "Software Engineering",
+      "subcategory": "Frontend Engineering Scenarios"
+    },
+    {
+      "id": "what-are-the-benefits-of-using-pwa",
+      "text": "What are the benefits of using PWA?",
+      "category": "Software Engineering",
+      "subcategory": "Frontend Engineering Scenarios"
+    },
+    {
+      "id": "what-are-the-key-features-of-a-pwa",
+      "text": "What are the key features of a PWA?",
+      "category": "Software Engineering",
+      "subcategory": "Frontend Engineering Scenarios"
+    },
+    {
+      "id": "how-can-you-optimize-a-pwa-for-performance",
+      "text": "How can you optimize a PWA for performance?",
+      "category": "Software Engineering",
+      "subcategory": "Frontend Engineering Scenarios"
+    },
+    {
+      "id": "client-side-rendering-csr-vs-server-side-rendering-ssr-explain-the-concepts",
+      "text": "Client Side Rendering (CSR) vs Server Side Rendering (SSR), explain the concepts",
+      "category": "Software Engineering",
+      "subcategory": "Frontend Engineering Scenarios"
+    },
+    {
+      "id": "can-you-describe-your-approach-to-optimizing-the-performance-and-user-experience-of-a-large-e-commerce-website",
+      "text": "Can you describe your approach to optimizing the performance and user experience of a large e-commerce website?",
+      "category": "Software Engineering",
+      "subcategory": "Frontend Engineering Scenarios"
+    },
+    {
+      "id": "how-would-you-approach-building-a-highly-interactive-and-responsive-web-application-with-real-time-updates-e-g-financial-app-stock-market-data",
+      "text": "How would you approach building a highly interactive and responsive web application with real-time updates? E.g. Financial App Stock Market data",
+      "category": "Software Engineering",
+      "subcategory": "Frontend Engineering Scenarios"
+    }
+  ]
+}
