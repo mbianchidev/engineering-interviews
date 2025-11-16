@@ -7,13 +7,19 @@ I have been a hiring manager for some time but I've also applied and got intervi
 
 _Note: for the sake of transparency I didn't got a job offer from these (yet) but with some I passed some of their coding and system interviews alike_ 
 
-
 My idea for this repo is, since I have seen and experienced first hand a lot of different approaches to the interview process, I want to provide some guideline for people to follow and maybe even spar with someone, or with me - for a (relatively) small fee.
 
 The following list is a collection of unsorted questions that purposefully have no answers. 
+
 The rationale is to use this as a reference for your own interview process (as candidate or as hiring manager) and to prepare for it.
 
 Contributions to this code base are welcome but subject to my sole judgement for inclusion or exclusion, feel free to fork.
+
+# Useful resources
+
+There are awesome books and resources out there, I won't have an extensive list but here are some:
+- https://deckly.dev/
+- [System Design Interview Book (not an affiliate link)](https://www.amazon.nl/-/en/Alex-Xu/dp/B08CMF2CQF)
 
 # STAR Method
 
