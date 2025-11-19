@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { allQuestions } from '@/lib/questionsData';
-import { getResponse, saveResponse } from '@/lib/responseStorage';
+import { getResponse, saveResponse, deleteResponse } from '@/lib/responseStorage';
 
 interface Question {
   id: string;
@@ -45,8 +45,8 @@ export default function PracticePage() {
   const getRandomQuestion = () => {
     if (questions.length === 0) return;
 
-    // Save current response before switching questions
-    if (currentQuestion) {
+    // Save current response before switching questions (only if not empty)
+    if (currentQuestion && response.trim()) {
       saveResponse(currentQuestion.id, response);
     }
 
@@ -65,13 +65,13 @@ export default function PracticePage() {
       const newQuestion = questions[randomIndex];
       setCurrentQuestion(newQuestion);
       setUsedQuestions(new Set([newQuestion.id]));
-      setResponse(getResponse(newQuestion.id));
+      setResponse(''); // Clear the text box for new question
     } else {
       const randomIndex = Math.floor(Math.random() * availableQuestions.length);
       const newQuestion = availableQuestions[randomIndex];
       setCurrentQuestion(newQuestion);
       setUsedQuestions(prev => new Set([...prev, newQuestion.id]));
-      setResponse(getResponse(newQuestion.id));
+      setResponse(''); // Clear the text box for new question
     }
 
     setTimer(0);
@@ -79,8 +79,8 @@ export default function PracticePage() {
   };
 
   const skipQuestion = () => {
-    // Save current response before skipping
-    if (currentQuestion) {
+    // Save current response before skipping (only if not empty)
+    if (currentQuestion && response.trim()) {
       saveResponse(currentQuestion.id, response);
     }
     getRandomQuestion();
@@ -89,6 +89,13 @@ export default function PracticePage() {
   const handleSaveResponse = () => {
     if (currentQuestion) {
       saveResponse(currentQuestion.id, response);
+    }
+  };
+
+  const handleClearResponse = () => {
+    if (currentQuestion) {
+      deleteResponse(currentQuestion.id);
+      setResponse('');
     }
   };
 
@@ -152,12 +159,22 @@ export default function PracticePage() {
               </div>
 
               <div className="mt-6">
-                <label 
-                  htmlFor="response" 
-                  className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
-                >
-                  Your Response:
-                </label>
+                <div className="flex justify-between items-center mb-2">
+                  <label 
+                    htmlFor="response" 
+                    className="block text-sm font-medium text-slate-700 dark:text-slate-300"
+                  >
+                    Your Response:
+                  </label>
+                  {response.trim() && (
+                    <button
+                      onClick={handleClearResponse}
+                      className="text-xs px-3 py-1 bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-200 hover:bg-red-200 dark:hover:bg-red-800 rounded transition-colors"
+                    >
+                      Clear Response
+                    </button>
+                  )}
+                </div>
                 <textarea
                   id="response"
                   value={response}

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { getResponse, saveResponse } from '@/lib/responseStorage';
+import { getResponse, saveResponse, deleteResponse } from '@/lib/responseStorage';
 
 interface QuestionItemProps {
   questionId: string;
@@ -17,6 +17,11 @@ export default function QuestionItem({ questionId, questionText, index }: Questi
 
   const handleSaveResponse = () => {
     saveResponse(questionId, response);
+  };
+
+  const handleClearResponse = () => {
+    deleteResponse(questionId);
+    setResponse('');
   };
 
   return (
@@ -49,12 +54,22 @@ export default function QuestionItem({ questionId, questionText, index }: Questi
       
       {isExpanded && (
         <div className="px-4 pb-4 border-t border-slate-200 dark:border-slate-600 pt-4">
-          <label 
-            htmlFor={`response-${questionId}`}
-            className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
-          >
-            Your Response:
-          </label>
+          <div className="flex justify-between items-center mb-2">
+            <label 
+              htmlFor={`response-${questionId}`}
+              className="block text-sm font-medium text-slate-700 dark:text-slate-300"
+            >
+              Your Response:
+            </label>
+            {response.trim() && (
+              <button
+                onClick={handleClearResponse}
+                className="text-xs px-3 py-1 bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-200 hover:bg-red-200 dark:hover:bg-red-800 rounded transition-colors"
+              >
+                Clear Response
+              </button>
+            )}
+          </div>
           <textarea
             id={`response-${questionId}`}
             value={response}
