@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { parseReadme } from '@/lib/parseQuestions';
 import { notFound } from 'next/navigation';
+import QuestionItem from './QuestionItem';
 
 export default async function CategoryPage({ params }: { params: Promise<{ categoryId: string }> }) {
   const { categoryId } = await params;
@@ -35,17 +36,12 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
               </h2>
               <ul className="space-y-3">
                 {category.questions.map((question, index) => (
-                  <li
+                  <QuestionItem
                     key={question.id}
-                    className="p-4 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors"
-                  >
-                    <span className="font-medium text-slate-700 dark:text-slate-300 mr-2">
-                      {index + 1}.
-                    </span>
-                    <span className="text-slate-900 dark:text-slate-100">
-                      {question.text}
-                    </span>
-                  </li>
+                    questionId={question.id}
+                    questionText={question.text}
+                    index={index}
+                  />
                 ))}
               </ul>
             </div>
@@ -61,17 +57,12 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
               </h2>
               <ul className="space-y-3">
                 {subcategory.questions.map((question, index) => (
-                  <li
+                  <QuestionItem
                     key={question.id}
-                    className="p-4 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors"
-                  >
-                    <span className="font-medium text-slate-700 dark:text-slate-300 mr-2">
-                      {index + 1}.
-                    </span>
-                    <span className="text-slate-900 dark:text-slate-100">
-                      {question.text}
-                    </span>
-                  </li>
+                    questionId={question.id}
+                    questionText={question.text}
+                    index={index}
+                  />
                 ))}
               </ul>
             </div>
