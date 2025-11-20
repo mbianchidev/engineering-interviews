@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { getResponse, saveResponse, deleteResponse } from '@/lib/responseStorage';
 
 interface QuestionItemProps {
@@ -11,9 +11,15 @@ interface QuestionItemProps {
 
 export default function QuestionItem({ questionId, questionText, index }: QuestionItemProps) {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [response, setResponse] = useState(() => getResponse(questionId));
+  const [response, setResponse] = useState('');
+  const [isClient, setIsClient] = useState(false);
 
-  const hasResponse = response.length > 0;
+  useEffect(() => {
+    setIsClient(true);
+    setResponse(getResponse(questionId));
+  }, [questionId]);
+
+  const hasResponse = isClient && response.length > 0;
 
   const handleSaveResponse = () => {
     saveResponse(questionId, response);
