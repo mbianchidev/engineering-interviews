@@ -34,17 +34,6 @@ export default function PracticePage() {
 
   const skipQuestionRef = useRef<(() => void) | null>(null);
 
-  const skipQuestion = () => {
-    // Save current response before skipping (only if not empty)
-    if (currentQuestion && response.trim()) {
-      saveResponse(currentQuestion.id, response);
-    }
-    getRandomQuestion();
-  };
-
-  // Update ref whenever skipQuestion changes
-  skipQuestionRef.current = skipQuestion;
-
   useEffect(() => {
     let interval: NodeJS.Timeout | null = null;
 
@@ -131,6 +120,19 @@ export default function PracticePage() {
     setIsActive(true);
     setQuestionsInRound(prev => prev + 1);
   };
+
+  const skipQuestion = () => {
+    // Save current response before skipping (only if not empty)
+    if (currentQuestion && response.trim()) {
+      saveResponse(currentQuestion.id, response);
+    }
+    getRandomQuestion();
+  };
+
+  // Update ref whenever skipQuestion changes
+  useEffect(() => {
+    skipQuestionRef.current = skipQuestion;
+  });
 
   const handleSaveResponse = () => {
     if (currentQuestion) {
