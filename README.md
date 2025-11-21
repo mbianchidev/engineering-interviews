@@ -1,7 +1,11 @@
 # Engineering interviews
 
-This repository contains a folder with coding challenges I've been asked to solve during my application batches from 2023 and beyond, I'll do my best to keep it updated with fresh questions.
-This very readme file contains the guidelines I follow when I interview candidates for an Engineering role and part of my question pool, mixed with questions I got asked during interviews.
+This repository contains interview guidelines, questions, and resources for technical interviews.
+
+> **📦 Coding Challenges Moved**: The coding challenges have been moved to a separate repository for better organization.  
+> Visit **[mbianchidev/coding-challenges](https://github.com/mbianchidev/coding-challenges)** for access to all coding exercises and challenges.
+
+This readme file contains the guidelines I follow when I interview candidates for an Engineering role and part of my question pool, mixed with questions I got asked during interviews.
 
 I have been a hiring manager for some time but I've also applied and got interviews for many companies (100+) - including AWS, Microsoft, Google, Uber, Booking.com and ClickHouse. 
 
