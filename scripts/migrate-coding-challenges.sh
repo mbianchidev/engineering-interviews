@@ -26,7 +26,7 @@ mkdir -p "$OUTPUT_DIR"
 
 # Copy coding-challenges content
 echo "Copying coding-challenges content..."
-cp -r "$CHALLENGES_DIR"/* "$OUTPUT_DIR/"
+cp -r "$CHALLENGES_DIR"/. "$OUTPUT_DIR/"
 
 # Initialize git repository in output directory
 echo "Initializing git repository..."
@@ -89,7 +89,7 @@ echo "Creating README.md..."
 cat > README.md << 'EOF'
 # Coding Challenges
 
-This repository contains coding challenges and exercises from various technical interviews and practice sessions spanning from 2023 onwards.
+This repository contains coding challenges and exercises from various technical interviews and practice sessions spanning multiple years.
 
 ## 📁 Structure
 
@@ -166,10 +166,11 @@ EOF
 
 # Create LICENSE file
 echo "Creating LICENSE..."
-cat > LICENSE << 'EOF'
+CURRENT_YEAR=$(date +%Y)
+cat > LICENSE << EOF
 MIT License
 
-Copyright (c) 2024 Matteo Bianchi
+Copyright (c) $CURRENT_YEAR Matteo Bianchi
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
