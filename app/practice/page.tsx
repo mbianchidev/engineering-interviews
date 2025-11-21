@@ -1,9 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { allQuestions } from '@/lib/questionsData';
-import { getResponse, saveResponse, deleteResponse } from '@/lib/responseStorage';
+import { saveResponse, deleteResponse } from '@/lib/responseStorage';
+import { saveEvaluation } from '@/lib/evaluationStorage';
 
 interface Question {
   id: string;
@@ -12,22 +13,44 @@ interface Question {
   subcategory?: string;
 }
 
+const TIMER_DURATION = 300; // 5 minutes in seconds
+const QUESTIONS_PER_ROUND = 10;
+
 export default function PracticePage() {
   const [questions] = useState<Question[]>(allQuestions);
   const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
-  const [timer, setTimer] = useState(0);
+  const [timer, setTimer] = useState(TIMER_DURATION);
   const [isActive, setIsActive] = useState(false);
   const [usedQuestions, setUsedQuestions] = useState<Set<string>>(new Set());
   const [response, setResponse] = useState('');
+  const [questionsInRound, setQuestionsInRound] = useState(0);
+  const [extraTime, setExtraTime] = useState(0);
+  const [showEvaluation, setShowEvaluation] = useState(false);
+  const [evaluation, setEvaluation] = useState({
+    confidence: 3,
+    effectiveness: 3,
+    knowledge: 3,
+  });
+
+  const skipQuestionRef = useRef<(() => void) | null>(null);
 
   useEffect(() => {
     let interval: NodeJS.Timeout | null = null;
 
-    if (isActive) {
+    if (isActive && timer > 0) {
       interval = setInterval(() => {
-        setTimer((seconds) => seconds + 1);
+        setTimer((seconds) => {
+          if (seconds <= 1) {
+            // Time's up, auto-skip to next question
+            if (skipQuestionRef.current) {
+              skipQuestionRef.current();
+            }
+            return TIMER_DURATION;
+          }
+          return seconds - 1;
+        });
       }, 1000);
-    } else if (!isActive && timer !== 0) {
+    } else if (!isActive && timer !== TIMER_DURATION) {
       if (interval) clearInterval(interval);
     }
 
@@ -44,6 +67,13 @@ export default function PracticePage() {
 
   const getRandomQuestion = () => {
     if (questions.length === 0) return;
+
+    // Check if we've completed a round
+    if (questionsInRound >= QUESTIONS_PER_ROUND) {
+      setShowEvaluation(true);
+      setIsActive(false);
+      return;
+    }
 
     // Save current response before switching questions (only if not empty)
     if (currentQuestion && response.trim()) {
@@ -74,8 +104,21 @@ export default function PracticePage() {
       setResponse(''); // Clear the text box for new question
     }
 
-    setTimer(0);
+    // Add any remaining time to extra time pool, then reset timer
+    if (timer > 0 && questionsInRound > 0) {
+      setExtraTime(prev => prev + timer);
+    }
+    
+    // Use extra time if available
+    let newTimer = TIMER_DURATION;
+    if (extraTime > 0) {
+      newTimer = TIMER_DURATION + extraTime;
+      setExtraTime(0);
+    }
+    
+    setTimer(newTimer);
     setIsActive(true);
+    setQuestionsInRound(prev => prev + 1);
   };
 
   const skipQuestion = () => {
@@ -85,6 +128,11 @@ export default function PracticePage() {
     }
     getRandomQuestion();
   };
+
+  // Update ref whenever skipQuestion changes
+  useEffect(() => {
+    skipQuestionRef.current = skipQuestion;
+  });
 
   const handleSaveResponse = () => {
     if (currentQuestion) {
@@ -97,6 +145,25 @@ export default function PracticePage() {
       deleteResponse(currentQuestion.id);
       setResponse('');
     }
+  };
+
+  const handleSubmitEvaluation = () => {
+    saveEvaluation(evaluation);
+    // Reset for new round
+    setShowEvaluation(false);
+    setQuestionsInRound(0);
+    setExtraTime(0);
+    setUsedQuestions(new Set());
+    setCurrentQuestion(null);
+    setTimer(TIMER_DURATION);
+    setIsActive(false);
+  };
+
+  const handleStartNewRound = () => {
+    setQuestionsInRound(0);
+    setExtraTime(0);
+    setUsedQuestions(new Set());
+    getRandomQuestion();
   };
 
   return (
@@ -115,13 +182,97 @@ export default function PracticePage() {
           Practice Mode
         </h1>
 
-        {!currentQuestion ? (
+        {showEvaluation ? (
+          <div className="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-8 space-y-6">
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100 text-center">
+              Round Complete! 🎉
+            </h2>
+            <p className="text-center text-slate-600 dark:text-slate-300">
+              You&apos;ve completed {QUESTIONS_PER_ROUND} questions. Please evaluate yourself:
+            </p>
+
+            <div className="space-y-6">
+              <div>
+                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                  Confidence (1-5)
+                </label>
+                <div className="flex gap-2 justify-center">
+                  {[1, 2, 3, 4, 5].map((val) => (
+                    <button
+                      key={val}
+                      onClick={() => setEvaluation(prev => ({ ...prev, confidence: val }))}
+                      className={`w-12 h-12 rounded-lg font-semibold transition-all ${
+                        evaluation.confidence === val
+                          ? 'bg-blue-600 text-white scale-110'
+                          : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-600'
+                      }`}
+                    >
+                      {val}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                  Effectiveness (1-5)
+                </label>
+                <div className="flex gap-2 justify-center">
+                  {[1, 2, 3, 4, 5].map((val) => (
+                    <button
+                      key={val}
+                      onClick={() => setEvaluation(prev => ({ ...prev, effectiveness: val }))}
+                      className={`w-12 h-12 rounded-lg font-semibold transition-all ${
+                        evaluation.effectiveness === val
+                          ? 'bg-green-600 text-white scale-110'
+                          : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-600'
+                      }`}
+                    >
+                      {val}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                  Knowledge (1-5)
+                </label>
+                <div className="flex gap-2 justify-center">
+                  {[1, 2, 3, 4, 5].map((val) => (
+                    <button
+                      key={val}
+                      onClick={() => setEvaluation(prev => ({ ...prev, knowledge: val }))}
+                      className={`w-12 h-12 rounded-lg font-semibold transition-all ${
+                        evaluation.knowledge === val
+                          ? 'bg-purple-600 text-white scale-110'
+                          : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-600'
+                      }`}
+                    >
+                      {val}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <button
+              onClick={handleSubmitEvaluation}
+              className="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              Submit Evaluation & Start New Round
+            </button>
+          </div>
+        ) : !currentQuestion ? (
           <div className="text-center space-y-8">
             <p className="text-xl text-slate-600 dark:text-slate-300">
-              Test your knowledge with random questions. A timer will start when you begin.
+              Test your knowledge with random questions. Each round has {QUESTIONS_PER_ROUND} questions with 5 minutes per question.
+            </p>
+            <p className="text-md text-slate-500 dark:text-slate-400">
+              Finish questions early? Your extra time rolls over to the next question!
             </p>
             <button
-              onClick={getRandomQuestion}
+              onClick={handleStartNewRound}
               disabled={questions.length === 0}
               className="px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
@@ -141,14 +292,24 @@ export default function PracticePage() {
                       {currentQuestion.category}
                     </span>
                   )}
+                  <div className="mt-2 text-sm font-medium text-slate-600 dark:text-slate-400">
+                    Question {questionsInRound} / {QUESTIONS_PER_ROUND}
+                  </div>
                 </div>
                 <div className="text-right">
-                  <div className="text-4xl font-bold text-slate-900 dark:text-slate-100 font-mono">
+                  <div className={`text-4xl font-bold font-mono ${
+                    timer <= 60 ? 'text-red-600 dark:text-red-400' : 'text-slate-900 dark:text-slate-100'
+                  }`}>
                     {formatTime(timer)}
                   </div>
                   <div className="text-sm text-slate-500 dark:text-slate-400 mt-1">
-                    Time elapsed
+                    Time remaining
                   </div>
+                  {extraTime > 0 && (
+                    <div className="text-xs text-green-600 dark:text-green-400 mt-1">
+                      +{formatTime(extraTime)} extra time available
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -192,9 +353,15 @@ export default function PracticePage() {
             <div className="flex gap-4 justify-center">
               <button
                 onClick={skipQuestion}
-                className="px-6 py-3 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-900 dark:text-slate-100 font-semibold rounded-lg transition-colors"
+                className="px-4 py-2 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-900 dark:text-slate-100 text-sm font-medium rounded-lg transition-colors"
               >
-                Skip Question →
+                Skip
+              </button>
+              <button
+                onClick={skipQuestion}
+                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors shadow-lg hover:shadow-xl"
+              >
+                Next Question →
               </button>
             </div>
 
