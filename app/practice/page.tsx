@@ -343,9 +343,9 @@ export default function PracticePage() {
                 
                 {showPreviousEvaluations && (
                   <div className="mt-4 space-y-4 max-w-3xl mx-auto">
-                    {previousEvaluations.slice().reverse().map((evalItem, index) => (
+                    {previousEvaluations.slice().reverse().map((evalItem) => (
                       <div 
-                        key={index}
+                        key={evalItem.timestamp}
                         className="bg-white dark:bg-slate-800 rounded-lg shadow-md p-6 text-left"
                       >
                         <div className="flex justify-between items-center mb-4">
