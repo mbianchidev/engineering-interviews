@@ -4,11 +4,12 @@ import type { NextConfig } from "next";
 // Set DEPLOY_ENV=github-pages when deploying to GitHub Pages
 const isStaticExport = process.env.DEPLOY_ENV === 'github-pages';
 
-// Note: Static export is only enabled for GitHub Pages deployments.
-// For production deployments with auth and Stripe, use a hosting service 
-// that supports Next.js API routes (Vercel, Netlify, etc.)
+// Note: Static export mode disables API routes, which means authentication 
+// (NextAuth.js) and payment processing (Stripe) will NOT work.
+// For full functionality with auth and payments, deploy to a platform that 
+// supports Next.js API routes (Vercel, Netlify, Railway, etc.)
 const nextConfig: NextConfig = {
-  // Only use static export when explicitly enabled
+  // Only use static export when explicitly enabled (disables auth & payments)
   ...(isStaticExport && { output: 'export' }),
   images: {
     unoptimized: true,

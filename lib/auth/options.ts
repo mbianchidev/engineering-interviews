@@ -25,8 +25,10 @@ declare module "next-auth/jwt" {
   }
 }
 
-// In-memory store for subscription status (in production, use a database)
-// This is a simple implementation for demo purposes
+// In-memory store for subscription status
+// WARNING: This is for demo/development purposes only!
+// In production, replace with a proper database (PostgreSQL, MongoDB, etc.)
+// Data will be lost on server restart and won't work in serverless environments
 export const subscriptionStore = new Map<string, { status: string; customerId?: string }>();
 
 export const authOptions: NextAuthOptions = {
