@@ -4,8 +4,8 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { allQuestions } from '@/lib/questionsData';
 import { saveResponse, deleteResponse, clearAllResponses } from '@/lib/responseStorage';
-import { saveEvaluation, getAllEvaluations, SelfEvaluation } from '@/lib/evaluationStorage';
-import { addViewedQuestion, getViewedQuestionsCount } from '@/lib/viewedQuestionsStorage';
+import { saveEvaluation, getAllEvaluations, clearAllEvaluations, SelfEvaluation } from '@/lib/evaluationStorage';
+import { addViewedQuestion, getViewedQuestionsCount, clearAllViewedQuestions } from '@/lib/viewedQuestionsStorage';
 
 interface Question {
   id: string;
@@ -17,6 +17,8 @@ interface Question {
 const TIMER_DURATION = 300; // 5 minutes in seconds
 const QUESTIONS_PER_ROUND = 10;
 
+type PracticeMode = 'easy' | 'standard' | 'hard';
+
 export default function PracticePage() {
   const [questions] = useState<Question[]>(allQuestions);
   const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
@@ -27,6 +29,7 @@ export default function PracticePage() {
   const [questionsInRound, setQuestionsInRound] = useState(0);
   const [extraTime, setExtraTime] = useState(0);
   const [showEvaluation, setShowEvaluation] = useState(false);
+  const [practiceMode, setPracticeMode] = useState<PracticeMode>('standard');
   const [evaluation, setEvaluation] = useState<{
     confidence: number | null;
     effectiveness: number | null;
@@ -51,14 +54,19 @@ export default function PracticePage() {
   useEffect(() => {
     let interval: NodeJS.Timeout | null = null;
 
+    // Easy mode: no timer
+    if (practiceMode === 'easy') {
+      return;
+    }
+
     if (isActive) {
       interval = setInterval(() => {
         // First, countdown the main timer
         if (timer > 0) {
           setTimer(seconds => seconds - 1);
         } 
-        // When main timer reaches 0, start using extra time
-        else if (extraTime > 0) {
+        // When main timer reaches 0, start using extra time (only in standard mode)
+        else if (extraTime > 0 && practiceMode === 'standard') {
           setExtraTime(prev => prev - 1);
         }
         // When both are 0, auto-skip
@@ -73,7 +81,7 @@ export default function PracticePage() {
     return () => {
       if (interval) clearInterval(interval);
     };
-  }, [isActive, timer, extraTime]);
+  }, [isActive, timer, extraTime, practiceMode]);
 
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
@@ -126,8 +134,8 @@ export default function PracticePage() {
     
     setCurrentQuestion(newQuestion);
 
-    // Add any remaining time to extra time pool (only count time from base timer)
-    if (timer > 0 && questionsInRound > 0) {
+    // Add any remaining time to extra time pool (only in standard mode)
+    if (timer > 0 && questionsInRound > 0 && practiceMode === 'standard') {
       setExtraTime(prev => prev + timer);
     }
     
@@ -204,8 +212,18 @@ export default function PracticePage() {
   const handleClearAllResponses = () => {
     if (window.confirm('Are you sure you want to delete all your recorded answers? This action cannot be undone.')) {
       clearAllResponses();
+      clearAllViewedQuestions(); // Also clear viewed questions count
       setResponse('');
-      alert('All responses have been cleared.');
+      setTotalViewedQuestions(0);
+      alert('All responses and viewed questions have been cleared.');
+    }
+  };
+
+  const handleClearEvaluations = () => {
+    if (window.confirm('Are you sure you want to delete all your self-evaluations? This action cannot be undone.')) {
+      clearAllEvaluations();
+      setPreviousEvaluations([]);
+      alert('All evaluations have been cleared.');
     }
   };
 
@@ -316,9 +334,53 @@ export default function PracticePage() {
             <p className="text-xl text-slate-600 dark:text-slate-300">
               Test your knowledge with random questions. Each round has {QUESTIONS_PER_ROUND} questions with 5 minutes per question.
             </p>
-            <p className="text-md text-slate-500 dark:text-slate-400">
-              Finish questions early? Your extra time rolls over to the next question!
-            </p>
+            
+            {/* Practice Mode Selector */}
+            <div className="max-w-2xl mx-auto">
+              <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-4">
+                Select Practice Mode:
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <button
+                  onClick={() => setPracticeMode('easy')}
+                  className={`p-4 rounded-xl border-2 transition-all ${
+                    practiceMode === 'easy'
+                      ? 'border-green-500 bg-green-50 dark:bg-green-900/20'
+                      : 'border-slate-200 dark:border-slate-700 hover:border-green-300 dark:hover:border-green-700'
+                  }`}
+                >
+                  <div className="text-2xl mb-2">😌</div>
+                  <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-1">Easy</h4>
+                  <p className="text-sm text-slate-600 dark:text-slate-400">No time limit</p>
+                </button>
+                
+                <button
+                  onClick={() => setPracticeMode('standard')}
+                  className={`p-4 rounded-xl border-2 transition-all ${
+                    practiceMode === 'standard'
+                      ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20'
+                      : 'border-slate-200 dark:border-slate-700 hover:border-blue-300 dark:hover:border-blue-700'
+                  }`}
+                >
+                  <div className="text-2xl mb-2">⚡</div>
+                  <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-1">Standard</h4>
+                  <p className="text-sm text-slate-600 dark:text-slate-400">Timer + extra time rolls over</p>
+                </button>
+                
+                <button
+                  onClick={() => setPracticeMode('hard')}
+                  className={`p-4 rounded-xl border-2 transition-all ${
+                    practiceMode === 'hard'
+                      ? 'border-red-500 bg-red-50 dark:bg-red-900/20'
+                      : 'border-slate-200 dark:border-slate-700 hover:border-red-300 dark:hover:border-red-700'
+                  }`}
+                >
+                  <div className="text-2xl mb-2">🔥</div>
+                  <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-1">Hard</h4>
+                  <p className="text-sm text-slate-600 dark:text-slate-400">Timer only, no rollover</p>
+                </button>
+              </div>
+            </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <button
@@ -347,7 +409,14 @@ export default function PracticePage() {
                 </button>
                 
                 {showPreviousEvaluations && (
-                  <div className="mt-4 space-y-4 max-w-3xl mx-auto">
+                  <>
+                    <button
+                      onClick={handleClearEvaluations}
+                      className="ml-4 px-4 py-2 bg-orange-600 hover:bg-orange-700 text-white text-sm font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+                    >
+                      Clear All Evaluations
+                    </button>
+                    <div className="mt-4 space-y-4 max-w-3xl mx-auto">
                     {previousEvaluations.slice().reverse().map((evalItem) => (
                       <div 
                         key={evalItem.timestamp}
@@ -387,6 +456,7 @@ export default function PracticePage() {
                       </div>
                     ))}
                   </div>
+                  </>
                 )}
               </div>
             )}
@@ -409,22 +479,30 @@ export default function PracticePage() {
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className={`text-4xl font-bold font-mono ${
-                    timer === 0 && extraTime > 0 
-                      ? 'text-green-600 dark:text-green-400'  // Green when using extra time
-                      : timer <= 60 && extraTime === 0 
-                        ? 'text-red-600 dark:text-red-400'  // Red when low and no extra time
-                        : 'text-slate-900 dark:text-slate-100'  // Normal color
-                  }`}>
-                    {formatTime(timer === 0 && extraTime > 0 ? extraTime : timer)}
-                  </div>
-                  <div className="text-sm text-slate-500 dark:text-slate-400 mt-1">
-                    Time remaining
-                  </div>
-                  {timer > 0 && extraTime > 0 && (
-                    <div className="text-sm text-green-600 dark:text-green-400 mt-1 font-semibold">
-                      +{formatTime(extraTime)} extra time available
+                  {practiceMode === 'easy' ? (
+                    <div className="text-2xl font-bold text-slate-900 dark:text-slate-100">
+                      ∞
                     </div>
+                  ) : (
+                    <>
+                      <div className={`text-4xl font-bold font-mono ${
+                        timer === 0 && extraTime > 0 
+                          ? 'text-green-600 dark:text-green-400'  // Green when using extra time
+                          : timer <= 60 && extraTime === 0 
+                            ? 'text-red-600 dark:text-red-400'  // Red when low and no extra time
+                            : 'text-slate-900 dark:text-slate-100'  // Normal color
+                      }`}>
+                        {formatTime(timer === 0 && extraTime > 0 ? extraTime : timer)}
+                      </div>
+                      <div className="text-sm text-slate-500 dark:text-slate-400 mt-1">
+                        Time remaining
+                      </div>
+                      {timer > 0 && extraTime > 0 && practiceMode === 'standard' && (
+                        <div className="text-sm text-green-600 dark:text-green-400 mt-1 font-semibold">
+                          +{formatTime(extraTime)} extra time available
+                        </div>
+                      )}
+                    </>
                   )}
                 </div>
               </div>
