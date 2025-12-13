@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { allQuestions } from '@/lib/questionsData';
 import { saveResponse, deleteResponse, clearAllResponses } from '@/lib/responseStorage';
 import { saveEvaluation, getAllEvaluations, SelfEvaluation } from '@/lib/evaluationStorage';
+import { addViewedQuestion, getViewedQuestionsCount } from '@/lib/viewedQuestionsStorage';
 
 interface Question {
   id: string;
@@ -37,38 +38,42 @@ export default function PracticePage() {
   });
   const [previousEvaluations, setPreviousEvaluations] = useState<SelfEvaluation[]>([]);
   const [showPreviousEvaluations, setShowPreviousEvaluations] = useState(false);
+  const [totalViewedQuestions, setTotalViewedQuestions] = useState(0);
 
   const skipQuestionRef = useRef<(() => void) | null>(null);
 
   // Load previous evaluations on mount
   useEffect(() => {
     setPreviousEvaluations(getAllEvaluations());
+    setTotalViewedQuestions(getViewedQuestionsCount());
   }, []);
 
   useEffect(() => {
     let interval: NodeJS.Timeout | null = null;
 
-    if (isActive && timer > 0) {
+    if (isActive) {
       interval = setInterval(() => {
-        setTimer((seconds) => {
-          if (seconds <= 1) {
-            // Time's up, auto-skip to next question
-            if (skipQuestionRef.current) {
-              skipQuestionRef.current();
-            }
-            return TIMER_DURATION;
+        // First, countdown the main timer
+        if (timer > 0) {
+          setTimer(seconds => seconds - 1);
+        } 
+        // When main timer reaches 0, start using extra time
+        else if (extraTime > 0) {
+          setExtraTime(prev => prev - 1);
+        }
+        // When both are 0, auto-skip
+        else {
+          if (skipQuestionRef.current) {
+            skipQuestionRef.current();
           }
-          return seconds - 1;
-        });
+        }
       }, 1000);
-    } else if (!isActive && timer !== TIMER_DURATION) {
-      if (interval) clearInterval(interval);
     }
 
     return () => {
       if (interval) clearInterval(interval);
     };
-  }, [isActive, timer]);
+  }, [isActive, timer, extraTime]);
 
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
@@ -99,35 +104,34 @@ export default function PracticePage() {
     // Find a question that hasn't been used
     const availableQuestions = questions.filter(q => !usedQuestions.has(q.id));
     
+    let newQuestion: Question;
     if (availableQuestions.length === 0) {
       // All questions used, reset and pick from all
       setUsedQuestions(new Set());
       const randomIndex = Math.floor(Math.random() * questions.length);
-      const newQuestion = questions[randomIndex];
-      setCurrentQuestion(newQuestion);
+      newQuestion = questions[randomIndex];
       setUsedQuestions(new Set([newQuestion.id]));
       setResponse(''); // Clear the text box for new question
     } else {
       const randomIndex = Math.floor(Math.random() * availableQuestions.length);
-      const newQuestion = availableQuestions[randomIndex];
-      setCurrentQuestion(newQuestion);
+      newQuestion = availableQuestions[randomIndex];
       setUsedQuestions(prev => new Set([...prev, newQuestion.id]));
       setResponse(''); // Clear the text box for new question
     }
 
-    // Add any remaining time to extra time pool, then reset timer
+    // Track that this question has been viewed (for lifetime stats)
+    addViewedQuestion(newQuestion.id);
+    setTotalViewedQuestions(getViewedQuestionsCount());
+    
+    setCurrentQuestion(newQuestion);
+
+    // Add any remaining time to extra time pool (only count time from base timer)
     if (timer > 0 && questionsInRound > 0) {
       setExtraTime(prev => prev + timer);
     }
     
-    // Use extra time if available
-    let newTimer = TIMER_DURATION;
-    if (extraTime > 0) {
-      newTimer = TIMER_DURATION + extraTime;
-      setExtraTime(0);
-    }
-    
-    setTimer(newTimer);
+    // Always reset timer to standard duration
+    setTimer(TIMER_DURATION);
     setIsActive(true);
     setQuestionsInRound(prev => prev + 1);
   };
@@ -405,15 +409,19 @@ export default function PracticePage() {
                 </div>
                 <div className="text-right">
                   <div className={`text-4xl font-bold font-mono ${
-                    timer <= 60 ? 'text-red-600 dark:text-red-400' : 'text-slate-900 dark:text-slate-100'
+                    timer === 0 && extraTime > 0 
+                      ? 'text-green-600 dark:text-green-400'  // Green when using extra time
+                      : timer <= 60 && extraTime === 0 
+                        ? 'text-red-600 dark:text-red-400'  // Red when low and no extra time
+                        : 'text-slate-900 dark:text-slate-100'  // Normal color
                   }`}>
-                    {formatTime(timer)}
+                    {formatTime(timer === 0 && extraTime > 0 ? extraTime : timer)}
                   </div>
                   <div className="text-sm text-slate-500 dark:text-slate-400 mt-1">
                     Time remaining
                   </div>
-                  {extraTime > 0 && (
-                    <div className="text-xs text-green-600 dark:text-green-400 mt-1">
+                  {timer > 0 && extraTime > 0 && (
+                    <div className="text-sm text-green-600 dark:text-green-400 mt-1 font-semibold">
                       +{formatTime(extraTime)} extra time available
                     </div>
                   )}
@@ -473,7 +481,7 @@ export default function PracticePage() {
             </div>
 
             <div className="text-center text-sm text-slate-500 dark:text-slate-400">
-              Progress: {usedQuestions.size} / {questions.length} questions viewed
+              Progress: {totalViewedQuestions} / {questions.length} questions viewed
             </div>
           </div>
         )}
