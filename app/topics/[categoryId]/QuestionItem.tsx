@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { getResponse, saveResponse, deleteResponse } from '@/lib/responseStorage';
+import { getAllViewedQuestions } from '@/lib/viewedQuestionsStorage';
 
 interface QuestionItemProps {
   questionId: string;
@@ -13,10 +14,13 @@ export default function QuestionItem({ questionId, questionText, index }: Questi
   const [isExpanded, setIsExpanded] = useState(false);
   const [response, setResponse] = useState('');
   const [isClient, setIsClient] = useState(false);
+  const [isViewed, setIsViewed] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
     setResponse(getResponse(questionId));
+    const viewedQuestions = getAllViewedQuestions();
+    setIsViewed(viewedQuestions.includes(questionId));
   }, [questionId]);
 
   const hasResponse = isClient && response.length > 0;
@@ -46,6 +50,11 @@ export default function QuestionItem({ questionId, questionText, index }: Questi
             </span>
           </div>
           <div className="flex items-center gap-2 ml-4">
+            {isViewed && (
+              <span className="text-lg" title="Viewed in practice mode">
+                👁️
+              </span>
+            )}
             {hasResponse && (
               <span className="text-xs px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded">
                 ✓ Answered
