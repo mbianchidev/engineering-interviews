@@ -52,7 +52,7 @@ export default function QuestionItem({ questionId, questionText, index }: Questi
           <div className="flex items-center gap-2 ml-4">
             {isViewed && (
               <span className="text-lg" title="Viewed in practice mode">
-                👁️
+                👀
               </span>
             )}
             {hasResponse && (
