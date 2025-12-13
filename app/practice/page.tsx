@@ -111,13 +111,14 @@ export default function PracticePage() {
       const randomIndex = Math.floor(Math.random() * questions.length);
       newQuestion = questions[randomIndex];
       setUsedQuestions(new Set([newQuestion.id]));
-      setResponse(''); // Clear the text box for new question
     } else {
       const randomIndex = Math.floor(Math.random() * availableQuestions.length);
       newQuestion = availableQuestions[randomIndex];
       setUsedQuestions(prev => new Set([...prev, newQuestion.id]));
-      setResponse(''); // Clear the text box for new question
     }
+
+    // Clear the text box for new question
+    setResponse('');
 
     // Track that this question has been viewed (for lifetime stats)
     addViewedQuestion(newQuestion.id);
