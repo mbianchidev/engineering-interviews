@@ -12,6 +12,8 @@ A modern, minimalist web application for practicing engineering interview questi
 - 🌗 **Dark Mode**: Automatic dark mode support for comfortable studying
 - 📱 **Responsive Design**: Works great on desktop, tablet, and mobile devices
 - 🎨 **Clean UI**: Minimalist design focused on the content, no clutter
+- 🔐 **Authentication**: Sign in with Google or GitHub to track your progress
+- 💳 **Premium Subscription**: Subscribe via Stripe to access expert-crafted sample answers
 
 ## Getting Started
 
@@ -33,12 +35,91 @@ cd engineering-interviews
 npm install
 ```
 
-3. Run the development server:
+3. Set up environment variables:
+```bash
+cp .env.example .env.local
+```
+
+4. Configure the environment variables (see [Environment Configuration](#environment-configuration) below)
+
+5. Run the development server:
 ```bash
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+6. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+### Environment Configuration
+
+Create a `.env.local` file based on `.env.example` with the following variables:
+
+#### NextAuth.js Configuration
+```bash
+# Generate a secret using: openssl rand -base64 32
+NEXTAUTH_SECRET=your-secret-key-here
+NEXTAUTH_URL=http://localhost:3000
+```
+
+#### Google OAuth Provider
+Get credentials from [Google Cloud Console](https://console.developers.google.com/):
+1. Create a new project or select existing
+2. Enable the Google+ API
+3. Go to Credentials → Create Credentials → OAuth 2.0 Client IDs
+4. Set authorized redirect URI to: `http://localhost:3000/api/auth/callback/google`
+
+```bash
+GOOGLE_CLIENT_ID=your-google-client-id
+GOOGLE_CLIENT_SECRET=your-google-client-secret
+```
+
+#### GitHub OAuth Provider
+Get credentials from [GitHub Developer Settings](https://github.com/settings/developers):
+1. Go to Settings → Developer settings → OAuth Apps → New OAuth App
+2. Set Authorization callback URL to: `http://localhost:3000/api/auth/callback/github`
+
+```bash
+GITHUB_ID=your-github-client-id
+GITHUB_SECRET=your-github-client-secret
+```
+
+#### Stripe Configuration
+Get keys from [Stripe Dashboard](https://dashboard.stripe.com/apikeys):
+
+```bash
+STRIPE_SECRET_KEY=sk_test_your-stripe-secret-key
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_your-stripe-publishable-key
+```
+
+Create a subscription product in Stripe:
+1. Go to Products → Add Product
+2. Create a recurring price (e.g., $9.99/month)
+3. Copy the Price ID
+
+```bash
+STRIPE_MONTHLY_PRICE_ID=price_your-monthly-price-id
+```
+
+For webhook handling in production:
+1. Go to Developers → Webhooks → Add endpoint
+2. Set endpoint URL to: `https://your-domain.com/api/stripe/webhook`
+3. Select events: `checkout.session.completed`, `customer.subscription.updated`, `customer.subscription.deleted`, `invoice.payment_failed`
+
+```bash
+STRIPE_WEBHOOK_SECRET=whsec_your-webhook-secret
+```
+
+### Testing Stripe Integration
+
+When Stripe is in test mode, use these test card numbers during checkout:
+
+| Card Number | Scenario |
+|-------------|----------|
+| `4242 4242 4242 4242` | Successful payment |
+| `4000 0000 0000 0002` | Card declined |
+| `4000 0000 0000 9995` | Insufficient funds |
+| `4000 0025 0000 3155` | 3D Secure required |
+
+Use any future expiry date and any 3-digit CVC.
 
 ### Building for Production
 
@@ -46,23 +127,32 @@ npm run dev
 npm run build
 ```
 
-The build creates a static export in the `out/` directory.
+**Note**: For full functionality (authentication and payments), deploy to a platform that supports Next.js API routes like Vercel or Netlify.
 
 ### Building for Static Export (GitHub Pages)
 
-This project is configured to export as a static site for GitHub Pages deployment:
+For GitHub Pages deployment (without auth/payment features):
 
 ```bash
-npm run build
+DEPLOY_ENV=github-pages npm run build
 ```
 
-The static files will be generated in the `out/` directory, ready for deployment.
+The static files will be generated in the `out/` directory.
 
 ## Deployment
 
-### GitHub Pages
+### Vercel (Recommended for Full Features)
+
+1. Push your code to GitHub
+2. Import your repository in [Vercel](https://vercel.com)
+3. Add environment variables in the Vercel dashboard
+4. Deploy
+
+### GitHub Pages (Static Export Only)
 
 This repository includes a GitHub Actions workflow that automatically deploys the website to GitHub Pages when changes are pushed to the `main` branch.
+
+**Note**: GitHub Pages deployment exports a static version without authentication or payment features.
 
 **Setup Steps:**
 
@@ -72,13 +162,13 @@ This repository includes a GitHub Actions workflow that automatically deploys th
 
 The site will be available at: `https://<username>.github.io/engineering-interviews/`
 
-You can also manually trigger the deployment workflow from the Actions tab.
-
 ## Tech Stack
 
 - **Framework**: Next.js 16 (App Router)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
+- **Authentication**: NextAuth.js (Google, GitHub OAuth)
+- **Payments**: Stripe (subscriptions)
 - **Deployment**: Vercel-ready
 
 ## Project Structure
@@ -88,18 +178,33 @@ You can also manually trigger the deployment workflow from the Actions tab.
 │   └── workflows/
 │       └── deploy.yml         # GitHub Pages deployment workflow
 ├── app/
+│   ├── api/
+│   │   ├── auth/[...nextauth]/ # NextAuth.js API routes
+│   │   └── stripe/            # Stripe API routes (checkout, webhook, portal)
+│   ├── auth/                  # Authentication pages (signin, error)
+│   ├── subscription/          # Subscription pages (pricing, success, cancel)
 │   ├── practice/              # Practice mode page
 │   ├── topics/                # Topic browsing pages
 │   │   └── [categoryId]/      # Dynamic category pages
-│   ├── layout.tsx             # Root layout
+│   ├── layout.tsx             # Root layout with AuthProvider
 │   └── page.tsx               # Homepage
+├── components/
+│   ├── AuthProvider.tsx       # NextAuth.js session provider
+│   ├── AuthStatus.tsx         # User authentication status display
+│   └── Header.tsx             # Navigation header with auth
 ├── lib/
+│   ├── auth/
+│   │   └── options.ts         # NextAuth.js configuration
+│   ├── stripe/
+│   │   ├── config.ts          # Stripe server configuration
+│   │   └── client.ts          # Stripe client-side utilities
 │   ├── parseQuestions.ts      # Question parsing logic
 │   └── questionsData.ts       # Client-side questions data
 ├── scripts/
 │   └── generate-questions.ts  # Build-time question JSON generator
 ├── public/
 │   └── questions.json         # Generated questions data
+├── .env.example               # Environment variables template
 ├── README.md                  # Original interview questions
 └── SETUP.md                   # This file
 ```
@@ -114,8 +219,21 @@ The application parses the `README.md` file at build time to extract:
 The build process:
 1. Runs `generate-questions.ts` to parse README.md and create `public/questions.json`
 2. Generates static pages for each topic category via SSG
-3. Exports all pages as static HTML in the `out/` directory
+3. API routes handle authentication and payment processing
 4. The practice mode loads questions from the JSON file client-side
+
+### Authentication Flow
+
+1. User clicks "Sign In" → Redirected to OAuth provider (Google/GitHub)
+2. After successful auth → Redirected back with session token
+3. Session stored as JWT → User can access protected features
+
+### Subscription Flow
+
+1. User clicks "Subscribe" → Redirected to Stripe Checkout
+2. Completes payment → Stripe sends webhook notification
+3. Webhook updates subscription status → User gains premium access
+4. User can manage subscription via Stripe Customer Portal
 
 ## License
 
