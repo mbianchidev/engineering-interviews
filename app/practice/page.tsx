@@ -16,6 +16,7 @@ interface Question {
 
 const TIMER_DURATION = 300; // 5 minutes in seconds
 const QUESTIONS_PER_ROUND = 10;
+const MIN_QUESTIONS_TO_START = 10;
 
 type PracticeMode = 'easy' | 'standard' | 'hard';
 
@@ -549,6 +550,11 @@ export default function PracticePage() {
                 {selectedSubtopics.size === 0 
                   ? `All ${allQuestions.length} questions selected (no filter applied)` 
                   : `${filteredQuestions.length} questions selected from ${selectedSubtopics.size} sub-topic${selectedSubtopics.size !== 1 ? 's' : ''}`}
+                {selectedSubtopics.size > 0 && filteredQuestions.length < MIN_QUESTIONS_TO_START && (
+                  <span className="block text-red-600 dark:text-red-400 mt-1">
+                    Select at least {MIN_QUESTIONS_TO_START} questions to start practicing
+                  </span>
+                )}
               </p>
               <div className="bg-white dark:bg-slate-800 rounded-xl shadow-md p-4 max-h-80 overflow-y-auto">
                 {allCategories.map((category) => {
@@ -641,7 +647,7 @@ export default function PracticePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <button
                 onClick={handleStartNewRound}
-                disabled={filteredQuestions.length === 0}
+                disabled={selectedSubtopics.size > 0 && filteredQuestions.length < MIN_QUESTIONS_TO_START}
                 className="px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Start Practicing
