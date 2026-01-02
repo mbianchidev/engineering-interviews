@@ -14,11 +14,6 @@ interface Question {
   subcategory?: string;
 }
 
-interface SubtopicSelection {
-  categoryId: string;
-  subcategoryId: string | null; // null means top-level category questions
-}
-
 const TIMER_DURATION = 300; // 5 minutes in seconds
 const QUESTIONS_PER_ROUND = 10;
 
