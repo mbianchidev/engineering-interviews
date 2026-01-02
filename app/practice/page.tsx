@@ -1,8 +1,8 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import Link from 'next/link';
-import { allQuestions } from '@/lib/questionsData';
+import { allQuestions, allCategories } from '@/lib/questionsData';
 import { saveResponse, deleteResponse, clearAllResponses } from '@/lib/responseStorage';
 import { saveEvaluation, getAllEvaluations, clearAllEvaluations, SelfEvaluation } from '@/lib/evaluationStorage';
 import { addViewedQuestion, getViewedQuestionsCount, clearAllViewedQuestions } from '@/lib/viewedQuestionsStorage';
@@ -14,13 +14,17 @@ interface Question {
   subcategory?: string;
 }
 
+interface SubtopicSelection {
+  categoryId: string;
+  subcategoryId: string | null; // null means top-level category questions
+}
+
 const TIMER_DURATION = 300; // 5 minutes in seconds
 const QUESTIONS_PER_ROUND = 10;
 
 type PracticeMode = 'easy' | 'standard' | 'hard';
 
 export default function PracticePage() {
-  const [questions] = useState<Question[]>(allQuestions);
   const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
   const [timer, setTimer] = useState(TIMER_DURATION);
   const [isActive, setIsActive] = useState(false);
@@ -42,8 +46,151 @@ export default function PracticePage() {
   const [previousEvaluations, setPreviousEvaluations] = useState<SelfEvaluation[]>([]);
   const [showPreviousEvaluations, setShowPreviousEvaluations] = useState(false);
   const [totalViewedQuestions, setTotalViewedQuestions] = useState(0);
+  const [selectedSubtopics, setSelectedSubtopics] = useState<Set<string>>(new Set());
+  const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set());
 
   const skipQuestionRef = useRef<(() => void) | null>(null);
+
+  // Build a unique key for each subtopic
+  const getSubtopicKey = (categoryId: string, subcategoryId: string | null) => {
+    return subcategoryId ? `${categoryId}::${subcategoryId}` : `${categoryId}::__general__`;
+  };
+
+  // Filter questions based on selected subtopics
+  const filteredQuestions = useMemo(() => {
+    if (selectedSubtopics.size === 0) {
+      return allQuestions;
+    }
+
+    return allQuestions.filter(question => {
+      const category = allCategories.find(c => c.name === question.category);
+      if (!category) return false;
+
+      if (question.subcategory) {
+        const subcategory = category.subcategories.find(s => s.name === question.subcategory);
+        if (subcategory) {
+          return selectedSubtopics.has(getSubtopicKey(category.id, subcategory.id));
+        }
+      } else {
+        // General questions (no subcategory)
+        return selectedSubtopics.has(getSubtopicKey(category.id, null));
+      }
+      return false;
+    });
+  }, [selectedSubtopics]);
+
+  const toggleCategory = (categoryId: string) => {
+    setExpandedCategories(prev => {
+      const next = new Set(prev);
+      if (next.has(categoryId)) {
+        next.delete(categoryId);
+      } else {
+        next.add(categoryId);
+      }
+      return next;
+    });
+  };
+
+  const toggleSubtopic = (categoryId: string, subcategoryId: string | null) => {
+    const key = getSubtopicKey(categoryId, subcategoryId);
+    setSelectedSubtopics(prev => {
+      const next = new Set(prev);
+      if (next.has(key)) {
+        next.delete(key);
+      } else {
+        next.add(key);
+      }
+      return next;
+    });
+  };
+
+  const selectAllInCategory = (categoryId: string) => {
+    const category = allCategories.find(c => c.id === categoryId);
+    if (!category) return;
+
+    setSelectedSubtopics(prev => {
+      const next = new Set(prev);
+      // Add general questions if any
+      if (category.questions.length > 0) {
+        next.add(getSubtopicKey(categoryId, null));
+      }
+      // Add all subcategories
+      category.subcategories.forEach(sub => {
+        next.add(getSubtopicKey(categoryId, sub.id));
+      });
+      return next;
+    });
+  };
+
+  const deselectAllInCategory = (categoryId: string) => {
+    const category = allCategories.find(c => c.id === categoryId);
+    if (!category) return;
+
+    setSelectedSubtopics(prev => {
+      const next = new Set(prev);
+      next.delete(getSubtopicKey(categoryId, null));
+      category.subcategories.forEach(sub => {
+        next.delete(getSubtopicKey(categoryId, sub.id));
+      });
+      return next;
+    });
+  };
+
+  const isCategoryFullySelected = (categoryId: string) => {
+    const category = allCategories.find(c => c.id === categoryId);
+    if (!category) return false;
+
+    let totalSubtopics = category.subcategories.length;
+    if (category.questions.length > 0) totalSubtopics++;
+
+    let selectedCount = 0;
+    if (category.questions.length > 0 && selectedSubtopics.has(getSubtopicKey(categoryId, null))) {
+      selectedCount++;
+    }
+    category.subcategories.forEach(sub => {
+      if (selectedSubtopics.has(getSubtopicKey(categoryId, sub.id))) {
+        selectedCount++;
+      }
+    });
+
+    return selectedCount === totalSubtopics && totalSubtopics > 0;
+  };
+
+  const isCategoryPartiallySelected = (categoryId: string) => {
+    const category = allCategories.find(c => c.id === categoryId);
+    if (!category) return false;
+
+    let selectedCount = 0;
+    if (category.questions.length > 0 && selectedSubtopics.has(getSubtopicKey(categoryId, null))) {
+      selectedCount++;
+    }
+    category.subcategories.forEach(sub => {
+      if (selectedSubtopics.has(getSubtopicKey(categoryId, sub.id))) {
+        selectedCount++;
+      }
+    });
+
+    return selectedCount > 0 && !isCategoryFullySelected(categoryId);
+  };
+
+  const selectAll = () => {
+    setSelectedSubtopics(() => {
+      const next = new Set<string>();
+      allCategories.forEach(category => {
+        if (category.questions.length > 0) {
+          next.add(getSubtopicKey(category.id, null));
+        }
+        category.subcategories.forEach(sub => {
+          next.add(getSubtopicKey(category.id, sub.id));
+        });
+      });
+      return next;
+    });
+  };
+
+  const deselectAll = () => {
+    setSelectedSubtopics(new Set());
+  };
 
   // Load previous evaluations on mount
   useEffect(() => {
@@ -90,7 +237,7 @@ export default function PracticePage() {
   };
 
   const getRandomQuestion = () => {
-    if (questions.length === 0) return;
+    if (filteredQuestions.length === 0) return;
 
     // Check if we've completed a round
     if (questionsInRound >= QUESTIONS_PER_ROUND) {
@@ -105,19 +252,19 @@ export default function PracticePage() {
     }
 
     // If all questions have been used, reset
-    if (usedQuestions.size >= questions.length) {
+    if (usedQuestions.size >= filteredQuestions.length) {
       setUsedQuestions(new Set());
     }
 
     // Find a question that hasn't been used
-    const availableQuestions = questions.filter(q => !usedQuestions.has(q.id));
+    const availableQuestions = filteredQuestions.filter(q => !usedQuestions.has(q.id));
     
     let newQuestion: Question;
     if (availableQuestions.length === 0) {
       // All questions used, reset and pick from all
       setUsedQuestions(new Set());
-      const randomIndex = Math.floor(Math.random() * questions.length);
-      newQuestion = questions[randomIndex];
+      const randomIndex = Math.floor(Math.random() * filteredQuestions.length);
+      newQuestion = filteredQuestions[randomIndex];
       setUsedQuestions(new Set([newQuestion.id]));
     } else {
       const randomIndex = Math.floor(Math.random() * availableQuestions.length);
@@ -381,11 +528,125 @@ export default function PracticePage() {
                 </button>
               </div>
             </div>
+
+            {/* Sub-Topic Selector */}
+            <div className="max-w-4xl mx-auto text-left">
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
+                  Select Topics to Practice:
+                </h3>
+                <div className="flex gap-2">
+                  <button
+                    onClick={selectAll}
+                    className="px-3 py-1 text-sm bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-200 hover:bg-blue-200 dark:hover:bg-blue-800 rounded transition-colors"
+                  >
+                    Select All
+                  </button>
+                  <button
+                    onClick={deselectAll}
+                    className="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-600 rounded transition-colors"
+                  >
+                    Clear All
+                  </button>
+                </div>
+              </div>
+              <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
+                {selectedSubtopics.size === 0 
+                  ? `All ${allQuestions.length} questions selected (no filter applied)` 
+                  : `${filteredQuestions.length} questions selected from ${selectedSubtopics.size} sub-topic${selectedSubtopics.size !== 1 ? 's' : ''}`}
+              </p>
+              <div className="bg-white dark:bg-slate-800 rounded-xl shadow-md p-4 max-h-80 overflow-y-auto">
+                {allCategories.map((category) => {
+                  const totalQuestions = category.questions.length + 
+                    category.subcategories.reduce((sum, sub) => sum + sub.questions.length, 0);
+                  const isExpanded = expandedCategories.has(category.id);
+                  const isFullySelected = isCategoryFullySelected(category.id);
+                  const isPartiallySelected = isCategoryPartiallySelected(category.id);
+
+                  return (
+                    <div key={category.id} className="mb-2">
+                      <div className="flex items-center gap-2 py-2 px-2 hover:bg-slate-50 dark:hover:bg-slate-700 rounded">
+                        <button
+                          onClick={() => toggleCategory(category.id)}
+                          className="text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 w-6 h-6 flex items-center justify-center"
+                          aria-expanded={isExpanded}
+                          aria-label={isExpanded ? `Collapse ${category.name}` : `Expand ${category.name}`}
+                        >
+                          {isExpanded ? '▼' : '▶'}
+                        </button>
+                        <label className="flex items-center gap-2 flex-1 cursor-pointer">
+                          <input
+                            type="checkbox"
+                            checked={isFullySelected}
+                            ref={(el) => {
+                              if (el) el.indeterminate = isPartiallySelected;
+                            }}
+                            onChange={() => {
+                              if (isFullySelected || isPartiallySelected) {
+                                deselectAllInCategory(category.id);
+                              } else {
+                                selectAllInCategory(category.id);
+                              }
+                            }}
+                            className="w-4 h-4 text-blue-600 rounded border-slate-300 dark:border-slate-600 focus:ring-blue-500"
+                            aria-label={`Select all in ${category.name}`}
+                          />
+                          <span className="font-medium text-slate-900 dark:text-slate-100">
+                            {category.name}
+                          </span>
+                          <span className="text-xs text-slate-500 dark:text-slate-400">
+                            ({totalQuestions} questions)
+                          </span>
+                        </label>
+                      </div>
+                      
+                      {isExpanded && (
+                        <div className="ml-8 pl-4 border-l-2 border-slate-200 dark:border-slate-600">
+                          {category.questions.length > 0 && (
+                            <label className="flex items-center gap-2 py-1 px-2 hover:bg-slate-50 dark:hover:bg-slate-700 rounded cursor-pointer">
+                              <input
+                                type="checkbox"
+                                checked={selectedSubtopics.has(getSubtopicKey(category.id, null))}
+                                onChange={() => toggleSubtopic(category.id, null)}
+                                className="w-4 h-4 text-blue-600 rounded border-slate-300 dark:border-slate-600 focus:ring-blue-500"
+                                aria-label={`Select General Questions in ${category.name}`}
+                              />
+                              <span className="text-slate-700 dark:text-slate-300">General Questions</span>
+                              <span className="text-xs text-slate-500 dark:text-slate-400">
+                                ({category.questions.length})
+                              </span>
+                            </label>
+                          )}
+                          {category.subcategories.map((subcategory) => (
+                            <label 
+                              key={subcategory.id} 
+                              className="flex items-center gap-2 py-1 px-2 hover:bg-slate-50 dark:hover:bg-slate-700 rounded cursor-pointer"
+                            >
+                              <input
+                                type="checkbox"
+                                checked={selectedSubtopics.has(getSubtopicKey(category.id, subcategory.id))}
+                                onChange={() => toggleSubtopic(category.id, subcategory.id)}
+                                className="w-4 h-4 text-blue-600 rounded border-slate-300 dark:border-slate-600 focus:ring-blue-500"
+                                aria-label={`Select ${subcategory.name}`}
+                              />
+                              <span className="text-slate-700 dark:text-slate-300">{subcategory.name}</span>
+                              <span className="text-xs text-slate-500 dark:text-slate-400">
+                                ({subcategory.questions.length})
+                              </span>
+                            </label>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <button
                 onClick={handleStartNewRound}
-                disabled={questions.length === 0}
+                disabled={filteredQuestions.length === 0}
                 className="px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Start Practicing
@@ -560,7 +821,7 @@ export default function PracticePage() {
             </div>
 
             <div className="text-center text-sm text-slate-500 dark:text-slate-400">
-              Progress: {totalViewedQuestions} / {questions.length} questions viewed
+              Progress: {totalViewedQuestions} / {allQuestions.length} questions viewed
             </div>
           </div>
         )}
