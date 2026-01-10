@@ -13,7 +13,7 @@ export default function Home() {
             Prepare for your next technical interview with curated questions across various engineering topics.
           </p>
 
-          <div className="pt-8 grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+          <div className="pt-8 grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
             <Link
               href="/topics"
               className="group p-8 bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-blue-500"
@@ -37,6 +37,19 @@ export default function Home() {
               </h2>
               <p className="text-slate-600 dark:text-slate-300">
                 Get random questions and practice with a timer to simulate real interview conditions.
+              </p>
+            </Link>
+
+            <Link
+              href="/ask-companies"
+              className="group p-8 bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-emerald-500 md:col-span-2"
+            >
+              <div className="text-4xl mb-4">💼</div>
+              <h2 className="text-2xl font-semibold text-slate-900 dark:text-slate-100 mb-3">
+                Questions to Ask Companies
+              </h2>
+              <p className="text-slate-600 dark:text-slate-300">
+                Master the art of interviewing them. Learn what questions to ask to evaluate culture, growth, and fit.
               </p>
             </Link>
           </div>
