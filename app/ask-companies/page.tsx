@@ -133,9 +133,14 @@ const proTips = [
     description: "You're interviewing them too!",
   },
   {
+    emoji: '🤔',
+    title: 'Address concerns proactively',
+    description: '"Is there anything about my background that gives you hesitation?" - Shows confidence and gives you a chance to address concerns',
+  },
+  {
     emoji: '💬',
     title: 'End with confidence',
-    description: '"Is there anything about my background that gives you hesitation?" - Shows confidence and gives you a chance to address concerns',
+    description: '"If you were to hire me today, what would be my biggest strength and how would you put it to use?" - Helps them see you as already hired and sets the right tone for the next round',
   },
 ];
 
