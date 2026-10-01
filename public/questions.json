@@ -404,6 +404,150 @@
               "text": "If I say \"Error Budget\", what do I mean? SLA is 99.9%, what is the error budget?",
               "category": "DevOps, SRE and Platform Engineering",
               "subcategory": "Site Reliability Engineering"
+            },
+            {
+              "id": "how-would-you-define-a-user-facing-sli-for-a-job-that-is-accepted-immediately-but-finishes-asynchronously",
+              "text": "How would you define a user-facing SLI for a job that is accepted immediately but finishes asynchronously?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Site Reliability Engineering"
+            },
+            {
+              "id": "how-would-you-distinguish-request-based-and-time-based-error-budgets-and-when-would-each-be-appropriate",
+              "text": "How would you distinguish request-based and time-based error budgets, and when would each be appropriate?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Site Reliability Engineering"
+            },
+            {
+              "id": "a-service-has-a-99-9-success-slo-over-one-million-eligible-requests-how-would-you-calculate-its-allowance-for-failures-and-remaining-budget",
+              "text": "A service has a 99.9% success SLO over one million eligible requests. How would you calculate its allowance for failures and remaining budget?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Site Reliability Engineering"
+            },
+            {
+              "id": "how-would-you-define-eligible-requests-retries-timeouts-and-exclusions-before-measuring-an-availability-slo",
+              "text": "How would you define eligible requests, retries, timeouts, and exclusions before measuring an availability SLO?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Site Reliability Engineering"
+            },
+            {
+              "id": "how-would-you-combine-correctness-availability-and-latency-objectives-without-hiding-one-type-of-user-harm",
+              "text": "How would you combine correctness, availability, and latency objectives without hiding one type of user harm?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Site Reliability Engineering"
+            },
+            {
+              "id": "a-dependency-is-returning-http-200-with-incorrect-results-how-would-you-detect-and-account-for-that-in-your-slos",
+              "text": "A dependency is returning HTTP 200 with incorrect results. How would you detect and account for that in your SLOs?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Site Reliability Engineering"
+            },
+            {
+              "id": "how-would-you-handle-missing-telemetry-or-a-period-with-no-traffic-when-evaluating-service-reliability",
+              "text": "How would you handle missing telemetry or a period with no traffic when evaluating service reliability?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Site Reliability Engineering"
+            },
+            {
+              "id": "how-would-you-design-multi-window-burn-rate-alerts-and-choose-which-conditions-should-page-someone",
+              "text": "How would you design multi-window burn-rate alerts and choose which conditions should page someone?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Site Reliability Engineering"
+            },
+            {
+              "id": "when-should-a-reliability-alert-create-a-ticket-instead-of-waking-an-on-call-engineer",
+              "text": "When should a reliability alert create a ticket instead of waking an on-call engineer?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Site Reliability Engineering"
+            },
+            {
+              "id": "your-error-budget-is-exhausted-during-a-feature-launch-how-would-you-agree-on-a-change-policy-that-still-allows-emergency-fixes",
+              "text": "Your error budget is exhausted during a feature launch. How would you agree on a change policy that still allows emergency fixes?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Site Reliability Engineering"
+            },
+            {
+              "id": "an-alert-storm-begins-during-a-regional-incident-how-would-you-reduce-noise-without-suppressing-evidence-of-new-failures",
+              "text": "An alert storm begins during a regional incident. How would you reduce noise without suppressing evidence of new failures?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Site Reliability Engineering"
+            },
+            {
+              "id": "what-information-belongs-in-an-on-call-handoff-so-the-next-engineer-can-safely-continue-an-investigation",
+              "text": "What information belongs in an on-call handoff so the next engineer can safely continue an investigation?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Site Reliability Engineering"
+            },
+            {
+              "id": "how-would-you-separate-incident-command-technical-response-and-communication-responsibilities-in-a-small-team",
+              "text": "How would you separate incident command, technical response, and communication responsibilities in a small team?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Site Reliability Engineering"
+            },
+            {
+              "id": "you-have-several-plausible-causes-for-an-outage-how-would-you-choose-a-safe-mitigation-before-proving-the-root-cause",
+              "text": "You have several plausible causes for an outage. How would you choose a safe mitigation before proving the root cause?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Site Reliability Engineering"
+            },
+            {
+              "id": "how-would-you-verify-that-an-incident-is-resolved-using-sustained-user-facing-evidence-rather-than-a-single-healthy-dashboard",
+              "text": "How would you verify that an incident is resolved using sustained user-facing evidence rather than a single healthy dashboard?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Site Reliability Engineering"
+            },
+            {
+              "id": "what-makes-a-postmortem-action-verifiable-and-how-would-you-determine-whether-it-prevents-a-wider-class-of-incidents",
+              "text": "What makes a postmortem action verifiable, and how would you determine whether it prevents a wider class of incidents?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Site Reliability Engineering"
+            },
+            {
+              "id": "a-rollback-follows-a-database-schema-migration-how-would-you-assess-compatibility-and-avoid-trading-downtime-for-data-loss",
+              "text": "A rollback follows a database schema migration. How would you assess compatibility and avoid trading downtime for data loss?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Site Reliability Engineering"
+            },
+            {
+              "id": "how-would-you-plan-a-regional-failover-when-data-replication-is-delayed-and-both-regions-could-accept-writes",
+              "text": "How would you plan a regional failover when data replication is delayed and both regions could accept writes?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Site Reliability Engineering"
+            },
+            {
+              "id": "how-would-you-demonstrate-that-backups-satisfy-your-recovery-time-and-recovery-point-objectives",
+              "text": "How would you demonstrate that backups satisfy your recovery time and recovery point objectives?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Site Reliability Engineering"
+            },
+            {
+              "id": "how-would-you-design-a-game-day-with-explicit-blast-radius-limits-abort-conditions-and-recovery-evidence",
+              "text": "How would you design a game day with explicit blast-radius limits, abort conditions, and recovery evidence?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Site Reliability Engineering"
+            },
+            {
+              "id": "how-would-you-prevent-retries-timeouts-and-circuit-breakers-from-amplifying-a-dependency-failure",
+              "text": "How would you prevent retries, timeouts, and circuit breakers from amplifying a dependency failure?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Site Reliability Engineering"
+            },
+            {
+              "id": "traffic-is-rising-faster-than-new-capacity-can-start-how-would-you-prioritize-load-shedding-queue-limits-and-scaling",
+              "text": "Traffic is rising faster than new capacity can start. How would you prioritize load shedding, queue limits, and scaling?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Site Reliability Engineering"
+            },
+            {
+              "id": "how-would-you-measure-operational-toil-and-decide-which-recurring-task-deserves-automation-first",
+              "text": "How would you measure operational toil and decide which recurring task deserves automation first?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Site Reliability Engineering"
+            },
+            {
+              "id": "an-ai-assistant-suggests-a-production-remediation-what-evidence-approval-boundaries-and-audit-trail-would-you-require-before-acting",
+              "text": "An AI assistant suggests a production remediation. What evidence, approval boundaries, and audit trail would you require before acting?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Site Reliability Engineering"
             }
           ]
         },
@@ -474,6 +618,54 @@
             {
               "id": "how-does-terraform-handle-dependencies-between-resources",
               "text": "How does Terraform handle dependencies between resources?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Terraform and Infrastructure as Code"
+            },
+            {
+              "id": "a-plan-unexpectedly-proposes-replacing-a-production-database-what-would-you-inspect-before-allowing-any-apply",
+              "text": "A plan unexpectedly proposes replacing a production database. What would you inspect before allowing any apply?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Terraform and Infrastructure as Code"
+            },
+            {
+              "id": "an-infrastructure-apply-fails-halfway-through-how-would-you-reconcile-actual-resources-recorded-state-and-the-next-plan",
+              "text": "An infrastructure apply fails halfway through. How would you reconcile actual resources, recorded state, and the next plan?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Terraform and Infrastructure as Code"
+            },
+            {
+              "id": "how-would-you-determine-whether-a-state-lock-is-stale-without-interrupting-an-active-operation",
+              "text": "How would you determine whether a state lock is stale without interrupting an active operation?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Terraform and Infrastructure as Code"
+            },
+            {
+              "id": "how-would-you-refactor-resource-addresses-or-module-boundaries-without-destroying-the-underlying-infrastructure",
+              "text": "How would you refactor resource addresses or module boundaries without destroying the underlying infrastructure?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Terraform and Infrastructure as Code"
+            },
+            {
+              "id": "how-would-you-adopt-an-existing-resource-into-managed-state-and-prove-that-the-next-plan-is-safe",
+              "text": "How would you adopt an existing resource into managed state and prove that the next plan is safe?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Terraform and Infrastructure as Code"
+            },
+            {
+              "id": "two-automation-systems-claim-ownership-of-the-same-cloud-resource-how-would-you-prevent-competing-changes",
+              "text": "Two automation systems claim ownership of the same cloud resource. How would you prevent competing changes?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Terraform and Infrastructure as Code"
+            },
+            {
+              "id": "how-would-you-validate-infrastructure-modules-with-static-checks-plan-tests-and-bounded-integration-environments",
+              "text": "How would you validate infrastructure modules with static checks, plan tests, and bounded integration environments?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Terraform and Infrastructure as Code"
+            },
+            {
+              "id": "how-would-you-promote-a-reviewed-plan-between-environments-while-accounting-for-identity-state-and-variable-differences",
+              "text": "How would you promote a reviewed plan between environments while accounting for identity, state, and variable differences?",
               "category": "DevOps, SRE and Platform Engineering",
               "subcategory": "Terraform and Infrastructure as Code"
             }
@@ -824,6 +1016,54 @@
               "text": "How would you manage etcd? Stacked or unstacked?",
               "category": "DevOps, SRE and Platform Engineering",
               "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "pods-remain-pending-even-though-the-cluster-has-spare-cpu-how-would-you-investigate-topology-taints-quotas-and-storage-constraints",
+              "text": "Pods remain Pending even though the cluster has spare CPU. How would you investigate topology, taints, quotas, and storage constraints?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "how-can-resource-requests-hpa-behavior-and-node-autoscaling-interact-to-create-a-scaling-feedback-loop",
+              "text": "How can resource requests, HPA behavior, and node autoscaling interact to create a scaling feedback loop?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "how-would-you-distinguish-a-healthy-process-from-a-workload-that-is-ready-to-serve-real-user-requests",
+              "text": "How would you distinguish a healthy process from a workload that is ready to serve real user requests?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "a-rolling-deployment-stalls-because-of-disruption-and-availability-constraints-how-would-you-identify-and-resolve-the-conflicting-requirements",
+              "text": "A rolling deployment stalls because of disruption and availability constraints. How would you identify and resolve the conflicting requirements?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "how-would-you-isolate-tenants-across-identity-network-access-resource-budgets-and-noisy-neighbor-behavior",
+              "text": "How would you isolate tenants across identity, network access, resource budgets, and noisy-neighbor behavior?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "a-pod-cannot-reach-a-dependency-after-a-network-policy-change-how-would-you-trace-dns-routing-and-policy-decisions",
+              "text": "A pod cannot reach a dependency after a network-policy change. How would you trace DNS, routing, and policy decisions?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "how-would-you-plan-an-operator-or-custom-resource-upgrade-when-stored-objects-and-conversion-webhooks-must-remain-compatible",
+              "text": "How would you plan an operator or custom-resource upgrade when stored objects and conversion webhooks must remain compatible?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
+            },
+            {
+              "id": "how-would-you-validate-recovery-of-a-stateful-workload-after-losing-a-node-or-an-availability-zone",
+              "text": "How would you validate recovery of a stateful workload after losing a node or an availability zone?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Kubernetes, Helm, and Container Orchestration"
             }
           ]
         },
@@ -900,6 +1140,102 @@
             {
               "id": "should-i-go-platform-engineering-if-i-have-one-product-and-one-team",
               "text": "Should I go Platform Engineering if I have one product and one team?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Platform Engineering"
+            },
+            {
+              "id": "how-would-you-discover-developer-needs-before-choosing-tools-for-an-internal-platform",
+              "text": "How would you discover developer needs before choosing tools for an internal platform?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Platform Engineering"
+            },
+            {
+              "id": "what-makes-a-golden-path-useful-and-how-would-you-provide-an-escape-hatch-without-abandoning-support-boundaries",
+              "text": "What makes a golden path useful, and how would you provide an escape hatch without abandoning support boundaries?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Platform Engineering"
+            },
+            {
+              "id": "how-would-you-measure-platform-adoption-and-developer-experience-without-treating-portal-visits-as-proof-of-value",
+              "text": "How would you measure platform adoption and developer experience without treating portal visits as proof of value?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Platform Engineering"
+            },
+            {
+              "id": "what-information-and-ownership-rules-belong-in-a-service-catalog",
+              "text": "What information and ownership rules belong in a service catalog?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Platform Engineering"
+            },
+            {
+              "id": "when-would-you-prefer-continuously-reconciled-platform-apis-over-a-pipeline-that-runs-infrastructure-plans-on-demand",
+              "text": "When would you prefer continuously reconciled platform APIs over a pipeline that runs infrastructure plans on demand?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Platform Engineering"
+            },
+            {
+              "id": "how-would-you-design-a-self-service-resource-api-with-clear-lifecycle-deletion-and-failure-semantics",
+              "text": "How would you design a self-service resource API with clear lifecycle, deletion, and failure semantics?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Platform Engineering"
+            },
+            {
+              "id": "how-would-you-decide-when-shared-namespaces-are-sufficient-and-when-a-tenant-needs-a-stronger-isolation-boundary",
+              "text": "How would you decide when shared namespaces are sufficient and when a tenant needs a stronger isolation boundary?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Platform Engineering"
+            },
+            {
+              "id": "how-would-you-introduce-workload-identity-and-short-lived-credentials-without-breaking-existing-applications",
+              "text": "How would you introduce workload identity and short-lived credentials without breaking existing applications?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Platform Engineering"
+            },
+            {
+              "id": "how-would-you-verify-artifact-provenance-and-promote-the-same-immutable-image-digest-through-environments",
+              "text": "How would you verify artifact provenance and promote the same immutable image digest through environments?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Platform Engineering"
+            },
+            {
+              "id": "how-would-you-combine-gitops-reconciliation-progressive-delivery-and-explicit-rollback-criteria",
+              "text": "How would you combine GitOps reconciliation, progressive delivery, and explicit rollback criteria?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Platform Engineering"
+            },
+            {
+              "id": "how-would-you-test-a-platform-upgrade-against-representative-workloads-before-rolling-it-out-across-the-fleet",
+              "text": "How would you test a platform upgrade against representative workloads before rolling it out across the fleet?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Platform Engineering"
+            },
+            {
+              "id": "how-would-you-allocate-shared-infrastructure-costs-and-measure-cost-per-useful-unit-of-work",
+              "text": "How would you allocate shared infrastructure costs and measure cost per useful unit of work?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Platform Engineering"
+            },
+            {
+              "id": "how-would-you-choose-between-a-managed-data-service-and-an-operator-managed-database-including-ownership-of-restores",
+              "text": "How would you choose between a managed data service and an operator-managed database, including ownership of restores?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Platform Engineering"
+            },
+            {
+              "id": "what-lifecycle-policy-would-you-use-to-retire-an-unused-platform-feature-or-migrate-teams-off-an-unsupported-version",
+              "text": "What lifecycle policy would you use to retire an unused platform feature or migrate teams off an unsupported version?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Platform Engineering"
+            },
+            {
+              "id": "how-would-you-schedule-ai-workloads-around-accelerator-capacity-checkpoints-tenant-fairness-and-predictable-costs",
+              "text": "How would you schedule AI workloads around accelerator capacity, checkpoints, tenant fairness, and predictable costs?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Platform Engineering"
+            },
+            {
+              "id": "how-would-you-isolate-temporary-agent-workers-scope-their-credentials-expire-their-leases-and-verify-teardown",
+              "text": "How would you isolate temporary agent workers, scope their credentials, expire their leases, and verify teardown?",
               "category": "DevOps, SRE and Platform Engineering",
               "subcategory": "Platform Engineering"
             }
@@ -1418,6 +1754,674 @@
         }
       ],
       "questions": []
+    },
+    {
+      "id": "observability",
+      "name": "Observability",
+      "subcategories": [
+        {
+          "id": "opentelemetry",
+          "name": "OpenTelemetry",
+          "questions": [
+            {
+              "id": "what-responsibilities-belong-to-the-opentelemetry-api-sdk-instrumentation-libraries-and-collector",
+              "text": "What responsibilities belong to the OpenTelemetry API, SDK, instrumentation libraries, and Collector?",
+              "category": "Observability",
+              "subcategory": "OpenTelemetry"
+            },
+            {
+              "id": "how-would-you-decide-where-automatic-instrumentation-is-sufficient-and-where-manual-spans-are-necessary",
+              "text": "How would you decide where automatic instrumentation is sufficient and where manual spans are necessary?",
+              "category": "Observability",
+              "subcategory": "OpenTelemetry"
+            },
+            {
+              "id": "how-would-you-propagate-trace-context-through-http-calls-queues-and-asynchronous-background-work",
+              "text": "How would you propagate trace context through HTTP calls, queues, and asynchronous background work?",
+              "category": "Observability",
+              "subcategory": "OpenTelemetry"
+            },
+            {
+              "id": "when-would-you-use-span-links-instead-of-a-parent-child-relationship-especially-for-batched-or-fan-in-processing",
+              "text": "When would you use span links instead of a parent-child relationship, especially for batched or fan-in processing?",
+              "category": "Observability",
+              "subcategory": "OpenTelemetry"
+            },
+            {
+              "id": "how-would-you-choose-between-head-sampling-and-tail-sampling-while-accounting-for-cost-latency-and-memory-limits",
+              "text": "How would you choose between head sampling and tail sampling while accounting for cost, latency, and memory limits?",
+              "category": "Observability",
+              "subcategory": "OpenTelemetry"
+            },
+            {
+              "id": "how-would-you-ensure-that-all-spans-for-a-trace-reach-the-same-tail-sampling-decision-when-collectors-scale-horizontally",
+              "text": "How would you ensure that all spans for a trace reach the same tail-sampling decision when Collectors scale horizontally?",
+              "category": "Observability",
+              "subcategory": "OpenTelemetry"
+            },
+            {
+              "id": "how-would-you-compare-agent-and-gateway-collector-deployments-for-availability-isolation-and-operational-ownership",
+              "text": "How would you compare agent and gateway Collector deployments for availability, isolation, and operational ownership?",
+              "category": "Observability",
+              "subcategory": "OpenTelemetry"
+            },
+            {
+              "id": "how-would-you-organize-receivers-processors-and-exporters-into-separate-telemetry-pipelines",
+              "text": "How would you organize receivers, processors, and exporters into separate telemetry pipelines?",
+              "category": "Observability",
+              "subcategory": "OpenTelemetry"
+            },
+            {
+              "id": "what-stable-resource-attributes-would-you-attach-to-identify-a-service-environment-and-deployed-version",
+              "text": "What stable resource attributes would you attach to identify a service, environment, and deployed version?",
+              "category": "Observability",
+              "subcategory": "OpenTelemetry"
+            },
+            {
+              "id": "how-would-you-correlate-structured-logs-with-traces-when-some-traces-are-not-retained-by-your-sampling-policy",
+              "text": "How would you correlate structured logs with traces when some traces are not retained by your sampling policy?",
+              "category": "Observability",
+              "subcategory": "OpenTelemetry"
+            },
+            {
+              "id": "how-would-you-reason-about-cumulative-versus-delta-metric-temporality-and-process-restarts-during-export",
+              "text": "How would you reason about cumulative versus delta metric temporality and process restarts during export?",
+              "category": "Observability",
+              "subcategory": "OpenTelemetry"
+            },
+            {
+              "id": "a-trace-disappears-between-two-services-how-would-you-locate-the-gap-in-propagation-sampling-export-or-backend-ingestion",
+              "text": "A trace disappears between two services. How would you locate the gap in propagation, sampling, export, or backend ingestion?",
+              "category": "Observability",
+              "subcategory": "OpenTelemetry"
+            }
+          ]
+        },
+        {
+          "id": "prometheus-and-promql",
+          "name": "Prometheus and PromQL",
+          "questions": [
+            {
+              "id": "when-would-you-use-a-counter-gauge-histogram-or-summary-to-measure-an-application-s-behavior",
+              "text": "When would you use a counter, gauge, histogram, or summary to measure an application's behavior?",
+              "category": "Observability",
+              "subcategory": "Prometheus and PromQL"
+            },
+            {
+              "id": "how-would-you-calculate-an-error-ratio-from-counters-while-handling-resets-and-choosing-an-appropriate-rate-window",
+              "text": "How would you calculate an error ratio from counters while handling resets and choosing an appropriate rate window?",
+              "category": "Observability",
+              "subcategory": "Prometheus and PromQL"
+            },
+            {
+              "id": "why-can-applying-a-rate-after-aggregating-counters-produce-incorrect-results-when-instances-restart",
+              "text": "Why can applying a rate after aggregating counters produce incorrect results when instances restart?",
+              "category": "Observability",
+              "subcategory": "Prometheus and PromQL"
+            },
+            {
+              "id": "how-would-you-calculate-a-fleet-wide-p99-from-histograms-without-averaging-per-instance-percentiles",
+              "text": "How would you calculate a fleet-wide p99 from histograms without averaging per-instance percentiles?",
+              "category": "Observability",
+              "subcategory": "Prometheus and PromQL"
+            },
+            {
+              "id": "how-would-you-choose-histogram-buckets-for-a-latency-objective-and-what-changes-when-using-native-histograms",
+              "text": "How would you choose histogram buckets for a latency objective, and what changes when using native histograms?",
+              "category": "Observability",
+              "subcategory": "Prometheus and PromQL"
+            },
+            {
+              "id": "why-are-user-ids-request-ids-and-raw-url-paths-risky-metric-labels-and-what-alternatives-would-you-use",
+              "text": "Why are user IDs, request IDs, and raw URL paths risky metric labels, and what alternatives would you use?",
+              "category": "Observability",
+              "subcategory": "Prometheus and PromQL"
+            },
+            {
+              "id": "how-would-you-distinguish-a-missing-time-series-from-a-valid-zero-when-writing-queries-and-alerts",
+              "text": "How would you distinguish a missing time series from a valid zero when writing queries and alerts?",
+              "category": "Observability",
+              "subcategory": "Prometheus and PromQL"
+            },
+            {
+              "id": "a-target-s-up-metric-is-healthy-while-users-see-failures-what-additional-signals-would-you-inspect",
+              "text": "A target's up metric is healthy while users see failures. What additional signals would you inspect?",
+              "category": "Observability",
+              "subcategory": "Prometheus and PromQL"
+            },
+            {
+              "id": "when-would-recording-rules-help-query-performance-and-how-would-you-validate-their-labels-and-aggregation-semantics",
+              "text": "When would recording rules help query performance, and how would you validate their labels and aggregation semantics?",
+              "category": "Observability",
+              "subcategory": "Prometheus and PromQL"
+            },
+            {
+              "id": "how-do-alert-evaluation-intervals-pending-states-and-a-for-duration-affect-detection-and-recovery",
+              "text": "How do alert evaluation intervals, pending states, and a for duration affect detection and recovery?",
+              "category": "Observability",
+              "subcategory": "Prometheus and PromQL"
+            },
+            {
+              "id": "remote-write-queues-are-backing-up-how-would-you-investigate-dropped-samples-backend-limits-and-local-resource-pressure",
+              "text": "Remote-write queues are backing up. How would you investigate dropped samples, backend limits, and local resource pressure?",
+              "category": "Observability",
+              "subcategory": "Prometheus and PromQL"
+            },
+            {
+              "id": "how-would-you-design-alertmanager-grouping-routing-inhibition-and-receiver-ownership-for-a-multi-team-organization",
+              "text": "How would you design Alertmanager grouping, routing, inhibition, and receiver ownership for a multi-team organization?",
+              "category": "Observability",
+              "subcategory": "Prometheus and PromQL"
+            }
+          ]
+        },
+        {
+          "id": "grafana-and-dashboards",
+          "name": "Grafana and Dashboards",
+          "questions": [
+            {
+              "id": "how-would-you-design-a-dashboard-around-a-user-journey-instead-of-a-collection-of-infrastructure-charts",
+              "text": "How would you design a dashboard around a user journey instead of a collection of infrastructure charts?",
+              "category": "Observability",
+              "subcategory": "Grafana and Dashboards"
+            },
+            {
+              "id": "how-would-you-use-red-and-use-views-together-to-connect-request-failures-to-resource-saturation",
+              "text": "How would you use RED and USE views together to connect request failures to resource saturation?",
+              "category": "Observability",
+              "subcategory": "Grafana and Dashboards"
+            },
+            {
+              "id": "what-identifiers-and-links-would-you-use-to-move-from-a-metric-anomaly-to-relevant-logs-and-traces",
+              "text": "What identifiers and links would you use to move from a metric anomaly to relevant logs and traces?",
+              "category": "Observability",
+              "subcategory": "Grafana and Dashboards"
+            },
+            {
+              "id": "how-would-you-provision-dashboards-and-data-sources-so-that-changes-can-be-reviewed-and-reproduced-across-environments",
+              "text": "How would you provision dashboards and data sources so that changes can be reviewed and reproduced across environments?",
+              "category": "Observability",
+              "subcategory": "Grafana and Dashboards"
+            },
+            {
+              "id": "a-dashboard-is-empty-after-a-deployment-how-would-you-check-time-ranges-labels-data-source-access-and-ingestion-freshness",
+              "text": "A dashboard is empty after a deployment. How would you check time ranges, labels, data-source access, and ingestion freshness?",
+              "category": "Observability",
+              "subcategory": "Grafana and Dashboards"
+            },
+            {
+              "id": "how-would-you-present-units-aggregation-windows-and-percentile-semantics-so-viewers-do-not-misread-a-panel",
+              "text": "How would you present units, aggregation windows, and percentile semantics so viewers do not misread a panel?",
+              "category": "Observability",
+              "subcategory": "Grafana and Dashboards"
+            },
+            {
+              "id": "how-would-you-avoid-misleading-averages-when-visualizing-latency-across-instances-regions-or-tenants",
+              "text": "How would you avoid misleading averages when visualizing latency across instances, regions, or tenants?",
+              "category": "Observability",
+              "subcategory": "Grafana and Dashboards"
+            },
+            {
+              "id": "how-would-you-expose-low-volume-or-high-impact-cohorts-without-making-every-dashboard-query-prohibitively-expensive",
+              "text": "How would you expose low-volume or high-impact cohorts without making every dashboard query prohibitively expensive?",
+              "category": "Observability",
+              "subcategory": "Grafana and Dashboards"
+            },
+            {
+              "id": "how-would-you-choose-whether-prometheus-or-grafana-owns-an-alert-and-prevent-duplicate-evaluations-and-notifications",
+              "text": "How would you choose whether Prometheus or Grafana owns an alert, and prevent duplicate evaluations and notifications?",
+              "category": "Observability",
+              "subcategory": "Grafana and Dashboards"
+            },
+            {
+              "id": "how-would-you-add-deployment-and-incident-annotations-without-confusing-correlation-with-proof-of-causation",
+              "text": "How would you add deployment and incident annotations without confusing correlation with proof of causation?",
+              "category": "Observability",
+              "subcategory": "Grafana and Dashboards"
+            },
+            {
+              "id": "how-would-you-make-a-telemetry-pipeline-failure-visible-separately-from-the-health-of-the-observed-application",
+              "text": "How would you make a telemetry-pipeline failure visible separately from the health of the observed application?",
+              "category": "Observability",
+              "subcategory": "Grafana and Dashboards"
+            },
+            {
+              "id": "how-would-you-control-dashboard-access-data-source-permissions-and-accidental-exposure-of-sensitive-query-results",
+              "text": "How would you control dashboard access, data-source permissions, and accidental exposure of sensitive query results?",
+              "category": "Observability",
+              "subcategory": "Grafana and Dashboards"
+            }
+          ]
+        },
+        {
+          "id": "instrumentation-and-telemetry-pipelines",
+          "name": "Instrumentation and Telemetry Pipelines",
+          "questions": [
+            {
+              "id": "how-would-you-instrument-successful-and-failed-business-outcomes-rather-than-counting-only-http-status-codes",
+              "text": "How would you instrument successful and failed business outcomes rather than counting only HTTP status codes?",
+              "category": "Observability",
+              "subcategory": "Instrumentation and Telemetry Pipelines"
+            },
+            {
+              "id": "how-would-you-define-metric-denominators-for-retries-timeouts-cancellations-and-asynchronous-completion",
+              "text": "How would you define metric denominators for retries, timeouts, cancellations, and asynchronous completion?",
+              "category": "Observability",
+              "subcategory": "Instrumentation and Telemetry Pipelines"
+            },
+            {
+              "id": "how-would-you-name-spans-and-metric-dimensions-so-instrumentation-stays-useful-as-routes-and-services-evolve",
+              "text": "How would you name spans and metric dimensions so instrumentation stays useful as routes and services evolve?",
+              "category": "Observability",
+              "subcategory": "Instrumentation and Telemetry Pipelines"
+            },
+            {
+              "id": "where-would-you-remove-personal-data-and-secrets-from-telemetry-and-how-would-you-verify-the-redaction",
+              "text": "Where would you remove personal data and secrets from telemetry, and how would you verify the redaction?",
+              "category": "Observability",
+              "subcategory": "Instrumentation and Telemetry Pipelines"
+            },
+            {
+              "id": "how-would-you-prevent-baggage-or-propagated-context-from-becoming-an-unbounded-source-of-sensitive-metadata",
+              "text": "How would you prevent baggage or propagated context from becoming an unbounded source of sensitive metadata?",
+              "category": "Observability",
+              "subcategory": "Instrumentation and Telemetry Pipelines"
+            },
+            {
+              "id": "how-would-you-design-structured-logs-that-provide-useful-context-without-duplicating-every-payload-or-stack-trace",
+              "text": "How would you design structured logs that provide useful context without duplicating every payload or stack trace?",
+              "category": "Observability",
+              "subcategory": "Instrumentation and Telemetry Pipelines"
+            },
+            {
+              "id": "how-would-you-instrument-an-external-dependency-without-exposing-credentials-or-recording-its-full-response-body",
+              "text": "How would you instrument an external dependency without exposing credentials or recording its full response body?",
+              "category": "Observability",
+              "subcategory": "Instrumentation and Telemetry Pipelines"
+            },
+            {
+              "id": "how-would-you-test-instrumentation-with-synthetic-requests-fake-exporters-and-explicit-assertions-about-emitted-signals",
+              "text": "How would you test instrumentation with synthetic requests, fake exporters, and explicit assertions about emitted signals?",
+              "category": "Observability",
+              "subcategory": "Instrumentation and Telemetry Pipelines"
+            },
+            {
+              "id": "what-should-an-application-do-if-its-telemetry-backend-is-unavailable-and-how-would-you-bound-buffering-and-overhead",
+              "text": "What should an application do if its telemetry backend is unavailable, and how would you bound buffering and overhead?",
+              "category": "Observability",
+              "subcategory": "Instrumentation and Telemetry Pipelines"
+            },
+            {
+              "id": "how-would-you-flush-telemetry-during-shutdown-while-respecting-termination-deadlines-and-avoiding-a-blocked-exit",
+              "text": "How would you flush telemetry during shutdown while respecting termination deadlines and avoiding a blocked exit?",
+              "category": "Observability",
+              "subcategory": "Instrumentation and Telemetry Pipelines"
+            },
+            {
+              "id": "how-would-you-detect-dropped-telemetry-queue-pressure-stale-ingestion-and-failed-alert-delivery-end-to-end",
+              "text": "How would you detect dropped telemetry, queue pressure, stale ingestion, and failed alert delivery end to end?",
+              "category": "Observability",
+              "subcategory": "Instrumentation and Telemetry Pipelines"
+            },
+            {
+              "id": "what-can-ebpf-based-observability-show-without-application-changes-and-where-do-encryption-and-missing-business-context-limit-it",
+              "text": "What can eBPF-based observability show without application changes, and where do encryption and missing business context limit it?",
+              "category": "Observability",
+              "subcategory": "Instrumentation and Telemetry Pipelines"
+            }
+          ]
+        },
+        {
+          "id": "latency-and-performance",
+          "name": "Latency and Performance",
+          "questions": [
+            {
+              "id": "your-average-request-latency-is-unchanged-but-p99-doubles-after-a-release-how-would-you-isolate-what-changed",
+              "text": "Your average request latency is unchanged, but p99 doubles after a release. How would you isolate what changed?",
+              "category": "Observability",
+              "subcategory": "Latency and Performance"
+            },
+            {
+              "id": "what-do-p50-p95-p99-and-p99-9-tell-you-and-how-does-sample-size-affect-confidence-in-each",
+              "text": "What do p50, p95, p99, and p99.9 tell you, and how does sample size affect confidence in each?",
+              "category": "Observability",
+              "subcategory": "Latency and Performance"
+            },
+            {
+              "id": "why-is-averaging-the-p99-values-of-several-services-or-instances-not-a-valid-end-to-end-percentile",
+              "text": "Why is averaging the p99 values of several services or instances not a valid end-to-end percentile?",
+              "category": "Observability",
+              "subcategory": "Latency and Performance"
+            },
+            {
+              "id": "how-would-histogram-bucket-boundaries-affect-the-accuracy-of-a-percentile-estimate-near-an-slo-threshold",
+              "text": "How would histogram bucket boundaries affect the accuracy of a percentile estimate near an SLO threshold?",
+              "category": "Observability",
+              "subcategory": "Latency and Performance"
+            },
+            {
+              "id": "what-is-coordinated-omission-in-a-load-test-and-how-could-it-hide-the-latency-users-would-experience",
+              "text": "What is coordinated omission in a load test, and how could it hide the latency users would experience?",
+              "category": "Observability",
+              "subcategory": "Latency and Performance"
+            },
+            {
+              "id": "when-would-you-choose-an-open-workload-model-instead-of-a-closed-one-for-a-performance-test",
+              "text": "When would you choose an open workload model instead of a closed one for a performance test?",
+              "category": "Observability",
+              "subcategory": "Latency and Performance"
+            },
+            {
+              "id": "how-would-you-separate-queueing-time-connection-pool-waits-execution-time-and-downstream-latency",
+              "text": "How would you separate queueing time, connection-pool waits, execution time, and downstream latency?",
+              "category": "Observability",
+              "subcategory": "Latency and Performance"
+            },
+            {
+              "id": "a-request-fans-out-to-many-dependencies-how-would-you-reason-about-tail-latency-amplification-and-the-overall-timeout-budget",
+              "text": "A request fans out to many dependencies. How would you reason about tail-latency amplification and the overall timeout budget?",
+              "category": "Observability",
+              "subcategory": "Latency and Performance"
+            },
+            {
+              "id": "how-could-retries-improve-success-rates-while-worsening-p99-and-resource-saturation",
+              "text": "How could retries improve success rates while worsening p99 and resource saturation?",
+              "category": "Observability",
+              "subcategory": "Latency and Performance"
+            },
+            {
+              "id": "how-would-you-distinguish-cold-starts-cache-misses-garbage-collection-and-cpu-throttling-as-causes-of-latency-spikes",
+              "text": "How would you distinguish cold starts, cache misses, garbage collection, and CPU throttling as causes of latency spikes?",
+              "category": "Observability",
+              "subcategory": "Latency and Performance"
+            },
+            {
+              "id": "throughput-stops-increasing-as-concurrency-rises-how-would-you-identify-the-bottleneck-and-choose-a-safe-operating-point",
+              "text": "Throughput stops increasing as concurrency rises. How would you identify the bottleneck and choose a safe operating point?",
+              "category": "Observability",
+              "subcategory": "Latency and Performance"
+            },
+            {
+              "id": "how-would-you-combine-profiling-traces-and-load-tests-to-verify-that-a-performance-change-actually-improves-user-facing-latency",
+              "text": "How would you combine profiling, traces, and load tests to verify that a performance change actually improves user-facing latency?",
+              "category": "Observability",
+              "subcategory": "Latency and Performance"
+            }
+          ]
+        }
+      ],
+      "questions": []
+    },
+    {
+      "id": "coding-and-problem-solving",
+      "name": "Coding and Problem Solving",
+      "subcategories": [
+        {
+          "id": "strings-and-algorithms",
+          "name": "Strings and Algorithms",
+          "questions": [
+            {
+              "id": "how-would-you-compare-dotted-numeric-version-strings-when-segments-can-be-missing-or-contain-leading-zeros",
+              "text": "How would you compare dotted numeric version strings when segments can be missing or contain leading zeros?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "Strings and Algorithms"
+            },
+            {
+              "id": "how-would-you-find-the-shortest-contiguous-token-sequence-containing-every-required-token",
+              "text": "How would you find the shortest contiguous token sequence containing every required token?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "Strings and Algorithms"
+            },
+            {
+              "id": "how-would-your-minimum-window-algorithm-change-if-required-tokens-can-appear-more-than-once",
+              "text": "How would your minimum-window algorithm change if required tokens can appear more than once?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "Strings and Algorithms"
+            },
+            {
+              "id": "given-unordered-directed-edges-and-a-starting-node-how-would-you-determine-whether-a-path-can-consume-every-edge-exactly-once",
+              "text": "Given unordered directed edges and a starting node, how would you determine whether a path can consume every edge exactly once?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "Strings and Algorithms"
+            },
+            {
+              "id": "how-would-you-handle-disconnected-components-repeated-edges-and-cycles-when-reconstructing-a-path",
+              "text": "How would you handle disconnected components, repeated edges, and cycles when reconstructing a path?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "Strings and Algorithms"
+            },
+            {
+              "id": "how-would-you-validate-a-sequence-of-bounded-text-edits-without-accepting-operations-outside-the-document",
+              "text": "How would you validate a sequence of bounded text edits without accepting operations outside the document?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "Strings and Algorithms"
+            },
+            {
+              "id": "how-would-unicode-code-points-byte-offsets-and-grapheme-clusters-affect-a-text-editing-algorithm",
+              "text": "How would Unicode code points, byte offsets, and grapheme clusters affect a text-editing algorithm?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "Strings and Algorithms"
+            },
+            {
+              "id": "how-would-you-parse-nested-delimiters-while-respecting-quoted-strings-and-escape-sequences",
+              "text": "How would you parse nested delimiters while respecting quoted strings and escape sequences?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "Strings and Algorithms"
+            },
+            {
+              "id": "how-would-you-process-a-large-stream-with-a-fixed-memory-budget-and-when-would-an-approximate-result-be-acceptable",
+              "text": "How would you process a large stream with a fixed memory budget, and when would an approximate result be acceptable?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "Strings and Algorithms"
+            },
+            {
+              "id": "what-invariants-and-property-based-tests-would-you-use-to-validate-a-string-or-graph-algorithm-beyond-a-few-examples",
+              "text": "What invariants and property-based tests would you use to validate a string or graph algorithm beyond a few examples?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "Strings and Algorithms"
+            }
+          ]
+        },
+        {
+          "id": "concurrency-and-coordination",
+          "name": "Concurrency and Coordination",
+          "questions": [
+            {
+              "id": "a-synchronous-log-writer-is-slowing-request-handling-how-would-you-move-the-work-off-the-request-path-without-losing-ordering-guarantees",
+              "text": "A synchronous log writer is slowing request handling. How would you move the work off the request path without losing ordering guarantees?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "Concurrency and Coordination"
+            },
+            {
+              "id": "how-would-you-batch-background-writes-using-both-a-size-threshold-and-a-time-limit",
+              "text": "How would you batch background writes using both a size threshold and a time limit?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "Concurrency and Coordination"
+            },
+            {
+              "id": "a-producer-generates-work-faster-than-consumers-can-finish-it-how-would-you-bound-memory-and-make-overload-behavior-explicit",
+              "text": "A producer generates work faster than consumers can finish it. How would you bound memory and make overload behavior explicit?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "Concurrency and Coordination"
+            },
+            {
+              "id": "how-would-you-drain-a-background-worker-safely-during-shutdown-including-work-that-is-queued-or-in-flight",
+              "text": "How would you drain a background worker safely during shutdown, including work that is queued or in flight?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "Concurrency and Coordination"
+            },
+            {
+              "id": "how-would-you-test-concurrent-code-with-controlled-scheduling-and-fake-clocks-rather-than-timing-dependent-sleeps",
+              "text": "How would you test concurrent code with controlled scheduling and fake clocks rather than timing-dependent sleeps?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "Concurrency and Coordination"
+            },
+            {
+              "id": "how-would-you-count-nodes-in-a-distributed-tree-when-each-node-can-contact-only-its-children",
+              "text": "How would you count nodes in a distributed tree when each node can contact only its children?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "Concurrency and Coordination"
+            },
+            {
+              "id": "how-would-you-represent-a-distributed-traversal-result-when-some-children-time-out-instead-of-pretending-the-result-is-complete",
+              "text": "How would you represent a distributed traversal result when some children time out instead of pretending the result is complete?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "Concurrency and Coordination"
+            },
+            {
+              "id": "how-would-you-correlate-late-replies-with-the-correct-request-and-avoid-counting-duplicated-responses",
+              "text": "How would you correlate late replies with the correct request and avoid counting duplicated responses?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "Concurrency and Coordination"
+            },
+            {
+              "id": "two-workers-update-the-same-record-how-would-you-compare-locking-optimistic-concurrency-and-single-owner-processing",
+              "text": "Two workers update the same record. How would you compare locking, optimistic concurrency, and single-owner processing?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "Concurrency and Coordination"
+            },
+            {
+              "id": "how-would-you-implement-cancellation-and-error-propagation-so-one-failed-task-does-not-leak-resources-in-a-worker-pool",
+              "text": "How would you implement cancellation and error propagation so one failed task does not leak resources in a worker pool?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "Concurrency and Coordination"
+            }
+          ]
+        },
+        {
+          "id": "apis-and-state-machines",
+          "name": "APIs and State Machines",
+          "questions": [
+            {
+              "id": "how-would-you-validate-a-json-command-stream-and-reject-malformed-or-unsupported-operations-before-mutating-state",
+              "text": "How would you validate a JSON command stream and reject malformed or unsupported operations before mutating state?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "APIs and State Machines"
+            },
+            {
+              "id": "how-would-you-model-a-document-editing-command-as-a-state-transition-with-explicit-preconditions-and-postconditions",
+              "text": "How would you model a document-editing command as a state transition with explicit preconditions and postconditions?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "APIs and State Machines"
+            },
+            {
+              "id": "how-would-you-replay-recorded-operations-and-prove-that-they-produce-the-expected-final-state",
+              "text": "How would you replay recorded operations and prove that they produce the expected final state?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "APIs and State Machines"
+            },
+            {
+              "id": "how-would-you-design-an-idempotent-api-when-clients-may-retry-a-request-after-losing-its-response",
+              "text": "How would you design an idempotent API when clients may retry a request after losing its response?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "APIs and State Machines"
+            },
+            {
+              "id": "how-would-you-distinguish-invalid-input-a-conflict-and-a-transient-dependency-failure-in-an-api-response",
+              "text": "How would you distinguish invalid input, a conflict, and a transient dependency failure in an API response?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "APIs and State Machines"
+            },
+            {
+              "id": "how-would-you-choose-an-idempotency-key-scope-and-retention-policy-without-allowing-two-unrelated-requests-to-collide",
+              "text": "How would you choose an idempotency-key scope and retention policy without allowing two unrelated requests to collide?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "APIs and State Machines"
+            },
+            {
+              "id": "a-client-disconnects-halfway-through-a-multi-step-operation-how-would-you-expose-status-and-support-safe-recovery",
+              "text": "A client disconnects halfway through a multi-step operation. How would you expose status and support safe recovery?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "APIs and State Machines"
+            },
+            {
+              "id": "how-would-you-prevent-an-old-asynchronous-result-from-overwriting-a-newer-state-transition",
+              "text": "How would you prevent an old asynchronous result from overwriting a newer state transition?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "APIs and State Machines"
+            },
+            {
+              "id": "how-would-you-evolve-an-event-or-command-schema-while-keeping-older-producers-and-consumers-compatible",
+              "text": "How would you evolve an event or command schema while keeping older producers and consumers compatible?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "APIs and State Machines"
+            },
+            {
+              "id": "what-tests-would-you-use-for-boundary-conditions-invalid-transitions-duplicate-events-and-interrupted-operations",
+              "text": "What tests would you use for boundary conditions, invalid transitions, duplicate events, and interrupted operations?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "APIs and State Machines"
+            }
+          ]
+        },
+        {
+          "id": "infrastructure-exercises",
+          "name": "Infrastructure Exercises",
+          "questions": [
+            {
+              "id": "how-would-you-design-a-small-web-deployment-with-a-public-entry-point-private-application-workers-and-a-private-database",
+              "text": "How would you design a small web deployment with a public entry point, private application workers, and a private database?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "Infrastructure Exercises"
+            },
+            {
+              "id": "how-would-you-prove-that-application-traffic-follows-the-intended-path-through-dns-routing-load-balancing-and-health-checks",
+              "text": "How would you prove that application traffic follows the intended path through DNS, routing, load balancing, and health checks?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "Infrastructure Exercises"
+            },
+            {
+              "id": "a-newly-deployed-application-cannot-connect-to-its-database-how-would-you-separate-identity-network-name-resolution-and-engine-failures",
+              "text": "A newly deployed application cannot connect to its database. How would you separate identity, network, name-resolution, and engine failures?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "Infrastructure Exercises"
+            },
+            {
+              "id": "how-would-you-structure-a-reusable-infrastructure-module-with-explicit-inputs-useful-outputs-and-minimal-hidden-assumptions",
+              "text": "How would you structure a reusable infrastructure module with explicit inputs, useful outputs, and minimal hidden assumptions?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "Infrastructure Exercises"
+            },
+            {
+              "id": "how-would-you-handle-a-required-cloud-api-quota-or-permission-that-is-missing-during-a-deployment",
+              "text": "How would you handle a required cloud API, quota, or permission that is missing during a deployment?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "Infrastructure Exercises"
+            },
+            {
+              "id": "how-would-you-verify-a-partially-completed-deployment-without-deleting-resources-or-discarding-state-to-start-over",
+              "text": "How would you verify a partially completed deployment without deleting resources or discarding state to start over?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "Infrastructure Exercises"
+            },
+            {
+              "id": "how-would-you-design-a-temporary-test-environment-with-bounded-costs-expiry-and-verified-cleanup",
+              "text": "How would you design a temporary test environment with bounded costs, expiry, and verified cleanup?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "Infrastructure Exercises"
+            },
+            {
+              "id": "how-would-you-demonstrate-that-a-deployment-remains-healthy-after-restarting-a-worker-or-losing-a-zone",
+              "text": "How would you demonstrate that a deployment remains healthy after restarting a worker or losing a zone?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "Infrastructure Exercises"
+            },
+            {
+              "id": "which-checks-would-you-automate-before-declaring-an-infrastructure-exercise-complete",
+              "text": "Which checks would you automate before declaring an infrastructure exercise complete?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "Infrastructure Exercises"
+            },
+            {
+              "id": "how-would-you-document-the-ownership-security-boundaries-recovery-path-and-known-limitations-of-a-small-platform-deployment",
+              "text": "How would you document the ownership, security boundaries, recovery path, and known limitations of a small platform deployment?",
+              "category": "Coding and Problem Solving",
+              "subcategory": "Infrastructure Exercises"
+            }
+          ]
+        }
+      ],
+      "questions": []
     }
   ],
   "questions": [
@@ -1776,6 +2780,150 @@
       "subcategory": "Site Reliability Engineering"
     },
     {
+      "id": "how-would-you-define-a-user-facing-sli-for-a-job-that-is-accepted-immediately-but-finishes-asynchronously",
+      "text": "How would you define a user-facing SLI for a job that is accepted immediately but finishes asynchronously?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Site Reliability Engineering"
+    },
+    {
+      "id": "how-would-you-distinguish-request-based-and-time-based-error-budgets-and-when-would-each-be-appropriate",
+      "text": "How would you distinguish request-based and time-based error budgets, and when would each be appropriate?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Site Reliability Engineering"
+    },
+    {
+      "id": "a-service-has-a-99-9-success-slo-over-one-million-eligible-requests-how-would-you-calculate-its-allowance-for-failures-and-remaining-budget",
+      "text": "A service has a 99.9% success SLO over one million eligible requests. How would you calculate its allowance for failures and remaining budget?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Site Reliability Engineering"
+    },
+    {
+      "id": "how-would-you-define-eligible-requests-retries-timeouts-and-exclusions-before-measuring-an-availability-slo",
+      "text": "How would you define eligible requests, retries, timeouts, and exclusions before measuring an availability SLO?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Site Reliability Engineering"
+    },
+    {
+      "id": "how-would-you-combine-correctness-availability-and-latency-objectives-without-hiding-one-type-of-user-harm",
+      "text": "How would you combine correctness, availability, and latency objectives without hiding one type of user harm?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Site Reliability Engineering"
+    },
+    {
+      "id": "a-dependency-is-returning-http-200-with-incorrect-results-how-would-you-detect-and-account-for-that-in-your-slos",
+      "text": "A dependency is returning HTTP 200 with incorrect results. How would you detect and account for that in your SLOs?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Site Reliability Engineering"
+    },
+    {
+      "id": "how-would-you-handle-missing-telemetry-or-a-period-with-no-traffic-when-evaluating-service-reliability",
+      "text": "How would you handle missing telemetry or a period with no traffic when evaluating service reliability?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Site Reliability Engineering"
+    },
+    {
+      "id": "how-would-you-design-multi-window-burn-rate-alerts-and-choose-which-conditions-should-page-someone",
+      "text": "How would you design multi-window burn-rate alerts and choose which conditions should page someone?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Site Reliability Engineering"
+    },
+    {
+      "id": "when-should-a-reliability-alert-create-a-ticket-instead-of-waking-an-on-call-engineer",
+      "text": "When should a reliability alert create a ticket instead of waking an on-call engineer?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Site Reliability Engineering"
+    },
+    {
+      "id": "your-error-budget-is-exhausted-during-a-feature-launch-how-would-you-agree-on-a-change-policy-that-still-allows-emergency-fixes",
+      "text": "Your error budget is exhausted during a feature launch. How would you agree on a change policy that still allows emergency fixes?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Site Reliability Engineering"
+    },
+    {
+      "id": "an-alert-storm-begins-during-a-regional-incident-how-would-you-reduce-noise-without-suppressing-evidence-of-new-failures",
+      "text": "An alert storm begins during a regional incident. How would you reduce noise without suppressing evidence of new failures?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Site Reliability Engineering"
+    },
+    {
+      "id": "what-information-belongs-in-an-on-call-handoff-so-the-next-engineer-can-safely-continue-an-investigation",
+      "text": "What information belongs in an on-call handoff so the next engineer can safely continue an investigation?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Site Reliability Engineering"
+    },
+    {
+      "id": "how-would-you-separate-incident-command-technical-response-and-communication-responsibilities-in-a-small-team",
+      "text": "How would you separate incident command, technical response, and communication responsibilities in a small team?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Site Reliability Engineering"
+    },
+    {
+      "id": "you-have-several-plausible-causes-for-an-outage-how-would-you-choose-a-safe-mitigation-before-proving-the-root-cause",
+      "text": "You have several plausible causes for an outage. How would you choose a safe mitigation before proving the root cause?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Site Reliability Engineering"
+    },
+    {
+      "id": "how-would-you-verify-that-an-incident-is-resolved-using-sustained-user-facing-evidence-rather-than-a-single-healthy-dashboard",
+      "text": "How would you verify that an incident is resolved using sustained user-facing evidence rather than a single healthy dashboard?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Site Reliability Engineering"
+    },
+    {
+      "id": "what-makes-a-postmortem-action-verifiable-and-how-would-you-determine-whether-it-prevents-a-wider-class-of-incidents",
+      "text": "What makes a postmortem action verifiable, and how would you determine whether it prevents a wider class of incidents?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Site Reliability Engineering"
+    },
+    {
+      "id": "a-rollback-follows-a-database-schema-migration-how-would-you-assess-compatibility-and-avoid-trading-downtime-for-data-loss",
+      "text": "A rollback follows a database schema migration. How would you assess compatibility and avoid trading downtime for data loss?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Site Reliability Engineering"
+    },
+    {
+      "id": "how-would-you-plan-a-regional-failover-when-data-replication-is-delayed-and-both-regions-could-accept-writes",
+      "text": "How would you plan a regional failover when data replication is delayed and both regions could accept writes?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Site Reliability Engineering"
+    },
+    {
+      "id": "how-would-you-demonstrate-that-backups-satisfy-your-recovery-time-and-recovery-point-objectives",
+      "text": "How would you demonstrate that backups satisfy your recovery time and recovery point objectives?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Site Reliability Engineering"
+    },
+    {
+      "id": "how-would-you-design-a-game-day-with-explicit-blast-radius-limits-abort-conditions-and-recovery-evidence",
+      "text": "How would you design a game day with explicit blast-radius limits, abort conditions, and recovery evidence?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Site Reliability Engineering"
+    },
+    {
+      "id": "how-would-you-prevent-retries-timeouts-and-circuit-breakers-from-amplifying-a-dependency-failure",
+      "text": "How would you prevent retries, timeouts, and circuit breakers from amplifying a dependency failure?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Site Reliability Engineering"
+    },
+    {
+      "id": "traffic-is-rising-faster-than-new-capacity-can-start-how-would-you-prioritize-load-shedding-queue-limits-and-scaling",
+      "text": "Traffic is rising faster than new capacity can start. How would you prioritize load shedding, queue limits, and scaling?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Site Reliability Engineering"
+    },
+    {
+      "id": "how-would-you-measure-operational-toil-and-decide-which-recurring-task-deserves-automation-first",
+      "text": "How would you measure operational toil and decide which recurring task deserves automation first?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Site Reliability Engineering"
+    },
+    {
+      "id": "an-ai-assistant-suggests-a-production-remediation-what-evidence-approval-boundaries-and-audit-trail-would-you-require-before-acting",
+      "text": "An AI assistant suggests a production remediation. What evidence, approval boundaries, and audit trail would you require before acting?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Site Reliability Engineering"
+    },
+    {
       "id": "what-is-infrastructure-as-code-and-why-is-it-important-in-modern-cloud-development",
       "text": "What is Infrastructure as Code and why is it important in modern cloud development?",
       "category": "DevOps, SRE and Platform Engineering",
@@ -1838,6 +2986,54 @@
     {
       "id": "how-does-terraform-handle-dependencies-between-resources",
       "text": "How does Terraform handle dependencies between resources?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Terraform and Infrastructure as Code"
+    },
+    {
+      "id": "a-plan-unexpectedly-proposes-replacing-a-production-database-what-would-you-inspect-before-allowing-any-apply",
+      "text": "A plan unexpectedly proposes replacing a production database. What would you inspect before allowing any apply?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Terraform and Infrastructure as Code"
+    },
+    {
+      "id": "an-infrastructure-apply-fails-halfway-through-how-would-you-reconcile-actual-resources-recorded-state-and-the-next-plan",
+      "text": "An infrastructure apply fails halfway through. How would you reconcile actual resources, recorded state, and the next plan?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Terraform and Infrastructure as Code"
+    },
+    {
+      "id": "how-would-you-determine-whether-a-state-lock-is-stale-without-interrupting-an-active-operation",
+      "text": "How would you determine whether a state lock is stale without interrupting an active operation?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Terraform and Infrastructure as Code"
+    },
+    {
+      "id": "how-would-you-refactor-resource-addresses-or-module-boundaries-without-destroying-the-underlying-infrastructure",
+      "text": "How would you refactor resource addresses or module boundaries without destroying the underlying infrastructure?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Terraform and Infrastructure as Code"
+    },
+    {
+      "id": "how-would-you-adopt-an-existing-resource-into-managed-state-and-prove-that-the-next-plan-is-safe",
+      "text": "How would you adopt an existing resource into managed state and prove that the next plan is safe?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Terraform and Infrastructure as Code"
+    },
+    {
+      "id": "two-automation-systems-claim-ownership-of-the-same-cloud-resource-how-would-you-prevent-competing-changes",
+      "text": "Two automation systems claim ownership of the same cloud resource. How would you prevent competing changes?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Terraform and Infrastructure as Code"
+    },
+    {
+      "id": "how-would-you-validate-infrastructure-modules-with-static-checks-plan-tests-and-bounded-integration-environments",
+      "text": "How would you validate infrastructure modules with static checks, plan tests, and bounded integration environments?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Terraform and Infrastructure as Code"
+    },
+    {
+      "id": "how-would-you-promote-a-reviewed-plan-between-environments-while-accounting-for-identity-state-and-variable-differences",
+      "text": "How would you promote a reviewed plan between environments while accounting for identity, state, and variable differences?",
       "category": "DevOps, SRE and Platform Engineering",
       "subcategory": "Terraform and Infrastructure as Code"
     },
@@ -2184,6 +3380,54 @@
       "subcategory": "Kubernetes, Helm, and Container Orchestration"
     },
     {
+      "id": "pods-remain-pending-even-though-the-cluster-has-spare-cpu-how-would-you-investigate-topology-taints-quotas-and-storage-constraints",
+      "text": "Pods remain Pending even though the cluster has spare CPU. How would you investigate topology, taints, quotas, and storage constraints?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "how-can-resource-requests-hpa-behavior-and-node-autoscaling-interact-to-create-a-scaling-feedback-loop",
+      "text": "How can resource requests, HPA behavior, and node autoscaling interact to create a scaling feedback loop?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "how-would-you-distinguish-a-healthy-process-from-a-workload-that-is-ready-to-serve-real-user-requests",
+      "text": "How would you distinguish a healthy process from a workload that is ready to serve real user requests?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "a-rolling-deployment-stalls-because-of-disruption-and-availability-constraints-how-would-you-identify-and-resolve-the-conflicting-requirements",
+      "text": "A rolling deployment stalls because of disruption and availability constraints. How would you identify and resolve the conflicting requirements?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "how-would-you-isolate-tenants-across-identity-network-access-resource-budgets-and-noisy-neighbor-behavior",
+      "text": "How would you isolate tenants across identity, network access, resource budgets, and noisy-neighbor behavior?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "a-pod-cannot-reach-a-dependency-after-a-network-policy-change-how-would-you-trace-dns-routing-and-policy-decisions",
+      "text": "A pod cannot reach a dependency after a network-policy change. How would you trace DNS, routing, and policy decisions?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "how-would-you-plan-an-operator-or-custom-resource-upgrade-when-stored-objects-and-conversion-webhooks-must-remain-compatible",
+      "text": "How would you plan an operator or custom-resource upgrade when stored objects and conversion webhooks must remain compatible?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
+      "id": "how-would-you-validate-recovery-of-a-stateful-workload-after-losing-a-node-or-an-availability-zone",
+      "text": "How would you validate recovery of a stateful workload after losing a node or an availability zone?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Kubernetes, Helm, and Container Orchestration"
+    },
+    {
       "id": "what-is-helm",
       "text": "What is Helm?",
       "category": "DevOps, SRE and Platform Engineering",
@@ -2246,6 +3490,102 @@
     {
       "id": "should-i-go-platform-engineering-if-i-have-one-product-and-one-team",
       "text": "Should I go Platform Engineering if I have one product and one team?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Platform Engineering"
+    },
+    {
+      "id": "how-would-you-discover-developer-needs-before-choosing-tools-for-an-internal-platform",
+      "text": "How would you discover developer needs before choosing tools for an internal platform?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Platform Engineering"
+    },
+    {
+      "id": "what-makes-a-golden-path-useful-and-how-would-you-provide-an-escape-hatch-without-abandoning-support-boundaries",
+      "text": "What makes a golden path useful, and how would you provide an escape hatch without abandoning support boundaries?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Platform Engineering"
+    },
+    {
+      "id": "how-would-you-measure-platform-adoption-and-developer-experience-without-treating-portal-visits-as-proof-of-value",
+      "text": "How would you measure platform adoption and developer experience without treating portal visits as proof of value?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Platform Engineering"
+    },
+    {
+      "id": "what-information-and-ownership-rules-belong-in-a-service-catalog",
+      "text": "What information and ownership rules belong in a service catalog?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Platform Engineering"
+    },
+    {
+      "id": "when-would-you-prefer-continuously-reconciled-platform-apis-over-a-pipeline-that-runs-infrastructure-plans-on-demand",
+      "text": "When would you prefer continuously reconciled platform APIs over a pipeline that runs infrastructure plans on demand?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Platform Engineering"
+    },
+    {
+      "id": "how-would-you-design-a-self-service-resource-api-with-clear-lifecycle-deletion-and-failure-semantics",
+      "text": "How would you design a self-service resource API with clear lifecycle, deletion, and failure semantics?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Platform Engineering"
+    },
+    {
+      "id": "how-would-you-decide-when-shared-namespaces-are-sufficient-and-when-a-tenant-needs-a-stronger-isolation-boundary",
+      "text": "How would you decide when shared namespaces are sufficient and when a tenant needs a stronger isolation boundary?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Platform Engineering"
+    },
+    {
+      "id": "how-would-you-introduce-workload-identity-and-short-lived-credentials-without-breaking-existing-applications",
+      "text": "How would you introduce workload identity and short-lived credentials without breaking existing applications?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Platform Engineering"
+    },
+    {
+      "id": "how-would-you-verify-artifact-provenance-and-promote-the-same-immutable-image-digest-through-environments",
+      "text": "How would you verify artifact provenance and promote the same immutable image digest through environments?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Platform Engineering"
+    },
+    {
+      "id": "how-would-you-combine-gitops-reconciliation-progressive-delivery-and-explicit-rollback-criteria",
+      "text": "How would you combine GitOps reconciliation, progressive delivery, and explicit rollback criteria?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Platform Engineering"
+    },
+    {
+      "id": "how-would-you-test-a-platform-upgrade-against-representative-workloads-before-rolling-it-out-across-the-fleet",
+      "text": "How would you test a platform upgrade against representative workloads before rolling it out across the fleet?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Platform Engineering"
+    },
+    {
+      "id": "how-would-you-allocate-shared-infrastructure-costs-and-measure-cost-per-useful-unit-of-work",
+      "text": "How would you allocate shared infrastructure costs and measure cost per useful unit of work?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Platform Engineering"
+    },
+    {
+      "id": "how-would-you-choose-between-a-managed-data-service-and-an-operator-managed-database-including-ownership-of-restores",
+      "text": "How would you choose between a managed data service and an operator-managed database, including ownership of restores?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Platform Engineering"
+    },
+    {
+      "id": "what-lifecycle-policy-would-you-use-to-retire-an-unused-platform-feature-or-migrate-teams-off-an-unsupported-version",
+      "text": "What lifecycle policy would you use to retire an unused platform feature or migrate teams off an unsupported version?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Platform Engineering"
+    },
+    {
+      "id": "how-would-you-schedule-ai-workloads-around-accelerator-capacity-checkpoints-tenant-fairness-and-predictable-costs",
+      "text": "How would you schedule AI workloads around accelerator capacity, checkpoints, tenant fairness, and predictable costs?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Platform Engineering"
+    },
+    {
+      "id": "how-would-you-isolate-temporary-agent-workers-scope-their-credentials-expire-their-leases-and-verify-teardown",
+      "text": "How would you isolate temporary agent workers, scope their credentials, expire their leases, and verify teardown?",
       "category": "DevOps, SRE and Platform Engineering",
       "subcategory": "Platform Engineering"
     },
@@ -2680,6 +4020,606 @@
       "text": "How would you approach building a highly interactive and responsive web application with real-time updates? E.g. Financial App Stock Market data",
       "category": "Software Engineering",
       "subcategory": "Frontend Engineering Scenarios"
+    },
+    {
+      "id": "what-responsibilities-belong-to-the-opentelemetry-api-sdk-instrumentation-libraries-and-collector",
+      "text": "What responsibilities belong to the OpenTelemetry API, SDK, instrumentation libraries, and Collector?",
+      "category": "Observability",
+      "subcategory": "OpenTelemetry"
+    },
+    {
+      "id": "how-would-you-decide-where-automatic-instrumentation-is-sufficient-and-where-manual-spans-are-necessary",
+      "text": "How would you decide where automatic instrumentation is sufficient and where manual spans are necessary?",
+      "category": "Observability",
+      "subcategory": "OpenTelemetry"
+    },
+    {
+      "id": "how-would-you-propagate-trace-context-through-http-calls-queues-and-asynchronous-background-work",
+      "text": "How would you propagate trace context through HTTP calls, queues, and asynchronous background work?",
+      "category": "Observability",
+      "subcategory": "OpenTelemetry"
+    },
+    {
+      "id": "when-would-you-use-span-links-instead-of-a-parent-child-relationship-especially-for-batched-or-fan-in-processing",
+      "text": "When would you use span links instead of a parent-child relationship, especially for batched or fan-in processing?",
+      "category": "Observability",
+      "subcategory": "OpenTelemetry"
+    },
+    {
+      "id": "how-would-you-choose-between-head-sampling-and-tail-sampling-while-accounting-for-cost-latency-and-memory-limits",
+      "text": "How would you choose between head sampling and tail sampling while accounting for cost, latency, and memory limits?",
+      "category": "Observability",
+      "subcategory": "OpenTelemetry"
+    },
+    {
+      "id": "how-would-you-ensure-that-all-spans-for-a-trace-reach-the-same-tail-sampling-decision-when-collectors-scale-horizontally",
+      "text": "How would you ensure that all spans for a trace reach the same tail-sampling decision when Collectors scale horizontally?",
+      "category": "Observability",
+      "subcategory": "OpenTelemetry"
+    },
+    {
+      "id": "how-would-you-compare-agent-and-gateway-collector-deployments-for-availability-isolation-and-operational-ownership",
+      "text": "How would you compare agent and gateway Collector deployments for availability, isolation, and operational ownership?",
+      "category": "Observability",
+      "subcategory": "OpenTelemetry"
+    },
+    {
+      "id": "how-would-you-organize-receivers-processors-and-exporters-into-separate-telemetry-pipelines",
+      "text": "How would you organize receivers, processors, and exporters into separate telemetry pipelines?",
+      "category": "Observability",
+      "subcategory": "OpenTelemetry"
+    },
+    {
+      "id": "what-stable-resource-attributes-would-you-attach-to-identify-a-service-environment-and-deployed-version",
+      "text": "What stable resource attributes would you attach to identify a service, environment, and deployed version?",
+      "category": "Observability",
+      "subcategory": "OpenTelemetry"
+    },
+    {
+      "id": "how-would-you-correlate-structured-logs-with-traces-when-some-traces-are-not-retained-by-your-sampling-policy",
+      "text": "How would you correlate structured logs with traces when some traces are not retained by your sampling policy?",
+      "category": "Observability",
+      "subcategory": "OpenTelemetry"
+    },
+    {
+      "id": "how-would-you-reason-about-cumulative-versus-delta-metric-temporality-and-process-restarts-during-export",
+      "text": "How would you reason about cumulative versus delta metric temporality and process restarts during export?",
+      "category": "Observability",
+      "subcategory": "OpenTelemetry"
+    },
+    {
+      "id": "a-trace-disappears-between-two-services-how-would-you-locate-the-gap-in-propagation-sampling-export-or-backend-ingestion",
+      "text": "A trace disappears between two services. How would you locate the gap in propagation, sampling, export, or backend ingestion?",
+      "category": "Observability",
+      "subcategory": "OpenTelemetry"
+    },
+    {
+      "id": "when-would-you-use-a-counter-gauge-histogram-or-summary-to-measure-an-application-s-behavior",
+      "text": "When would you use a counter, gauge, histogram, or summary to measure an application's behavior?",
+      "category": "Observability",
+      "subcategory": "Prometheus and PromQL"
+    },
+    {
+      "id": "how-would-you-calculate-an-error-ratio-from-counters-while-handling-resets-and-choosing-an-appropriate-rate-window",
+      "text": "How would you calculate an error ratio from counters while handling resets and choosing an appropriate rate window?",
+      "category": "Observability",
+      "subcategory": "Prometheus and PromQL"
+    },
+    {
+      "id": "why-can-applying-a-rate-after-aggregating-counters-produce-incorrect-results-when-instances-restart",
+      "text": "Why can applying a rate after aggregating counters produce incorrect results when instances restart?",
+      "category": "Observability",
+      "subcategory": "Prometheus and PromQL"
+    },
+    {
+      "id": "how-would-you-calculate-a-fleet-wide-p99-from-histograms-without-averaging-per-instance-percentiles",
+      "text": "How would you calculate a fleet-wide p99 from histograms without averaging per-instance percentiles?",
+      "category": "Observability",
+      "subcategory": "Prometheus and PromQL"
+    },
+    {
+      "id": "how-would-you-choose-histogram-buckets-for-a-latency-objective-and-what-changes-when-using-native-histograms",
+      "text": "How would you choose histogram buckets for a latency objective, and what changes when using native histograms?",
+      "category": "Observability",
+      "subcategory": "Prometheus and PromQL"
+    },
+    {
+      "id": "why-are-user-ids-request-ids-and-raw-url-paths-risky-metric-labels-and-what-alternatives-would-you-use",
+      "text": "Why are user IDs, request IDs, and raw URL paths risky metric labels, and what alternatives would you use?",
+      "category": "Observability",
+      "subcategory": "Prometheus and PromQL"
+    },
+    {
+      "id": "how-would-you-distinguish-a-missing-time-series-from-a-valid-zero-when-writing-queries-and-alerts",
+      "text": "How would you distinguish a missing time series from a valid zero when writing queries and alerts?",
+      "category": "Observability",
+      "subcategory": "Prometheus and PromQL"
+    },
+    {
+      "id": "a-target-s-up-metric-is-healthy-while-users-see-failures-what-additional-signals-would-you-inspect",
+      "text": "A target's up metric is healthy while users see failures. What additional signals would you inspect?",
+      "category": "Observability",
+      "subcategory": "Prometheus and PromQL"
+    },
+    {
+      "id": "when-would-recording-rules-help-query-performance-and-how-would-you-validate-their-labels-and-aggregation-semantics",
+      "text": "When would recording rules help query performance, and how would you validate their labels and aggregation semantics?",
+      "category": "Observability",
+      "subcategory": "Prometheus and PromQL"
+    },
+    {
+      "id": "how-do-alert-evaluation-intervals-pending-states-and-a-for-duration-affect-detection-and-recovery",
+      "text": "How do alert evaluation intervals, pending states, and a for duration affect detection and recovery?",
+      "category": "Observability",
+      "subcategory": "Prometheus and PromQL"
+    },
+    {
+      "id": "remote-write-queues-are-backing-up-how-would-you-investigate-dropped-samples-backend-limits-and-local-resource-pressure",
+      "text": "Remote-write queues are backing up. How would you investigate dropped samples, backend limits, and local resource pressure?",
+      "category": "Observability",
+      "subcategory": "Prometheus and PromQL"
+    },
+    {
+      "id": "how-would-you-design-alertmanager-grouping-routing-inhibition-and-receiver-ownership-for-a-multi-team-organization",
+      "text": "How would you design Alertmanager grouping, routing, inhibition, and receiver ownership for a multi-team organization?",
+      "category": "Observability",
+      "subcategory": "Prometheus and PromQL"
+    },
+    {
+      "id": "how-would-you-design-a-dashboard-around-a-user-journey-instead-of-a-collection-of-infrastructure-charts",
+      "text": "How would you design a dashboard around a user journey instead of a collection of infrastructure charts?",
+      "category": "Observability",
+      "subcategory": "Grafana and Dashboards"
+    },
+    {
+      "id": "how-would-you-use-red-and-use-views-together-to-connect-request-failures-to-resource-saturation",
+      "text": "How would you use RED and USE views together to connect request failures to resource saturation?",
+      "category": "Observability",
+      "subcategory": "Grafana and Dashboards"
+    },
+    {
+      "id": "what-identifiers-and-links-would-you-use-to-move-from-a-metric-anomaly-to-relevant-logs-and-traces",
+      "text": "What identifiers and links would you use to move from a metric anomaly to relevant logs and traces?",
+      "category": "Observability",
+      "subcategory": "Grafana and Dashboards"
+    },
+    {
+      "id": "how-would-you-provision-dashboards-and-data-sources-so-that-changes-can-be-reviewed-and-reproduced-across-environments",
+      "text": "How would you provision dashboards and data sources so that changes can be reviewed and reproduced across environments?",
+      "category": "Observability",
+      "subcategory": "Grafana and Dashboards"
+    },
+    {
+      "id": "a-dashboard-is-empty-after-a-deployment-how-would-you-check-time-ranges-labels-data-source-access-and-ingestion-freshness",
+      "text": "A dashboard is empty after a deployment. How would you check time ranges, labels, data-source access, and ingestion freshness?",
+      "category": "Observability",
+      "subcategory": "Grafana and Dashboards"
+    },
+    {
+      "id": "how-would-you-present-units-aggregation-windows-and-percentile-semantics-so-viewers-do-not-misread-a-panel",
+      "text": "How would you present units, aggregation windows, and percentile semantics so viewers do not misread a panel?",
+      "category": "Observability",
+      "subcategory": "Grafana and Dashboards"
+    },
+    {
+      "id": "how-would-you-avoid-misleading-averages-when-visualizing-latency-across-instances-regions-or-tenants",
+      "text": "How would you avoid misleading averages when visualizing latency across instances, regions, or tenants?",
+      "category": "Observability",
+      "subcategory": "Grafana and Dashboards"
+    },
+    {
+      "id": "how-would-you-expose-low-volume-or-high-impact-cohorts-without-making-every-dashboard-query-prohibitively-expensive",
+      "text": "How would you expose low-volume or high-impact cohorts without making every dashboard query prohibitively expensive?",
+      "category": "Observability",
+      "subcategory": "Grafana and Dashboards"
+    },
+    {
+      "id": "how-would-you-choose-whether-prometheus-or-grafana-owns-an-alert-and-prevent-duplicate-evaluations-and-notifications",
+      "text": "How would you choose whether Prometheus or Grafana owns an alert, and prevent duplicate evaluations and notifications?",
+      "category": "Observability",
+      "subcategory": "Grafana and Dashboards"
+    },
+    {
+      "id": "how-would-you-add-deployment-and-incident-annotations-without-confusing-correlation-with-proof-of-causation",
+      "text": "How would you add deployment and incident annotations without confusing correlation with proof of causation?",
+      "category": "Observability",
+      "subcategory": "Grafana and Dashboards"
+    },
+    {
+      "id": "how-would-you-make-a-telemetry-pipeline-failure-visible-separately-from-the-health-of-the-observed-application",
+      "text": "How would you make a telemetry-pipeline failure visible separately from the health of the observed application?",
+      "category": "Observability",
+      "subcategory": "Grafana and Dashboards"
+    },
+    {
+      "id": "how-would-you-control-dashboard-access-data-source-permissions-and-accidental-exposure-of-sensitive-query-results",
+      "text": "How would you control dashboard access, data-source permissions, and accidental exposure of sensitive query results?",
+      "category": "Observability",
+      "subcategory": "Grafana and Dashboards"
+    },
+    {
+      "id": "how-would-you-instrument-successful-and-failed-business-outcomes-rather-than-counting-only-http-status-codes",
+      "text": "How would you instrument successful and failed business outcomes rather than counting only HTTP status codes?",
+      "category": "Observability",
+      "subcategory": "Instrumentation and Telemetry Pipelines"
+    },
+    {
+      "id": "how-would-you-define-metric-denominators-for-retries-timeouts-cancellations-and-asynchronous-completion",
+      "text": "How would you define metric denominators for retries, timeouts, cancellations, and asynchronous completion?",
+      "category": "Observability",
+      "subcategory": "Instrumentation and Telemetry Pipelines"
+    },
+    {
+      "id": "how-would-you-name-spans-and-metric-dimensions-so-instrumentation-stays-useful-as-routes-and-services-evolve",
+      "text": "How would you name spans and metric dimensions so instrumentation stays useful as routes and services evolve?",
+      "category": "Observability",
+      "subcategory": "Instrumentation and Telemetry Pipelines"
+    },
+    {
+      "id": "where-would-you-remove-personal-data-and-secrets-from-telemetry-and-how-would-you-verify-the-redaction",
+      "text": "Where would you remove personal data and secrets from telemetry, and how would you verify the redaction?",
+      "category": "Observability",
+      "subcategory": "Instrumentation and Telemetry Pipelines"
+    },
+    {
+      "id": "how-would-you-prevent-baggage-or-propagated-context-from-becoming-an-unbounded-source-of-sensitive-metadata",
+      "text": "How would you prevent baggage or propagated context from becoming an unbounded source of sensitive metadata?",
+      "category": "Observability",
+      "subcategory": "Instrumentation and Telemetry Pipelines"
+    },
+    {
+      "id": "how-would-you-design-structured-logs-that-provide-useful-context-without-duplicating-every-payload-or-stack-trace",
+      "text": "How would you design structured logs that provide useful context without duplicating every payload or stack trace?",
+      "category": "Observability",
+      "subcategory": "Instrumentation and Telemetry Pipelines"
+    },
+    {
+      "id": "how-would-you-instrument-an-external-dependency-without-exposing-credentials-or-recording-its-full-response-body",
+      "text": "How would you instrument an external dependency without exposing credentials or recording its full response body?",
+      "category": "Observability",
+      "subcategory": "Instrumentation and Telemetry Pipelines"
+    },
+    {
+      "id": "how-would-you-test-instrumentation-with-synthetic-requests-fake-exporters-and-explicit-assertions-about-emitted-signals",
+      "text": "How would you test instrumentation with synthetic requests, fake exporters, and explicit assertions about emitted signals?",
+      "category": "Observability",
+      "subcategory": "Instrumentation and Telemetry Pipelines"
+    },
+    {
+      "id": "what-should-an-application-do-if-its-telemetry-backend-is-unavailable-and-how-would-you-bound-buffering-and-overhead",
+      "text": "What should an application do if its telemetry backend is unavailable, and how would you bound buffering and overhead?",
+      "category": "Observability",
+      "subcategory": "Instrumentation and Telemetry Pipelines"
+    },
+    {
+      "id": "how-would-you-flush-telemetry-during-shutdown-while-respecting-termination-deadlines-and-avoiding-a-blocked-exit",
+      "text": "How would you flush telemetry during shutdown while respecting termination deadlines and avoiding a blocked exit?",
+      "category": "Observability",
+      "subcategory": "Instrumentation and Telemetry Pipelines"
+    },
+    {
+      "id": "how-would-you-detect-dropped-telemetry-queue-pressure-stale-ingestion-and-failed-alert-delivery-end-to-end",
+      "text": "How would you detect dropped telemetry, queue pressure, stale ingestion, and failed alert delivery end to end?",
+      "category": "Observability",
+      "subcategory": "Instrumentation and Telemetry Pipelines"
+    },
+    {
+      "id": "what-can-ebpf-based-observability-show-without-application-changes-and-where-do-encryption-and-missing-business-context-limit-it",
+      "text": "What can eBPF-based observability show without application changes, and where do encryption and missing business context limit it?",
+      "category": "Observability",
+      "subcategory": "Instrumentation and Telemetry Pipelines"
+    },
+    {
+      "id": "your-average-request-latency-is-unchanged-but-p99-doubles-after-a-release-how-would-you-isolate-what-changed",
+      "text": "Your average request latency is unchanged, but p99 doubles after a release. How would you isolate what changed?",
+      "category": "Observability",
+      "subcategory": "Latency and Performance"
+    },
+    {
+      "id": "what-do-p50-p95-p99-and-p99-9-tell-you-and-how-does-sample-size-affect-confidence-in-each",
+      "text": "What do p50, p95, p99, and p99.9 tell you, and how does sample size affect confidence in each?",
+      "category": "Observability",
+      "subcategory": "Latency and Performance"
+    },
+    {
+      "id": "why-is-averaging-the-p99-values-of-several-services-or-instances-not-a-valid-end-to-end-percentile",
+      "text": "Why is averaging the p99 values of several services or instances not a valid end-to-end percentile?",
+      "category": "Observability",
+      "subcategory": "Latency and Performance"
+    },
+    {
+      "id": "how-would-histogram-bucket-boundaries-affect-the-accuracy-of-a-percentile-estimate-near-an-slo-threshold",
+      "text": "How would histogram bucket boundaries affect the accuracy of a percentile estimate near an SLO threshold?",
+      "category": "Observability",
+      "subcategory": "Latency and Performance"
+    },
+    {
+      "id": "what-is-coordinated-omission-in-a-load-test-and-how-could-it-hide-the-latency-users-would-experience",
+      "text": "What is coordinated omission in a load test, and how could it hide the latency users would experience?",
+      "category": "Observability",
+      "subcategory": "Latency and Performance"
+    },
+    {
+      "id": "when-would-you-choose-an-open-workload-model-instead-of-a-closed-one-for-a-performance-test",
+      "text": "When would you choose an open workload model instead of a closed one for a performance test?",
+      "category": "Observability",
+      "subcategory": "Latency and Performance"
+    },
+    {
+      "id": "how-would-you-separate-queueing-time-connection-pool-waits-execution-time-and-downstream-latency",
+      "text": "How would you separate queueing time, connection-pool waits, execution time, and downstream latency?",
+      "category": "Observability",
+      "subcategory": "Latency and Performance"
+    },
+    {
+      "id": "a-request-fans-out-to-many-dependencies-how-would-you-reason-about-tail-latency-amplification-and-the-overall-timeout-budget",
+      "text": "A request fans out to many dependencies. How would you reason about tail-latency amplification and the overall timeout budget?",
+      "category": "Observability",
+      "subcategory": "Latency and Performance"
+    },
+    {
+      "id": "how-could-retries-improve-success-rates-while-worsening-p99-and-resource-saturation",
+      "text": "How could retries improve success rates while worsening p99 and resource saturation?",
+      "category": "Observability",
+      "subcategory": "Latency and Performance"
+    },
+    {
+      "id": "how-would-you-distinguish-cold-starts-cache-misses-garbage-collection-and-cpu-throttling-as-causes-of-latency-spikes",
+      "text": "How would you distinguish cold starts, cache misses, garbage collection, and CPU throttling as causes of latency spikes?",
+      "category": "Observability",
+      "subcategory": "Latency and Performance"
+    },
+    {
+      "id": "throughput-stops-increasing-as-concurrency-rises-how-would-you-identify-the-bottleneck-and-choose-a-safe-operating-point",
+      "text": "Throughput stops increasing as concurrency rises. How would you identify the bottleneck and choose a safe operating point?",
+      "category": "Observability",
+      "subcategory": "Latency and Performance"
+    },
+    {
+      "id": "how-would-you-combine-profiling-traces-and-load-tests-to-verify-that-a-performance-change-actually-improves-user-facing-latency",
+      "text": "How would you combine profiling, traces, and load tests to verify that a performance change actually improves user-facing latency?",
+      "category": "Observability",
+      "subcategory": "Latency and Performance"
+    },
+    {
+      "id": "how-would-you-compare-dotted-numeric-version-strings-when-segments-can-be-missing-or-contain-leading-zeros",
+      "text": "How would you compare dotted numeric version strings when segments can be missing or contain leading zeros?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "Strings and Algorithms"
+    },
+    {
+      "id": "how-would-you-find-the-shortest-contiguous-token-sequence-containing-every-required-token",
+      "text": "How would you find the shortest contiguous token sequence containing every required token?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "Strings and Algorithms"
+    },
+    {
+      "id": "how-would-your-minimum-window-algorithm-change-if-required-tokens-can-appear-more-than-once",
+      "text": "How would your minimum-window algorithm change if required tokens can appear more than once?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "Strings and Algorithms"
+    },
+    {
+      "id": "given-unordered-directed-edges-and-a-starting-node-how-would-you-determine-whether-a-path-can-consume-every-edge-exactly-once",
+      "text": "Given unordered directed edges and a starting node, how would you determine whether a path can consume every edge exactly once?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "Strings and Algorithms"
+    },
+    {
+      "id": "how-would-you-handle-disconnected-components-repeated-edges-and-cycles-when-reconstructing-a-path",
+      "text": "How would you handle disconnected components, repeated edges, and cycles when reconstructing a path?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "Strings and Algorithms"
+    },
+    {
+      "id": "how-would-you-validate-a-sequence-of-bounded-text-edits-without-accepting-operations-outside-the-document",
+      "text": "How would you validate a sequence of bounded text edits without accepting operations outside the document?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "Strings and Algorithms"
+    },
+    {
+      "id": "how-would-unicode-code-points-byte-offsets-and-grapheme-clusters-affect-a-text-editing-algorithm",
+      "text": "How would Unicode code points, byte offsets, and grapheme clusters affect a text-editing algorithm?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "Strings and Algorithms"
+    },
+    {
+      "id": "how-would-you-parse-nested-delimiters-while-respecting-quoted-strings-and-escape-sequences",
+      "text": "How would you parse nested delimiters while respecting quoted strings and escape sequences?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "Strings and Algorithms"
+    },
+    {
+      "id": "how-would-you-process-a-large-stream-with-a-fixed-memory-budget-and-when-would-an-approximate-result-be-acceptable",
+      "text": "How would you process a large stream with a fixed memory budget, and when would an approximate result be acceptable?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "Strings and Algorithms"
+    },
+    {
+      "id": "what-invariants-and-property-based-tests-would-you-use-to-validate-a-string-or-graph-algorithm-beyond-a-few-examples",
+      "text": "What invariants and property-based tests would you use to validate a string or graph algorithm beyond a few examples?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "Strings and Algorithms"
+    },
+    {
+      "id": "a-synchronous-log-writer-is-slowing-request-handling-how-would-you-move-the-work-off-the-request-path-without-losing-ordering-guarantees",
+      "text": "A synchronous log writer is slowing request handling. How would you move the work off the request path without losing ordering guarantees?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "Concurrency and Coordination"
+    },
+    {
+      "id": "how-would-you-batch-background-writes-using-both-a-size-threshold-and-a-time-limit",
+      "text": "How would you batch background writes using both a size threshold and a time limit?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "Concurrency and Coordination"
+    },
+    {
+      "id": "a-producer-generates-work-faster-than-consumers-can-finish-it-how-would-you-bound-memory-and-make-overload-behavior-explicit",
+      "text": "A producer generates work faster than consumers can finish it. How would you bound memory and make overload behavior explicit?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "Concurrency and Coordination"
+    },
+    {
+      "id": "how-would-you-drain-a-background-worker-safely-during-shutdown-including-work-that-is-queued-or-in-flight",
+      "text": "How would you drain a background worker safely during shutdown, including work that is queued or in flight?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "Concurrency and Coordination"
+    },
+    {
+      "id": "how-would-you-test-concurrent-code-with-controlled-scheduling-and-fake-clocks-rather-than-timing-dependent-sleeps",
+      "text": "How would you test concurrent code with controlled scheduling and fake clocks rather than timing-dependent sleeps?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "Concurrency and Coordination"
+    },
+    {
+      "id": "how-would-you-count-nodes-in-a-distributed-tree-when-each-node-can-contact-only-its-children",
+      "text": "How would you count nodes in a distributed tree when each node can contact only its children?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "Concurrency and Coordination"
+    },
+    {
+      "id": "how-would-you-represent-a-distributed-traversal-result-when-some-children-time-out-instead-of-pretending-the-result-is-complete",
+      "text": "How would you represent a distributed traversal result when some children time out instead of pretending the result is complete?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "Concurrency and Coordination"
+    },
+    {
+      "id": "how-would-you-correlate-late-replies-with-the-correct-request-and-avoid-counting-duplicated-responses",
+      "text": "How would you correlate late replies with the correct request and avoid counting duplicated responses?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "Concurrency and Coordination"
+    },
+    {
+      "id": "two-workers-update-the-same-record-how-would-you-compare-locking-optimistic-concurrency-and-single-owner-processing",
+      "text": "Two workers update the same record. How would you compare locking, optimistic concurrency, and single-owner processing?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "Concurrency and Coordination"
+    },
+    {
+      "id": "how-would-you-implement-cancellation-and-error-propagation-so-one-failed-task-does-not-leak-resources-in-a-worker-pool",
+      "text": "How would you implement cancellation and error propagation so one failed task does not leak resources in a worker pool?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "Concurrency and Coordination"
+    },
+    {
+      "id": "how-would-you-validate-a-json-command-stream-and-reject-malformed-or-unsupported-operations-before-mutating-state",
+      "text": "How would you validate a JSON command stream and reject malformed or unsupported operations before mutating state?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "APIs and State Machines"
+    },
+    {
+      "id": "how-would-you-model-a-document-editing-command-as-a-state-transition-with-explicit-preconditions-and-postconditions",
+      "text": "How would you model a document-editing command as a state transition with explicit preconditions and postconditions?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "APIs and State Machines"
+    },
+    {
+      "id": "how-would-you-replay-recorded-operations-and-prove-that-they-produce-the-expected-final-state",
+      "text": "How would you replay recorded operations and prove that they produce the expected final state?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "APIs and State Machines"
+    },
+    {
+      "id": "how-would-you-design-an-idempotent-api-when-clients-may-retry-a-request-after-losing-its-response",
+      "text": "How would you design an idempotent API when clients may retry a request after losing its response?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "APIs and State Machines"
+    },
+    {
+      "id": "how-would-you-distinguish-invalid-input-a-conflict-and-a-transient-dependency-failure-in-an-api-response",
+      "text": "How would you distinguish invalid input, a conflict, and a transient dependency failure in an API response?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "APIs and State Machines"
+    },
+    {
+      "id": "how-would-you-choose-an-idempotency-key-scope-and-retention-policy-without-allowing-two-unrelated-requests-to-collide",
+      "text": "How would you choose an idempotency-key scope and retention policy without allowing two unrelated requests to collide?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "APIs and State Machines"
+    },
+    {
+      "id": "a-client-disconnects-halfway-through-a-multi-step-operation-how-would-you-expose-status-and-support-safe-recovery",
+      "text": "A client disconnects halfway through a multi-step operation. How would you expose status and support safe recovery?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "APIs and State Machines"
+    },
+    {
+      "id": "how-would-you-prevent-an-old-asynchronous-result-from-overwriting-a-newer-state-transition",
+      "text": "How would you prevent an old asynchronous result from overwriting a newer state transition?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "APIs and State Machines"
+    },
+    {
+      "id": "how-would-you-evolve-an-event-or-command-schema-while-keeping-older-producers-and-consumers-compatible",
+      "text": "How would you evolve an event or command schema while keeping older producers and consumers compatible?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "APIs and State Machines"
+    },
+    {
+      "id": "what-tests-would-you-use-for-boundary-conditions-invalid-transitions-duplicate-events-and-interrupted-operations",
+      "text": "What tests would you use for boundary conditions, invalid transitions, duplicate events, and interrupted operations?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "APIs and State Machines"
+    },
+    {
+      "id": "how-would-you-design-a-small-web-deployment-with-a-public-entry-point-private-application-workers-and-a-private-database",
+      "text": "How would you design a small web deployment with a public entry point, private application workers, and a private database?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "Infrastructure Exercises"
+    },
+    {
+      "id": "how-would-you-prove-that-application-traffic-follows-the-intended-path-through-dns-routing-load-balancing-and-health-checks",
+      "text": "How would you prove that application traffic follows the intended path through DNS, routing, load balancing, and health checks?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "Infrastructure Exercises"
+    },
+    {
+      "id": "a-newly-deployed-application-cannot-connect-to-its-database-how-would-you-separate-identity-network-name-resolution-and-engine-failures",
+      "text": "A newly deployed application cannot connect to its database. How would you separate identity, network, name-resolution, and engine failures?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "Infrastructure Exercises"
+    },
+    {
+      "id": "how-would-you-structure-a-reusable-infrastructure-module-with-explicit-inputs-useful-outputs-and-minimal-hidden-assumptions",
+      "text": "How would you structure a reusable infrastructure module with explicit inputs, useful outputs, and minimal hidden assumptions?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "Infrastructure Exercises"
+    },
+    {
+      "id": "how-would-you-handle-a-required-cloud-api-quota-or-permission-that-is-missing-during-a-deployment",
+      "text": "How would you handle a required cloud API, quota, or permission that is missing during a deployment?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "Infrastructure Exercises"
+    },
+    {
+      "id": "how-would-you-verify-a-partially-completed-deployment-without-deleting-resources-or-discarding-state-to-start-over",
+      "text": "How would you verify a partially completed deployment without deleting resources or discarding state to start over?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "Infrastructure Exercises"
+    },
+    {
+      "id": "how-would-you-design-a-temporary-test-environment-with-bounded-costs-expiry-and-verified-cleanup",
+      "text": "How would you design a temporary test environment with bounded costs, expiry, and verified cleanup?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "Infrastructure Exercises"
+    },
+    {
+      "id": "how-would-you-demonstrate-that-a-deployment-remains-healthy-after-restarting-a-worker-or-losing-a-zone",
+      "text": "How would you demonstrate that a deployment remains healthy after restarting a worker or losing a zone?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "Infrastructure Exercises"
+    },
+    {
+      "id": "which-checks-would-you-automate-before-declaring-an-infrastructure-exercise-complete",
+      "text": "Which checks would you automate before declaring an infrastructure exercise complete?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "Infrastructure Exercises"
+    },
+    {
+      "id": "how-would-you-document-the-ownership-security-boundaries-recovery-path-and-known-limitations-of-a-small-platform-deployment",
+      "text": "How would you document the ownership, security boundaries, recovery path, and known limitations of a small platform deployment?",
+      "category": "Coding and Problem Solving",
+      "subcategory": "Infrastructure Exercises"
     }
   ]
 }

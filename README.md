@@ -1,6 +1,6 @@
 # Engineering interviews
 
-This repository contains a folder with coding challenges I've been asked to solve during my application batches from 2023 and beyond, I'll do my best to keep it updated with fresh questions.
+This repository collects engineering interview questions and a website for practicing them. Coding exercises are abstracted into open-ended scenarios rather than reproducing company-specific take-home assignments.
 This very readme file contains the guidelines I follow when I interview candidates for an Engineering role and part of my question pool, mixed with questions I got asked during interviews.
 
 I have been a hiring manager for some time but I've also applied and got interviews for many companies (100+) - including AWS, Microsoft, Google, Uber, Booking.com and ClickHouse. 
@@ -14,6 +14,19 @@ The following list is a collection of unsorted questions that purposefully have 
 The rationale is to use this as a reference for your own interview process (as candidate or as hiring manager) and to prepare for it.
 
 Contributions to this code base are welcome but subject to my sole judgement for inclusion or exclusion, feel free to fork.
+
+## Practice website
+
+Browse topics, write responses saved in your browser, or practice ten-question rounds in easy, standard, and hard modes. The bank covers engineering fundamentals, software design, coding and problem solving, observability, SRE, and platform engineering. The questions intentionally have no answer keys.
+
+Run locally with Node.js 24 LTS:
+
+```bash
+npm ci
+npm run dev
+```
+
+See [SETUP.md](SETUP.md) for the full setup, validation, and deployment instructions. The additional platform topics draw inspiration from the [Platform Engineering Roadmap](https://platform-engineering-roadmap.mbianchi.dev/).
 
 # Useful resources
 
@@ -126,6 +139,31 @@ S.T.A.R. is a useful acronym and an effective formula for structuring your inter
 - What is a Service Level Agreement (SLA)?
 - If I say "Error Budget", what do I mean? SLA is 99.9%, what is the error budget?
 
+- How would you define a user-facing SLI for a job that is accepted immediately but finishes asynchronously?
+- How would you distinguish request-based and time-based error budgets, and when would each be appropriate?
+- A service has a 99.9% success SLO over one million eligible requests. How would you calculate its allowance for failures and remaining budget?
+- How would you define eligible requests, retries, timeouts, and exclusions before measuring an availability SLO?
+- How would you combine correctness, availability, and latency objectives without hiding one type of user harm?
+- A dependency is returning HTTP 200 with incorrect results. How would you detect and account for that in your SLOs?
+- How would you handle missing telemetry or a period with no traffic when evaluating service reliability?
+- How would you design multi-window burn-rate alerts and choose which conditions should page someone?
+- When should a reliability alert create a ticket instead of waking an on-call engineer?
+- Your error budget is exhausted during a feature launch. How would you agree on a change policy that still allows emergency fixes?
+- An alert storm begins during a regional incident. How would you reduce noise without suppressing evidence of new failures?
+- What information belongs in an on-call handoff so the next engineer can safely continue an investigation?
+- How would you separate incident command, technical response, and communication responsibilities in a small team?
+- You have several plausible causes for an outage. How would you choose a safe mitigation before proving the root cause?
+- How would you verify that an incident is resolved using sustained user-facing evidence rather than a single healthy dashboard?
+- What makes a postmortem action verifiable, and how would you determine whether it prevents a wider class of incidents?
+- A rollback follows a database schema migration. How would you assess compatibility and avoid trading downtime for data loss?
+- How would you plan a regional failover when data replication is delayed and both regions could accept writes?
+- How would you demonstrate that backups satisfy your recovery time and recovery point objectives?
+- How would you design a game day with explicit blast-radius limits, abort conditions, and recovery evidence?
+- How would you prevent retries, timeouts, and circuit breakers from amplifying a dependency failure?
+- Traffic is rising faster than new capacity can start. How would you prioritize load shedding, queue limits, and scaling?
+- How would you measure operational toil and decide which recurring task deserves automation first?
+- An AI assistant suggests a production remediation. What evidence, approval boundaries, and audit trail would you require before acting?
+
 ## Terraform and Infrastructure as Code
 
 - What is Infrastructure as Code and why is it important in modern cloud development?
@@ -139,6 +177,15 @@ S.T.A.R. is a useful acronym and an effective formula for structuring your inter
 - What major cloud provider can Terraform work with?
 - How does Terraform handle updates to existing resources?
 - How does Terraform handle dependencies between resources?
+
+- A plan unexpectedly proposes replacing a production database. What would you inspect before allowing any apply?
+- An infrastructure apply fails halfway through. How would you reconcile actual resources, recorded state, and the next plan?
+- How would you determine whether a state lock is stale without interrupting an active operation?
+- How would you refactor resource addresses or module boundaries without destroying the underlying infrastructure?
+- How would you adopt an existing resource into managed state and prove that the next plan is safe?
+- Two automation systems claim ownership of the same cloud resource. How would you prevent competing changes?
+- How would you validate infrastructure modules with static checks, plan tests, and bounded integration environments?
+- How would you promote a reviewed plan between environments while accounting for identity, state, and variable differences?
 
 ## Kubernetes, Helm, and Container Orchestration
 
@@ -204,6 +251,15 @@ limits="cpu=500m,memory=256Mi" --requests="cpu=250m,memory=128Mi" --dry-run=clie
 - How would you set up a high availability HA cluster in Kubernetes?
   - How would you manage etcd? Stacked or unstacked?
 
+- Pods remain Pending even though the cluster has spare CPU. How would you investigate topology, taints, quotas, and storage constraints?
+- How can resource requests, HPA behavior, and node autoscaling interact to create a scaling feedback loop?
+- How would you distinguish a healthy process from a workload that is ready to serve real user requests?
+- A rolling deployment stalls because of disruption and availability constraints. How would you identify and resolve the conflicting requirements?
+- How would you isolate tenants across identity, network access, resource budgets, and noisy-neighbor behavior?
+- A pod cannot reach a dependency after a network-policy change. How would you trace DNS, routing, and policy decisions?
+- How would you plan an operator or custom-resource upgrade when stored objects and conversion webhooks must remain compatible?
+- How would you validate recovery of a stateful workload after losing a node or an availability zone?
+
 ## Helm
 
 - What is Helm?
@@ -221,7 +277,24 @@ limits="cpu=500m,memory=256Mi" --requests="cpu=250m,memory=128Mi" --dry-run=clie
 - What is the tooling you use for Platform Engineering?
 - Should I go Platform Engineering if I have one product and one team?
 
-See: https://github.com/mbianchidev/platform-engineering-roadmap
+- How would you discover developer needs before choosing tools for an internal platform?
+- What makes a golden path useful, and how would you provide an escape hatch without abandoning support boundaries?
+- How would you measure platform adoption and developer experience without treating portal visits as proof of value?
+- What information and ownership rules belong in a service catalog?
+- When would you prefer continuously reconciled platform APIs over a pipeline that runs infrastructure plans on demand?
+- How would you design a self-service resource API with clear lifecycle, deletion, and failure semantics?
+- How would you decide when shared namespaces are sufficient and when a tenant needs a stronger isolation boundary?
+- How would you introduce workload identity and short-lived credentials without breaking existing applications?
+- How would you verify artifact provenance and promote the same immutable image digest through environments?
+- How would you combine GitOps reconciliation, progressive delivery, and explicit rollback criteria?
+- How would you test a platform upgrade against representative workloads before rolling it out across the fleet?
+- How would you allocate shared infrastructure costs and measure cost per useful unit of work?
+- How would you choose between a managed data service and an operator-managed database, including ownership of restores?
+- What lifecycle policy would you use to retire an unused platform feature or migrate teams off an unsupported version?
+- How would you schedule AI workloads around accelerator capacity, checkpoints, tenant fairness, and predictable costs?
+- How would you isolate temporary agent workers, scope their credentials, expire their leases, and verify teardown?
+
+See the [Platform Engineering Roadmap](https://platform-engineering-roadmap.mbianchi.dev/).
 
 ## OpenShift
 
@@ -332,6 +405,139 @@ See: https://github.com/mbianchidev/platform-engineering-roadmap
 - Client Side Rendering (CSR) vs Server Side Rendering (SSR), explain the concepts
 - Can you describe your approach to optimizing the performance and user experience of a large e-commerce website?
 - How would you approach building a highly interactive and responsive web application with real-time updates? E.g. Financial App Stock Market data
+
+# Observability
+
+## OpenTelemetry
+
+- What responsibilities belong to the OpenTelemetry API, SDK, instrumentation libraries, and Collector?
+- How would you decide where automatic instrumentation is sufficient and where manual spans are necessary?
+- How would you propagate trace context through HTTP calls, queues, and asynchronous background work?
+- When would you use span links instead of a parent-child relationship, especially for batched or fan-in processing?
+- How would you choose between head sampling and tail sampling while accounting for cost, latency, and memory limits?
+- How would you ensure that all spans for a trace reach the same tail-sampling decision when Collectors scale horizontally?
+- How would you compare agent and gateway Collector deployments for availability, isolation, and operational ownership?
+- How would you organize receivers, processors, and exporters into separate telemetry pipelines?
+- What stable resource attributes would you attach to identify a service, environment, and deployed version?
+- How would you correlate structured logs with traces when some traces are not retained by your sampling policy?
+- How would you reason about cumulative versus delta metric temporality and process restarts during export?
+- A trace disappears between two services. How would you locate the gap in propagation, sampling, export, or backend ingestion?
+
+## Prometheus and PromQL
+
+- When would you use a counter, gauge, histogram, or summary to measure an application's behavior?
+- How would you calculate an error ratio from counters while handling resets and choosing an appropriate rate window?
+- Why can applying a rate after aggregating counters produce incorrect results when instances restart?
+- How would you calculate a fleet-wide p99 from histograms without averaging per-instance percentiles?
+- How would you choose histogram buckets for a latency objective, and what changes when using native histograms?
+- Why are user IDs, request IDs, and raw URL paths risky metric labels, and what alternatives would you use?
+- How would you distinguish a missing time series from a valid zero when writing queries and alerts?
+- A target's up metric is healthy while users see failures. What additional signals would you inspect?
+- When would recording rules help query performance, and how would you validate their labels and aggregation semantics?
+- How do alert evaluation intervals, pending states, and a for duration affect detection and recovery?
+- Remote-write queues are backing up. How would you investigate dropped samples, backend limits, and local resource pressure?
+- How would you design Alertmanager grouping, routing, inhibition, and receiver ownership for a multi-team organization?
+
+## Grafana and Dashboards
+
+- How would you design a dashboard around a user journey instead of a collection of infrastructure charts?
+- How would you use RED and USE views together to connect request failures to resource saturation?
+- What identifiers and links would you use to move from a metric anomaly to relevant logs and traces?
+- How would you provision dashboards and data sources so that changes can be reviewed and reproduced across environments?
+- A dashboard is empty after a deployment. How would you check time ranges, labels, data-source access, and ingestion freshness?
+- How would you present units, aggregation windows, and percentile semantics so viewers do not misread a panel?
+- How would you avoid misleading averages when visualizing latency across instances, regions, or tenants?
+- How would you expose low-volume or high-impact cohorts without making every dashboard query prohibitively expensive?
+- How would you choose whether Prometheus or Grafana owns an alert, and prevent duplicate evaluations and notifications?
+- How would you add deployment and incident annotations without confusing correlation with proof of causation?
+- How would you make a telemetry-pipeline failure visible separately from the health of the observed application?
+- How would you control dashboard access, data-source permissions, and accidental exposure of sensitive query results?
+
+## Instrumentation and Telemetry Pipelines
+
+- How would you instrument successful and failed business outcomes rather than counting only HTTP status codes?
+- How would you define metric denominators for retries, timeouts, cancellations, and asynchronous completion?
+- How would you name spans and metric dimensions so instrumentation stays useful as routes and services evolve?
+- Where would you remove personal data and secrets from telemetry, and how would you verify the redaction?
+- How would you prevent baggage or propagated context from becoming an unbounded source of sensitive metadata?
+- How would you design structured logs that provide useful context without duplicating every payload or stack trace?
+- How would you instrument an external dependency without exposing credentials or recording its full response body?
+- How would you test instrumentation with synthetic requests, fake exporters, and explicit assertions about emitted signals?
+- What should an application do if its telemetry backend is unavailable, and how would you bound buffering and overhead?
+- How would you flush telemetry during shutdown while respecting termination deadlines and avoiding a blocked exit?
+- How would you detect dropped telemetry, queue pressure, stale ingestion, and failed alert delivery end to end?
+- What can eBPF-based observability show without application changes, and where do encryption and missing business context limit it?
+
+## Latency and Performance
+
+- Your average request latency is unchanged, but p99 doubles after a release. How would you isolate what changed?
+- What do p50, p95, p99, and p99.9 tell you, and how does sample size affect confidence in each?
+- Why is averaging the p99 values of several services or instances not a valid end-to-end percentile?
+- How would histogram bucket boundaries affect the accuracy of a percentile estimate near an SLO threshold?
+- What is coordinated omission in a load test, and how could it hide the latency users would experience?
+- When would you choose an open workload model instead of a closed one for a performance test?
+- How would you separate queueing time, connection-pool waits, execution time, and downstream latency?
+- A request fans out to many dependencies. How would you reason about tail-latency amplification and the overall timeout budget?
+- How could retries improve success rates while worsening p99 and resource saturation?
+- How would you distinguish cold starts, cache misses, garbage collection, and CPU throttling as causes of latency spikes?
+- Throughput stops increasing as concurrency rises. How would you identify the bottleneck and choose a safe operating point?
+- How would you combine profiling, traces, and load tests to verify that a performance change actually improves user-facing latency?
+
+# Coding and Problem Solving
+
+These scenarios focus on reusable engineering concepts. Discuss assumptions, edge cases, tests, and trade-offs before choosing an implementation.
+
+## Strings and Algorithms
+
+- How would you compare dotted numeric version strings when segments can be missing or contain leading zeros?
+- How would you find the shortest contiguous token sequence containing every required token?
+- How would your minimum-window algorithm change if required tokens can appear more than once?
+- Given unordered directed edges and a starting node, how would you determine whether a path can consume every edge exactly once?
+- How would you handle disconnected components, repeated edges, and cycles when reconstructing a path?
+- How would you validate a sequence of bounded text edits without accepting operations outside the document?
+- How would Unicode code points, byte offsets, and grapheme clusters affect a text-editing algorithm?
+- How would you parse nested delimiters while respecting quoted strings and escape sequences?
+- How would you process a large stream with a fixed memory budget, and when would an approximate result be acceptable?
+- What invariants and property-based tests would you use to validate a string or graph algorithm beyond a few examples?
+
+## Concurrency and Coordination
+
+- A synchronous log writer is slowing request handling. How would you move the work off the request path without losing ordering guarantees?
+- How would you batch background writes using both a size threshold and a time limit?
+- A producer generates work faster than consumers can finish it. How would you bound memory and make overload behavior explicit?
+- How would you drain a background worker safely during shutdown, including work that is queued or in flight?
+- How would you test concurrent code with controlled scheduling and fake clocks rather than timing-dependent sleeps?
+- How would you count nodes in a distributed tree when each node can contact only its children?
+- How would you represent a distributed traversal result when some children time out instead of pretending the result is complete?
+- How would you correlate late replies with the correct request and avoid counting duplicated responses?
+- Two workers update the same record. How would you compare locking, optimistic concurrency, and single-owner processing?
+- How would you implement cancellation and error propagation so one failed task does not leak resources in a worker pool?
+
+## APIs and State Machines
+
+- How would you validate a JSON command stream and reject malformed or unsupported operations before mutating state?
+- How would you model a document-editing command as a state transition with explicit preconditions and postconditions?
+- How would you replay recorded operations and prove that they produce the expected final state?
+- How would you design an idempotent API when clients may retry a request after losing its response?
+- How would you distinguish invalid input, a conflict, and a transient dependency failure in an API response?
+- How would you choose an idempotency-key scope and retention policy without allowing two unrelated requests to collide?
+- A client disconnects halfway through a multi-step operation. How would you expose status and support safe recovery?
+- How would you prevent an old asynchronous result from overwriting a newer state transition?
+- How would you evolve an event or command schema while keeping older producers and consumers compatible?
+- What tests would you use for boundary conditions, invalid transitions, duplicate events, and interrupted operations?
+
+## Infrastructure Exercises
+
+- How would you design a small web deployment with a public entry point, private application workers, and a private database?
+- How would you prove that application traffic follows the intended path through DNS, routing, load balancing, and health checks?
+- A newly deployed application cannot connect to its database. How would you separate identity, network, name-resolution, and engine failures?
+- How would you structure a reusable infrastructure module with explicit inputs, useful outputs, and minimal hidden assumptions?
+- How would you handle a required cloud API, quota, or permission that is missing during a deployment?
+- How would you verify a partially completed deployment without deleting resources or discarding state to start over?
+- How would you design a temporary test environment with bounded costs, expiry, and verified cleanup?
+- How would you demonstrate that a deployment remains healthy after restarting a worker or losing a zone?
+- Which checks would you automate before declaring an infrastructure exercise complete?
+- How would you document the ownership, security boundaries, recovery path, and known limitations of a small platform deployment?
 
 # Behavioral (I don't usually ask these questions)
 
