@@ -1,126 +1,94 @@
-# Engineering Interview Practice - Next.js Website
+# Engineering Interview Practice
 
-A modern, minimalist web application for practicing engineering interview questions. This website transforms the engineering-interviews repository into an interactive study platform.
+A static Next.js website for working through the interview questions in [README.md](README.md).
 
 ## Features
 
-- 📚 **Browse by Topic**: Explore 210+ questions organized by categories including DevOps, Backend, Frontend, and more
-- 🎯 **Practice Mode**: Get random questions with a built-in timer to simulate real interview conditions
-- ⏱️ **Timer**: Track how long you spend on each question
-- ➡️ **Skip Functionality**: Move to the next question whenever you're ready
-- 📊 **Progress Tracking**: See how many questions you've viewed
-- 🌗 **Dark Mode**: Automatic dark mode support for comfortable studying
-- 📱 **Responsive Design**: Works great on desktop, tablet, and mobile devices
-- 🎨 **Clean UI**: Minimalist design focused on the content, no clutter
+- **Browse by topic:** 366 questions across engineering fundamentals, software engineering, coding and problem solving, platforms and SRE, and observability.
+- **Practice rounds:** Ten randomly selected questions per round, with topic and subtopic selection. Select at least ten questions when applying a filter; no selection means the full bank.
+- **Three practice modes:** Easy has no timer. Standard allows five minutes per question and rolls unused time into an extra-time pool. Hard has five minutes with no rollover. Timed modes advance when time expires.
+- **Responses and progress:** Write, revisit, or clear answers, track viewed questions, and review self-evaluations after a round.
+- **Questions to ask companies:** Expand sections about culture, growth, role expectations, and company fit.
+- **Responsive styling:** Shared typography and components, automatic light/dark appearance, visible keyboard focus, and reduced-motion support.
 
-## Getting Started
+Responses, viewed-question IDs, and evaluations stay in browser local storage. Responses save when the text box loses focus or the practice question changes. There is no account or backend; clearing browser storage removes your saved work.
 
-### Prerequisites
+The additional coding prompts abstract reusable concepts from exercises rather than publishing company-specific assignments. Observability covers OpenTelemetry, Prometheus/PromQL, Grafana, instrumentation, telemetry pipelines, and tail latency. Reliability and platform scenarios draw inspiration from the [Platform Engineering Roadmap](https://platform-engineering-roadmap.mbianchi.dev/).
 
-- Node.js 18.x or higher
-- npm or yarn
+## Run locally
 
-### Installation
+Use Node.js 24 LTS, matching CI, and npm.
 
-1. Clone the repository:
 ```bash
 git clone https://github.com/mbianchidev/engineering-interviews.git
 cd engineering-interviews
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Run the development server:
-```bash
+npm ci
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+Open [http://localhost:3000](http://localhost:3000).
 
-### Building for Production
+## Validate changes
+
+```bash
+npm run lint
+npm test
+npm audit
+npm run build
+```
+
+Tests check question coverage, unique IDs, stable existing routes and representative question IDs, generated-data consistency, and local-storage behavior using synthetic data. The PR workflow runs installation, audit, lint, tests, and a production export.
+
+## Build and deployment
 
 ```bash
 npm run build
 ```
 
-The build creates a static export in the `out/` directory.
+Production builds always create a static export in `out/`. Serve that directory with a static host that resolves extensionless routes to their `.html` files. `next start` is not a preview server for a static export.
 
-### Building for Static Export (GitHub Pages)
-
-This project is configured to export as a static site for GitHub Pages deployment:
+To reproduce the GitHub Pages asset prefix locally:
 
 ```bash
-npm run build
+DEPLOY_ENV=github-pages npm run build
 ```
 
-The static files will be generated in the `out/` directory, ready for deployment.
+This exports links and assets under `/engineering-interviews`. GitHub Actions selects the same prefix automatically through `GITHUB_ACTIONS=true`.
 
-## Deployment
+The [Pages workflow](.github/workflows/deploy.yml) publishes after changes reach `main`, or when manually dispatched. Draft pull requests do not deploy.
 
-### GitHub Pages
+In repository **Settings > Pages**, choose **GitHub Actions** as the build source. The website is available at [mbianchidev.github.io/engineering-interviews](https://mbianchidev.github.io/engineering-interviews/).
 
-This repository includes a GitHub Actions workflow that automatically deploys the website to GitHub Pages when changes are pushed to the `main` branch.
+## Stack and structure
 
-**Setup Steps:**
+Next.js 16 App Router, React 19, TypeScript, and Tailwind CSS. Space Grotesk and DM Sans are bundled through Fontsource packages; no external font service is contacted by the browser.
 
-1. Go to your repository's Settings → Pages
-2. Under "Build and deployment", select "GitHub Actions" as the source
-3. Push to the `main` branch to trigger the deployment
-
-The site will be available at: `https://<username>.github.io/engineering-interviews/`
-
-You can also manually trigger the deployment workflow from the Actions tab.
-
-## Tech Stack
-
-- **Framework**: Next.js 16 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **Deployment**: Vercel-ready
-
-## Project Structure
-
-```
-├── .github/
-│   └── workflows/
-│       └── deploy.yml         # GitHub Pages deployment workflow
-├── app/
-│   ├── practice/              # Practice mode page
-│   ├── topics/                # Topic browsing pages
-│   │   └── [categoryId]/      # Dynamic category pages
-│   ├── layout.tsx             # Root layout
-│   └── page.tsx               # Homepage
-├── lib/
-│   ├── parseQuestions.ts      # Question parsing logic
-│   └── questionsData.ts       # Client-side questions data
-├── scripts/
-│   └── generate-questions.ts  # Build-time question JSON generator
-├── public/
-│   └── questions.json         # Generated questions data
-├── README.md                  # Original interview questions
-└── SETUP.md                   # This file
+```text
+.github/workflows/ci.yml       PR validation
+.github/workflows/deploy.yml   GitHub Pages deployment
+app/components/               Shared header, page headings, and icons
+app/topics/                   Topic index and question pages
+app/practice/                 Practice modes and self-evaluations
+app/ask-companies/             Company questions
+app/globals.css                Shared design tokens and responsive styling
+lib/parseQuestions.ts          README parser and question types
+lib/questionsData.ts           Generated data for client components
+lib/*Storage.ts                Browser-local responses, progress, and ratings
+lib/topicPresentation.ts       Topic descriptions and question counts
+scripts/generate-questions.ts  Question JSON generator
+public/questions.json         Generated question data
+tests/                        Question and storage regression tests
+README.md                     Canonical question bank
 ```
 
-## How It Works
+## Editing questions
 
-The application parses the `README.md` file at build time to extract:
-- Question categories (General, DevOps, Software Engineering)
-- Subcategories (Git, Network, React, etc.)
-- Individual questions
+Keep the question bank in `README.md`. Top-level headings define categories, second-level headings define subtopics, and question bullets start with an uppercase letter. The parser skips the introductory, resource, STAR, behavioral, and outro sections.
 
-The build process:
-1. Runs `generate-questions.ts` to parse README.md and create `public/questions.json`
-2. Generates static pages for each topic category via SSG
-3. Exports all pages as static HTML in the `out/` directory
-4. The practice mode loads questions from the JSON file client-side
+Run `npm run generate-questions` after editing questions and commit the updated `public/questions.json`. Development, tests, and production builds also regenerate it automatically. Topic pages are generated at build time; practice mode imports the same data.
 
-## License
+Question IDs derive from their text. Changing an existing question's wording changes its ID and disconnects previously saved answers and viewed status. Append new questions rather than rewording existing ones unless that migration is intentional. Give a new subtopic at least ten questions so it can be selected for a complete practice round.
 
-See the main README.md for project information and guidelines.
+## Contributing and license
 
-## Contributing
-
-Contributions are welcome! Please refer to the main README.md for contribution guidelines.
+See [README.md](README.md) for contribution guidelines. Licensed under [AGPL-3.0](LICENSE).

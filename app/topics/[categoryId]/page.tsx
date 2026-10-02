@@ -1,6 +1,7 @@
-import Link from 'next/link';
 import { parseReadme } from '@/lib/parseQuestions';
 import { notFound } from 'next/navigation';
+import { countCategoryQuestions, getTopicPresentation } from '@/lib/topicPresentation';
+import PageHeader from '../../components/PageHeader';
 import QuestionItem from './QuestionItem';
 
 export default async function CategoryPage({ params }: { params: Promise<{ categoryId: string }> }) {
@@ -13,61 +14,45 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
-      <div className="container mx-auto px-4 py-8 max-w-4xl">
-        <div className="mb-8">
-          <Link 
-            href="/topics"
-            className="inline-flex items-center text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
-          >
-            ← Back to Topics
-          </Link>
-        </div>
-
-        <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-8">
-          {category.name}
-        </h1>
-
-        <div className="space-y-8">
-          {category.questions.length > 0 && (
-            <div className="bg-white dark:bg-slate-800 rounded-xl shadow-md p-6">
-              <h2 className="text-2xl font-semibold text-slate-900 dark:text-slate-100 mb-4">
-                General Questions
-              </h2>
-              <ul className="space-y-3">
-                {category.questions.map((question, index) => (
-                  <QuestionItem
-                    key={question.id}
-                    questionId={question.id}
-                    questionText={question.text}
-                    index={index}
-                  />
-                ))}
-              </ul>
+    <div className="page-width content-page reading-width">
+      <PageHeader
+        eyebrow="Go a little deeper"
+        title={category.name}
+        description={getTopicPresentation(category.id).description}
+        backHref="/topics"
+        backLabel="Back to Topics"
+      />
+      <div className="category-summary">
+        <span className="tag">{countCategoryQuestions(category)} questions</span>
+        <p>Open a question to write your response. It stays in this browser.</p>
+      </div>
+      <div className="question-sections">
+        {category.questions.length > 0 && (
+          <section className="topic-section">
+            <div className="section-heading">
+              <h2>General Questions</h2>
+              <span className="section-count">{category.questions.length} questions</span>
             </div>
-          )}
-
-          {category.subcategories.map((subcategory) => (
-            <div 
-              key={subcategory.id}
-              className="bg-white dark:bg-slate-800 rounded-xl shadow-md p-6"
-            >
-              <h2 className="text-2xl font-semibold text-slate-900 dark:text-slate-100 mb-4">
-                {subcategory.name}
-              </h2>
-              <ul className="space-y-3">
-                {subcategory.questions.map((question, index) => (
-                  <QuestionItem
-                    key={question.id}
-                    questionId={question.id}
-                    questionText={question.text}
-                    index={index}
-                  />
-                ))}
-              </ul>
+            <ul className="question-list">
+              {category.questions.map((question, index) => (
+                <QuestionItem key={question.id} questionId={question.id} questionText={question.text} index={index} />
+              ))}
+            </ul>
+          </section>
+        )}
+        {category.subcategories.map(subcategory => (
+          <section key={subcategory.id} className="topic-section">
+            <div className="section-heading">
+              <h2>{subcategory.name}</h2>
+              <span className="section-count">{subcategory.questions.length} questions</span>
             </div>
-          ))}
-        </div>
+            <ul className="question-list">
+              {subcategory.questions.map((question, index) => (
+                <QuestionItem key={question.id} questionId={question.id} questionText={question.text} index={index} />
+              ))}
+            </ul>
+          </section>
+        ))}
       </div>
     </div>
   );

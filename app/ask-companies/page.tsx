@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import PageHeader from '../components/PageHeader';
+import Icon from '../components/Icon';
 
 interface Question {
   question: string;
@@ -168,190 +170,66 @@ export default function AskCompaniesPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
-      <div className="container mx-auto px-4 py-8 max-w-6xl">
-        {/* Back Navigation */}
-        <div className="mb-8">
-          <Link
-            href="/"
-            className="inline-flex items-center text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
-          >
-            ← Back to Home
-          </Link>
-        </div>
-
-        {/* Hero Section */}
-        <div className="text-center mb-12 space-y-4">
-          <div className="inline-block">
-            <span className="text-6xl mb-4 inline-block animate-bounce-slow">💼</span>
-          </div>
-          <h1 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600 dark:from-emerald-400 dark:to-teal-400 mb-4 tracking-tight leading-tight">
-            Questions to Ask Companies
-          </h1>
-          <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Master the art of interviewing <span className="font-semibold italic text-emerald-600 dark:text-emerald-400">them</span>
-          </p>
-          <p className="text-base md:text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
-            Your questions reveal your priorities, demonstrate your experience, and help you make informed career decisions. Use this guide to turn interviews into two-way conversations.
-          </p>
-        </div>
-
-        {/* Expand/Collapse Controls */}
-        <div className="flex justify-center gap-3 mb-8">
-          <button
-            onClick={expandAll}
-            className="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-          >
-            Expand All
-          </button>
-          <button
-            onClick={collapseAll}
-            className="px-6 py-2.5 bg-slate-700 hover:bg-slate-800 dark:bg-slate-600 dark:hover:bg-slate-700 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-          >
-            Collapse All
-          </button>
-        </div>
-
-        {/* Sections */}
-        <div className="space-y-6 mb-12">
-          {sections.map((section) => {
-            const isExpanded = expandedSections.has(section.id);
-            return (
-              <div
-                key={section.id}
-                className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-emerald-200 dark:hover:border-emerald-800"
-              >
-                {/* Section Header */}
+    <div className="page-width content-page reading-width">
+      <PageHeader
+        eyebrow="The conversation goes both ways"
+        title="Questions to Ask Companies"
+        description="You're choosing a team, too. Ask about the work, the culture, and the things that matter to you before you say yes."
+      />
+      <div className="company-toolbar">
+        <button onClick={expandAll} className="button button-primary">Expand All</button>
+        <button onClick={collapseAll} className="button button-secondary">Collapse All</button>
+      </div>
+      <div className="company-sections">
+        {sections.map(section => {
+          const isExpanded = expandedSections.has(section.id);
+          return (
+            <section key={section.id} className="company-section">
+              <h2>
                 <button
                   onClick={() => toggleSection(section.id)}
-                  className="w-full px-6 py-5 flex items-center justify-between text-left transition-colors hover:bg-slate-50 dark:hover:bg-slate-700/50"
+                  className="company-trigger"
                   aria-expanded={isExpanded}
+                  aria-controls={`company-${section.id}`}
                 >
-                  <div className="flex items-center gap-4 flex-1">
-                    <span className="text-4xl" role="img" aria-label={section.title}>
-                      {section.icon}
-                    </span>
-                    <div className="flex-1">
-                      <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-1">
-                        {section.title}
-                      </h2>
-                      <p className="text-sm text-slate-600 dark:text-slate-400">
-                        {section.subtitle}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="ml-4">
-                    <svg
-                      className={`w-6 h-6 text-slate-500 dark:text-slate-400 transition-transform duration-300 ${
-                        isExpanded ? 'rotate-180' : ''
-                      }`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </div>
+                  <span className="company-symbol" aria-hidden="true">{section.icon}</span>
+                  <span className="company-trigger-text">
+                    <span className="company-title">{section.title}</span>
+                    <span className="company-subtitle">{section.subtitle}</span>
+                  </span>
+                  <Icon name="chevron" className={`chevron${isExpanded ? ' is-open' : ''}`} />
                 </button>
-
-                {/* Section Content */}
-                <div
-                  className={`grid transition-all duration-500 ease-in-out overflow-hidden ${
-                    isExpanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
-                  }`}
-                >
-                  <div className="min-h-0">
-                    <div className="px-6 pb-6">
-                      <div className="border-t-2 border-slate-100 dark:border-slate-700 pt-4">
-                        <div className="overflow-x-auto">
-                          <table className="w-full">
-                            <thead>
-                              <tr className="border-b-2 border-emerald-200 dark:border-emerald-800">
-                                <th className="text-left py-3 px-4 font-semibold text-slate-900 dark:text-slate-100 text-base w-1/2">
-                                  Question
-                                </th>
-                                <th className="text-left py-3 px-4 font-semibold text-slate-900 dark:text-slate-100 text-base w-1/2">
-                                  Why Ask It
-                                </th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              {section.questions.map((q, index) => (
-                                <tr
-                                  key={index}
-                                  className="border-b border-slate-100 dark:border-slate-700 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/10 transition-colors"
-                                >
-                                  <td className="py-4 px-4 text-slate-800 dark:text-slate-200 align-top">
-                                    <span className="font-medium">{q.question}</span>
-                                  </td>
-                                  <td className="py-4 px-4 text-slate-600 dark:text-slate-400 align-top">
-                                    {q.whyAskIt}
-                                  </td>
-                                </tr>
-                              ))}
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              </h2>
+              <div id={`company-${section.id}`} hidden={!isExpanded} className="company-table-wrapper">
+                <table className="company-table">
+                  <thead><tr><th scope="col">Question</th><th scope="col">Why Ask It</th></tr></thead>
+                  <tbody>
+                    {section.questions.map((question, index) => (
+                      <tr key={index}><td>{question.question}</td><td>{question.whyAskIt}</td></tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
-            );
-          })}
+            </section>
+          );
+        })}
+      </div>
+      <section className="company-tips">
+        <h2>Pro Tips</h2>
+        <div className="tips-grid">
+          {proTips.map((tip, index) => (
+            <div key={index} className="tip">
+              <span className="tip-symbol" aria-hidden="true">{tip.emoji}</span>
+              <div><h3>{tip.title}</h3><p>{tip.description}</p></div>
+            </div>
+          ))}
         </div>
-
-        {/* Pro Tips Section */}
-        <div className="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-950/30 dark:to-orange-950/30 rounded-2xl shadow-xl border-2 border-amber-200 dark:border-amber-800 p-8 mb-8">
-          <div className="flex items-center gap-3 mb-6">
-            <span className="text-4xl" role="img" aria-label="Pro Tips">
-              💡
-            </span>
-            <h2 className="text-3xl font-bold text-amber-900 dark:text-amber-100">
-              Pro Tips
-            </h2>
-          </div>
-          <div className="space-y-5">
-            {proTips.map((tip, index) => (
-              <div
-                key={index}
-                className="flex items-start gap-4 p-4 bg-white/60 dark:bg-slate-800/60 rounded-xl border border-amber-200 dark:border-amber-800 hover:shadow-md transition-shadow"
-              >
-                <span className="text-3xl flex-shrink-0 mt-1" role="img" aria-label={tip.title}>
-                  {tip.emoji}
-                </span>
-                <div className="flex-1">
-                  <h3 className="font-bold text-slate-900 dark:text-slate-100 text-lg mb-1">
-                    {tip.title}
-                  </h3>
-                  <p className="text-slate-700 dark:text-slate-300">
-                    {tip.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Footer CTA */}
-        <div className="text-center py-8 space-y-4">
-          <p className="text-lg text-slate-600 dark:text-slate-400">
-            Ready to practice your interview skills?
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/topics"
-              className="inline-flex items-center justify-center px-8 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-            >
-              Browse Topics
-            </Link>
-            <Link
-              href="/practice"
-              className="inline-flex items-center justify-center px-8 py-3 bg-slate-700 hover:bg-slate-800 dark:bg-slate-600 dark:hover:bg-slate-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-            >
-              Start Practicing
-            </Link>
-          </div>
+      </section>
+      <div className="company-cta">
+        <p>Ready to work on your side of the conversation?</p>
+        <div className="button-row">
+          <Link href="/topics" className="button button-secondary">Browse Topics</Link>
+          <Link href="/practice" className="button button-primary">Start Practicing<Icon name="arrow" /></Link>
         </div>
       </div>
     </div>
