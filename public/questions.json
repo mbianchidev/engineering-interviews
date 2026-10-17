@@ -1509,6 +1509,12 @@
               "text": "What if I have a log file that multiple processes write to, how can I make sure that the log file is not corrupted?",
               "category": "Software Engineering",
               "subcategory": "Backend Engineering Scenarios"
+            },
+            {
+              "id": "if-you-re-maintaining-a-critical-internal-tool-and-an-engineer-submits-a-very-large-pull-request-that-s-clearly-ai-generated-what-goes-through-your-mind-as-you-start-reviewing-it-what-yellow-flags-are-you-looking-for-what-kind-of-conversation-would-you-have-with-the-author-to-feel-confident-that-you-can-safely-merge-the-code",
+              "text": "If you're maintaining a critical internal tool and an engineer submits a very large pull request that's clearly AI-generated, what goes through your mind as you start reviewing it? What yellow flags are you looking for? What kind of conversation would you have with the author to feel confident that you can safely merge the code?",
+              "category": "Software Engineering",
+              "subcategory": "Backend Engineering Scenarios"
             }
           ]
         },
@@ -3808,6 +3814,12 @@
     {
       "id": "what-if-i-have-a-log-file-that-multiple-processes-write-to-how-can-i-make-sure-that-the-log-file-is-not-corrupted",
       "text": "What if I have a log file that multiple processes write to, how can I make sure that the log file is not corrupted?",
+      "category": "Software Engineering",
+      "subcategory": "Backend Engineering Scenarios"
+    },
+    {
+      "id": "if-you-re-maintaining-a-critical-internal-tool-and-an-engineer-submits-a-very-large-pull-request-that-s-clearly-ai-generated-what-goes-through-your-mind-as-you-start-reviewing-it-what-yellow-flags-are-you-looking-for-what-kind-of-conversation-would-you-have-with-the-author-to-feel-confident-that-you-can-safely-merge-the-code",
+      "text": "If you're maintaining a critical internal tool and an engineer submits a very large pull request that's clearly AI-generated, what goes through your mind as you start reviewing it? What yellow flags are you looking for? What kind of conversation would you have with the author to feel confident that you can safely merge the code?",
       "category": "Software Engineering",
       "subcategory": "Backend Engineering Scenarios"
     },
