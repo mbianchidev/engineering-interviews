@@ -350,11 +350,14 @@ See the [Platform Engineering Roadmap](https://platform-engineering-roadmap.mbia
 - Should I Adopt DDD (Domain Driven Design)?
 - Orchestrating microservices is not easy. What are the options?
 
+![System-design diagram supplied with the interview material, showing a client, API gateway, Subscription, Search, and Video services, Postgres, and video storage](docs/images/system-design.png)
+
 ## Backend Engineering Scenarios
 
 - What’s canary deployment?
 - What if I have two deployments 1.0 (production, stable) and 1.1 (test, maybe stable) and I want to test 1.1 with production traffic, without using the canary deployment technique, what alternatives have I got?
 - What if I have a log file that multiple processes write to, how can I make sure that the log file is not corrupted?
+- If you're maintaining a critical internal tool and an engineer submits a very large pull request that's clearly AI-generated, what goes through your mind as you start reviewing it? What yellow flags are you looking for? What kind of conversation would you have with the author to feel confident that you can safely merge the code?
 
 ## Database
 
