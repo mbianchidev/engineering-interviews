@@ -1,9 +1,9 @@
 import fs from 'fs';
 import path from 'path';
-import { parseReadme, getAllQuestions } from '../lib/parseQuestions.js';
+import { parseQuestionBank, getAllQuestions } from '../lib/parseQuestions.js';
 
 // Generate questions data at build time
-const categories = parseReadme();
+const categories = parseQuestionBank();
 const questions = getAllQuestions();
 
 const data = {

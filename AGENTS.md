@@ -1,5 +1,13 @@
 # Agent instructions
 
+## Repository map and validation
+
+Read the [developer guide](SETUP.md) and [contribution guidance](CONTRIBUTING.md). The [documentation index](docs/README.md) links user and developer workflows.
+
+The README is a website-first landing page. Keep question content in `legacy.md`; `lib/parseQuestions.ts` reads that source, and `scripts/generate-questions.ts` produces `public/questions.json`. Do not move questions back into the README. Preserve question wording and category headings unless changing saved-answer IDs or topic routes is intentional.
+
+Use Node.js 24 LTS and npm. Run the [validation commands](SETUP.md#validate-changes) for changes, keep generated question data consistent, and use only synthetic data in tests and screenshots.
+
 ## TODO: Replace the temporary braces security backport
 
 **Check this TODO when working on dependencies in this repository. Keep the accepted pin until an official compatible fix is verified.**

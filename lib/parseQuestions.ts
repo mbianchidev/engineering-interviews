@@ -28,9 +28,9 @@ function generateId(text: string): string {
     .replace(/^-|-$/g, '');
 }
 
-export function parseReadme(): Category[] {
-  const readmePath = path.join(process.cwd(), 'README.md');
-  const content = fs.readFileSync(readmePath, 'utf-8');
+export function parseQuestionBank(): Category[] {
+  const questionBankPath = path.join(process.cwd(), 'legacy.md');
+  const content = fs.readFileSync(questionBankPath, 'utf-8');
   const lines = content.split('\n');
   
   const categories: Category[] = [];
@@ -48,10 +48,7 @@ export function parseReadme(): Category[] {
       const categoryName = line.replace(/^# /, '');
       
       // Skip certain sections
-      if (categoryName === 'Engineering interviews' || 
-          categoryName === 'Useful resources' || 
-          categoryName === 'STAR Method' ||
-          categoryName === 'Intro' ||
+      if (categoryName === 'Intro' ||
           categoryName === 'Behavioral (I don\'t usually ask these questions)' ||
           categoryName === 'Outro') {
         currentCategory = null;
@@ -106,7 +103,7 @@ export function parseReadme(): Category[] {
 }
 
 export function getAllQuestions(): Question[] {
-  const categories = parseReadme();
+  const categories = parseQuestionBank();
   const allQuestions: Question[] = [];
   
   categories.forEach(category => {
