@@ -43,6 +43,8 @@ There is no backend, account, cross-device sync, or backup/export feature. Local
 
 For reproducible non-sensitive bugs, use the repository's [issues](https://github.com/mbianchidev/engineering-interviews/issues). Do not include private interview responses or credentials in reports.
 
+For accessibility barriers, follow [ACCESSIBILITY.md](../ACCESSIBILITY.md#report-an-accessibility-barrier), which also documents current limitations and the untimed Easy mode. Report vulnerabilities through the [private security process](../SECURITY.md), and conduct concerns through the [Code of Conduct](../CODE_OF_CONDUCT.md#reporting-an-issue).
+
 ## STAR method
 
 S.T.A.R. is a useful acronym and an effective formula for structuring your interview responses for tech companies.

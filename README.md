@@ -15,7 +15,7 @@ Practice explaining engineering decisions, not memorizing answer keys. Engineeri
 
 ## Contents
 
-[Quickstart](#quickstart) | [Why Engineering interviews](#why-engineering-interviews) | [How it works](#how-it-works) | [Configuration](#get-started-and-configuration) | [Features](#features) | [Documentation](#documentation) | [AI policy](#ai-policy) | [Contributing](#contributing) | [License](#license)
+[Quickstart](#quickstart) | [Why Engineering interviews](#why-engineering-interviews) | [How it works](#how-it-works) | [Configuration](#get-started-and-configuration) | [Features](#features) | [Documentation](#documentation) | [AI policy](#ai-policy) | [Contributing](#contributing) | [Security](#security) | [License](#license)
 
 ## Quickstart
 
@@ -30,7 +30,7 @@ npm ci
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000). The home page provides Start Practicing, Browse Topics, and Questions to Ask Companies. No database, Docker setup, API keys, or environment file is required. CI runs on Ubuntu; the website needs a browser with JavaScript enabled.
+Open [http://localhost:3000](http://localhost:3000). The home page provides Start Practicing, Browse Topics, and Questions to Ask Companies. No database, Docker setup, API keys, or environment file is required. CI runs on Ubuntu 24.04; the website needs a browser with JavaScript enabled.
 
 ## Why Engineering interviews
 
@@ -70,6 +70,8 @@ For hosting, `npm run build` creates `out/`. `DEPLOY_ENV=github-pages npm run bu
 
 Start with the [documentation index](docs/README.md) for the [practice guide](docs/practice.md), [local setup and deployment](SETUP.md), and [question-authoring instructions](SETUP.md#editing-questions).
 
+See [ACCESSIBILITY.md](ACCESSIBILITY.md) for contribution targets, verification practices, known limitations, and reporting accessibility barriers.
+
 The practice guide also preserves the [STAR method](docs/practice.md#star-method) and [useful resources](docs/practice.md#useful-resources). Platform scenarios draw inspiration from the [Platform Engineering Roadmap](https://platform-engineering-roadmap.mbianchi.dev/).
 
 ## AI policy
@@ -80,6 +82,14 @@ You are responsible for everything you contribute, including AI-assisted code, d
 
 Contributions are welcome; inclusion remains at the maintainer's discretion. Read [CONTRIBUTING.md](CONTRIBUTING.md) for setup, question-editing, and review guidance. Coding agents must also read [AGENTS.md](AGENTS.md), including the temporary dependency-backport TODO.
 
+Participation follows the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md).
+
+## Security
+
+Report vulnerabilities through the repository's enabled [private reporting channel](https://github.com/mbianchidev/engineering-interviews/security/advisories/new), not public issues. [SECURITY.md](SECURITY.md) covers supported versions, best-effort responses, and coordinated disclosure.
+
 ## License
 
 Licensed under the [GNU Affero General Public License v3.0](LICENSE).
+
+The [Code of Conduct](CODE_OF_CONDUCT.md#attribution) retains Contributor Covenant's CC BY-SA 4.0 attribution and license.

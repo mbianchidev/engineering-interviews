@@ -6,6 +6,8 @@ Developer setup for the static Next.js [practice website](https://mbianchidev.gi
 
 Use Node.js 24 LTS, matching CI, and npm.
 
+Validation and Pages jobs use the explicit Ubuntu 24.04 runner image rather than the moving `ubuntu-latest` label.
+
 ```bash
 git clone https://github.com/mbianchidev/engineering-interviews.git
 cd engineering-interviews
@@ -27,6 +29,12 @@ npm run build
 Tests check the `legacy.md` source independently of the README, question coverage, unique IDs, stable existing routes and representative question IDs, generated-data consistency, local-storage behavior, Next.js lint-root glob compatibility, and brace nesting limits using synthetic data. The PR workflow runs installation, audit, lint, tests, and a production export.
 
 CI audits both production and development dependencies. A scoped npm override pins `braces` within the Next.js ESLint plugin's dependency tree to the community backport `@dieub/braces-depth-guard@3.0.3-pn.0` while an upstream fix for [GHSA-vfj7-8cjw-p6xm](https://github.com/advisories/GHSA-vfj7-8cjw-p6xm) remains unpublished. Its only runtime changes from `braces@3.0.3` are nesting-depth guards: inputs and ASTs deeper than 100 levels are rejected, and stricter `maxDepth` limits are supported. Next.js, ESLint, and globbing APIs and lint rules are unchanged. Revisit the override when an official patched release becomes available.
+
+### Dependency install scripts
+
+`package.json` records exact-version `allowScripts` approvals for the reviewed `esbuild@0.25.12`, `unrs-resolver@1.11.1`, and macOS-only `fsevents@2.3.3` dependencies. Current npm uses these approvals for dependency lifecycle scripts; unreviewed packages or upgraded versions remain subject to review.
+
+Use `npm install-scripts ls` to inspect pending approvals. After a dependency upgrade, read the affected lifecycle script and its helpers before recording a new pinned approval with `npm install-scripts approve <package>`. Do not use blanket `--all` approval or global script permissions. Rerun clean installation, the full audit, tests, lint, and builds after changing approvals.
 
 ## Build and deployment
 
@@ -85,3 +93,5 @@ Question IDs derive from their text. Changing an existing question's wording cha
 ## Contributing and license
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines and [AGENTS.md](AGENTS.md) for agent instructions. Licensed under [AGPL-3.0](LICENSE).
+
+Follow the [Code of Conduct](CODE_OF_CONDUCT.md), [security reporting policy](SECURITY.md), and [accessibility contribution guidance](ACCESSIBILITY.md). Contributor Covenant's attribution and CC BY-SA 4.0 license are retained in the Code of Conduct.
