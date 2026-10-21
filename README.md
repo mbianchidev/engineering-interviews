@@ -1,32 +1,95 @@
 # Engineering interviews
 
-This repository collects engineering interview questions and a website for practicing them. Coding exercises are abstracted into open-ended scenarios rather than reproducing company-specific take-home assignments.
-This very readme file contains the guidelines I follow when I interview candidates for an Engineering role and part of my question pool, mixed with questions I got asked during interviews.
+An engineering interview question bank and a static website for practicing it. Candidates can rehearse their explanations, and interviewers can use the bank to prepare their own question sets. Topics cover engineering fundamentals, software design, coding and problem solving, observability, SRE, and platform engineering.
 
-I have been a hiring manager for some time but I've also applied and got interviews for many companies (100+) - including AWS, Microsoft, Google, Uber, Booking.com and ClickHouse. 
+**[Open the practice website](https://mbianchidev.github.io/engineering-interviews/)** or read the [question bank below](#question-bank-and-interview-guide). No installation or account is needed to use the hosted website.
 
-_Note: for the sake of transparency I didn't got a job offer from these (yet) but with some I passed some of their coding and system interviews alike_ 
-
-My idea for this repo is, since I have seen and experienced first hand a lot of different approaches to the interview process, I want to provide some guideline for people to follow and maybe even spar with someone, or with me - for a (relatively) small fee.
-
-The following list is a collection of unsorted questions that purposefully have no answers. 
-
-The rationale is to use this as a reference for your own interview process (as candidate or as hiring manager) and to prepare for it.
-
-Contributions to this code base are welcome but subject to my sole judgement for inclusion or exclusion, feel free to fork.
+The questions intentionally have no answer keys. Coding exercises are open-ended scenarios, not reproductions of company-specific take-home assignments.
 
 ## Practice website
 
-Browse topics, write responses saved in your browser, or practice ten-question rounds in easy, standard, and hard modes. The bank covers engineering fundamentals, software design, coding and problem solving, observability, SRE, and platform engineering. The questions intentionally have no answer keys.
+- **Browse by topic:** Expand a question, write your response, and revisit or clear saved answers.
+- **Practice rounds:** Work through ten randomly selected questions, optionally filtered by topic and subtopic.
+- **Track your practice:** See which questions you have viewed and rate your confidence, effectiveness, and knowledge after each round. Review past self-evaluations in the browser.
+- **Prepare your own questions:** Use the Questions to Ask Companies page to explore company fit, team culture, growth, and role expectations.
 
-Run locally with Node.js 24 LTS:
+### Practice modes
+
+| Mode | Time per question | Unused time |
+| --- | --- | --- |
+| Easy | No time limit | Not applicable |
+| Standard | Five minutes | Rolls into an extra-time pool for later questions in the round |
+| Hard | Five minutes | Does not roll over |
+
+Timed modes advance automatically when time runs out. Leave all topics unselected to use the full bank, or select subtopics containing at least ten questions in total.
+
+### Saved work and limitations
+
+Responses, viewed-question IDs, and self-evaluations are stored in this browser's local storage. Responses save when the text box loses focus or you move to the next practice question; revisit them through Browse Topics.
+
+There is no backend, account system, cross-device sync, automated grading, or code execution. Clearing browser storage removes saved work, and an active round and timer do not survive a page reload. The hosted website and a local development server use different origins, so they do not share saved responses.
+
+## Run locally
+
+Use **Node.js 24 LTS and npm**, matching CI, plus Git to clone the repository. The website needs a browser with JavaScript and local storage enabled. CI runs on Ubuntu; no database, Docker setup, API keys, or environment file is required.
 
 ```bash
+git clone https://github.com/mbianchidev/engineering-interviews.git
+cd engineering-interviews
 npm ci
 npm run dev
 ```
 
-See [SETUP.md](SETUP.md) for the full setup, validation, and deployment instructions. The additional platform topics draw inspiration from the [Platform Engineering Roadmap](https://platform-engineering-roadmap.mbianchi.dev/).
+Open [http://localhost:3000](http://localhost:3000). The home page offers Start Practicing, Browse Topics, and Questions to Ask Companies. To try a first round, select Start Practicing, choose Easy, and leave the topic filter empty.
+
+### Development commands
+
+```bash
+npm run lint
+npm test
+npm audit --omit=dev
+npm run build
+```
+
+Development, tests, and builds regenerate `public/questions.json` from this README. Tests cover question data, stable routes and IDs, and browser-storage helpers.
+
+### Build and configuration
+
+The website uses Next.js 16 App Router, React 19, TypeScript, and Tailwind CSS. `npm run build` creates a static export in `out/`; publish that directory to a static host that resolves extensionless routes to their `.html` files. Despite the package's `start` script, `npm start` is not a preview server for this static export.
+
+For the GitHub Pages path prefix, run:
+
+```bash
+DEPLOY_ENV=github-pages npm run build
+```
+
+This exports links and assets under `/engineering-interviews` instead of the root path. GitHub Actions selects the same prefix automatically through `GITHUB_ACTIONS=true`. No other application configuration is required. See [SETUP.md](SETUP.md#build-and-deployment) for hosting instructions and the [Pages workflow](.github/workflows/deploy.yml) for deployment from `main`.
+
+## Question bank and interview guide
+
+This README is the canonical source for the website's technical question bank. The interview guidance and behavioral questions below remain useful for reading or practicing with a partner, but are not included in website practice rounds.
+
+- [STAR method](#star-method) and [introductory questions](#intro)
+- [General engineering](#general): Git, networking, Linux, and virtualization
+- [DevOps, SRE, and platform engineering](#devops-sre-and-platform-engineering)
+- [Software engineering](#software-engineering): backend, databases, frontend, and frameworks
+- [Observability](#observability): OpenTelemetry, Prometheus, Grafana, instrumentation, and performance
+- [Coding and problem solving](#coding-and-problem-solving)
+- [Behavioral questions](#behavioral-i-dont-usually-ask-these-questions) and [closing questions](#outro)
+
+The bank mixes questions I use as a hiring manager with questions I have been asked as a candidate. It draws on experience interviewing with more than 100 companies. Use it as a reference, not a prescribed interview process or a promise of a job offer.
+
+The additional platform topics draw inspiration from the [Platform Engineering Roadmap](https://platform-engineering-roadmap.mbianchi.dev/).
+
+## Contributing
+
+Contributions are welcome through [issues](https://github.com/mbianchidev/engineering-interviews/issues) and pull requests; inclusion remains at the maintainer's discretion. Feel free to fork the project.
+
+Read [SETUP.md](SETUP.md) for the full setup and validation guide and [Editing questions](SETUP.md#editing-questions) before changing the bank. Category headings determine topic routes, and question wording determines saved-answer IDs, so preserve existing headings and wording unless a migration is intentional. After editing questions, run `npm run generate-questions` and include the updated `public/questions.json` in your pull request.
+
+## License
+
+Licensed under the [GNU Affero General Public License v3.0](LICENSE).
 
 # Useful resources
 
