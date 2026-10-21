@@ -47,7 +47,7 @@ Open [http://localhost:3000](http://localhost:3000). The home page offers Start 
 ```bash
 npm run lint
 npm test
-npm audit --omit=dev
+npm audit
 npm run build
 ```
 
