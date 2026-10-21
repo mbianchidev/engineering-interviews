@@ -1,4 +1,4 @@
-import { parseReadme } from '@/lib/parseQuestions';
+import { parseQuestionBank } from '@/lib/parseQuestions';
 import { notFound } from 'next/navigation';
 import { countCategoryQuestions, getTopicPresentation } from '@/lib/topicPresentation';
 import PageHeader from '../../components/PageHeader';
@@ -6,7 +6,7 @@ import QuestionItem from './QuestionItem';
 
 export default async function CategoryPage({ params }: { params: Promise<{ categoryId: string }> }) {
   const { categoryId } = await params;
-  const categories = parseReadme();
+  const categories = parseQuestionBank();
   const category = categories.find(c => c.id === categoryId);
 
   if (!category) {
@@ -59,7 +59,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
 }
 
 export function generateStaticParams() {
-  const categories = parseReadme();
+  const categories = parseQuestionBank();
   return categories.map((category) => ({
     categoryId: category.id,
   }));

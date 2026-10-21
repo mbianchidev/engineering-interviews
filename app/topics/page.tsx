@@ -1,11 +1,11 @@
 import Link from 'next/link';
-import { parseReadme } from '@/lib/parseQuestions';
+import { parseQuestionBank } from '@/lib/parseQuestions';
 import { countCategoryQuestions, getTopicPresentation } from '@/lib/topicPresentation';
 import PageHeader from '../components/PageHeader';
 import Icon from '../components/Icon';
 
 export default function TopicsPage() {
-  const categories = parseReadme();
+  const categories = parseQuestionBank();
 
   return (
     <div className="page-width content-page">

@@ -1,576 +1,95 @@
+<img src="app/icon.svg" alt="Engineering interviews logo" width="64" height="64" />
+
 # Engineering interviews
 
-This repository collects engineering interview questions and a website for practicing them. Coding exercises are abstracted into open-ended scenarios rather than reproducing company-specific take-home assignments.
-This very readme file contains the guidelines I follow when I interview candidates for an Engineering role and part of my question pool, mixed with questions I got asked during interviews.
+[![Validate website](https://github.com/mbianchidev/engineering-interviews/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/mbianchidev/engineering-interviews/actions/workflows/ci.yml)
+[Website](https://mbianchidev.github.io/engineering-interviews/) | [Documentation](docs/README.md) | [Issues](https://github.com/mbianchidev/engineering-interviews/issues)
 
-I have been a hiring manager for some time but I've also applied and got interviews for many companies (100+) - including AWS, Microsoft, Google, Uber, Booking.com and ClickHouse. 
+[![An active practice round with a technical question, response editor, round progress, and next-question controls](docs/images/practice.png)](https://mbianchidev.github.io/engineering-interviews/practice)
 
-_Note: for the sake of transparency I didn't got a job offer from these (yet) but with some I passed some of their coding and system interviews alike_ 
+*The current practice website, shown with a synthetic example response.*
 
-My idea for this repo is, since I have seen and experienced first hand a lot of different approaches to the interview process, I want to provide some guideline for people to follow and maybe even spar with someone, or with me - for a (relatively) small fee.
+Practice explaining engineering decisions, not memorizing answer keys. Engineering interviews is a static website for candidates rehearsing their reasoning and interviewers preparing a question set, covering fundamentals, software design, coding, observability, SRE, and platform engineering.
 
-The following list is a collection of unsorted questions that purposefully have no answers. 
+**[Open the practice website](https://mbianchidev.github.io/engineering-interviews/)** to browse and practice the questions. No installation or account is required. The bank mixes hiring-manager and candidate experience; coding prompts are open-ended scenarios rather than company-specific take-home assignments.
 
-The rationale is to use this as a reference for your own interview process (as candidate or as hiring manager) and to prepare for it.
+## Contents
 
-Contributions to this code base are welcome but subject to my sole judgement for inclusion or exclusion, feel free to fork.
+[Quickstart](#quickstart) | [Why Engineering interviews](#why-engineering-interviews) | [How it works](#how-it-works) | [Configuration](#get-started-and-configuration) | [Features](#features) | [Documentation](#documentation) | [AI policy](#ai-policy) | [Contributing](#contributing) | [Security](#security) | [License](#license)
 
-## Practice website
+## Quickstart
 
-Browse topics, write responses saved in your browser, or practice ten-question rounds in easy, standard, and hard modes. The bank covers engineering fundamentals, software design, coding and problem solving, observability, SRE, and platform engineering. The questions intentionally have no answer keys.
+Open the [website](https://mbianchidev.github.io/engineering-interviews/), select **Start Practicing**, choose **Easy**, and leave the topic filter empty. Start the round to see the first of ten questions and write a response.
 
-Run locally with Node.js 24 LTS:
+For local development, use **Node.js 24 LTS, npm, and Git**, matching CI:
 
 ```bash
+git clone https://github.com/mbianchidev/engineering-interviews.git
+cd engineering-interviews
 npm ci
 npm run dev
 ```
 
-See [SETUP.md](SETUP.md) for the full setup, validation, and deployment instructions. The additional platform topics draw inspiration from the [Platform Engineering Roadmap](https://platform-engineering-roadmap.mbianchi.dev/).
+Open [http://localhost:3000](http://localhost:3000). The home page provides Start Practicing, Browse Topics, and Questions to Ask Companies. No database, Docker setup, API keys, or environment file is required. CI runs on Ubuntu 24.04; the website needs a browser with JavaScript enabled.
 
-# Useful resources
+## Why Engineering interviews
 
-There are awesome books and resources out there, I won't have an extensive list but here are some:
-- https://deckly.dev/
-- [System Design Interview Book (not an affiliate link)](https://www.amazon.nl/-/en/Alex-Xu/dp/B08CMF2CQF)
+Use topic browsing for focused study, random rounds to rehearse under time pressure, and company questions to make interviews a two-way conversation. Questions intentionally have no answer keys, automated grading, or code execution: explain your assumptions and trade-offs, then reflect on your own performance.
 
-# STAR Method
+Answers and progress stay in your browser instead of an account or backend. That also means no cross-device sync or recovery after clearing browser storage.
 
-The STAR method
-S.T.A.R. is a useful acronym and an effective formula for structuring your interview responses for tech companies.
+## How it works
 
-- **Situation** (20%), explain the situation so that your interviewer understands the context of your example, they do not need to know every technical detail.
-- **Task** (10%), talk about the task that you took responsibility for completing or the goal of your efforts.
-- **Action** (60%), describe the actions that you personally took to complete the task or reach the end goal. Highlight skills or character traits addressed in the question. Use a lot of "I" instead of "we".
-- **Result** (10%), explain the positive outcomes or results generated by your actions or efforts. Here, it is important to highlight quantifiable results. You may also want to emphasize what you learned from the experience or your key takeaways. This can even be a not-so-pleasant experience, in that case still try to focus on positive takeaways.
+Choose topics, answer ten randomly selected questions, and rate your confidence, effectiveness, and knowledge after each round. Browse Topics lets you revisit saved answers; Questions to Ask Companies covers team culture, growth, and role expectations.
 
-# Intro
+The site uses Next.js 16 App Router, React 19, TypeScript, and Tailwind CSS. Builds parse the archived Markdown question source, generate client data and topic pages, and export a static website. The README is a landing page, not the question source. See the [developer guide](SETUP.md#stack-and-structure) for the data flow and repository map.
 
-- How are you doing/weather, something nice to break the ice and make the candidate feel comfortable
-- Tell me about your engineering journey, how did you get into engineering?
-- What do you like about this job?
-- What are you looking for in your next role?
-- What is your favorite programming language and why?
-- What is the best piece of code you have ever written? And the worst?
-- Do you hate PHP? (I do)
-- Are you nervous? (I am)
+## Get started and configuration
 
-# General 
+Leave all topics unselected to use the full bank. A topic filter must contain at least ten questions in total.
 
-## Git
+| Mode | Time per question | Unused time |
+| --- | --- | --- |
+| Easy | No time limit | Not applicable |
+| Standard | Five minutes | Rolls into an extra-time pool for later questions in the round |
+| Hard | Five minutes | Does not roll over |
 
-- What is the difference between a remote branch and a local branch?
-- How can I delete a remote branch? Please give the command
-- What’s a tag and how is it used?
-- What’s a hook? Make an example of its use.
-- What’s a submodule and when should it be used?
-- How can I rollback the last commit I made on my local branch?
-- Rebase vs merge, explain the difference and when to use one or the other
+Timed modes advance automatically when time runs out. Responses save when the text box loses focus or you move to the next question. Local storage must be available to retain responses, viewed-question IDs, and evaluations. Active rounds and timers do not survive a page reload, and the hosted and local sites do not share saved work.
 
-## Network
+For hosting, `npm run build` creates `out/`. `DEPLOY_ENV=github-pages npm run build` selects the `/engineering-interviews` prefix; GitHub Actions selects it automatically. `npm start` is not a preview server for this static export. See [setup and deployment](SETUP.md) for the full workflow and [saved-work guidance](docs/practice.md#saved-work-and-resetting) before clearing data.
 
-- How does the TCP/IP protocol work?
-- What’s a DNS and how does that work?
-- What is a VPN?
-- What is a NAT tunnel?
-- How does DHCP work?
-- What is a firewall? What is a WAF?
-- How would you block a specific IP address from accessing a service?
-- What is a proxy? What is a reverse proxy? What is a forward proxy?
-- How does a load balancer work?
-- Do you know any Load Balancing algorithms? Explain them (e.g. Round Robin, Least Connections, etc.)
+## Features
 
-## Linux and Virtualization
+- **Browse by topic:** Expand questions, write responses, and revisit or clear saved answers.
+- **Practice rounds:** Ten questions per round with optional category and subtopic filters.
+- **Choose your pace:** Untimed practice or five-minute questions, with optional time rollover.
+- **Reflect on progress:** Track viewed questions and review browser-local self-evaluations.
+- **Interview the company:** Explore questions about culture, growth, work-life balance, and role fit.
 
-- What is Linux and what makes it different from other operating systems?
-- What is a directory?
-- What’s "the kernel"?
-- How can you install software on a Linux system and what are the common package managers used in Linux?
-- What’s the command for changing the permission of a file? Give an example
-- What’s the command for changing the ownership of a file? Give an example
-- What’s a command for killing a process given its PID? Give an example
-- What’s a command to list all the processes running? Give an example
-- What’s the command, named after a protocol, to connect to a remote server in Linux? Give an example
-- What’s a service in Linux?
-- How does SELinux work?
-- What does it happen when you launch `$?` in bash?
-- What is a virtual machine (VM) and how does it work?
-- What’s a hypervisor software?
+## Documentation
 
-# DevOps, SRE and Platform Engineering
+Start with the [documentation index](docs/README.md) for the [practice guide](docs/practice.md), [local setup and deployment](SETUP.md), and [question-authoring instructions](SETUP.md#editing-questions).
 
-## CI/CD
+See [ACCESSIBILITY.md](ACCESSIBILITY.md) for contribution targets, verification practices, known limitations, and reporting accessibility barriers.
 
-- What’s CI/CD?
-- Explain the phases of CI/CD
-- Have you ever used GitHub actions? How does it work?
-- Have you ever used GitLab? How does it differ from GitHub?
+The practice guide also preserves the [STAR method](docs/practice.md#star-method) and [useful resources](docs/practice.md#useful-resources). Platform scenarios draw inspiration from the [Platform Engineering Roadmap](https://platform-engineering-roadmap.mbianchi.dev/).
 
-## Docker and Containerization
+## AI policy
 
-- What’s the difference between a virtual machine and a container runtime?
-- How does containerization work?
-- Is Docker the only way to create a container?
-- What is the purpose and power of an image?
-- What is the registry and how is it used in containerization?
-- What’s a Dockerfile?
-- What is the first line of a Dockerfile?
-- How do you attach a volume in a Docker container?
-- How do you manage or orchestrate multiple containers?
-- What’s the purpose of Docker Compose?
-- Best practice for building a good Dockerfile
-- Why too many lines are bad for a Dockerfile?
+You are responsible for everything you contribute, including AI-assisted code, documentation, and assets. Review and test your contribution. You must be able to explain what the code does and why it is needed.
 
-## Cloud
+## Contributing
 
-- What is cloud computing?
-- Define public, hybrid, and private cloud and give a use case for each
-- What is serverless?
-- Is I say edge computing, what do I mean?
-- List some CNCF (Cloud Native Computing Foundation) graduated projects or projects you like
+Contributions are welcome; inclusion remains at the maintainer's discretion. Read [CONTRIBUTING.md](CONTRIBUTING.md) for setup, question-editing, and review guidance. Coding agents must also read [AGENTS.md](AGENTS.md), including the temporary dependency-backport TODO.
 
-## Site Reliability Engineering
+Participation follows the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md).
 
-- What is a receiver in an alert manager?
-- What happens when you execute a `curl` command on a Prometheus exporter endpoint?
-- Give me an example of an OpenMetrics payload
-- What is a Service Level Objective (SLO)?
-- What is a Service Level Indicator (SLI)?
-- What is a Service Level Agreement (SLA)?
-- If I say "Error Budget", what do I mean? SLA is 99.9%, what is the error budget?
+## Security
 
-- How would you define a user-facing SLI for a job that is accepted immediately but finishes asynchronously?
-- How would you distinguish request-based and time-based error budgets, and when would each be appropriate?
-- A service has a 99.9% success SLO over one million eligible requests. How would you calculate its allowance for failures and remaining budget?
-- How would you define eligible requests, retries, timeouts, and exclusions before measuring an availability SLO?
-- How would you combine correctness, availability, and latency objectives without hiding one type of user harm?
-- A dependency is returning HTTP 200 with incorrect results. How would you detect and account for that in your SLOs?
-- How would you handle missing telemetry or a period with no traffic when evaluating service reliability?
-- How would you design multi-window burn-rate alerts and choose which conditions should page someone?
-- When should a reliability alert create a ticket instead of waking an on-call engineer?
-- Your error budget is exhausted during a feature launch. How would you agree on a change policy that still allows emergency fixes?
-- An alert storm begins during a regional incident. How would you reduce noise without suppressing evidence of new failures?
-- What information belongs in an on-call handoff so the next engineer can safely continue an investigation?
-- How would you separate incident command, technical response, and communication responsibilities in a small team?
-- You have several plausible causes for an outage. How would you choose a safe mitigation before proving the root cause?
-- How would you verify that an incident is resolved using sustained user-facing evidence rather than a single healthy dashboard?
-- What makes a postmortem action verifiable, and how would you determine whether it prevents a wider class of incidents?
-- A rollback follows a database schema migration. How would you assess compatibility and avoid trading downtime for data loss?
-- How would you plan a regional failover when data replication is delayed and both regions could accept writes?
-- How would you demonstrate that backups satisfy your recovery time and recovery point objectives?
-- How would you design a game day with explicit blast-radius limits, abort conditions, and recovery evidence?
-- How would you prevent retries, timeouts, and circuit breakers from amplifying a dependency failure?
-- Traffic is rising faster than new capacity can start. How would you prioritize load shedding, queue limits, and scaling?
-- How would you measure operational toil and decide which recurring task deserves automation first?
-- An AI assistant suggests a production remediation. What evidence, approval boundaries, and audit trail would you require before acting?
+Report vulnerabilities through the repository's enabled [private reporting channel](https://github.com/mbianchidev/engineering-interviews/security/advisories/new), not public issues. [SECURITY.md](SECURITY.md) covers supported versions, best-effort responses, and coordinated disclosure.
 
-## Terraform and Infrastructure as Code
+## License
 
-- What is Infrastructure as Code and why is it important in modern cloud development?
-- Explain the following commands: terraform init, terraform plan, terraform apply
-- What is the purpose of the Terraform state file?
-- What is Terraform's remote state?
-- Where should it be stored, for example, in AWS as a cloud provider?
-- What is a Terraform provider and what’s the difference between a provider and a resource?
-- What is the way of reusing Terraform templates?
-- How can you use Terraform variables?
-- What major cloud provider can Terraform work with?
-- How does Terraform handle updates to existing resources?
-- How does Terraform handle dependencies between resources?
+Licensed under the [GNU Affero General Public License v3.0](LICENSE).
 
-- A plan unexpectedly proposes replacing a production database. What would you inspect before allowing any apply?
-- An infrastructure apply fails halfway through. How would you reconcile actual resources, recorded state, and the next plan?
-- How would you determine whether a state lock is stale without interrupting an active operation?
-- How would you refactor resource addresses or module boundaries without destroying the underlying infrastructure?
-- How would you adopt an existing resource into managed state and prove that the next plan is safe?
-- Two automation systems claim ownership of the same cloud resource. How would you prevent competing changes?
-- How would you validate infrastructure modules with static checks, plan tests, and bounded integration environments?
-- How would you promote a reviewed plan between environments while accounting for identity, state, and variable differences?
-
-## Kubernetes, Helm, and Container Orchestration
-
-- What is Kubernetes, and what are some of its main features and benefits?
-- What are the components of a Kubernetes cluster, and how do they interact with each other?
-- How can you interact with Kubernetes API?
-- Explain these commands: k create, k get, k describe, k delete, k apply, k logs, k exec, scale, rollout
-- How do you create a Kubernetes deployment, and what are some best practices to follow when defining deployments?
-- What is an ImagePullPolicy and what values can this parameter hold?
-- What is a Kubernetes port forward? Why do you use that? What’s the command to perform that?
-- NodePort vs LoadBalancer?
-- What is the role of the Scheduler?
-- Explain node affinity, node taints, node selectors, and pod priority.
-- What are Kubernetes pods, and how do they relate to containers?
-- Explain the Pod lifecycle
-- What is the CrashLoopBackOff state?
-- Explain the following command 
-```
-kubectl run nginx --image=nginx:latest --port=80 --env="ENV_VAR=value" --labels="app=nginx" --
-limits="cpu=500m,memory=256Mi" --requests="cpu=250m,memory=128Mi" --dry-run=client -o yaml > nginx.yaml
-```
-- What’s the difference between resource request and resource limit in Kubernetes?
-- When is a Pod evicted?
-- How does Kubernetes health checks work?
-- What is a livenessProbe ?
-- What is a readinessProbe ?
-- What is a startupProbe ?
-- How many kinds of probe types are there?
-- NodeAffinity vs PodAffinity
-- What is the POD disruption budget?
-- What is a Kubernetes volume?
-- How is a Kubernetes volume different from a container's file system?
-- What are some types of Kubernetes volumes?
-- How do you define a Kubernetes volume in a Pod's YAML configuration?
-- How do you mount a Kubernetes volume to a container?
-- Can multiple containers in a Pod share the same volume?
-- What is a Persistent Volume (PV) in Kubernetes?
-- How do you define a Persistent Volume in Kubernetes?
-- How do you claim a Persistent Volume in Kubernetes (PVC)?
-- How do you use a Persistent Volume in a Pod?
-- What is a StorageClass and how does that work?
-- What are the benefits of StorageClass?
-- What is a Kubernetes namespace, and how can it be used to manage resources in a multi-tenant environment?
-- What are Kubernetes Services, and how do they enable application discovery and load balancing?
-- What is an Ingress and how does it work?
-- What is a Kubernetes Controller and how does it work?
-- Explain the difference between ReplicaSet controller, Deployment controller, StatefulSet controller, and DaemonSet controller
-- What is a secret, and how can it be used to manage sensitive information like passwords and API keys?
-- How do you scale a Kubernetes deployment, and what factors should you consider when determining the optimal number of replicas?
-- Also, what metrics exist (natively) that can trigger a new pod?
-- What kind of autoscaling is Kubernetes capable of?
-- What is HPA and how does it work?
-- What is Cluster Autoscaling and how does it work?
-- What is a ConfigMap?
-- What’s a Kubernetes Operator?
-- Explain RBAC - Role Based Access Control
-- What is the difference between Role and RoleBinding?
-- Role vs ClusterRole, explain the difference
-- What are some best practices for monitoring and logging Kubernetes clusters and applications running on them?
-- Do you have any experience with Grafana+Prometheus, New Relic, Datadog, Dynatrace, or other similar products?
-- How would you decide to separate Kubernetes clusters in an organisation? In what conditions would you have a single cluster?
-- How do you manage multi-tenancy on Kubernetes in general and in terms of billing?
-- How would you set up a high availability HA cluster in Kubernetes?
-  - How would you manage etcd? Stacked or unstacked?
-
-- Pods remain Pending even though the cluster has spare CPU. How would you investigate topology, taints, quotas, and storage constraints?
-- How can resource requests, HPA behavior, and node autoscaling interact to create a scaling feedback loop?
-- How would you distinguish a healthy process from a workload that is ready to serve real user requests?
-- A rolling deployment stalls because of disruption and availability constraints. How would you identify and resolve the conflicting requirements?
-- How would you isolate tenants across identity, network access, resource budgets, and noisy-neighbor behavior?
-- A pod cannot reach a dependency after a network-policy change. How would you trace DNS, routing, and policy decisions?
-- How would you plan an operator or custom-resource upgrade when stored objects and conversion webhooks must remain compatible?
-- How would you validate recovery of a stateful workload after losing a node or an availability zone?
-
-## Helm
-
-- What is Helm?
-- Explain helm create, helm package, and helm install commands
-- What does this `replicas: {{ .Values.replicaCount }}` mean?
-- How does helm templating work?
-- What is Jinja?
-- How can you see the story of the releases in helm?
-- Describe how to perform a go to the previous version in helm
-
-## Platform Engineering
-
-- What is Platform Engineering?
-- What is the difference between DevOps, SRE and Platform Engineering?
-- What is the tooling you use for Platform Engineering?
-- Should I go Platform Engineering if I have one product and one team?
-
-- How would you discover developer needs before choosing tools for an internal platform?
-- What makes a golden path useful, and how would you provide an escape hatch without abandoning support boundaries?
-- How would you measure platform adoption and developer experience without treating portal visits as proof of value?
-- What information and ownership rules belong in a service catalog?
-- When would you prefer continuously reconciled platform APIs over a pipeline that runs infrastructure plans on demand?
-- How would you design a self-service resource API with clear lifecycle, deletion, and failure semantics?
-- How would you decide when shared namespaces are sufficient and when a tenant needs a stronger isolation boundary?
-- How would you introduce workload identity and short-lived credentials without breaking existing applications?
-- How would you verify artifact provenance and promote the same immutable image digest through environments?
-- How would you combine GitOps reconciliation, progressive delivery, and explicit rollback criteria?
-- How would you test a platform upgrade against representative workloads before rolling it out across the fleet?
-- How would you allocate shared infrastructure costs and measure cost per useful unit of work?
-- How would you choose between a managed data service and an operator-managed database, including ownership of restores?
-- What lifecycle policy would you use to retire an unused platform feature or migrate teams off an unsupported version?
-- How would you schedule AI workloads around accelerator capacity, checkpoints, tenant fairness, and predictable costs?
-- How would you isolate temporary agent workers, scope their credentials, expire their leases, and verify teardown?
-
-See the [Platform Engineering Roadmap](https://platform-engineering-roadmap.mbianchi.dev/).
-
-## OpenShift
-
-- Do you have any experience with OpenShift Container Platform?
-- What is OpenShift?
-
-## Ansible
-
-- What is the difference between Playbook and Role?
-- How do you debug a Playbook?
-- How would you use Ansible to automate the deployment of a web application?
-
-## AWS
-
-- Define these AWS Services: EC2, S3, Route 53, Lambda, IAM
-- What kind of different Load Balancers does AWS offer?
-- Define these networking resources in AWS: VPC, ACL, NACL
-- What’s the difference between EKS, ECS, and ECR?
-- What is CloudFormation and how does it work?
-
-## Azure
-
-- How would you deploy a web application to Azure App Service?
-- Can you explain the difference between Azure Virtual Machines and Azure Kubernetes Service (AKS), and when you might choose one over the other?
-- How do you configure Azure Active Directory for use in a single-sign-on (SSO) scenario?
-
-# Software Engineering 
-
-## Backend
-
-- Explain SOLID principles
-- Do you know any design pattern? Pick your favorite one and explain it (e.g. Decorator, Facade, Observer)
-- What is a RESTful API?
-- What’s the difference between 2xx, 4xx, and 5xx error codes?
-- What is a Microservice architecture and how it differs from a monolithic one?
-- Explain OOP
-- Explain functional programming
-- Explain what is a Queue in programming and make some examples of different types of Queues (LIFO, FIFO...)
-- How do you handle errors in your code?
-- What is a distributed system?
-- Have you ever used a message broker? What is it and how does it work?
-- What is a cache? What is it used for?
-- Why is redis so fast?
-
-## Microservices
-
-- Why should I use separate data storage for each microservice?
-- What does it meen to keep code at a similar level of maturity?
-- What entails to separate build for each microservice?
-- Should I assign each microservice multiple responsibility?
-- Are containers useful in microservices?
-- Stateless microservices seem to be bad. Can I go stateful with microservices? 
-- Should I Adopt DDD (Domain Driven Design)?
-- Orchestrating microservices is not easy. What are the options?
-
-![System-design diagram supplied with the interview material, showing a client, API gateway, Subscription, Search, and Video services, Postgres, and video storage](docs/images/system-design.png)
-
-## Backend Engineering Scenarios
-
-- What’s canary deployment?
-- What if I have two deployments 1.0 (production, stable) and 1.1 (test, maybe stable) and I want to test 1.1 with production traffic, without using the canary deployment technique, what alternatives have I got?
-- What if I have a log file that multiple processes write to, how can I make sure that the log file is not corrupted?
-- If you're maintaining a critical internal tool and an engineer submits a very large pull request that's clearly AI-generated, what goes through your mind as you start reviewing it? What yellow flags are you looking for? What kind of conversation would you have with the author to feel confident that you can safely merge the code?
-
-## Database
-
-- What kind of databases do you know? Pick one and convince me it's the best kind of db ever for my application (e.g. In memory, time series, document, vectorial)
-- Explain DB data structures (e.g. B-Tree, Hash Table, LSM tree etc.)
-- What is a query execution plan? Can you "explain" it?
-- What is a transaction? What's the definition of ACID?
-
-## Frontend
-
-- What is responsive design and how is it achieved?
-- What is a CSS preprocessor?
-- What is a media query in CSS?
-- What’s a CDN?
-- How can it help to improve a frontend?
-- What kind of CDN have you used?
-- What’s caching and how does it work?
-- What kind of caches have you used?
-- How can you test frontend?
-- Have you got any experience with Selenium, Cypress, or Storybook.js?
-
-## React
-
-- What are the benefits of using a virtual DOM in React?
-- What is the difference between state and props in React?
-- What’s the difference between a class component and a functional component?
-- How routing works in React?
-- What is the difference between controlled and uncontrolled components in React?
-- What is Redux?
-
-## Angular
-
-- What is the difference between ngOnChanges and ngOnInit in Angular?
-- What is Angular's change detection mechanism?
-- What is an Angular service?
-- What is dependency injection in Angular?
-- What is Angular routing?
-- What is the difference between a component and a directive in Angular?
-
-## Frontend Engineering Scenarios
-
-- What are microfrontends?
-- What are the benefits of using micro frontends?
-- What is a Progressive Web App (PWA)?
-- What are the benefits of using PWA?
-- What are the key features of a PWA?
-- How can you optimize a PWA for performance?
-- Client Side Rendering (CSR) vs Server Side Rendering (SSR), explain the concepts
-- Can you describe your approach to optimizing the performance and user experience of a large e-commerce website?
-- How would you approach building a highly interactive and responsive web application with real-time updates? E.g. Financial App Stock Market data
-
-# Observability
-
-## OpenTelemetry
-
-- What responsibilities belong to the OpenTelemetry API, SDK, instrumentation libraries, and Collector?
-- How would you decide where automatic instrumentation is sufficient and where manual spans are necessary?
-- How would you propagate trace context through HTTP calls, queues, and asynchronous background work?
-- When would you use span links instead of a parent-child relationship, especially for batched or fan-in processing?
-- How would you choose between head sampling and tail sampling while accounting for cost, latency, and memory limits?
-- How would you ensure that all spans for a trace reach the same tail-sampling decision when Collectors scale horizontally?
-- How would you compare agent and gateway Collector deployments for availability, isolation, and operational ownership?
-- How would you organize receivers, processors, and exporters into separate telemetry pipelines?
-- What stable resource attributes would you attach to identify a service, environment, and deployed version?
-- How would you correlate structured logs with traces when some traces are not retained by your sampling policy?
-- How would you reason about cumulative versus delta metric temporality and process restarts during export?
-- A trace disappears between two services. How would you locate the gap in propagation, sampling, export, or backend ingestion?
-
-## Prometheus and PromQL
-
-- When would you use a counter, gauge, histogram, or summary to measure an application's behavior?
-- How would you calculate an error ratio from counters while handling resets and choosing an appropriate rate window?
-- Why can applying a rate after aggregating counters produce incorrect results when instances restart?
-- How would you calculate a fleet-wide p99 from histograms without averaging per-instance percentiles?
-- How would you choose histogram buckets for a latency objective, and what changes when using native histograms?
-- Why are user IDs, request IDs, and raw URL paths risky metric labels, and what alternatives would you use?
-- How would you distinguish a missing time series from a valid zero when writing queries and alerts?
-- A target's up metric is healthy while users see failures. What additional signals would you inspect?
-- When would recording rules help query performance, and how would you validate their labels and aggregation semantics?
-- How do alert evaluation intervals, pending states, and a for duration affect detection and recovery?
-- Remote-write queues are backing up. How would you investigate dropped samples, backend limits, and local resource pressure?
-- How would you design Alertmanager grouping, routing, inhibition, and receiver ownership for a multi-team organization?
-
-## Grafana and Dashboards
-
-- How would you design a dashboard around a user journey instead of a collection of infrastructure charts?
-- How would you use RED and USE views together to connect request failures to resource saturation?
-- What identifiers and links would you use to move from a metric anomaly to relevant logs and traces?
-- How would you provision dashboards and data sources so that changes can be reviewed and reproduced across environments?
-- A dashboard is empty after a deployment. How would you check time ranges, labels, data-source access, and ingestion freshness?
-- How would you present units, aggregation windows, and percentile semantics so viewers do not misread a panel?
-- How would you avoid misleading averages when visualizing latency across instances, regions, or tenants?
-- How would you expose low-volume or high-impact cohorts without making every dashboard query prohibitively expensive?
-- How would you choose whether Prometheus or Grafana owns an alert, and prevent duplicate evaluations and notifications?
-- How would you add deployment and incident annotations without confusing correlation with proof of causation?
-- How would you make a telemetry-pipeline failure visible separately from the health of the observed application?
-- How would you control dashboard access, data-source permissions, and accidental exposure of sensitive query results?
-
-## Instrumentation and Telemetry Pipelines
-
-- How would you instrument successful and failed business outcomes rather than counting only HTTP status codes?
-- How would you define metric denominators for retries, timeouts, cancellations, and asynchronous completion?
-- How would you name spans and metric dimensions so instrumentation stays useful as routes and services evolve?
-- Where would you remove personal data and secrets from telemetry, and how would you verify the redaction?
-- How would you prevent baggage or propagated context from becoming an unbounded source of sensitive metadata?
-- How would you design structured logs that provide useful context without duplicating every payload or stack trace?
-- How would you instrument an external dependency without exposing credentials or recording its full response body?
-- How would you test instrumentation with synthetic requests, fake exporters, and explicit assertions about emitted signals?
-- What should an application do if its telemetry backend is unavailable, and how would you bound buffering and overhead?
-- How would you flush telemetry during shutdown while respecting termination deadlines and avoiding a blocked exit?
-- How would you detect dropped telemetry, queue pressure, stale ingestion, and failed alert delivery end to end?
-- What can eBPF-based observability show without application changes, and where do encryption and missing business context limit it?
-
-## Latency and Performance
-
-- Your average request latency is unchanged, but p99 doubles after a release. How would you isolate what changed?
-- What do p50, p95, p99, and p99.9 tell you, and how does sample size affect confidence in each?
-- Why is averaging the p99 values of several services or instances not a valid end-to-end percentile?
-- How would histogram bucket boundaries affect the accuracy of a percentile estimate near an SLO threshold?
-- What is coordinated omission in a load test, and how could it hide the latency users would experience?
-- When would you choose an open workload model instead of a closed one for a performance test?
-- How would you separate queueing time, connection-pool waits, execution time, and downstream latency?
-- A request fans out to many dependencies. How would you reason about tail-latency amplification and the overall timeout budget?
-- How could retries improve success rates while worsening p99 and resource saturation?
-- How would you distinguish cold starts, cache misses, garbage collection, and CPU throttling as causes of latency spikes?
-- Throughput stops increasing as concurrency rises. How would you identify the bottleneck and choose a safe operating point?
-- How would you combine profiling, traces, and load tests to verify that a performance change actually improves user-facing latency?
-
-# Coding and Problem Solving
-
-These scenarios focus on reusable engineering concepts. Discuss assumptions, edge cases, tests, and trade-offs before choosing an implementation.
-
-## Strings and Algorithms
-
-- How would you compare dotted numeric version strings when segments can be missing or contain leading zeros?
-- How would you find the shortest contiguous token sequence containing every required token?
-- How would your minimum-window algorithm change if required tokens can appear more than once?
-- Given unordered directed edges and a starting node, how would you determine whether a path can consume every edge exactly once?
-- How would you handle disconnected components, repeated edges, and cycles when reconstructing a path?
-- How would you validate a sequence of bounded text edits without accepting operations outside the document?
-- How would Unicode code points, byte offsets, and grapheme clusters affect a text-editing algorithm?
-- How would you parse nested delimiters while respecting quoted strings and escape sequences?
-- How would you process a large stream with a fixed memory budget, and when would an approximate result be acceptable?
-- What invariants and property-based tests would you use to validate a string or graph algorithm beyond a few examples?
-
-## Concurrency and Coordination
-
-- A synchronous log writer is slowing request handling. How would you move the work off the request path without losing ordering guarantees?
-- How would you batch background writes using both a size threshold and a time limit?
-- A producer generates work faster than consumers can finish it. How would you bound memory and make overload behavior explicit?
-- How would you drain a background worker safely during shutdown, including work that is queued or in flight?
-- How would you test concurrent code with controlled scheduling and fake clocks rather than timing-dependent sleeps?
-- How would you count nodes in a distributed tree when each node can contact only its children?
-- How would you represent a distributed traversal result when some children time out instead of pretending the result is complete?
-- How would you correlate late replies with the correct request and avoid counting duplicated responses?
-- Two workers update the same record. How would you compare locking, optimistic concurrency, and single-owner processing?
-- How would you implement cancellation and error propagation so one failed task does not leak resources in a worker pool?
-
-## APIs and State Machines
-
-- How would you validate a JSON command stream and reject malformed or unsupported operations before mutating state?
-- How would you model a document-editing command as a state transition with explicit preconditions and postconditions?
-- How would you replay recorded operations and prove that they produce the expected final state?
-- How would you design an idempotent API when clients may retry a request after losing its response?
-- How would you distinguish invalid input, a conflict, and a transient dependency failure in an API response?
-- How would you choose an idempotency-key scope and retention policy without allowing two unrelated requests to collide?
-- A client disconnects halfway through a multi-step operation. How would you expose status and support safe recovery?
-- How would you prevent an old asynchronous result from overwriting a newer state transition?
-- How would you evolve an event or command schema while keeping older producers and consumers compatible?
-- What tests would you use for boundary conditions, invalid transitions, duplicate events, and interrupted operations?
-
-## Infrastructure Exercises
-
-- How would you design a small web deployment with a public entry point, private application workers, and a private database?
-- How would you prove that application traffic follows the intended path through DNS, routing, load balancing, and health checks?
-- A newly deployed application cannot connect to its database. How would you separate identity, network, name-resolution, and engine failures?
-- How would you structure a reusable infrastructure module with explicit inputs, useful outputs, and minimal hidden assumptions?
-- How would you handle a required cloud API, quota, or permission that is missing during a deployment?
-- How would you verify a partially completed deployment without deleting resources or discarding state to start over?
-- How would you design a temporary test environment with bounded costs, expiry, and verified cleanup?
-- How would you demonstrate that a deployment remains healthy after restarting a worker or losing a zone?
-- Which checks would you automate before declaring an infrastructure exercise complete?
-- How would you document the ownership, security boundaries, recovery path, and known limitations of a small platform deployment?
-
-# Behavioral (I don't usually ask these questions)
-
-- Describe a time when you disagreed with a team member. How did you resolve the problem?
-- Describe a time when you faced a block at work and how you solved it.
-- Tell me about a time when you disagreed with a supervisor.
-- What is the most difficult/ challenging situation you’ve ever had to resolve in the workplace? 
-- Describe a time when you were able to motivate unmotivated team members.
-- Tell me about a decision that you’ve regretted and how you overcame it.
-- Tell me about a time when you tried something risky and failed.
-- Tell me about a time when you were consulted for a problem.
-- Explain a time when you took the initiative on a project.
-- What’s the best idea you’ve come up with on a team-based project?
-- Tell me about a time when you worked well under pressure.
-- So, tell me a bit about yourself…
-- Why do you want to work here?
-- Where do you see yourself in X years? (X = 3, 5, 10)
-- What do you do outside of work?
-- What are your strengths and weaknesses?
-- Why are you leaving your current job? (not for interns/new grad)
-- Who is your idol?
-- What is your favorite book?
-- Why startup|big tech|[insert here kind of company or industry]?
-- How do you see [insert here industry] in the next 5 years?
-- What would be your perfect job description?
-
-# Outro
-- Are you happy with our salary offering?
-- What benefit would you like to see listed?
-- What benefit are you glad we offer?
-- What is your notice period?
-- When would you be available to start?
-- Do you have any questions for me?
+The [Code of Conduct](CODE_OF_CONDUCT.md#attribution) retains Contributor Covenant's CC BY-SA 4.0 attribution and license.

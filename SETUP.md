@@ -1,23 +1,12 @@
 # Engineering Interview Practice
 
-A static Next.js website for working through the interview questions in [README.md](README.md).
-
-## Features
-
-- **Browse by topic:** 366 questions across engineering fundamentals, software engineering, coding and problem solving, platforms and SRE, and observability.
-- **Practice rounds:** Ten randomly selected questions per round, with topic and subtopic selection. Select at least ten questions when applying a filter; no selection means the full bank.
-- **Three practice modes:** Easy has no timer. Standard allows five minutes per question and rolls unused time into an extra-time pool. Hard has five minutes with no rollover. Timed modes advance when time expires.
-- **Responses and progress:** Write, revisit, or clear answers, track viewed questions, and review self-evaluations after a round.
-- **Questions to ask companies:** Expand sections about culture, growth, role expectations, and company fit.
-- **Responsive styling:** Shared typography and components, automatic light/dark appearance, visible keyboard focus, and reduced-motion support.
-
-Responses, viewed-question IDs, and evaluations stay in browser local storage. Responses save when the text box loses focus or the practice question changes. There is no account or backend; clearing browser storage removes your saved work.
-
-The additional coding prompts abstract reusable concepts from exercises rather than publishing company-specific assignments. Observability covers OpenTelemetry, Prometheus/PromQL, Grafana, instrumentation, telemetry pipelines, and tail latency. Reliability and platform scenarios draw inspiration from the [Platform Engineering Roadmap](https://platform-engineering-roadmap.mbianchi.dev/).
+Developer setup for the static Next.js [practice website](https://mbianchidev.github.io/engineering-interviews/). For practice modes, saved answers, self-evaluations, and troubleshooting, see the [user guide](docs/practice.md).
 
 ## Run locally
 
 Use Node.js 24 LTS, matching CI, and npm.
+
+Validation and Pages jobs use the explicit Ubuntu 24.04 runner image rather than the moving `ubuntu-latest` label.
 
 ```bash
 git clone https://github.com/mbianchidev/engineering-interviews.git
@@ -37,7 +26,15 @@ npm audit
 npm run build
 ```
 
-Tests check question coverage, unique IDs, stable existing routes and representative question IDs, generated-data consistency, and local-storage behavior using synthetic data. The PR workflow runs installation, audit, lint, tests, and a production export.
+Tests check the `legacy.md` source independently of the README, question coverage, unique IDs, stable existing routes and representative question IDs, generated-data consistency, local-storage behavior, Next.js lint-root glob compatibility, and brace nesting limits using synthetic data. The PR workflow runs installation, audit, lint, tests, and a production export.
+
+CI audits both production and development dependencies. A scoped npm override pins `braces` within the Next.js ESLint plugin's dependency tree to the community backport `@dieub/braces-depth-guard@3.0.3-pn.0` while an upstream fix for [GHSA-vfj7-8cjw-p6xm](https://github.com/advisories/GHSA-vfj7-8cjw-p6xm) remains unpublished. Its only runtime changes from `braces@3.0.3` are nesting-depth guards: inputs and ASTs deeper than 100 levels are rejected, and stricter `maxDepth` limits are supported. Next.js, ESLint, and globbing APIs and lint rules are unchanged. Revisit the override when an official patched release becomes available.
+
+### Dependency install scripts
+
+`package.json` records exact-version `allowScripts` approvals for the reviewed `esbuild@0.25.12`, `unrs-resolver@1.11.1`, and macOS-only `fsevents@2.3.3` dependencies. Current npm uses these approvals for dependency lifecycle scripts; unreviewed packages or upgraded versions remain subject to review.
+
+Use `npm install-scripts ls` to inspect pending approvals. After a dependency upgrade, read the affected lifecycle script and its helpers before recording a new pinned approval with `npm install-scripts approve <package>`. Do not use blanket `--all` approval or global script permissions. Rerun clean installation, the full audit, tests, lint, and builds after changing approvals.
 
 ## Build and deployment
 
@@ -71,19 +68,23 @@ app/topics/                   Topic index and question pages
 app/practice/                 Practice modes and self-evaluations
 app/ask-companies/             Company questions
 app/globals.css                Shared design tokens and responsive styling
-lib/parseQuestions.ts          README parser and question types
+lib/parseQuestions.ts          Legacy question-bank parser and question types
 lib/questionsData.ts           Generated data for client components
 lib/*Storage.ts                Browser-local responses, progress, and ratings
 lib/topicPresentation.ts       Topic descriptions and question counts
 scripts/generate-questions.ts  Question JSON generator
 public/questions.json         Generated question data
 tests/                        Question and storage regression tests
-README.md                     Canonical question bank
+legacy.md                     Canonical question bank and archived interview material
+README.md                     Website-first project overview
+docs/README.md                User/developer documentation index
 ```
+
+The parser reads `legacy.md`, excluding introductory, behavioral, and closing sections from practice rounds. The generator writes `public/questions.json` for client components; topic pages read the same source directly and are generated at build time. The README is independent of that data flow. Browser-local helpers store answers, viewed IDs, and self-evaluations; no backend is involved.
 
 ## Editing questions
 
-Keep the question bank in `README.md`. Top-level headings define categories, second-level headings define subtopics, and question bullets start with an uppercase letter. The parser skips the introductory, resource, STAR, behavioral, and outro sections.
+Keep the question bank in [`legacy.md`](legacy.md), not the README. It preserves the original interview material from `Intro` onward, while the website is the default reading and practice interface. Top-level headings define categories, second-level headings define subtopics, and question bullets start with an uppercase letter. The parser skips the introductory, behavioral, and outro sections.
 
 Run `npm run generate-questions` after editing questions and commit the updated `public/questions.json`. Development, tests, and production builds also regenerate it automatically. Topic pages are generated at build time; practice mode imports the same data.
 
@@ -91,4 +92,6 @@ Question IDs derive from their text. Changing an existing question's wording cha
 
 ## Contributing and license
 
-See [README.md](README.md) for contribution guidelines. Licensed under [AGPL-3.0](LICENSE).
+See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines and [AGENTS.md](AGENTS.md) for agent instructions. Licensed under [AGPL-3.0](LICENSE).
+
+Follow the [Code of Conduct](CODE_OF_CONDUCT.md), [security reporting policy](SECURITY.md), and [accessibility contribution guidance](ACCESSIBILITY.md). Contributor Covenant's attribution and CC BY-SA 4.0 license are retained in the Code of Conduct.

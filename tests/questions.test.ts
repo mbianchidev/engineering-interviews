@@ -1,10 +1,43 @@
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
 import { test } from 'node:test';
-import { parseReadme, getAllQuestions } from '../lib/parseQuestions';
+import { parseQuestionBank, getAllQuestions } from '../lib/parseQuestions';
 import { allCategories, allQuestions } from '../lib/questionsData';
 
+test('question parsing uses legacy.md independently of the README landing page', t => {
+  const readFile = t.mock.method(fs, 'readFileSync', () => [
+    '# Intro',
+    '- Ignore this introduction',
+    '# Synthetic category',
+    '## Synthetic subtopic',
+    '- How would you test a synthetic service?',
+    '# Outro',
+    '- Ignore this closing question',
+  ].join('\n'));
+
+  assert.deepEqual(parseQuestionBank(), [{
+    id: 'synthetic-category',
+    name: 'Synthetic category',
+    questions: [],
+    subcategories: [{
+      id: 'synthetic-subtopic',
+      name: 'Synthetic subtopic',
+      questions: [{
+        id: 'how-would-you-test-a-synthetic-service',
+        text: 'How would you test a synthetic service?',
+        category: 'Synthetic category',
+        subcategory: 'Synthetic subtopic',
+      }],
+    }],
+  }]);
+  assert.deepEqual(readFile.mock.calls.map(call => call.arguments[0]), [
+    path.join(process.cwd(), 'legacy.md'),
+  ]);
+});
+
 test('existing category routes and representative question IDs stay stable', () => {
-  const categories = parseReadme();
+  const categories = parseQuestionBank();
   for (const id of ['general', 'devops-sre-and-platform-engineering', 'software-engineering']) {
     assert.ok(categories.some(category => category.id === id), `Missing existing category: ${id}`);
   }
@@ -21,7 +54,7 @@ test('existing category routes and representative question IDs stay stable', () 
 });
 
 test('coding scenarios cover algorithms, concurrency, state, and infrastructure', () => {
-  const category = parseReadme().find(category => category.id === 'coding-and-problem-solving');
+  const category = parseQuestionBank().find(category => category.id === 'coding-and-problem-solving');
   assert.ok(category, 'The coding question category must be available');
   for (const name of [
     'Strings and Algorithms',
@@ -36,7 +69,7 @@ test('coding scenarios cover algorithms, concurrency, state, and infrastructure'
 });
 
 test('observability topics each support a complete practice round', () => {
-  const category = parseReadme().find(category => category.id === 'observability');
+  const category = parseQuestionBank().find(category => category.id === 'observability');
   assert.ok(category, 'The observability question category must be available');
   for (const name of [
     'OpenTelemetry',
@@ -52,7 +85,7 @@ test('observability topics each support a complete practice round', () => {
 });
 
 test('SRE and platform engineering include deeper operational questions', () => {
-  const category = parseReadme().find(category => category.id === 'devops-sre-and-platform-engineering');
+  const category = parseQuestionBank().find(category => category.id === 'devops-sre-and-platform-engineering');
   assert.ok(category);
   const sre = category.subcategories.find(subcategory => subcategory.name === 'Site Reliability Engineering');
   const platform = category.subcategories.find(subcategory => subcategory.name === 'Platform Engineering');
@@ -61,7 +94,7 @@ test('SRE and platform engineering include deeper operational questions', () => 
 });
 
 test('question IDs are unique and every question belongs to a valid topic', () => {
-  const categories = parseReadme();
+  const categories = parseQuestionBank();
   const questions = getAllQuestions();
   assert.equal(new Set(categories.map(category => category.id)).size, categories.length);
   assert.equal(new Set(questions.map(question => question.id)).size, questions.length);
@@ -79,7 +112,7 @@ test('question IDs are unique and every question belongs to a valid topic', () =
 
 test('generated client data matches the server-side question bank', () => {
   const normalize = (value: unknown) => JSON.parse(JSON.stringify(value));
-  assert.deepEqual(allCategories, normalize(parseReadme()));
+  assert.deepEqual(allCategories, normalize(parseQuestionBank()));
   assert.deepEqual(allQuestions, normalize(getAllQuestions()));
   assert.ok(allQuestions.length >= 366, 'The expanded bank must retain the original 210 questions');
 });
