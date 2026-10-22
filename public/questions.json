@@ -320,6 +320,12 @@
               "text": "Why too many lines are bad for a Dockerfile?",
               "category": "DevOps, SRE and Platform Engineering",
               "subcategory": "Docker and Containerization"
+            },
+            {
+              "id": "given-a-node-js-service-s-dockerfile-explain-each-instruction-in-order-including-its-effects-on-dependency-installation-build-stages-caching-runtime-permissions-networking-and-process-startup",
+              "text": "Given a Node.js service's Dockerfile, explain each instruction in order, including its effects on dependency installation, build stages, caching, runtime permissions, networking, and process startup.",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Docker and Containerization"
             }
           ]
         },
@@ -1431,6 +1437,18 @@
               "text": "Why is redis so fast?",
               "category": "Software Engineering",
               "subcategory": "Backend"
+            },
+            {
+              "id": "what-does-lamp-stand-for-what-role-does-each-component-play-and-how-does-a-technology-stack-differ-from-a-microservice-architecture",
+              "text": "What does LAMP stand for, what role does each component play, and how does a technology stack differ from a microservice architecture?",
+              "category": "Software Engineering",
+              "subcategory": "Backend"
+            },
+            {
+              "id": "when-would-you-choose-node-js-rather-than-python-for-a-json-heavy-web-service-or-microservice-discuss-typescript-event-loop-concurrency-cpu-bound-work-team-and-ecosystem-fit-and-python-with-fastapi-as-an-alternative",
+              "text": "When would you choose Node.js rather than Python for a JSON-heavy web service or microservice? Discuss TypeScript, event-loop concurrency, CPU-bound work, team and ecosystem fit, and Python with FastAPI as an alternative.",
+              "category": "Software Engineering",
+              "subcategory": "Backend"
             }
           ]
         },
@@ -1483,6 +1501,12 @@
             {
               "id": "orchestrating-microservices-is-not-easy-what-are-the-options",
               "text": "Orchestrating microservices is not easy. What are the options?",
+              "category": "Software Engineering",
+              "subcategory": "Microservices"
+            },
+            {
+              "id": "how-would-you-package-and-deploy-a-single-process-node-js-http-service-as-an-independently-deployable-microservice-discuss-containerization-deterministic-production-dependencies-non-root-execution-interface-binding-and-port-publishing-graceful-shutdown-and-the-limits-of-in-memory-state-across-restarts-and-replicas",
+              "text": "How would you package and deploy a single-process Node.js HTTP service as an independently deployable microservice? Discuss containerization, deterministic production dependencies, non-root execution, interface binding and port publishing, graceful shutdown, and the limits of in-memory state across restarts and replicas.",
               "category": "Software Engineering",
               "subcategory": "Microservices"
             }
@@ -2714,6 +2738,12 @@
       "subcategory": "Docker and Containerization"
     },
     {
+      "id": "given-a-node-js-service-s-dockerfile-explain-each-instruction-in-order-including-its-effects-on-dependency-installation-build-stages-caching-runtime-permissions-networking-and-process-startup",
+      "text": "Given a Node.js service's Dockerfile, explain each instruction in order, including its effects on dependency installation, build stages, caching, runtime permissions, networking, and process startup.",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Docker and Containerization"
+    },
+    {
       "id": "what-is-cloud-computing",
       "text": "What is cloud computing?",
       "category": "DevOps, SRE and Platform Engineering",
@@ -3752,6 +3782,18 @@
       "subcategory": "Backend"
     },
     {
+      "id": "what-does-lamp-stand-for-what-role-does-each-component-play-and-how-does-a-technology-stack-differ-from-a-microservice-architecture",
+      "text": "What does LAMP stand for, what role does each component play, and how does a technology stack differ from a microservice architecture?",
+      "category": "Software Engineering",
+      "subcategory": "Backend"
+    },
+    {
+      "id": "when-would-you-choose-node-js-rather-than-python-for-a-json-heavy-web-service-or-microservice-discuss-typescript-event-loop-concurrency-cpu-bound-work-team-and-ecosystem-fit-and-python-with-fastapi-as-an-alternative",
+      "text": "When would you choose Node.js rather than Python for a JSON-heavy web service or microservice? Discuss TypeScript, event-loop concurrency, CPU-bound work, team and ecosystem fit, and Python with FastAPI as an alternative.",
+      "category": "Software Engineering",
+      "subcategory": "Backend"
+    },
+    {
       "id": "why-should-i-use-separate-data-storage-for-each-microservice",
       "text": "Why should I use separate data storage for each microservice?",
       "category": "Software Engineering",
@@ -3796,6 +3838,12 @@
     {
       "id": "orchestrating-microservices-is-not-easy-what-are-the-options",
       "text": "Orchestrating microservices is not easy. What are the options?",
+      "category": "Software Engineering",
+      "subcategory": "Microservices"
+    },
+    {
+      "id": "how-would-you-package-and-deploy-a-single-process-node-js-http-service-as-an-independently-deployable-microservice-discuss-containerization-deterministic-production-dependencies-non-root-execution-interface-binding-and-port-publishing-graceful-shutdown-and-the-limits-of-in-memory-state-across-restarts-and-replicas",
+      "text": "How would you package and deploy a single-process Node.js HTTP service as an independently deployable microservice? Discuss containerization, deterministic production dependencies, non-root execution, interface binding and port publishing, graceful shutdown, and the limits of in-memory state across restarts and replicas.",
       "category": "Software Engineering",
       "subcategory": "Microservices"
     },
