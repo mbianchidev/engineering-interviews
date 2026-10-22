@@ -251,6 +251,20 @@ limits="cpu=500m,memory=256Mi" --requests="cpu=250m,memory=128Mi" --dry-run=clie
 
 See the [Platform Engineering Roadmap](https://platform-engineering-roadmap.mbianchi.dev/).
 
+## Application Delivery and Observability
+
+- Proof-of-value (POV) information is managed inconsistently across Google Drive, Notion, and a CRM. What lightweight web application would you build to manage it, and how would you build it? Give a ten-second pitch.
+- A developer pulls the POV application's code from GitHub and then needs to run the full stack locally without network connectivity. How would you support this, and what would need to be prepared before going offline?
+- How would you deploy the POV application to production on Amazon EKS? Walk through the deployment and discuss managed Kubernetes environments you have actually worked with.
+- How would you use Flux specifically to manage the POV application's EKS deployment through GitOps?
+- What differences matter when deploying the POV application's database versus its frontend?
+- How would you instrument the POV application with OpenTelemetry?
+- What exactly does OpenTelemetry auto-instrumentation require at the application level?
+- An enterprise has 10,000 microservices. Can instrumentation dependencies and installation be abstracted away from application teams? How would you approach this?
+- How would you attribute spans to the resources generating them, including the service, pod, namespace, and cluster? Distinguish resource attributes from CPU and memory metrics.
+- How would you compare OpenTelemetry Collector gateway, sidecar, and DaemonSet deployment patterns, including their effects on resource attribution and scale?
+- Why would you choose distributed tracing over logs? Explain the tradeoffs and why both may still be needed.
+
 ## OpenShift
 
 - Do you have any experience with OpenShift Container Platform?
