@@ -1248,6 +1248,78 @@
           ]
         },
         {
+          "id": "application-delivery-and-observability",
+          "name": "Application Delivery and Observability",
+          "questions": [
+            {
+              "id": "proof-of-value-pov-information-is-managed-inconsistently-across-google-drive-notion-and-a-crm-what-lightweight-web-application-would-you-build-to-manage-it-and-how-would-you-build-it-give-a-ten-second-pitch",
+              "text": "Proof-of-value (POV) information is managed inconsistently across Google Drive, Notion, and a CRM. What lightweight web application would you build to manage it, and how would you build it? Give a ten-second pitch.",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Application Delivery and Observability"
+            },
+            {
+              "id": "a-developer-pulls-the-pov-application-s-code-from-github-and-then-needs-to-run-the-full-stack-locally-without-network-connectivity-how-would-you-support-this-and-what-would-need-to-be-prepared-before-going-offline",
+              "text": "A developer pulls the POV application's code from GitHub and then needs to run the full stack locally without network connectivity. How would you support this, and what would need to be prepared before going offline?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Application Delivery and Observability"
+            },
+            {
+              "id": "how-would-you-deploy-the-pov-application-to-production-on-amazon-eks-walk-through-the-deployment-and-discuss-managed-kubernetes-environments-you-have-actually-worked-with",
+              "text": "How would you deploy the POV application to production on Amazon EKS? Walk through the deployment and discuss managed Kubernetes environments you have actually worked with.",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Application Delivery and Observability"
+            },
+            {
+              "id": "how-would-you-use-flux-specifically-to-manage-the-pov-application-s-eks-deployment-through-gitops",
+              "text": "How would you use Flux specifically to manage the POV application's EKS deployment through GitOps?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Application Delivery and Observability"
+            },
+            {
+              "id": "what-differences-matter-when-deploying-the-pov-application-s-database-versus-its-frontend",
+              "text": "What differences matter when deploying the POV application's database versus its frontend?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Application Delivery and Observability"
+            },
+            {
+              "id": "how-would-you-instrument-the-pov-application-with-opentelemetry",
+              "text": "How would you instrument the POV application with OpenTelemetry?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Application Delivery and Observability"
+            },
+            {
+              "id": "what-exactly-does-opentelemetry-auto-instrumentation-require-at-the-application-level",
+              "text": "What exactly does OpenTelemetry auto-instrumentation require at the application level?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Application Delivery and Observability"
+            },
+            {
+              "id": "an-enterprise-has-10-000-microservices-can-instrumentation-dependencies-and-installation-be-abstracted-away-from-application-teams-how-would-you-approach-this",
+              "text": "An enterprise has 10,000 microservices. Can instrumentation dependencies and installation be abstracted away from application teams? How would you approach this?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Application Delivery and Observability"
+            },
+            {
+              "id": "how-would-you-attribute-spans-to-the-resources-generating-them-including-the-service-pod-namespace-and-cluster-distinguish-resource-attributes-from-cpu-and-memory-metrics",
+              "text": "How would you attribute spans to the resources generating them, including the service, pod, namespace, and cluster? Distinguish resource attributes from CPU and memory metrics.",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Application Delivery and Observability"
+            },
+            {
+              "id": "how-would-you-compare-opentelemetry-collector-gateway-sidecar-and-daemonset-deployment-patterns-including-their-effects-on-resource-attribution-and-scale",
+              "text": "How would you compare OpenTelemetry Collector gateway, sidecar, and DaemonSet deployment patterns, including their effects on resource attribution and scale?",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Application Delivery and Observability"
+            },
+            {
+              "id": "why-would-you-choose-distributed-tracing-over-logs-explain-the-tradeoffs-and-why-both-may-still-be-needed",
+              "text": "Why would you choose distributed tracing over logs? Explain the tradeoffs and why both may still be needed.",
+              "category": "DevOps, SRE and Platform Engineering",
+              "subcategory": "Application Delivery and Observability"
+            }
+          ]
+        },
+        {
           "id": "openshift",
           "name": "OpenShift",
           "questions": [
@@ -3624,6 +3696,72 @@
       "text": "How would you isolate temporary agent workers, scope their credentials, expire their leases, and verify teardown?",
       "category": "DevOps, SRE and Platform Engineering",
       "subcategory": "Platform Engineering"
+    },
+    {
+      "id": "proof-of-value-pov-information-is-managed-inconsistently-across-google-drive-notion-and-a-crm-what-lightweight-web-application-would-you-build-to-manage-it-and-how-would-you-build-it-give-a-ten-second-pitch",
+      "text": "Proof-of-value (POV) information is managed inconsistently across Google Drive, Notion, and a CRM. What lightweight web application would you build to manage it, and how would you build it? Give a ten-second pitch.",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Application Delivery and Observability"
+    },
+    {
+      "id": "a-developer-pulls-the-pov-application-s-code-from-github-and-then-needs-to-run-the-full-stack-locally-without-network-connectivity-how-would-you-support-this-and-what-would-need-to-be-prepared-before-going-offline",
+      "text": "A developer pulls the POV application's code from GitHub and then needs to run the full stack locally without network connectivity. How would you support this, and what would need to be prepared before going offline?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Application Delivery and Observability"
+    },
+    {
+      "id": "how-would-you-deploy-the-pov-application-to-production-on-amazon-eks-walk-through-the-deployment-and-discuss-managed-kubernetes-environments-you-have-actually-worked-with",
+      "text": "How would you deploy the POV application to production on Amazon EKS? Walk through the deployment and discuss managed Kubernetes environments you have actually worked with.",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Application Delivery and Observability"
+    },
+    {
+      "id": "how-would-you-use-flux-specifically-to-manage-the-pov-application-s-eks-deployment-through-gitops",
+      "text": "How would you use Flux specifically to manage the POV application's EKS deployment through GitOps?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Application Delivery and Observability"
+    },
+    {
+      "id": "what-differences-matter-when-deploying-the-pov-application-s-database-versus-its-frontend",
+      "text": "What differences matter when deploying the POV application's database versus its frontend?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Application Delivery and Observability"
+    },
+    {
+      "id": "how-would-you-instrument-the-pov-application-with-opentelemetry",
+      "text": "How would you instrument the POV application with OpenTelemetry?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Application Delivery and Observability"
+    },
+    {
+      "id": "what-exactly-does-opentelemetry-auto-instrumentation-require-at-the-application-level",
+      "text": "What exactly does OpenTelemetry auto-instrumentation require at the application level?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Application Delivery and Observability"
+    },
+    {
+      "id": "an-enterprise-has-10-000-microservices-can-instrumentation-dependencies-and-installation-be-abstracted-away-from-application-teams-how-would-you-approach-this",
+      "text": "An enterprise has 10,000 microservices. Can instrumentation dependencies and installation be abstracted away from application teams? How would you approach this?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Application Delivery and Observability"
+    },
+    {
+      "id": "how-would-you-attribute-spans-to-the-resources-generating-them-including-the-service-pod-namespace-and-cluster-distinguish-resource-attributes-from-cpu-and-memory-metrics",
+      "text": "How would you attribute spans to the resources generating them, including the service, pod, namespace, and cluster? Distinguish resource attributes from CPU and memory metrics.",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Application Delivery and Observability"
+    },
+    {
+      "id": "how-would-you-compare-opentelemetry-collector-gateway-sidecar-and-daemonset-deployment-patterns-including-their-effects-on-resource-attribution-and-scale",
+      "text": "How would you compare OpenTelemetry Collector gateway, sidecar, and DaemonSet deployment patterns, including their effects on resource attribution and scale?",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Application Delivery and Observability"
+    },
+    {
+      "id": "why-would-you-choose-distributed-tracing-over-logs-explain-the-tradeoffs-and-why-both-may-still-be-needed",
+      "text": "Why would you choose distributed tracing over logs? Explain the tradeoffs and why both may still be needed.",
+      "category": "DevOps, SRE and Platform Engineering",
+      "subcategory": "Application Delivery and Observability"
     },
     {
       "id": "do-you-have-any-experience-with-openshift-container-platform",

@@ -30,6 +30,8 @@ Tests check the `legacy.md` source independently of the README, question coverag
 
 CI audits both production and development dependencies. A scoped npm override pins `braces` within the Next.js ESLint plugin's dependency tree to the community backport `@dieub/braces-depth-guard@3.0.3-pn.0` while an upstream fix for [GHSA-vfj7-8cjw-p6xm](https://github.com/advisories/GHSA-vfj7-8cjw-p6xm) remains unpublished. Its only runtime changes from `braces@3.0.3` are nesting-depth guards: inputs and ASTs deeper than 100 levels are rejected, and stricter `maxDepth` limits are supported. Next.js, ESLint, and globbing APIs and lint rules are unchanged. Revisit the override when an official patched release becomes available.
 
+Next.js is pinned to `16.4.2`, which includes fixes for [image-optimization remote code execution](https://github.com/advisories/GHSA-2464-fhr4-w9xw) and [Server Actions denial of service](https://github.com/advisories/GHSA-p3m5-59mp-jv5r). The existing ESLint toolchain is unchanged.
+
 ### Dependency install scripts
 
 `package.json` records exact-version `allowScripts` approvals for the reviewed `esbuild@0.25.12`, `unrs-resolver@1.11.1`, and macOS-only `fsevents@2.3.3` dependencies. Current npm uses these approvals for dependency lifecycle scripts; unreviewed packages or upgraded versions remain subject to review.
