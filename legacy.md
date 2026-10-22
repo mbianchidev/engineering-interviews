@@ -74,6 +74,7 @@
 - What’s the purpose of Docker Compose?
 - Best practice for building a good Dockerfile
 - Why too many lines are bad for a Dockerfile?
+- Given a Node.js service's Dockerfile, explain each instruction in order, including its effects on dependency installation, build stages, caching, runtime permissions, networking, and process startup.
 
 ## Cloud
 
@@ -292,6 +293,8 @@ See the [Platform Engineering Roadmap](https://platform-engineering-roadmap.mbia
 - Have you ever used a message broker? What is it and how does it work?
 - What is a cache? What is it used for?
 - Why is redis so fast?
+- What does LAMP stand for, what role does each component play, and how does a technology stack differ from a microservice architecture?
+- When would you choose Node.js rather than Python for a JSON-heavy web service or microservice? Discuss TypeScript, event-loop concurrency, CPU-bound work, team and ecosystem fit, and Python with FastAPI as an alternative.
 
 ## Microservices
 
@@ -303,6 +306,7 @@ See the [Platform Engineering Roadmap](https://platform-engineering-roadmap.mbia
 - Stateless microservices seem to be bad. Can I go stateful with microservices? 
 - Should I Adopt DDD (Domain Driven Design)?
 - Orchestrating microservices is not easy. What are the options?
+- How would you package and deploy a single-process Node.js HTTP service as an independently deployable microservice? Discuss containerization, deterministic production dependencies, non-root execution, interface binding and port publishing, graceful shutdown, and the limits of in-memory state across restarts and replicas.
 
 ![System-design diagram supplied with the interview material, showing a client, API gateway, Subscription, Search, and Video services, Postgres, and video storage](docs/images/system-design.png)
 
