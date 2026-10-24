@@ -6,7 +6,7 @@ Developer setup for the static Next.js [practice website](https://mbianchidev.gi
 
 Use Node.js 24 LTS, matching CI, and npm.
 
-Validation and Pages jobs use the explicit Ubuntu 24.04 runner image rather than the moving `ubuntu-latest` label.
+Validation and Pages jobs use GitHub-hosted x64 Linux runners via `ubuntu-latest`, following GitHub's supported default image rather than a fixed Ubuntu release. These jobs do not require a specific Ubuntu version; Node.js stays on 24 LTS.
 
 ```bash
 git clone https://github.com/mbianchidev/engineering-interviews.git
