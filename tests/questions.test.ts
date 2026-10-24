@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { test } from 'node:test';
-import { parseQuestionBank, getAllQuestions } from '../lib/parseQuestions';
+import { parseQuestionBank, getAllQuestions, type Subcategory } from '../lib/parseQuestions';
 import { allCategories, allQuestions } from '../lib/questionsData';
 
 test('question parsing uses legacy.md independently of the README landing page', t => {
@@ -62,7 +62,7 @@ test('coding scenarios cover algorithms, concurrency, state, and infrastructure'
     'APIs and State Machines',
     'Infrastructure Exercises',
   ]) {
-    const subcategory = category.subcategories.find(subcategory => subcategory.name === name);
+    const subcategory: Subcategory | undefined = category.subcategories.find(subcategory => subcategory.name === name);
     assert.ok(subcategory, `Missing coding topic: ${name}`);
     assert.ok(subcategory.questions.length >= 10, `${name} must support a complete practice round`);
   }
@@ -78,7 +78,7 @@ test('observability topics each support a complete practice round', () => {
     'Instrumentation and Telemetry Pipelines',
     'Latency and Performance',
   ]) {
-    const subcategory = category.subcategories.find(subcategory => subcategory.name === name);
+    const subcategory: Subcategory | undefined = category.subcategories.find(subcategory => subcategory.name === name);
     assert.ok(subcategory, `Missing observability topic: ${name}`);
     assert.ok(subcategory.questions.length >= 12, `${name} needs practical scenario coverage`);
   }

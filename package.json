@@ -13,19 +13,19 @@
   "dependencies": {
     "@fontsource-variable/dm-sans": "5.3.0",
     "@fontsource-variable/space-grotesk": "5.3.0",
-    "next": "16.4.2",
-    "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "next": "16.4.3",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
+    "@types/node": "^26",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.3.8",
+    "eslint-config-next": "16.4.3",
     "tailwindcss": "^4",
-    "tsx": "^4.20.6",
+    "tsx": "^4.23.15",
     "typescript": "5.9.3"
   },
   "overrides": {
@@ -34,8 +34,8 @@
     }
   },
   "allowScripts": {
-    "esbuild@0.25.12": true,
     "unrs-resolver@1.11.1": true,
-    "fsevents@2.3.3": true
+    "fsevents@2.3.3": true,
+    "esbuild@0.28.2": true
   }
 }

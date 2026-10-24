@@ -1,5 +1,7 @@
 // Utility functions for tracking all viewed questions across sessions
 
+import { notifyStorageChange } from './browserStorageEvents';
+
 const VIEWED_QUESTIONS_KEY = 'interview-viewed-questions';
 
 export interface ViewedQuestionsStorage {
@@ -32,6 +34,7 @@ export function addViewedQuestion(questionId: string): void {
       viewedQuestions.push(questionId);
       const data: ViewedQuestionsStorage = { questionIds: viewedQuestions };
       localStorage.setItem(VIEWED_QUESTIONS_KEY, JSON.stringify(data));
+      notifyStorageChange();
     }
   } catch (error) {
     console.error('Error saving viewed question to local storage:', error);
@@ -49,6 +52,7 @@ export function clearAllViewedQuestions(): void {
   
   try {
     localStorage.removeItem(VIEWED_QUESTIONS_KEY);
+    notifyStorageChange();
   } catch (error) {
     console.error('Error clearing viewed questions from local storage:', error);
   }

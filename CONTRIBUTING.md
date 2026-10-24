@@ -16,7 +16,7 @@ Useful contributions include question scenarios, documentation, fixes, and impro
 
 ## Develop and validate
 
-Use Node.js 24 LTS and npm. Follow [local setup](SETUP.md#run-locally), then run the [validation commands](SETUP.md#validate-changes) before opening a pull request. Both production and development dependencies are audited.
+Use Node.js 26.12.1 from `.node-version` and npm. Follow [local setup](SETUP.md#run-locally), then run the [validation commands](SETUP.md#validate-changes) before opening a pull request. Both production and development dependencies are audited.
 
 Keep changes focused, preserve existing behavior unless the change is intentional, and add synthetic-data regression tests for behavior changes. Update directly related documentation.
 
