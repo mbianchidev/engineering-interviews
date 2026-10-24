@@ -30,7 +30,7 @@ npm ci
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000). The home page provides Start Practicing, Browse Topics, and Questions to Ask Companies. No database, Docker setup, API keys, or environment file is required. CI runs on Ubuntu 24.04; the website needs a browser with JavaScript enabled.
+Open [http://localhost:3000](http://localhost:3000). The home page provides Start Practicing, Browse Topics, and Questions to Ask Companies. No database, Docker setup, API keys, or environment file is required. CI uses `ubuntu-latest` GitHub-hosted Linux runners; the website needs a browser with JavaScript enabled.
 
 ## Why Engineering interviews
 
