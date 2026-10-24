@@ -35,7 +35,7 @@ jobs:
           generator_config_file: ./next.config.ts
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --prefer-offline
 
       - name: Build with Next.js
         run: npm run build
