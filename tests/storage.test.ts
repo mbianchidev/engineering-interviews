@@ -9,6 +9,7 @@ import {
 import {
   saveEvaluation, getAllEvaluations, clearAllEvaluations,
 } from '../lib/evaluationStorage';
+import { subscribeToStorage } from '../lib/browserStorageEvents';
 
 class MockStorage implements Storage {
   private values = new Map<string, string>();
@@ -24,7 +25,7 @@ const originalWindow = Object.getOwnPropertyDescriptor(globalThis, 'window');
 const originalStorage = Object.getOwnPropertyDescriptor(globalThis, 'localStorage');
 
 beforeEach(() => {
-  Object.defineProperty(globalThis, 'window', { value: {}, configurable: true });
+  Object.defineProperty(globalThis, 'window', { value: new EventTarget(), configurable: true });
   Object.defineProperty(globalThis, 'localStorage', { value: new MockStorage(), configurable: true });
 });
 
@@ -71,4 +72,49 @@ test('round evaluations retain ratings, order, and the existing storage key', ()
   assert.ok(localStorage.getItem('interview-practice-evaluations'));
   clearAllEvaluations();
   assert.deepEqual(getAllEvaluations(), []);
+});
+
+test('evaluation snapshots stay stable until the stored data changes', () => {
+  const empty = getAllEvaluations();
+  assert.equal(getAllEvaluations(), empty);
+
+  saveEvaluation({ confidence: 2, effectiveness: 3, knowledge: 4 });
+  const saved = getAllEvaluations();
+  assert.notEqual(saved, empty);
+  assert.deepEqual(empty, []);
+  assert.equal(getAllEvaluations(), saved);
+
+  saveEvaluation({ confidence: 4, effectiveness: 5, knowledge: 3 });
+  assert.equal(saved.length, 1);
+  assert.equal(getAllEvaluations().length, 2);
+
+  clearAllEvaluations();
+  const cleared = getAllEvaluations();
+  assert.deepEqual(cleared, []);
+  assert.equal(getAllEvaluations(), cleared);
+});
+
+test('practice storage changes notify listeners in the same tab', t => {
+  let changes = 0;
+  const onChange = () => { changes++; };
+  const unsubscribe = subscribeToStorage(onChange);
+  t.after(unsubscribe);
+
+  saveEvaluation({ confidence: 2, effectiveness: 3, knowledge: 4 });
+  assert.equal(changes, 1);
+  clearAllEvaluations();
+  assert.equal(changes, 2);
+  addViewedQuestion('synthetic-question');
+  assert.equal(changes, 3);
+  addViewedQuestion('synthetic-question');
+  assert.equal(changes, 3);
+  clearAllViewedQuestions();
+  assert.equal(changes, 4);
+
+  window.dispatchEvent(new Event('storage'));
+  assert.equal(changes, 5);
+  unsubscribe();
+  saveEvaluation({ confidence: 4, effectiveness: 5, knowledge: 3 });
+  window.dispatchEvent(new Event('storage'));
+  assert.equal(changes, 5);
 });

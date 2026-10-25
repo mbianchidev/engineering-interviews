@@ -3,17 +3,13 @@
 import { useState, useSyncExternalStore } from 'react';
 import { getResponse, saveResponse, deleteResponse } from '@/lib/responseStorage';
 import { getAllViewedQuestions } from '@/lib/viewedQuestionsStorage';
+import { subscribeToStorage } from '@/lib/browserStorageEvents';
 import Icon from '../../components/Icon';
 
 interface QuestionItemProps {
   questionId: string;
   questionText: string;
   index: number;
-}
-
-function subscribeToStorage(onChange: () => void) {
-  window.addEventListener('storage', onChange);
-  return () => window.removeEventListener('storage', onChange);
 }
 
 export default function QuestionItem({ questionId, questionText, index }: QuestionItemProps) {

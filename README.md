@@ -21,7 +21,7 @@ Practice explaining engineering decisions, not memorizing answer keys. Engineeri
 
 Open the [website](https://mbianchidev.github.io/engineering-interviews/), select **Start Practicing**, choose **Easy**, and leave the topic filter empty. Start the round to see the first of ten questions and write a response.
 
-For local development, use **Node.js 24 LTS, npm, and Git**, matching CI:
+For local development, use **Node.js 26.12.1 (current stable), npm, and Git**, matching CI:
 
 ```bash
 git clone https://github.com/mbianchidev/engineering-interviews.git

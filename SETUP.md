@@ -4,9 +4,9 @@ Developer setup for the static Next.js [practice website](https://mbianchidev.gi
 
 ## Run locally
 
-Use Node.js 24 LTS, matching CI, and npm.
+Use Node.js 26.12.1 (current stable, pinned in `.node-version`) and npm.
 
-Validation and Pages jobs use GitHub-hosted x64 Linux runners via `ubuntu-latest`, following GitHub's supported default image rather than a fixed Ubuntu release. These jobs do not require a specific Ubuntu version; Node.js stays on 24 LTS.
+Validation and Pages jobs use GitHub-hosted x64 Linux runners via `ubuntu-latest`, following GitHub's supported default image rather than a fixed Ubuntu release. Both workflows load Node.js from `.node-version` so local development, validation, and deployment use the same release.
 
 ```bash
 git clone https://github.com/mbianchidev/engineering-interviews.git
@@ -26,17 +26,17 @@ npm audit
 npm run build
 ```
 
-Tests check the `legacy.md` source independently of the README, question coverage, unique IDs, stable existing routes and representative question IDs, generated-data consistency, local-storage behavior, Next.js lint-root glob compatibility, and brace nesting limits using synthetic data. The PR workflow runs installation, audit, lint, tests, and a production export.
+Tests check the `legacy.md` source independently of the README, question coverage, unique IDs, stable existing routes and representative question IDs, generated-data consistency, local-storage behavior and subscription snapshots, Next.js lint-root glob compatibility, and brace nesting limits using synthetic data. The PR workflow runs installation, audit, lint, tests, and a production export.
 
 Both workflows prefer npm's cached package downloads with `npm ci --prefer-offline`, while still fetching missing packages and enforcing the lockfile. Validation adds `--no-audit` only to installation, then runs the separate full `npm audit` gate once; the Pages workflow keeps its installation audit.
 
-CI audits both production and development dependencies. A scoped npm override pins `braces` within the Next.js ESLint plugin's dependency tree to the community backport `@dieub/braces-depth-guard@3.0.3-pn.0` while an upstream fix for [GHSA-vfj7-8cjw-p6xm](https://github.com/advisories/GHSA-vfj7-8cjw-p6xm) remains unpublished. Its only runtime changes from `braces@3.0.3` are nesting-depth guards: inputs and ASTs deeper than 100 levels are rejected, and stricter `maxDepth` limits are supported. Next.js, ESLint, and globbing APIs and lint rules are unchanged. Revisit the override when an official patched release becomes available.
+CI audits both production and development dependencies. A scoped npm override pins `braces` within the Next.js ESLint plugin's dependency tree to the community backport `@dieub/braces-depth-guard@3.0.3-pn.0` while an official nesting-depth fix remains unpublished. Although [GHSA-vfj7-8cjw-p6xm](https://github.com/advisories/GHSA-vfj7-8cjw-p6xm) was withdrawn, the latest upstream `braces@3.0.3` still lacks depth guards. The backport's only runtime changes are nesting-depth guards: inputs and ASTs deeper than 100 levels are rejected, and stricter `maxDepth` limits are supported. Next.js, ESLint, and globbing APIs and lint rules are unchanged. Revisit the override when an official patched release becomes available.
 
-Next.js is pinned to `16.4.2`, which includes fixes for [image-optimization remote code execution](https://github.com/advisories/GHSA-2464-fhr4-w9xw) and [Server Actions denial of service](https://github.com/advisories/GHSA-p3m5-59mp-jv5r). The existing ESLint toolchain is unchanged.
+Next.js and `eslint-config-next` are pinned together to `16.4.3`. This Next.js release includes fixes for [image-optimization remote code execution](https://github.com/advisories/GHSA-2464-fhr4-w9xw) and [Server Actions denial of service](https://github.com/advisories/GHSA-p3m5-59mp-jv5r). React and React DOM are pinned together to `19.3.1`; Node.js and React type definitions track their corresponding major versions.
 
 ### Dependency install scripts
 
-`package.json` records exact-version `allowScripts` approvals for the reviewed `esbuild@0.25.12`, `unrs-resolver@1.11.1`, and macOS-only `fsevents@2.3.3` dependencies. Current npm uses these approvals for dependency lifecycle scripts; unreviewed packages or upgraded versions remain subject to review.
+`package.json` records exact-version `allowScripts` approvals for the reviewed `esbuild@0.28.2`, `unrs-resolver@1.11.1`, and macOS-only `fsevents@2.3.3` dependencies. The TypeScript runner uses `tsx@4.23.15` or a compatible newer release for Node.js 26 loader-hook support. Current npm uses these approvals for dependency lifecycle scripts; unreviewed packages or upgraded versions remain subject to review.
 
 Use `npm install-scripts ls` to inspect pending approvals. After a dependency upgrade, read the affected lifecycle script and its helpers before recording a new pinned approval with `npm install-scripts approve <package>`. Do not use blanket `--all` approval or global script permissions. Rerun clean installation, the full audit, tests, lint, and builds after changing approvals.
 

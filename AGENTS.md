@@ -8,7 +8,7 @@ Follow the [Code of Conduct](CODE_OF_CONDUCT.md), route security-sensitive repor
 
 The README is a website-first landing page. Keep question content in `legacy.md`; `lib/parseQuestions.ts` reads that source, and `scripts/generate-questions.ts` produces `public/questions.json`. Do not move questions back into the README. Preserve question wording and category headings unless changing saved-answer IDs or topic routes is intentional.
 
-Use Node.js 24 LTS and npm. Run the [validation commands](SETUP.md#validate-changes) for changes, keep generated question data consistent, and use only synthetic data in tests and screenshots.
+Use Node.js 26.12.1 from `.node-version` and npm. Run the [validation commands](SETUP.md#validate-changes) for changes, keep generated question data consistent, and use only synthetic data in tests and screenshots.
 
 Dependency install-script approvals are pinned in `package.json`. Review lifecycle scripts before approving new versions; do not grant blanket script permission. See [install-script review](SETUP.md#dependency-install-scripts).
 

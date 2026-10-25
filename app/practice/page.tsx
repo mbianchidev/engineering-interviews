@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef, useMemo } from 'react';
+import { useState, useEffect, useRef, useMemo, useSyncExternalStore } from 'react';
 import PageHeader from '../components/PageHeader';
 import Icon from '../components/Icon';
 import { countCategoryQuestions } from '@/lib/topicPresentation';
@@ -8,6 +8,7 @@ import { allQuestions, allCategories } from '@/lib/questionsData';
 import { saveResponse, deleteResponse, clearAllResponses } from '@/lib/responseStorage';
 import { saveEvaluation, getAllEvaluations, clearAllEvaluations, SelfEvaluation } from '@/lib/evaluationStorage';
 import { addViewedQuestion, getViewedQuestionsCount, clearAllViewedQuestions } from '@/lib/viewedQuestionsStorage';
+import { subscribeToStorage } from '@/lib/browserStorageEvents';
 
 interface Question {
   id: string;
@@ -19,6 +20,7 @@ interface Question {
 const TIMER_DURATION = 300; // 5 minutes in seconds
 const QUESTIONS_PER_ROUND = 10;
 const MIN_QUESTIONS_TO_START = 10;
+const EMPTY_EVALUATIONS: SelfEvaluation[] = [];
 
 type PracticeMode = 'easy' | 'standard' | 'hard';
 
@@ -53,9 +55,13 @@ export default function PracticePage() {
     effectiveness: null,
     knowledge: null,
   });
-  const [previousEvaluations, setPreviousEvaluations] = useState<SelfEvaluation[]>([]);
+  const previousEvaluations = useSyncExternalStore(
+    subscribeToStorage, getAllEvaluations, () => EMPTY_EVALUATIONS,
+  );
   const [showPreviousEvaluations, setShowPreviousEvaluations] = useState(false);
-  const [totalViewedQuestions, setTotalViewedQuestions] = useState(0);
+  const totalViewedQuestions = useSyncExternalStore(
+    subscribeToStorage, getViewedQuestionsCount, () => 0,
+  );
   const [selectedSubtopics, setSelectedSubtopics] = useState<Set<string>>(new Set());
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set());
 
@@ -202,12 +208,6 @@ export default function PracticePage() {
     setSelectedSubtopics(new Set());
   };
 
-  // Load previous evaluations on mount
-  useEffect(() => {
-    setPreviousEvaluations(getAllEvaluations());
-    setTotalViewedQuestions(getViewedQuestionsCount());
-  }, []);
-
   useEffect(() => {
     let interval: NodeJS.Timeout | null = null;
 
@@ -287,7 +287,6 @@ export default function PracticePage() {
 
     // Track that this question has been viewed (for lifetime stats)
     addViewedQuestion(newQuestion.id);
-    setTotalViewedQuestions(getViewedQuestionsCount());
     
     setCurrentQuestion(newQuestion);
 
@@ -341,9 +340,6 @@ export default function PracticePage() {
       knowledge: evaluation.knowledge,
     });
     
-    // Reload evaluations to show the new one
-    setPreviousEvaluations(getAllEvaluations());
-    
     // Reset for new round
     setShowEvaluation(false);
     setQuestionsInRound(0);
@@ -371,7 +367,6 @@ export default function PracticePage() {
       clearAllResponses();
       clearAllViewedQuestions(); // Also clear viewed questions count
       setResponse('');
-      setTotalViewedQuestions(0);
       alert('All responses and viewed questions have been cleared.');
     }
   };
@@ -379,7 +374,6 @@ export default function PracticePage() {
   const handleClearEvaluations = () => {
     if (window.confirm('Are you sure you want to delete all your self-evaluations? This action cannot be undone.')) {
       clearAllEvaluations();
-      setPreviousEvaluations([]);
       alert('All evaluations have been cleared.');
     }
   };

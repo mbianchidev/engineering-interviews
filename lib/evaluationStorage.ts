@@ -1,5 +1,7 @@
 // Utility functions for managing self-evaluations in local storage
 
+import { notifyStorageChange } from './browserStorageEvents';
+
 const EVALUATION_STORAGE_KEY = 'interview-practice-evaluations';
 
 export interface SelfEvaluation {
@@ -14,17 +16,25 @@ export interface EvaluationStorage {
   evaluations: SelfEvaluation[];
 }
 
+const EMPTY_EVALUATIONS: SelfEvaluation[] = [];
+// External-store snapshots must retain their identity until storage changes.
+let cachedStored: string | null | undefined;
+let cachedEvaluations = EMPTY_EVALUATIONS;
+
 // Get all evaluations from local storage
 export function getAllEvaluations(): SelfEvaluation[] {
-  if (typeof window === 'undefined') return [];
+  if (typeof window === 'undefined') return EMPTY_EVALUATIONS;
   
   try {
     const stored = localStorage.getItem(EVALUATION_STORAGE_KEY);
+    if (stored === cachedStored) return cachedEvaluations;
     const data: EvaluationStorage = stored ? JSON.parse(stored) : { evaluations: [] };
-    return data.evaluations || [];
+    cachedEvaluations = data.evaluations || EMPTY_EVALUATIONS;
+    cachedStored = stored;
+    return cachedEvaluations;
   } catch (error) {
     console.error('Error reading evaluations from local storage:', error);
-    return [];
+    return EMPTY_EVALUATIONS;
   }
 }
 
@@ -42,10 +52,9 @@ export function saveEvaluation(evaluation: Omit<SelfEvaluation, 'timestamp' | 'r
       roundNumber,
     };
     
-    evaluations.push(newEvaluation);
-    
-    const data: EvaluationStorage = { evaluations };
+    const data: EvaluationStorage = { evaluations: [...evaluations, newEvaluation] };
     localStorage.setItem(EVALUATION_STORAGE_KEY, JSON.stringify(data));
+    notifyStorageChange();
   } catch (error) {
     console.error('Error saving evaluation to local storage:', error);
   }
@@ -57,6 +66,7 @@ export function clearAllEvaluations(): void {
   
   try {
     localStorage.removeItem(EVALUATION_STORAGE_KEY);
+    notifyStorageChange();
   } catch (error) {
     console.error('Error clearing evaluations from local storage:', error);
   }
