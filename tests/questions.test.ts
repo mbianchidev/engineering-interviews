@@ -54,7 +54,7 @@ test('existing category routes and representative question IDs stay stable', () 
   }
 });
 
-test('system design includes complete event ticketing and delivery tracking cases', () => {
+test('system design includes complete scenarios and an open-ended video starting point', () => {
   const category = parseQuestionBank().find(category => category.id === 'system-design');
   assert.ok(category, 'The system design category must be available');
   assert.equal(category.name, 'System Design');
@@ -63,6 +63,8 @@ test('system design includes complete event ticketing and delivery tracking case
   for (const text of [
     'Design a service where organizers publish events and customers browse them, check availability, and buy tickets. Organizers should be able to manage their events and track sales. Most events receive steady traffic, but a popular release can attract many buyers at once. Decide what the first version should support, explain your assumptions, and shape the system around them. Discuss how you would balance a smooth buying experience, accurate availability, reliability, and cost.',
     'Design a service that lets customers track deliveries handled by different shipping companies. Customers should see a package’s current status and history, and receive notifications about important changes. Support teams also need enough information to investigate delivery problems. Shipping partners vary in how quickly and reliably they provide updates. Define what you would promise customers, then explain how you would organize the service and handle growth without making the initial design unnecessarily complicated.',
+    'Design an online store where customers browse and search for products, check prices and availability, add items to a cart, place orders, and track their purchases. Store staff need to manage the catalog, inventory, and orders. The store usually receives steady traffic, but promotions can cause sudden spikes. Prices and stock levels can change while customers are shopping. Decide what the first version should support and clarify your assumptions about scale and business rules. Explain how you would organize the service, how information moves through it, and the tradeoffs between customer experience, accuracy, reliability, and cost. Describe what you would deliberately keep simple and what might need to change as the business grows. Follow-up to introduce during the mock: A payment succeeds, but checkout times out before the customer receives confirmation. They try again. What should happen, and how would you investigate if they report a problem?',
+    'Design a YouTube-style video service. Start with only a client, a video element, and a PostgreSQL database. Enrich this starting point with the components and connections you consider necessary. Decide what the first version should support, clarify your assumptions, and explain how your design works and the tradeoffs behind your choices.',
   ]) {
     assert.ok(
       category.questions.some(question => question.text === text),

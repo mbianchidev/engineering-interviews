@@ -8,7 +8,7 @@ Select **Browse Topics**, choose a topic, and expand a question. Write in **Your
 
 The topics cover engineering fundamentals, software engineering, system design, coding and problem solving, observability, SRE, and platform engineering. Coding prompts use reusable scenarios rather than reproducing company take-home assignments.
 
-[System Design](https://mbianchidev.github.io/engineering-interviews/topics/system-design) includes event ticketing and multi-carrier delivery tracking cases. Browse these cases directly, or combine them with other topics to meet the ten-question minimum for a practice round.
+[System Design](https://mbianchidev.github.io/engineering-interviews/topics/system-design) includes event ticketing, multi-carrier delivery tracking, e-commerce, and a YouTube-style video service. The e-commerce case includes a payment-timeout mock follow-up; the video case starts with only a client, a video element, and PostgreSQL for you to enrich. Browse these cases directly, or combine them with other topics to meet the ten-question minimum for a practice round.
 
 ## Practice a round
 
