@@ -1858,6 +1858,33 @@
       "questions": []
     },
     {
+      "id": "system-design",
+      "name": "System Design",
+      "subcategories": [],
+      "questions": [
+        {
+          "id": "design-a-service-where-organizers-publish-events-and-customers-browse-them-check-availability-and-buy-tickets-organizers-should-be-able-to-manage-their-events-and-track-sales-most-events-receive-steady-traffic-but-a-popular-release-can-attract-many-buyers-at-once-decide-what-the-first-version-should-support-explain-your-assumptions-and-shape-the-system-around-them-discuss-how-you-would-balance-a-smooth-buying-experience-accurate-availability-reliability-and-cost",
+          "text": "Design a service where organizers publish events and customers browse them, check availability, and buy tickets. Organizers should be able to manage their events and track sales. Most events receive steady traffic, but a popular release can attract many buyers at once. Decide what the first version should support, explain your assumptions, and shape the system around them. Discuss how you would balance a smooth buying experience, accurate availability, reliability, and cost.",
+          "category": "System Design"
+        },
+        {
+          "id": "design-a-service-that-lets-customers-track-deliveries-handled-by-different-shipping-companies-customers-should-see-a-package-s-current-status-and-history-and-receive-notifications-about-important-changes-support-teams-also-need-enough-information-to-investigate-delivery-problems-shipping-partners-vary-in-how-quickly-and-reliably-they-provide-updates-define-what-you-would-promise-customers-then-explain-how-you-would-organize-the-service-and-handle-growth-without-making-the-initial-design-unnecessarily-complicated",
+          "text": "Design a service that lets customers track deliveries handled by different shipping companies. Customers should see a package’s current status and history, and receive notifications about important changes. Support teams also need enough information to investigate delivery problems. Shipping partners vary in how quickly and reliably they provide updates. Define what you would promise customers, then explain how you would organize the service and handle growth without making the initial design unnecessarily complicated.",
+          "category": "System Design"
+        },
+        {
+          "id": "design-an-online-store-where-customers-browse-and-search-for-products-check-prices-and-availability-add-items-to-a-cart-place-orders-and-track-their-purchases-store-staff-need-to-manage-the-catalog-inventory-and-orders-the-store-usually-receives-steady-traffic-but-promotions-can-cause-sudden-spikes-prices-and-stock-levels-can-change-while-customers-are-shopping-decide-what-the-first-version-should-support-and-clarify-your-assumptions-about-scale-and-business-rules-explain-how-you-would-organize-the-service-how-information-moves-through-it-and-the-tradeoffs-between-customer-experience-accuracy-reliability-and-cost-describe-what-you-would-deliberately-keep-simple-and-what-might-need-to-change-as-the-business-grows-follow-up-to-introduce-during-the-mock-a-payment-succeeds-but-checkout-times-out-before-the-customer-receives-confirmation-they-try-again-what-should-happen-and-how-would-you-investigate-if-they-report-a-problem",
+          "text": "Design an online store where customers browse and search for products, check prices and availability, add items to a cart, place orders, and track their purchases. Store staff need to manage the catalog, inventory, and orders. The store usually receives steady traffic, but promotions can cause sudden spikes. Prices and stock levels can change while customers are shopping. Decide what the first version should support and clarify your assumptions about scale and business rules. Explain how you would organize the service, how information moves through it, and the tradeoffs between customer experience, accuracy, reliability, and cost. Describe what you would deliberately keep simple and what might need to change as the business grows. Follow-up to introduce during the mock: A payment succeeds, but checkout times out before the customer receives confirmation. They try again. What should happen, and how would you investigate if they report a problem?",
+          "category": "System Design"
+        },
+        {
+          "id": "design-a-youtube-style-video-service-start-with-only-a-client-a-video-element-and-a-postgresql-database-enrich-this-starting-point-with-the-components-and-connections-you-consider-necessary-decide-what-the-first-version-should-support-clarify-your-assumptions-and-explain-how-your-design-works-and-the-tradeoffs-behind-your-choices",
+          "text": "Design a YouTube-style video service. Start with only a client, a video element, and a PostgreSQL database. Enrich this starting point with the components and connections you consider necessary. Decide what the first version should support, clarify your assumptions, and explain how your design works and the tradeoffs behind your choices.",
+          "category": "System Design"
+        }
+      ]
+    },
+    {
       "id": "observability",
       "name": "Observability",
       "subcategories": [
@@ -4218,6 +4245,26 @@
       "text": "How would you approach building a highly interactive and responsive web application with real-time updates? E.g. Financial App Stock Market data",
       "category": "Software Engineering",
       "subcategory": "Frontend Engineering Scenarios"
+    },
+    {
+      "id": "design-a-service-where-organizers-publish-events-and-customers-browse-them-check-availability-and-buy-tickets-organizers-should-be-able-to-manage-their-events-and-track-sales-most-events-receive-steady-traffic-but-a-popular-release-can-attract-many-buyers-at-once-decide-what-the-first-version-should-support-explain-your-assumptions-and-shape-the-system-around-them-discuss-how-you-would-balance-a-smooth-buying-experience-accurate-availability-reliability-and-cost",
+      "text": "Design a service where organizers publish events and customers browse them, check availability, and buy tickets. Organizers should be able to manage their events and track sales. Most events receive steady traffic, but a popular release can attract many buyers at once. Decide what the first version should support, explain your assumptions, and shape the system around them. Discuss how you would balance a smooth buying experience, accurate availability, reliability, and cost.",
+      "category": "System Design"
+    },
+    {
+      "id": "design-a-service-that-lets-customers-track-deliveries-handled-by-different-shipping-companies-customers-should-see-a-package-s-current-status-and-history-and-receive-notifications-about-important-changes-support-teams-also-need-enough-information-to-investigate-delivery-problems-shipping-partners-vary-in-how-quickly-and-reliably-they-provide-updates-define-what-you-would-promise-customers-then-explain-how-you-would-organize-the-service-and-handle-growth-without-making-the-initial-design-unnecessarily-complicated",
+      "text": "Design a service that lets customers track deliveries handled by different shipping companies. Customers should see a package’s current status and history, and receive notifications about important changes. Support teams also need enough information to investigate delivery problems. Shipping partners vary in how quickly and reliably they provide updates. Define what you would promise customers, then explain how you would organize the service and handle growth without making the initial design unnecessarily complicated.",
+      "category": "System Design"
+    },
+    {
+      "id": "design-an-online-store-where-customers-browse-and-search-for-products-check-prices-and-availability-add-items-to-a-cart-place-orders-and-track-their-purchases-store-staff-need-to-manage-the-catalog-inventory-and-orders-the-store-usually-receives-steady-traffic-but-promotions-can-cause-sudden-spikes-prices-and-stock-levels-can-change-while-customers-are-shopping-decide-what-the-first-version-should-support-and-clarify-your-assumptions-about-scale-and-business-rules-explain-how-you-would-organize-the-service-how-information-moves-through-it-and-the-tradeoffs-between-customer-experience-accuracy-reliability-and-cost-describe-what-you-would-deliberately-keep-simple-and-what-might-need-to-change-as-the-business-grows-follow-up-to-introduce-during-the-mock-a-payment-succeeds-but-checkout-times-out-before-the-customer-receives-confirmation-they-try-again-what-should-happen-and-how-would-you-investigate-if-they-report-a-problem",
+      "text": "Design an online store where customers browse and search for products, check prices and availability, add items to a cart, place orders, and track their purchases. Store staff need to manage the catalog, inventory, and orders. The store usually receives steady traffic, but promotions can cause sudden spikes. Prices and stock levels can change while customers are shopping. Decide what the first version should support and clarify your assumptions about scale and business rules. Explain how you would organize the service, how information moves through it, and the tradeoffs between customer experience, accuracy, reliability, and cost. Describe what you would deliberately keep simple and what might need to change as the business grows. Follow-up to introduce during the mock: A payment succeeds, but checkout times out before the customer receives confirmation. They try again. What should happen, and how would you investigate if they report a problem?",
+      "category": "System Design"
+    },
+    {
+      "id": "design-a-youtube-style-video-service-start-with-only-a-client-a-video-element-and-a-postgresql-database-enrich-this-starting-point-with-the-components-and-connections-you-consider-necessary-decide-what-the-first-version-should-support-clarify-your-assumptions-and-explain-how-your-design-works-and-the-tradeoffs-behind-your-choices",
+      "text": "Design a YouTube-style video service. Start with only a client, a video element, and a PostgreSQL database. Enrich this starting point with the components and connections you consider necessary. Decide what the first version should support, clarify your assumptions, and explain how your design works and the tradeoffs behind your choices.",
+      "category": "System Design"
     },
     {
       "id": "what-responsibilities-belong-to-the-opentelemetry-api-sdk-instrumentation-libraries-and-collector",

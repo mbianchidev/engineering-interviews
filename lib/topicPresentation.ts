@@ -17,6 +17,11 @@ const presentation: Record<string, { icon: IconName; description: string; label:
     label: 'Software engineering',
     description: 'APIs, data, architecture, and the frontend. Explain the choices behind your code.',
   },
+  'system-design': {
+    icon: 'layers',
+    label: 'System design',
+    description: 'Scope a first version and reason about availability, reliability, growth, and cost.',
+  },
   observability: {
     icon: 'activity',
     label: 'Observability',
