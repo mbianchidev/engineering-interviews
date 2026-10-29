@@ -381,6 +381,11 @@ See the [Platform Engineering Roadmap](https://platform-engineering-roadmap.mbia
 - Can you describe your approach to optimizing the performance and user experience of a large e-commerce website?
 - How would you approach building a highly interactive and responsive web application with real-time updates? E.g. Financial App Stock Market data
 
+# System Design
+
+- Design a service where organizers publish events and customers browse them, check availability, and buy tickets. Organizers should be able to manage their events and track sales. Most events receive steady traffic, but a popular release can attract many buyers at once. Decide what the first version should support, explain your assumptions, and shape the system around them. Discuss how you would balance a smooth buying experience, accurate availability, reliability, and cost.
+- Design a service that lets customers track deliveries handled by different shipping companies. Customers should see a package’s current status and history, and receive notifications about important changes. Support teams also need enough information to investigate delivery problems. Shipping partners vary in how quickly and reliably they provide updates. Define what you would promise customers, then explain how you would organize the service and handle growth without making the initial design unnecessarily complicated.
+
 # Observability
 
 ## OpenTelemetry

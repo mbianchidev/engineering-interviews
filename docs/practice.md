@@ -6,7 +6,9 @@ Open the [practice website](https://mbianchidev.github.io/engineering-interviews
 
 Select **Browse Topics**, choose a topic, and expand a question. Write in **Your Response** and leave the text box to save. Return to the same question in the same browser to revisit or edit the answer. **Clear Response** removes that answer.
 
-The topics cover engineering fundamentals, software design, coding and problem solving, observability, SRE, and platform engineering. Coding prompts use reusable scenarios rather than reproducing company take-home assignments.
+The topics cover engineering fundamentals, software engineering, system design, coding and problem solving, observability, SRE, and platform engineering. Coding prompts use reusable scenarios rather than reproducing company take-home assignments.
+
+[System Design](https://mbianchidev.github.io/engineering-interviews/topics/system-design) includes event ticketing and multi-carrier delivery tracking cases. Browse these cases directly, or combine them with other topics to meet the ten-question minimum for a practice round.
 
 ## Practice a round
 

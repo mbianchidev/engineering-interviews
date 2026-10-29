@@ -9,7 +9,7 @@
 
 *The current practice website, shown with a synthetic example response.*
 
-Practice explaining engineering decisions, not memorizing answer keys. Engineering interviews is a static website for candidates rehearsing their reasoning and interviewers preparing a question set, covering fundamentals, software design, coding, observability, SRE, and platform engineering.
+Practice explaining engineering decisions, not memorizing answer keys. Engineering interviews is a static website for candidates rehearsing their reasoning and interviewers preparing a question set, covering fundamentals, software engineering, system design, coding, observability, SRE, and platform engineering.
 
 **[Open the practice website](https://mbianchidev.github.io/engineering-interviews/)** to browse and practice the questions. No installation or account is required. The bank mixes hiring-manager and candidate experience; coding prompts are open-ended scenarios rather than company-specific take-home assignments.
 

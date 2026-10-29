@@ -4,6 +4,7 @@ import path from 'node:path';
 import { test } from 'node:test';
 import { parseQuestionBank, getAllQuestions, type Subcategory } from '../lib/parseQuestions';
 import { allCategories, allQuestions } from '../lib/questionsData';
+import { getTopicPresentation } from '../lib/topicPresentation';
 
 test('question parsing uses legacy.md independently of the README landing page', t => {
   const readFile = t.mock.method(fs, 'readFileSync', () => [
@@ -50,6 +51,23 @@ test('existing category routes and representative question IDs stay stable', () 
     'what-is-the-difference-between-state-and-props-in-react',
   ]) {
     assert.ok(ids.has(id), `Saved responses must still resolve question: ${id}`);
+  }
+});
+
+test('system design includes complete event ticketing and delivery tracking cases', () => {
+  const category = parseQuestionBank().find(category => category.id === 'system-design');
+  assert.ok(category, 'The system design category must be available');
+  assert.equal(category.name, 'System Design');
+  assert.equal(getTopicPresentation(category.id).label, 'System design');
+
+  for (const text of [
+    'Design a service where organizers publish events and customers browse them, check availability, and buy tickets. Organizers should be able to manage their events and track sales. Most events receive steady traffic, but a popular release can attract many buyers at once. Decide what the first version should support, explain your assumptions, and shape the system around them. Discuss how you would balance a smooth buying experience, accurate availability, reliability, and cost.',
+    'Design a service that lets customers track deliveries handled by different shipping companies. Customers should see a package’s current status and history, and receive notifications about important changes. Support teams also need enough information to investigate delivery problems. Shipping partners vary in how quickly and reliably they provide updates. Define what you would promise customers, then explain how you would organize the service and handle growth without making the initial design unnecessarily complicated.',
+  ]) {
+    assert.ok(
+      category.questions.some(question => question.text === text),
+      `Missing complete system design case: ${text}`,
+    );
   }
 });
 
