@@ -404,6 +404,7 @@ See the [Platform Engineering Roadmap](https://platform-engineering-roadmap.mbia
 - How would you correlate structured logs with traces when some traces are not retained by your sampling policy?
 - How would you reason about cumulative versus delta metric temporality and process restarts during export?
 - A trace disappears between two services. How would you locate the gap in propagation, sampling, export, or backend ingestion?
+- A growing retail startup sells inexpensive, everyday products online. Customers are reporting service slowdowns, and the engineering team is starting an OpenTelemetry project to improve visibility and performance. The team is growing quickly, and onboarding new engineers is a challenge. Its stack includes Java, Node.js, PostgreSQL, Apache Kafka, and a self-hosted three-node Kubernetes cluster, with Grafana, Jaeger, and the ELK stack for observability. It needs a robust, future-proof SaaS solution to manage its OpenTelemetry data, prioritizing open standards, excellent usability, competitive pricing, and data security. Design an OpenTelemetry-based observability approach to investigate service slowdowns across this stack. Explain how it would fit the existing environment and how you would evaluate a SaaS solution against the requirements. Discuss the trade-offs, including what you would keep or replace in the current setup and how new engineers would get started.
 
 ## Prometheus and PromQL
 

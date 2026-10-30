@@ -1963,6 +1963,12 @@
               "text": "A trace disappears between two services. How would you locate the gap in propagation, sampling, export, or backend ingestion?",
               "category": "Observability",
               "subcategory": "OpenTelemetry"
+            },
+            {
+              "id": "a-growing-retail-startup-sells-inexpensive-everyday-products-online-customers-are-reporting-service-slowdowns-and-the-engineering-team-is-starting-an-opentelemetry-project-to-improve-visibility-and-performance-the-team-is-growing-quickly-and-onboarding-new-engineers-is-a-challenge-its-stack-includes-java-node-js-postgresql-apache-kafka-and-a-self-hosted-three-node-kubernetes-cluster-with-grafana-jaeger-and-the-elk-stack-for-observability-it-needs-a-robust-future-proof-saas-solution-to-manage-its-opentelemetry-data-prioritizing-open-standards-excellent-usability-competitive-pricing-and-data-security-design-an-opentelemetry-based-observability-approach-to-investigate-service-slowdowns-across-this-stack-explain-how-it-would-fit-the-existing-environment-and-how-you-would-evaluate-a-saas-solution-against-the-requirements-discuss-the-trade-offs-including-what-you-would-keep-or-replace-in-the-current-setup-and-how-new-engineers-would-get-started",
+              "text": "A growing retail startup sells inexpensive, everyday products online. Customers are reporting service slowdowns, and the engineering team is starting an OpenTelemetry project to improve visibility and performance. The team is growing quickly, and onboarding new engineers is a challenge. Its stack includes Java, Node.js, PostgreSQL, Apache Kafka, and a self-hosted three-node Kubernetes cluster, with Grafana, Jaeger, and the ELK stack for observability. It needs a robust, future-proof SaaS solution to manage its OpenTelemetry data, prioritizing open standards, excellent usability, competitive pricing, and data security. Design an OpenTelemetry-based observability approach to investigate service slowdowns across this stack. Explain how it would fit the existing environment and how you would evaluate a SaaS solution against the requirements. Discuss the trade-offs, including what you would keep or replace in the current setup and how new engineers would get started.",
+              "category": "Observability",
+              "subcategory": "OpenTelemetry"
             }
           ]
         },
@@ -4335,6 +4341,12 @@
     {
       "id": "a-trace-disappears-between-two-services-how-would-you-locate-the-gap-in-propagation-sampling-export-or-backend-ingestion",
       "text": "A trace disappears between two services. How would you locate the gap in propagation, sampling, export, or backend ingestion?",
+      "category": "Observability",
+      "subcategory": "OpenTelemetry"
+    },
+    {
+      "id": "a-growing-retail-startup-sells-inexpensive-everyday-products-online-customers-are-reporting-service-slowdowns-and-the-engineering-team-is-starting-an-opentelemetry-project-to-improve-visibility-and-performance-the-team-is-growing-quickly-and-onboarding-new-engineers-is-a-challenge-its-stack-includes-java-node-js-postgresql-apache-kafka-and-a-self-hosted-three-node-kubernetes-cluster-with-grafana-jaeger-and-the-elk-stack-for-observability-it-needs-a-robust-future-proof-saas-solution-to-manage-its-opentelemetry-data-prioritizing-open-standards-excellent-usability-competitive-pricing-and-data-security-design-an-opentelemetry-based-observability-approach-to-investigate-service-slowdowns-across-this-stack-explain-how-it-would-fit-the-existing-environment-and-how-you-would-evaluate-a-saas-solution-against-the-requirements-discuss-the-trade-offs-including-what-you-would-keep-or-replace-in-the-current-setup-and-how-new-engineers-would-get-started",
+      "text": "A growing retail startup sells inexpensive, everyday products online. Customers are reporting service slowdowns, and the engineering team is starting an OpenTelemetry project to improve visibility and performance. The team is growing quickly, and onboarding new engineers is a challenge. Its stack includes Java, Node.js, PostgreSQL, Apache Kafka, and a self-hosted three-node Kubernetes cluster, with Grafana, Jaeger, and the ELK stack for observability. It needs a robust, future-proof SaaS solution to manage its OpenTelemetry data, prioritizing open standards, excellent usability, competitive pricing, and data security. Design an OpenTelemetry-based observability approach to investigate service slowdowns across this stack. Explain how it would fit the existing environment and how you would evaluate a SaaS solution against the requirements. Discuss the trade-offs, including what you would keep or replace in the current setup and how new engineers would get started.",
       "category": "Observability",
       "subcategory": "OpenTelemetry"
     },
