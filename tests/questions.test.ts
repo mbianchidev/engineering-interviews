@@ -104,6 +104,22 @@ test('observability topics each support a complete practice round', () => {
   }
 });
 
+test('retail observability challenge is available in topic browsing and practice', () => {
+  const text = 'A growing retail startup sells inexpensive, everyday products online. Customers are reporting service slowdowns, and the engineering team is starting an OpenTelemetry project to improve visibility and performance. The team is growing quickly, and onboarding new engineers is a challenge. Its stack includes Java, Node.js, PostgreSQL, Apache Kafka, and a self-hosted three-node Kubernetes cluster, with Grafana, Jaeger, and the ELK stack for observability. It needs a robust, future-proof SaaS solution to manage its OpenTelemetry data, prioritizing open standards, excellent usability, competitive pricing, and data security. Design an OpenTelemetry-based observability approach to investigate service slowdowns across this stack. Explain how it would fit the existing environment and how you would evaluate a SaaS solution against the requirements. Discuss the trade-offs, including what you would keep or replace in the current setup and how new engineers would get started.';
+  const category = parseQuestionBank().find(category => category.id === 'observability');
+  const subcategory = category?.subcategories.find(subcategory => subcategory.id === 'opentelemetry');
+  const question = subcategory?.questions.find(question => question.text === text);
+
+  assert.ok(question, 'The complete engineering challenge must appear on the Observability topic page');
+  assert.equal(question.category, 'Observability');
+  assert.equal(question.subcategory, 'OpenTelemetry');
+  assert.deepEqual(
+    allQuestions.find(candidate => candidate.id === question.id),
+    question,
+    'Practice rounds must use the same complete challenge as topic browsing',
+  );
+});
+
 test('SRE and platform engineering include deeper operational questions', () => {
   const category = parseQuestionBank().find(category => category.id === 'devops-sre-and-platform-engineering');
   assert.ok(category);
